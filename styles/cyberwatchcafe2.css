@@ -1,0 +1,237 @@
+/* CSS Document */
+
+/* containers */
+body { padding:0px; margin:0px; position:relative; }
+
+#center_wristwatch_container{ margin:0px auto 0px auto; width:980px;}
+#main_wristwatch_container{ float:left; margin:62px 0px 0px 0px; width:980px; padding:0px 10px; min-height:300px; background:#FFF; box-shadow:1px 1px 12px 1px #555; }
+
+/*classes*/
+.lite{
+background: #fbfbfb; /* Old browsers */
+background: -moz-linear-gradient(top,  #fbfbfb 0%, #f0f0f0 44%, #e7e7e7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(44%,#f0f0f0), color-stop(100%,#e7e7e7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+}
+.bodybg{
+background: #efefef; 
+}
+.dark_btn{
+background: #474747; /* Old browsers */
+background: -moz-linear-gradient(top,  #474747 0%, #2f2f2f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#2f2f2f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #474747 0%,#2f2f2f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #474747 0%,#2f2f2f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #474747 0%,#2f2f2f 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #474747 0%,#2f2f2f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#2f2f2f',GradientType=0 ); /* IE6-9 */
+}
+.no_margn{margin:0px !important;}
+.left_line{ border-left: 1px solid #ccc;}
+.bg_red{background:#ca0201;}
+.lgt_green{background:lightseagreen;}
+.lgt_gray{background:lightgray;}
+.clr_white{color:white !important;}
+.clr_gray{color:#111 !important;}
+.padding_link{padding:0px 12px !important;}
+.a_tag{text-decoration:none !important; border:none !important;}
+.fleft{float:left;}
+.fright{float:right;}
+/* HEADER 
+=====================================================================================================
+*/
+#top_bar_header_background{width:100%; height:40px; border-bottom:1px solid #ccc; top:0px; left:0px; position:absolute;}
+#top_header_wristwatch{margin:0 auto; width:1000px; height:40px; line-height:40px; vertical-align:middle;}
+.top_link{float:left; display:block; height:40px; margin: 0px 12px; padding:0px 0px 0px 8px;}
+.top_link a{float:left; display:block; text-decoration:none; font-family:arial; font-size:12px; color:#555; }
+.top_link a:hover{color:#000; }
+#header_wrist_watch{float:left; width:100%; height:100px; margin:0px;}
+#top_header1{float:left; width:600px;}
+#top_header2{float:right; width:400px;}
+#top_header2 .top_link{float:right;}
+.line{float:left; height:28px; border-left:1px solid #CCC; margin-top:6px; width:20px;}
+#header_contents{float:left; width:100%; height:100px;}
+#cyber_wristwatch_logo{float:left; width:310px; height:100px; line-height:100px; vertical-align:middle; text-align:center; font-size:24px; font-family:arial; color:#333; background:url('../assets/images/cyberwatchcafe.png') 10px 10px no-repeat}
+#cyber_wristwatch_search{float:left; width:670px; height:100px;}
+#search_wristwatch{float:left; margin:30px 0px 0px 220px; width:380px; height:42px;}
+#search_cyberwatch{float:left; height:29px; margin:0px; width:210px; padding-left:10px; font-size: 15px; border:none; border: 6px solid lightgray; line-height:29px; vertical-align:middle;  }
+#search_button{float:left; margin-left:-3px; font-size: 17px; height:43px; width:90px; border: 6px solid gray; }
+#advance_search{float:left; margin-left:-9px; font-size: 15px; height:43px; width:40px; color:#777; border: 6px solid gray; border-left:3px solid gray }
+#cyber_wristwatch_sell{float:left; width:270px; height:100px;}
+#sell_box{width:220px; position:relative; margin:19px 0px 0px 40px; height:50px; border:4px solid beige; float:left; 
+background: #ffaf4b; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffaf4b 0%, #ff920a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffaf4b), color-stop(100%,#ff920a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffaf4b 0%,#ff920a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffaf4b 0%,#ff920a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffaf4b 0%,#ff920a 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffaf4b 0%,#ff920a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=0 ); /* IE6-9 */
+background:#148c82;
+}
+#sell_box img{margin:2px; float:left;}
+#sell_text1{position:absolute; top: 0px; right:8px; color:#FFF; font-size:22px; font-family:tahoma;  }
+#sell_text2{position:absolute; top: 25px; right:8px; color:#CCC; font-size:16px; font-family:arial;  }
+
+.btn {
+
+  background: #f0f0f0;
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #d6d6d6);
+  background-image: -moz-linear-gradient(top, #f0f0f0, #d6d6d6);
+  background-image: -ms-linear-gradient(top, #f0f0f0, #d6d6d6);
+  background-image: -o-linear-gradient(top, #f0f0f0, #d6d6d6);
+  background-image: linear-gradient(to bottom, #f0f0f0, #d6d6d6);
+  font-family: Arial;
+  color: #383838;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #d6d6d6;
+  background-image: -webkit-linear-gradient(top, #d6d6d6, #9e9e9e);
+  background-image: -moz-linear-gradient(top, #d6d6d6, #9e9e9e);
+  background-image: -ms-linear-gradient(top, #d6d6d6, #9e9e9e);
+  background-image: -o-linear-gradient(top, #d6d6d6, #9e9e9e);
+  background-image: linear-gradient(to bottom, #d6d6d6, #9e9e9e);
+  text-decoration: none;
+  color:white;
+}
+#header_menu{clear:both; width:100%; height:30px; margin:10px 0px 5px 0px; line-height:30px; vertical-align:middle; clear:both;
+background: #4a4a4a; /* Old browsers */
+background: -moz-linear-gradient(top,  #4a4a4a 0%, #2c2c2c 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4a4a4a), color-stop(100%,#2c2c2c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4a4a4a 0%,#2c2c2c 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4a4a4a 0%,#2c2c2c 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4a4a4a 0%,#2c2c2c 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #4a4a4a 0%,#2c2c2c 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a4a4a', endColorstr='#2c2c2c',GradientType=0 ); /* IE6-9 */
+}
+.top_menu{float:left; display:block; height:30px; margin: 0px 12px; padding:0px 15px; position:relative;}
+.top_menu a{float:left; display:block; text-decoration:none; font-family:verdana; font-size:14px; color:#FFF; }
+.top_menu:hover{
+background: #ff4935; /* Old browsers */
+background: -moz-linear-gradient(top,  #ff4935 0%, #ff1a00 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff4935), color-stop(100%,#ff1a00)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ff4935 0%,#ff1a00 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ff4935 0%,#ff1a00 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ff4935 0%,#ff1a00 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ff4935 0%,#ff1a00 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4935', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */
+ }
+
+ .drop_nav{
+ position:absolute;
+ width:400px;
+ height:400px;
+ background:#FFF;
+ border:3px solid #ff4935;
+ z-index:999;
+ z-index: 999;
+top: 30px;
+display:none;
+ }
+ 
+#watch_list{
+float:left;
+width:80px;
+height:37px;
+line-height:37px;
+vertical-align:middle;
+text-align:center;
+font-size:12px;
+font-family:tahoma;
+background: #fbfbfb; /* Old browsers */
+background: -moz-linear-gradient(top,  #fbfbfb 0%, #f0f0f0 44%, #e7e7e7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(44%,#f0f0f0), color-stop(100%,#e7e7e7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+box-shadow:1px 1px 2px 1px #CCC;
+}
+#watch_list:hover{
+background:beige;
+} 
+  
+ 
+ .title_bar{
+float:left;
+margin:0px 0px 10px 10px;
+border:1px solid #ccc;
+width:748px;
+padding-left:20px;
+height:30px;
+line-height:30px;
+vertical-align:middle;
+font-family:arial;
+color:#333;
+font-weight:bold;
+font-size:14px;
+background: #fbfbfb; /* Old browsers */
+background: -moz-linear-gradient(top,  #fbfbfb 0%, #f0f0f0 44%, #e7e7e7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(44%,#f0f0f0), color-stop(100%,#e7e7e7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+}
+ 
+ 
+ /* FOOTER 
+=====================================================================================================
+*/
+#footer_content{
+float:left;
+width:100%;
+height:200px;
+background:#e8e8e8;	
+position:relative;
+background: #EEEEE0;
+margin:0px;
+border-top:solid 3px #CCC;
+}
+.footer_part{
+float:left;
+height:115px;
+width:220px;
+border-right:1px solid #CCC;
+}
+.footer_part li{
+list-style:none;
+}
+.footer_part li a{
+text-decoration:none;
+color:#666;
+font-family:verdana;
+font-size:12px;
+}
+.footer_part li a:hover{
+color:#000;
+}
+.last_part{
+border:none;
+}
+#footer_inner{
+float:left;
+height:115px;
+width:900px;
+margin-left:40px;
+margin-top:15px;
+}
+#footer_note{
+width:900px;
+height:40px;
+position:absolute;
+bottom:0px;
+left:40px;
+font-family:tahoma;
+color:#555;
+font-size:12px;
+border-top:1px solid #CCC;
+padding-top:7px;
+}
