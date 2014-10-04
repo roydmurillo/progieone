@@ -10,32 +10,32 @@
 	if($category != false){
 			
 			
-			echo "<div class='drop_container'>";
+			echo "<ul class='dropdown-menu' role='menu'>";
 				
 			foreach($category as $key => $val){
 				
 				if($type == "male"){
-					echo  "<div class='drop_links'><a class='w90' href='".base_url()."mens-watches?brand=".$key."'>" . $val . "</a></div>";
+					echo  "<li><a href='".base_url()."mens-watches?brand=".$key."'>" . $val . "</a></li>";
 				}
 				if($type == "female"){
-					echo  "<div class='drop_links'><a class='w90' href='".base_url()."womens-watches?brand=".$key."'>" . $val . "</a></div>";
+					echo  "<li><a href='".base_url()."womens-watches?brand=".$key."'>" . $val . "</a></li>";
 				}
 				if($type == "kids"){
-					echo  "<div class='drop_links'><a class='w90' href='".base_url()."kids-watches?brand=".$key."'>" . $val . "</a></div>";
+					echo  "<li><a href='".base_url()."kids-watches?brand=".$key."'>" . $val . "</a></li>";
 				}
 
 			}
 			
 			if($type=="male"){
-				echo  "<div class='drop_links'><a class='w90 all' href='".base_url()."mens-watches/'>View All Mens Watches</a></div>";
+				echo  "<li><a class='all' href='".base_url()."mens-watches/'>View All Mens Watches</a></li>";
 			}
 			if($type=="female"){
-				echo  "<div class='drop_links'><a class='w90 all' href='".base_url()."womens-watches/'>View All Womens Watches</a></div>";
+				echo  "<li><a class='all' href='".base_url()."womens-watches/'>View All Womens Watches</a></li>";
 			}
 			if($type=="kids"){
-				echo  "<div class='drop_links'><a class='w90 all' href='".base_url()."kids-watches/'>View All Kids Watches</a></div>";
+				echo  "<li><a class='all' href='".base_url()."kids-watches/'>View All Kids Watches</a></li>";
 			}
-			echo "</div>";
+			echo "</ul>";
 
 	}
 

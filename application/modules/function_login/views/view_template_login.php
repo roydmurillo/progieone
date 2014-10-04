@@ -4,13 +4,7 @@
 	<div class="inner_acct">
 		
 		<?php if($error != ""){	?>
-			<div class="regular_register" style="min-height:40px !important;margin: 0px 155px;">
-					<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-					<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-						<?php echo $error; ?>
-					</div>									
-						
-			</div>
+			<p class="alert alert-danger"><?php echo $error; ?></p>
 		<?php } ?>	
 		
 		<?php if($msg = $this->native_session->get("login_message")){	?>
@@ -21,37 +15,33 @@
 					</div>									
 			</div>
 		<?php $this->native_session->delete("login_message"); } ?>	
-		
-		<div id="regular_register" style="min-height:40px !important; margin: 20px 155px; background:rgba(0,0,0,0.05); ">
-			
-			<h2 class="mtop0 mbottom">Member Signin</h2>
-				
-				<form method="POST">
-				
-				<div class="field">
-					<div class="hdr">User Name * </div>
-					<div class="hdr"><input class="inp" type="text" id="username" name="username" value="<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
-						<div class="remark" style="float: left;
-						min-width: 160px;
-						height: 32px;
-						padding-left: 12px;
-						line-height: 32px;
-						vertical-align: middle;"></div>
-					</div>
-				</div>
-
-				<div class="field">
-					<div class="hdr" style="margin-top:20px">Password * </div>
-					<div class="hdr"><input class="inp" type="password" name="password" value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>"></div>
-				</div>
-				
-				<div style="margin:50px auto 20px auto !important; width:200px;">
-					<div class="hdr"><input class="css_btn_c0" style="margin-bottom: 20px; margin-top: 20px; width: 225px; margin-left: -12px;" type="submit" name="login_submit" value="Sign-In"></div>
-				</div>
-				
-				</form>																	
-		
-		</div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                            <div class="panel-heading">Members login</div>
+                            <div class="panel-body">	
+                            <form role="form" method="POST">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input class="form-control" type="text" id="username" name="username" placeholder="username" value="<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input class="form-control"  id="password" type="password" name="password" placeholder="password" value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>">
+                                    </div>
+                                    <button class="btn btn-default" type="submit" name="login_submit">login</button>
+                            </form>	
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                            <div class="panel-heading">Create Account</div>
+                            <div class="panel-body">	
+                                <p>Not yet a member?</p>
+                                <a class="btn btn-default" href="<?php echo base_url();?>secure/register">Create Account</a>
+                            </div>
+                    </div>
+                </div>        
 	
 	</div>
 	

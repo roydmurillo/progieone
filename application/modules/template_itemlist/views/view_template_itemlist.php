@@ -1,13 +1,4 @@
 <!-- additional scripts -->
-<style>
-
-    .image_holder{ border:1px solid rgba(0,0,0,0.4); }
-    .item_price{margin-top: 0px !important; margin-left: 23px; text-align:left; font-size: 17px; color:#405E9C; font-family:arial; font-weight:bold}
-    .item_posted{float:left; font-family:tahoma; clear:both; width:90%; margin-top: 0px !important; margin-left: 23px; margin-bottom:5px; text-align:left; font-size: 10px; color:#777;}
-    .item_seller{ width:189px;}
-    .inner_seller{ float:left; margin:3px 0px 0px 12px; font-size:12px; font-weight:bold; color:#333;}
-    .item_title{margin-top:0px !important; height:48px; color:#333; width:143px; text-align:left; margin-top:-10px; margin-left:18px; font-weight:bold; text-transform:none !important;}
-</style>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/itemlist_scripts.js"></script>
 
@@ -17,7 +8,7 @@ $this->load->module("function_country");
 $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
 
-<div>
+<div class="breadcrumb">
     FEATURED WATCHES
     <a href="<?php echo base_url() ?>all-watches">View All</a>
 </div>
@@ -84,54 +75,37 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
             if($data["user_activated"] != "deactivated"){
                 ?>
 
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                    <div class="item_seller">
-                        <div class="inner_seller">
-                            <table>
-                                <tr>
-                                    <td><div class="fright" style="margin-right:5px">Seller :</div></td>
-                                    <td> <a href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></td>
-                                </tr>
-                                <tr>
-                                    <td><div class="fright" style="margin-right:5px">Rating :</div></td>
-                                    <td><?php $this->function_rating->get_stars($featured->item_user_id); ?></td>
-                                </tr>
-                                <tr>
-                                    <td><div class="fright" style="margin-right:5px">Country :</div></td>
-                                    <td><div class="flag flag-<?php echo strtolower($data["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($data["user_country"]); ?>"></div></td>
-                                </tr>
-                            </table>
-
-                        </div>
-                    </div>
-                    <a href="<?php echo $url; ?>" class="a_class">
-                        <div class="image_holder">
-                            <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" />
-                        </div>
-                    </a>
-                    <a href="<?php echo $url; ?>" class="item_title">
-                        <?php
-                        if(strlen(trim($featured->item_name)) > 35){
-                            $n = substr(ucwords(strtolower($featured->item_name)),0,45) ."...";
-                        } else {
-                            $n = substr(ucwords(strtolower($featured->item_name)),0,45);
-                        }
-                        echo $n;
-                        ?>
-                    </a>
-                    <div class="item_price"><?php echo $this->function_currency->format($price); ?></div>
-                    <input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-                    <?php
-                    if($this->function_login->is_user_loggedin()){
-                        if($this->template_itemlist->not_exist_wishlist($user,$item_id)){
-                            echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
-                        } else {
-                            echo '<a href="javascript:;" class="btn btn-primary">In Watchlist</a>';
-                        }
-                    } else {
-                        echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
-                    }
-                    ?>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+                    <figure class="thumbnail"><a href="<?php echo $url; ?>"><img alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" /></a>
+                        <h5 class="text-center"><a class="name" href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></h5>
+                            <figcaption class="caption">
+                            <a class="title" href="<?php echo $url; ?>">
+                                <?php
+                                if(strlen(trim($featured->item_name)) > 35){
+                                    $n = substr(ucwords(strtolower($featured->item_name)),0,45) ."...";
+                                } else {
+                                    $n = substr(ucwords(strtolower($featured->item_name)),0,45);
+                                }
+                                echo $n;
+                                ?>
+                                </a>
+                            <div class="clearfix">
+                                <div class="pull-left"><?php echo $this->function_currency->format($price); ?></div>
+                                <input type="hidden" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
+                                <div class="pull-right"><?php
+                                if($this->function_login->is_user_loggedin()){
+                                    if($this->template_itemlist->not_exist_wishlist($user,$item_id)){
+                                        echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
+                                    } else {
+                                        echo '<a href="javascript:;" class="btn btn-primary">In Watchlist</a>';
+                                    }
+                                } else {
+                                    echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
+                                }
+                                ?></div>
+                            </div>
+                            </figcaption>
+                    </figure>
                 </div>
 
             <?php

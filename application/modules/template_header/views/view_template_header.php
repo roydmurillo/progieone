@@ -10,8 +10,8 @@
 	<meta name="copyright" content="Cyberwatchcafe is a registered trademark of Cyberwatchcafe Inc.">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url();?>styles/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/multi-columns-row.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/cyberwatchcafe.css">
@@ -41,7 +41,12 @@
 </head>
 
 <body>
-
+    <div id="top" class="bg-success">
+            <div class="container clearfix">
+                <p class="pull-left">$0.50 per item posting, post now!</p>
+            
+            </div>
+    </div>
 <?php
 
 	//load sidebar left
@@ -59,50 +64,9 @@
 
     
 <div class="container">
-<?php 
-/*$this->load->module("function_paypal");
-if($this->function_paypal->check_active()){
-?>    
-    <a href="<?php echo base_url() ?>secure/register" style="border:none; border:0px;">
-    <img src="<?php echo base_url() ?>assets/images/ads.png" style="border:none; border:0px;float:left; clear:both; margin:70px 0px -50px; width:1000px; height:80px; background:lightblue">
-    </a>
-<?php } */?>   
-<div>
+   
+<div class="container-center">
 	
-<!--    <div id="header_contents">
-
-    	<div id="cyber_wristwatch_search">
-            <div id="search_wristwatch">
-		<form method="GET" action="<?php echo base_url(); ?>search">
-		<table>
-		    <tbody>
-		    <tr>
-			<td><input type="text" name="s" id="search_cyberwatch" placeholder="Search"></td>
-			<td><input type="submit" value="Search" id="search_button" class="btn"></td>
-			<td><a href="<?php echo base_url() ?>advance_search" id="advance_search" title="Advance Search" class="btn" 
-				   style="height:31px; width:25px; text-align:center; line-height:34px;">&#x25BC;</a></td>
-			<td>
-				<a href="<?php echo base_url(); ?>watchlist" id="awatch">
-					<div id="watch_list">
-					<table>
-						<tbody>
-							<tr>
-								<td><img alt="Cyberwatch Cafe Watchlist" src="<?php echo base_url() ?>assets/images/listicon.png" style='width:16px; height:16px; float:left; margin-left:3px; '></td><td>Watchlist</td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-				</a>
-			</td>
-		    </tr>
-		    </tbody>
-		</table>
-		</form>
-            </div>
-
-        </div>
-        
-    </div>-->
     	
 
  

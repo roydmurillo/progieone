@@ -17,7 +17,7 @@
 </script>
 
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 <?php
 		$week_number = date("W");
 		$year = date("Y");
@@ -122,15 +122,12 @@
 ?>
 		
  		<?php
-    	//load sidebar left
+                //load sidebar left
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 
 		?>
-        
-		<div class="title_bar">
-			DASHBOARD
-		</div>
+    <div class="col-sm-9 col-md-10 main">
 		
 		<div id="inner_dashboard" style="margin-left: 15px !important; width: 760px !important">
                     
@@ -407,7 +404,7 @@
 			</div>
 		
 		</div>
-        
+    </div>
 </div>
 
 <!-- additional scripts -->

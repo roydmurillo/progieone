@@ -37,6 +37,7 @@ jQuery(document).ready(function(){
   ga('send', 'pageview');
 </script>
 <script type="text/javascript" src="<?php echo base_url();?>scripts/ie-row-fix.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>scripts/bootstrap.js"></script>
 </body>
 </html>
 

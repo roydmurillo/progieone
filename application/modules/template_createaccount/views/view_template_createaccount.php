@@ -38,66 +38,44 @@ input[type="checkbox"] {
 					
 		</div>
 		<?php } ?>
-		
-		<div id="regular_register" style="margin:10px 155px; background:rgba(0,0,0,0.05);">
-			
-			<h2 class="mtop0 mbottom">Create Your Account</h2>
-				
-				<form method="POST">
-				
-				<div class="field">
-					<div class="hdr">User Name * </div>
-					<div class="hdr"><input class="inp" type="text" id="username" name="username" value="<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
-						<div class="remark" style="float: left;
-						min-width: 160px;
-						height: 32px;
-						padding-left: 12px;
-						line-height: 32px;
-						vertical-align: middle;
-						display:none"></div>
-					</div>
+            <div class="col-md-6">
+            <div class="panel panel-default">
+			<div class="panel-heading">Create Account</div>
+                        <div class="panel-body">
+                            <form role="form" method="POST">
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input class="form-control" type="text" id="username" name="username" placeholder="username" value="<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
 				</div>
-
-				<div class="field">
-					<div class="hdr" style="margin-top:20px">Password * </div>
-					<div class="hdr"><input class="inp" type="password" name="password" value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>"></div>
+				<div class="form-group">
+					<label>Password</label>
+					<input class="form-control"  id="password" type="password" name="password" placeholder="password" value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>">
 				</div>
-				
-				<div class="field">
-					<div class="hdr" style="margin-top:20px">First Name * </div>
-					<div class="hdr"><input class="inp" type="text" name="firstname" value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"]; ?>"></div>
+				<div class="form-group">
+					<label for="first">First Name</label>
+                                <input class="form-control" type="text" id="first" name="firstname" placeholder="first name" value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"]; ?>">
 				</div>
-
-				<div class="field">
-					<div class="hdr" style="margin-top:20px">Last Name *</div>
-					<div class="hdr"><input class="inp" type="text" name="lastname" value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"]; ?>"></div>
+				<div class="form-group">
+					<label for="last">Last Name</label>
+					<input class="form-control" type="text" id="last" name="lastname" value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"]; ?>">
 				</div>			
-
-				<div class="field">
-					<div class="hdr" style="margin-top:20px">Email Address *</div>
-					<div class="hdr"><input class="inp" type="text" name="email" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>"></div>
+				<div class="form-group">
+					<label for="email">Email Address</label>
+					<input class="form-control" type="text" id="email" name="email" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>">
 				</div>	
-				<div class="field">
-					<div class="hdr" style="margin-top:20px">Country *</div>
-					<div class="hdr">
-						<select id="user_country" name="user_country" style="width: 225px; padding: 7px;">
-							<option value=""> -- Select Country --</option>
+				<div class="form-group">
+					<label for="user_country">Country</label>
+                                            <select id="user_country" name="user_country" class="form-control">
+						<option value=""> -- Select Country --</option>
 							<?php 
-								
-								$arr = $this->function_country->get_country_array();
+                                                            $arr = $this->function_country->get_country_array();
 								foreach($arr as $key => $val){
-									
 									echo "<option value='$key'>$val</option>";
-									
-								}
-							
-							?>
-						</select>					
-					</div>
+							}?>
+                                            </select>					
 				</div>
-
-				<div class="field" style="margin-left:120">
-					<div class="hdr" style="margin-top:20px">Verify Captcha *</div>
+				<div class="form-group">
+					<label>Verify Captcha</label>
 					<div class="hdr">
 					<?php
 							$this->load->module("function_captcha");
@@ -106,28 +84,34 @@ input[type="checkbox"] {
 							$key = $cap["key"];
 							echo $image["image"];
 					?>
-						<div >
+						<div>
 							<input type="hidden" name="captcha_key" value="<?php echo $key; ?>">
 							<input class="inp"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code" style="width:335px">
 						</div>					
 					</div>
 				</div>	
 
-				<div class="field">
+				<div class="form-group">
 					<div class="hdr" style="font-size:10px; margin:20px 0px">
 						<input type="checkbox" name="terms_agreement" style="float:left; margin:0px 5px 0px 0px; padding:0px" value="1" <?php if(isset($_POST["terms_agreement"])) echo 'checked="checked"'; ?>> 
 						<div style="float:left; margin:0px">I Accept the <a href="<?php echo base_url() ?>terms_and_conditions">Terms and Conditions</a></div>
 					</div>
 				</div>	
-
-				<div style="margin:50px auto 20px auto !important; width:200px;">
-					<div class="hdr"><input class="css_btn_c0" style="margin-bottom:20px; width: 220px; margin-bottom: 20px; margin-left: -12px;" type="submit" name="submit" value="Submit"></div>
-				</div>
-				
-				</form>																	
-		
+                                <button class="btn btn-default" type="submit" name="submit">Create</button>
+                               </form> 
+                        </div>
 		</div>
-		
+            </div>
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                            <div class="panel-heading">Login</div>
+                            <div class="panel-body">	
+                                <p>Already a member?</p>
+                                <p>login and enjoy!</p>
+                                <a class="btn btn-default" href="<?php echo base_url();?>secure/sign-in">Sign in</a>
+                            </div>
+                    </div>
+                </div> 
 		<?php } else { ?>
 		
 		<div id="regular_register" style="min-height:40px !important; width:520px !important">
@@ -141,6 +125,5 @@ input[type="checkbox"] {
 		
 		<?php } ?>
 	
-	</div>
-	
+</div>
 </div>
