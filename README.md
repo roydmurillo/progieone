@@ -1,4 +1,4 @@
 progieone
 =========
 
-First Project
+Project
