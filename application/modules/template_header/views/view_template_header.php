@@ -10,8 +10,12 @@
 	<meta name="copyright" content="Cyberwatchcafe is a registered trademark of Cyberwatchcafe Inc.">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url();?>styles/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>styles/multi-columns-row.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/cyberwatchcafe.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>styles/style.css">
     <script type="text/javascript" src="<?php echo base_url();?>scripts/jquery.js"></script>
 	
     <?php
@@ -36,7 +40,7 @@
 
 </head>
 
-<body class="bodybg">
+<body>
 
 <?php
 
@@ -54,22 +58,18 @@
 ?>
 
     
-<div id="center_wristwatch_container">
+<div class="container">
 <?php 
-$this->load->module("function_paypal");
+/*$this->load->module("function_paypal");
 if($this->function_paypal->check_active()){
 ?>    
     <a href="<?php echo base_url() ?>secure/register" style="border:none; border:0px;">
     <img src="<?php echo base_url() ?>assets/images/ads.png" style="border:none; border:0px;float:left; clear:both; margin:70px 0px -50px; width:1000px; height:80px; background:lightblue">
     </a>
-<?php } ?>    
-<div id="main_wristwatch_container">
+<?php } */?>   
+<div>
 	
-    <div id="header_contents">
-    
-    	<div id="cyber_wristwatch_logo">
-
-        </div>
+<!--    <div id="header_contents">
 
     	<div id="cyber_wristwatch_search">
             <div id="search_wristwatch">
@@ -102,83 +102,7 @@ if($this->function_paypal->check_active()){
 
         </div>
         
-    </div>
-
-    <!--
-    ==================================================================
-    	MENU LINKS
-    ==================================================================
-    -->
-    <div id="header_menu">
-            <div class="top_menu"><a href="<?php echo base_url() ?>mens-watches" class="menu_a">MEN'S</a>
-		<div class="drop_nav">
-			<div class="inner_drop"  style="min-width:230px;">
-				<?php 		   
-				   //dependent files
-				   $data["type"] = "watch_men";
-				   $this->load->module('function_dropdown');
-				   $this->function_dropdown->view_template_dropdown($data); 
-				
-				?>			    
-			</div>	
-		</div>
-	    </div>        	
-            <div class="top_menu"><a href="<?php echo base_url() ?>womens-watches" class="menu_a">WOMEN'S</a>
-		<div class="drop_nav">
-			 <div class="inner_drop"  style="min-width:230px;">
-				<?php 		   
-				   //dependent files
-				   $data["type"] = "watch_women";
-				   $this->load->module('function_dropdown');
-				   $this->function_dropdown->view_template_dropdown($data); 
-				
-				?>			    
-			</div>
-		</div>
-	    </div> 		
-            <div class="top_menu"><a href="<?php echo base_url() ?>kids-watches" class="menu_a">KID'S</a>
-		<div class="drop_nav">
-					 <div class="inner_drop"  style="min-width:230px;">
-				<?php 		   
-				   //dependent files
-				   $data["type"] = "watch_kids";
-				   $this->load->module('function_dropdown');
-				   $this->function_dropdown->view_template_dropdown($data); 
-				
-				?>			    
-				</div>
-		</div>
-	    </div> 		
-            <div class="top_menu"><a href="<?php echo base_url() ?>watch-categories" class="menu_a">CATEGORIES</a>
-		<div class="drop_nav" style="height:500px !important; overflow:hidden;" >
-			<div class="inner_drop" style=" min-width:320px; height:440px !important">
-				<?php 		   
-				   //dependent files
-				   $data["type"] = "watch_category";
-				   $this->load->module('function_dropdown');
-				   $this->function_dropdown->view_template_dropdown($data); 
-				
-				?>			    
-			</div>
-		</div>
-	    </div> 		
-            <div class="top_menu"><a href="<?php echo base_url() ?>watch-brands" class="menu_a">BRANDS</a>
-		<div class="drop_nav">
-		    
-		</div>
-	    </div> 		
-            <div class="top_menu"><a href="<?php echo base_url() ?>friends/" class="menu_a">CAFE FRIENDS</a>
-		<div class="drop_nav">
-		    
-		</div>
-	    </div> 		
-            <div class="top_menu"><a href="<?php echo base_url() ?>forums/" class="menu_a">FORUM</a>
-		<div class="drop_nav">
-		    
-		</div>
-	    </div> 	
-		<input type="hidden" value="<?php echo base_url() ?>" id="base_loc">	
-    </div>
+    </div>-->
     	
 
  

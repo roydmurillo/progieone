@@ -1,14 +1,12 @@
 <!-- additional scripts -->
 <style>
 
-    .iteminfo{border:1px solid rgba(0,0,0,0.3); background:#FFF; }
     .image_holder{ border:1px solid rgba(0,0,0,0.4); }
     .item_price{margin-top: 0px !important; margin-left: 23px; text-align:left; font-size: 17px; color:#405E9C; font-family:arial; font-weight:bold}
     .item_posted{float:left; font-family:tahoma; clear:both; width:90%; margin-top: 0px !important; margin-left: 23px; margin-bottom:5px; text-align:left; font-size: 10px; color:#777;}
     .item_seller{ width:189px;}
     .inner_seller{ float:left; margin:3px 0px 0px 12px; font-size:12px; font-weight:bold; color:#333;}
     .item_title{margin-top:0px !important; height:48px; color:#333; width:143px; text-align:left; margin-top:-10px; margin-left:18px; font-weight:bold; text-transform:none !important;}
-    .add_wishlist{margin: 3px 0px 0px 23px;}
 </style>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/itemlist_scripts.js"></script>
@@ -19,13 +17,12 @@ $this->load->module("function_country");
 $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
 
-<div class="title_bar" style="position:relative;">
+<div>
     FEATURED WATCHES
-    <a href="<?php echo base_url() ?>all-watches" style="position:absolute; color:#405E9C; font-family:verdana; border:0px; border:none; font-size:12px; right:12px; top:0px">View All</a>
+    <a href="<?php echo base_url() ?>all-watches">View All</a>
 </div>
 <!-- item lists here -->
-<div class="item_list_watches">
-
+<div class="row">
     <?php
     // ============================================================
     // load items
@@ -87,7 +84,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
             if($data["user_activated"] != "deactivated"){
                 ?>
 
-                <div class="iteminfo">
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="item_seller">
                         <div class="inner_seller">
                             <table>
@@ -127,12 +124,12 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                     <?php
                     if($this->function_login->is_user_loggedin()){
                         if($this->template_itemlist->not_exist_wishlist($user,$item_id)){
-                            echo '<a href="javascript:;" class="add_wishlist">Add to Watchlist</a>';
+                            echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
                         } else {
-                            echo '<a href="javascript:;" class="add_wishlist">In Watchlist</a>';
+                            echo '<a href="javascript:;" class="btn btn-primary">In Watchlist</a>';
                         }
                     } else {
-                        echo '<a href="javascript:;" class="add_wishlist">Add to Watchlist</a>';
+                        echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
                     }
                     ?>
                 </div>
@@ -140,11 +137,6 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
             <?php
             }
         }
-
     }
-
     ?>
-
-
-
 </div>
