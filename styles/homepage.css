@@ -128,8 +128,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 #homepage{
 width:100%;
 min-height:500px;
-float:left;
-margin:7px 0px;
 }
 
 #sidebar_left{

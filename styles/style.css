@@ -1,0 +1,16 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 3, 14, 5:12:10 PM
+    Author     : macbook
+*/
+
+.clear{
+    clear:left;
+}
+
+footer{padding:15px;margin-top:24px;background:#ddd;}
+footer .container > p{text-align:center;}
