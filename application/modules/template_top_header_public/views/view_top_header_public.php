@@ -1,26 +1,87 @@
 <?php 
  $currency = $this->native_session->get("currency");
 ?>
-<div id="top_bar_header_background" class="lite1">
-
-        <div id="top_header_wristwatch">
-			<div id="top_header1">
-                <div class="top_link"><a href="<?php echo base_url();?>">Home</a></div>        	
-                <div class="top_link"><div class="line"></div><a href="<?php echo base_url();?>sell">Sell Your Watch</a></div>        	
+        <nav class="navbar-default">
+            <div class="container">
+                    <a class="navbar-brand" href="<?php echo base_url();?>">CYBERWATCH CAFE</a>      	      	
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a class="link" href="<?php echo base_url() ?>forums/" class="menu_a">FORUM</a></li>
+                        <li><a class="btn btn-default navbar-btn" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
+                        <li><a class="btn btn-default navbar-btn" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	
+                    </ul>
             </div>
-			<div id="top_header2">
-                <div class="top_link lgt_gray no_margn padding_link"><a class="clr_gray" href="<?php echo base_url();?>secure/register">Create an Account</a></div>        	
-                <div class="top_link dark_btn no_margn padding_link"><a class="clr_white" href="<?php echo base_url();?>secure/sign-in">Login</a></div> 
-				<div class="top_link no_margn padding_link" id="d_currency">
-					<div id="currency_converter">
-						<h2 style="float:left; margin:5px 0px; width:100%; font-family:Verdana, Geneva, sans-serif; font-size:20px; text-align:center">Convert Currency</h2>
-						<select id="val_currency" style="float:left; clear:both; margin-left:15px; padding:5px;">
-						   <?php echo $this->function_currency->currency_dropdown(); ?>	
-						</select>
-						<input type="button" class="css_btn_c0" value="Convert" id="convert">
-					</div>
-					<div class="clr_white drop_currency" style="font-family:arial" ><div style="float:left; font-size:12px"><?php echo $currency ?> (<?php echo $this->function_currency->getCurrencySymbol($currency);?>)</div> <div class="clr_white" style="float:left; margin-left:12px">&#x25BC;</div></div></div>        	
-        	</div>
+        </nav>
+        <!--
+    ==================================================================
+    	MENU LINKS
+    ==================================================================
+    -->
+    <nav class="navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+            <li class="top_menu" ><a href="<?php echo base_url() ?>mens-watches" class="menu_a">MEN'S</a>
+		<div class="drop_nav">
+			<div class="inner_drop"  style="min-width:230px;">
+				<?php 		   
+				   //dependent files
+				   $data["type"] = "watch_men";
+				   $this->load->module('function_dropdown');
+				   $this->function_dropdown->view_template_dropdown($data); 
+				
+				?>			    
+			</div>	
+		</div>
+	    </li>        	
+            <li class="top_menu" ><a href="<?php echo base_url() ?>womens-watches" class="menu_a">WOMEN'S</a>
+		<div class="drop_nav">
+			 <div class="inner_drop"  style="min-width:230px;">
+				<?php 		   
+				   //dependent files
+				   $data["type"] = "watch_women";
+				   $this->load->module('function_dropdown');
+				   $this->function_dropdown->view_template_dropdown($data); 
+				
+				?>			    
+			</div>
+		</div>
+	    </li> 		
+            <li class="top_menu" ><a href="<?php echo base_url() ?>kids-watches" class="menu_a">KID'S</a>
+		<div class="drop_nav">
+					 <div class="inner_drop"  style="min-width:230px;">
+				<?php 		   
+				   //dependent files
+				   $data["type"] = "watch_kids";
+				   $this->load->module('function_dropdown');
+				   $this->function_dropdown->view_template_dropdown($data); 
+				
+				?>			    
+				</div>
+		</div>
+	    </li> 		
+            <li class="top_menu" ><a href="<?php echo base_url() ?>watch-categories" class="menu_a">CATEGORIES</a>
+		<div class="drop_nav" style="height:500px !important; overflow:hidden;" >
+			<div class="inner_drop" style=" min-width:320px; height:440px !important">
+				<?php 		   
+				   //dependent files
+				   $data["type"] = "watch_category";
+				   $this->load->module('function_dropdown');
+				   $this->function_dropdown->view_template_dropdown($data); 
+				
+				?>			    
+			</div>
+		</div>
+	    </li> 		
+            <li class="top_menu" ><a href="<?php echo base_url() ?>watch-brands" class="menu_a">BRANDS</a>
+		<div class="drop_nav">
+		    
+		</div>
+	    </li> 		
+            <li class="top_menu" ><a href="<?php echo base_url() ?>friends/" class="menu_a">CAFE FRIENDS</a>
+		<div class="drop_nav">
+		    
+		</div>
+	    </li> 		
+		<input type="hidden" value="<?php echo base_url() ?>" id="base_loc">
+            </ul>
         </div>
-
-</div>
+    </nav>
