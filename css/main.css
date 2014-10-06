@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 3, 14, 5:12:10 PM
+    Author     : macbook
+*/
+h1, h2, h3, h4, h5, .title, .name {
+  font-family: 'Lato', sans-serif; }
+
+.name {
+  font-style: italic; }
+
+p {
+  font-family: 'Merriweather', serif; }
+
+.clear {
+  clear: left; }
+
+/* footer */
+footer {
+  padding: 15px;
+  margin-top: 24px;
+  background: #ddd; }
+  footer .container > p {
+    text-align: center; }
+
+/* item list */
+.item {
+  min-height: 350px; }
+  .item img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; }
+
+/* sidebar */
+.sidebar {
+  background: #f0f0f0; }
+  .sidebar .active {
+    background: #e3e3e3; }
+
+/*# sourceMappingURL=main.css.map */

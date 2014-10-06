@@ -21,13 +21,22 @@ p{
     clear:left;
 }
 
-footer{padding:15px;margin-top:24px;background:#ddd;}
-footer .container > p{text-align:center;}
+// preprocessor from this point down
+
+/* footer */
+footer{
+    padding:15px;margin-top:24px;background:#ddd;
+    .container > p{text-align:center;}
+}
 
 /* item list */
-.item{min-height:350px;}
-.item img{width:100%;height:auto;max-height:200px; }
+.item{
+    min-height:350px;
+    img{width:100%;height:auto;max-height:200px; } 
+}
 
 /* sidebar */
-.sidebar{background:#f0f0f0;}
-.sidebar .active{background:#e3e3e3;}
+.sidebar{
+    background:#f0f0f0;
+    .active{background:#e3e3e3;}
+}

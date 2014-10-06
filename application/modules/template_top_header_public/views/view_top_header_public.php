@@ -2,7 +2,6 @@
             <div class="container">
                     <a class="navbar-brand" href="<?php echo base_url();?>">CYBERWATCH CAFE</a>      	      	
                     <ul class="nav navbar-nav pull-right">
-                        <li><a class="link" href="<?php echo base_url() ?>forums/" class="menu_a">FORUM</a></li>
                         <li><a class="btn btn-default navbar-btn" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
                         <li><a class="btn btn-default navbar-btn" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	
                     </ul>

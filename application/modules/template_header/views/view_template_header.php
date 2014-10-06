@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>styles/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/multi-columns-row.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/cyberwatchcafe.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>styles/style.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/main.css">
     <script type="text/javascript" src="<?php echo base_url();?>scripts/jquery.js"></script>
 	
     <?php
