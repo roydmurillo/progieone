@@ -55,10 +55,10 @@ class template_single_item extends MX_Controller {
 	
 	public function display_links($title){ ?>
 		
-		<div id="d_links" style="min-height:20px;">
-			<a href='<?php echo base_url() . $this->uri->segment(1); ?>'><?php echo ucwords(str_replace("-"," ",$this->uri->segment(1))); ?></a> <span class="splitter">/</span> 
-			<a href=''><div style="float:left; width:640px"><?php echo $title; ?></div></a> 
-		</div>
+		<ol class="breadcrumb">
+                    <li><a href='<?php echo base_url() . $this->uri->segment(1); ?>'><?php echo ucwords(str_replace("-"," ",$this->uri->segment(1))); ?></a></li>
+                    <li><a href=''><?php echo $title; ?></a></li>
+		</ol>
 		
 	<?php
 	}

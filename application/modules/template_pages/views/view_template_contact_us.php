@@ -29,64 +29,45 @@ border:1px solid #CCC; }
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage">
+<div id="contact">
 
  		<?php
-		if($this->function_login->is_user_loggedin()){
-    	  $this->load->module('template_sideleft_loggedin');
-		  $this->template_sideleft_loggedin->view_template_sideleft_loggedin(); 
-		} else {
-		  $this->load->module('template_sideleft');
-		  $this->template_sideleft->view_template_sideleft(); 
-		}
+//		if($this->function_login->is_user_loggedin()){
+//    	  $this->load->module('template_sideleft_loggedin');
+//		  $this->template_sideleft_loggedin->view_template_sideleft_loggedin(); 
+//		} else {
+//		  $this->load->module('template_sideleft');
+//		  $this->template_sideleft->view_template_sideleft(); 
+//		}
 		?>
-        
-		<div class="title_bar">
-			CONTACT US
-		</div>
-		
-		<div id="inner_dashboard">
-			<div style="float:left; width:560px; min-height:300px; margin:0px 0px 80px 40px; font-family:arial; color:#333; font-size:14px">
+		<div class="body">
+			<div>
 					<!-- content goes here -->
 					<?php if($this->native_session->get("message_contact_us")){	?>
 						<div class="regular_register" style="min-height:40px !important;">
 								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-								<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-									Your Inquiry was successfully sent!<br>
-									We will reply to you as soon as possible.<br>
-									Thank You!
-								</div>									
-									
+								<p> Your Inquiry was successfully sent! We will reply to you as soon as possible. Thank You!</p>												
 						</div>
 					<?php $this->native_session->delete("message_contact_us");} ?>	
-					
-				<div style="float:left; width:600px; clear:both">
-				<h1 class="page-title">Contact Us</h1>
-				Cyberwatchcafe is an ecommerce advertising website listings for watch enthusiasts.<br>
-				Feel free to drop us some email if you have inquiries and we will be glad to reply on your important questions.
+				<div>	
 				</div>
-					<div id="add_new_item">
-						 <div id="send_pm" style="float:left; padding:5px 50px; margin:10px 0px 20px 10px; border:1px solid #CCC;">  
-						   <form method="POST">
-
-							<div class="t_area" style="float:left; clear:both; margin-top:20px;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px 5px">Name:</div><br>
-								<div style="float:left; clear:both; margin-left:5px">
-									<input class="input1" type="text" name="sender_name" id="sender_name" placeholder="Your Name" style="padding:5px; width:422px">
-								</div>
+					<div class="col-md-6">
+						<div class="panel panel-default">
+                                                   <div class="panel-heading">Contact</div>
+                                                <div class="panel-body">  
+                                                   <p>Cyberwatchcafe is an ecommerce advertising website listings for watch enthusiasts. Feel free to drop us some email if you have inquiries and we will be glad to reply on your important questions.</p>
+						   <form role="form" method="POST">
+							<div class="form-group">
+								<label for="sender_name">Name:</label>
+								<input class="input1 form-control" type="text" name="sender_name" id="sender_name" placeholder="Your Name">
+							</div>
+							<div class="form-group">
+								<label for="sender_email">Email:</label><br>
+								<input class="input1 form-control"  type="text" name="sender_email" id="sender_email" placeholder="Your Email">
 							</div>	
-
-							<div class="t_area" style="float:left; clear:both; margin-top:20px;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px 5px">Email:</div><br>
-								<div style="float:left; clear:both; margin-left:5px">
-									<input class="input1"  type="text" name="sender_email" id="sender_email" placeholder="Your Email" style="padding:5px; width:422px">
-								</div>
-							</div>	
-
-							<div class="t_area" style="float:left; clear:both; margin-top:20px;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px 5px">Country:</div><br>
-								<div style="float:left; clear:both; margin-left:5px">
-									<select class="input1"  id="sender_country" name="sender_country" style="width: 225px; padding: 7px;">
+							<div class="form-group">
+								<label for="sender_country">Country:</label>				
+									<select class="input1 form-control"  id="sender_country" name="sender_country">
 										<option value=""> -- Select Country --</option>
 										<?php 
 											
@@ -95,30 +76,24 @@ border:1px solid #CCC; }
 												
 												echo "<option value='$key'>$val</option>";
 												
-											}
-										
+											}								
 										?>
-									</select>					
-								</div>
+									</select>											
 							</div>
 
-							<div class="t_area" style="float:left; clear:both; margin-top:20px;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px 5px">Subject:</div><br>
-								<div style="float:left; clear:both; margin-left:5px">
-									<input class="input1"  type="text" name="sender_subject" id="sender_subject" placeholder="Subject of Interest" style="padding:5px; width:422px">
-								</div>
+							<div class="form-group">
+                                                            <label for="sender_subject">Subject:</label>
+                                                            <input class="input1 form-control"  type="text" name="sender_subject" id="sender_subject" placeholder="Subject of Interest">
 							</div>
 							
-							<div class="t_area" style="float:left; margin:20px 0px;clear:both;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px">Message:</div><br>
-								<div style="float:left; clear:both; margin-left:5px">
-									<textarea id="sender_message" name="sender_message" style="width:150%; height:300px;"></textarea>
-								</div>
+							<div class="form-group">
+                                                            <label for="sender_message">Message:</label>
+                                                            <textarea class="form-control" row="3" id="sender_message" name="sender_message"></textarea>
 							</div>
 
-							<div class="t_area" style="float:left; margin:20px 0px;clear:both;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px">Verify Captcha:</div><br>
-								<div style="float:left; clear:both; margin-left:5px">
+							<div class="form-group">
+                                                            <label for="captcha_answer">Verify Captcha:</label>
+                                                            <div>
 								<?php
 								        $this->load->module("function_captcha");
 										$cap= $this->function_captcha->create_captcha();
@@ -126,32 +101,22 @@ border:1px solid #CCC; }
 										$key = $cap["key"];
 										echo $image["image"];
 								?>
-									<div style="float:left; clear:both; margin-left:0px">
+									<div>
 									    <input type="hidden" id="captcha_key" value="<?php echo $key; ?>">
-										<input class="input1"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code" style="padding:5px; width:349px">
+                                                                            <input class="input1 form-control"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code" style="padding:5px; width:349px">
 									</div>
-								</div>
+                                                            </div>
 							</div>							
 							
-							<div class="t_area" style="float:left; margin:10px 8px 20px 8px; clear:both;">
-								<input class='css_btn_c0' type="button" onclick="reset_data()" value="Reset"/>
-								<input id="submit_pm" class='css_btn_c0' type="button" value="Send Message">
+							<div class="form-group">
+								<input class='btn btn-default' type="button" onclick="reset_data()" value="Reset"/>
+								<input id="submit_pm" class='btn btn-default' type="button" value="Send Message">
 								<input id="submit_sendpm" name="submit_sendpm" type="submit" value="Submit Info" style="display:none">
 							</div>
-							<div id="remarks" style="float: left;
-														  width: 300px;
-														  height: 20px;
-														  color:red;
-														  font-family:arial;
-														  font-size:14px;
-														  margin-left: 10px;
-														  margin-top:-12px;
-														  clear: both;"></div>
-								
+							<div id="remarks" style="float: left;width: 300px;height: 20px;color:red;font-family:arial;font-size:14px;margin-left: 10px;margin-top:-12px;clear: both;"></div>	
 						</form>
-
-				
-			</div>
+                                            </div>	
+                                            </div>
 		</div>
 </div>
 </div>

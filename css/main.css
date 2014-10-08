@@ -1,12 +1,9 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+    this css is compiled from main.scss
 */
-/* 
-    Created on : 10 3, 14, 5:12:10 PM
-    Author     : macbook
-*/
+body {
+  background-color: #FAFAFA; }
+
 h1, h2, h3, h4, h5, .title, .name {
   font-family: 'Lato', sans-serif; }
 
@@ -19,15 +16,19 @@ p {
 .clear {
   clear: left; }
 
-/* footer */
+header .container, header .navbar-brand {
+  padding-left: 0;
+  padding-right: 0; }
+
 footer {
   padding: 15px;
   margin-top: 24px;
   background: #ddd; }
   footer .container > p {
     text-align: center; }
+  footer .copy > div, footer .container {
+    padding: 0; }
 
-/* item list */
 .item {
   min-height: 350px; }
   .item img {
@@ -35,10 +36,14 @@ footer {
     height: auto;
     max-height: 200px; }
 
-/* sidebar */
 .sidebar {
   background: #f0f0f0; }
   .sidebar .active {
     background: #e3e3e3; }
+
+.nav.navbar-nav {
+  max-width: 510px;
+  margin: 0 auto;
+  float: none; }
 
 /*# sourceMappingURL=main.css.map */

@@ -72,18 +72,19 @@ var native_width = 0;
 	jQuery("body > :not(#main_wristwatch_container)").hover(function() {
       	jQuery(".large").hide();
     });
-	jQuery(".dtab").click(function() {
-		jQuery(".large").hide();
-		jQuery(".dtab").removeClass("dtab_active");
-		jQuery(this).addClass("dtab_active");
-		var id = jQuery(this).attr("id");
-		id = id.replace("tab_", "#");
-		jQuery(".inner_details_cont").hide();
-		jQuery(id).show();
-		jQuery('html, body').animate({
-        	scrollTop: jQuery("#contact_seller").offset().top
-    	}, 500);
-    });	
+    //replaced with bootstrap js
+//	jQuery(".nav.nav-tabs > li").click(function(e) {
+//                e.preventDefault();
+//		jQuery(".large").hide();
+//		jQuery(".nav.nav-tabs > li").removeClass("active");
+//		jQuery(this).addClass("active");
+//		var id = jQuery(this).attr("href");
+//		jQuery(".inner_details_cont").hide();
+//		jQuery(id).show();
+//		jQuery('html, body').animate({
+//        	scrollTop: jQuery("#contact_seller").offset().top
+//    	}, 500);
+//    });	
 	jQuery(".dtab,.details_container,#brief_container,.desc5,.title5").hover(function() {
 		jQuery(".large").hide();
     });		

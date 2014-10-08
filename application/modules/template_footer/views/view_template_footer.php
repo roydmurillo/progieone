@@ -16,10 +16,15 @@ jQuery(document).ready(function(){
 <div class="clear"></div>
 <footer>
 	<div class="container">
-            <div>
-                Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo base_url() ?>" style="color:#9e8355"><b>CyberwatchCafe Inc.</b></a> All Rights Reserved. Designated trademarks and brands are the property of their respective owners.
-                Use of this Web site constitutes acceptance of the CyberwatchCafe <a href="<?php echo base_url() ?>terms_and_conditions" style="color:#9e8355"><b>Terms And Conditions</b>
-                <span><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=OTTw7Bt3FGeC8BgoEtJjAOzw5Pxrz9wSkUeA0ndtil5Gq5JhLs8Q6gG8g"></script></span>
+            <div class="clearfix copy">
+                <div class="col-md-6">
+                    Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo base_url() ?>">CyberwatchCafe Inc.</a> All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-right"> 
+                    <a href="<?php echo base_url() ?>about_us">About us</a>&emsp;<a href="<?php echo base_url() ?>advertise">Advertise</a>&emsp;
+                    <a href="<?php echo base_url() ?>contact_us">Contact</a>&emsp;<a href="<?php echo base_url() ?>terms_and_conditions">Terms And Conditions</a>
+                </div>
+<!--                <span><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=OTTw7Bt3FGeC8BgoEtJjAOzw5Pxrz9wSkUeA0ndtil5Gq5JhLs8Q6gG8g"></script></span>-->
             </div>
         </div>
 </footer>

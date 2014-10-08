@@ -46,8 +46,8 @@
 									  $im2 = $im[0] ."." . $im[1] . "_large_thumb." . $im[2];
 								  }
 				             ?>
-							<div class="thumb_image" style="float:left; width:80px; margin-bottom:8px; height:80px; line-height:75px; text-align:center; border:1px solid #CCC; cursor:hand; cursor:pointer">
-								<img src="<?php echo $im2; ?>" style="max-width:80px; max-height:80px; vertical-align:middle;">
+							<div class="thumbnail">
+								<img src="<?php echo $im2; ?>">
 							</div>
 			        <?php } 
 			             }
@@ -59,7 +59,7 @@
 			<!-- image view holder -->
 			<div id="image_viewer">
 			    <div class="large" style="background:url(<?php echo $im2; ?>) no-repeat"></div>
-				<img id="image_view" src="<?php echo $im2; ?>">
+				<img class="img-thumbnail" src="<?php echo $im2; ?>">
 			</div>
 
 			<!-- brief info -->
@@ -126,36 +126,28 @@
 			</div>
 			
 			<div class="details_container">
-			
-				<div class="details_tab">
-					<div class="dtab dtab_active" id="tab_description">
-						Details
-					</div>
-					<div class="dtab" id="tab_shipping">
-						Shipping Information
-					</div>			
-					<div class="dtab" id="tab_contact">
-						Contact Seller
-					</div>	
-					<div id="tab_watchlist">
+				<ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#description" role="tab" data-toggle="tab">Details</a></li>
+                                    <li><a href="#shipping" role="tab" data-toggle="tab">Shipping Information</a></li>			
+                                    <li><a href="#contact" role="tab" data-toggle="tab">Contact Seller</a></li>	
+<!--					<li>
 						<?php
-						if($this->function_login->is_user_loggedin()){
-							$user_id = unserialize($this->native_session->get("user_info"));
-							$user_id = $user_id["user_id"];
-							if($this->template_itemlist->not_exist_wishlist($user_id,$item_details[0]->item_id)){ 
-								echo 'Add to Watchlist';  
-							} else {
-								echo 'In Watchlist';  
-							}
-						} else {
-							echo 'Add to Watchlist';  
-						}
-						?>
-						
-					</div>								
-				</div>
-					
-				<div class="inner_details_cont" id="description">
+//						if($this->function_login->is_user_loggedin()){
+//							$user_id = unserialize($this->native_session->get("user_info"));
+//							$user_id = $user_id["user_id"];
+//							if($this->template_itemlist->not_exist_wishlist($user_id,$item_details[0]->item_id)){ 
+//								echo 'Add to Watchlist';  
+//							} else {
+//								echo 'In Watchlist';  
+//							}
+//						} else {
+//							echo 'Add to Watchlist';  
+//						}
+						?>		
+					</li>								-->
+				</ul>
+                            <div class="tab-content">	
+				<div class="tab-pane active" id="description">
 					<div style="float:left; margin:10px 0px">
 						<table>
 							<tr>
@@ -213,7 +205,7 @@
 					</div>
 				</div>
 
-				<div class="inner_details_cont" id="shipping">
+				<div class="tab-pane" id="shipping">
 					<div style="float:left; margin:10px 0px">
 						<table>
 							<tr>
@@ -223,7 +215,7 @@
 					</div>
 				</div>
 				
-				<div class="inner_details_cont" id="contact">
+				<div class="tab-pane" id="contact">
 					<div style="float:left; margin:10px 0px">
 						<table>
 							<tr>
@@ -298,7 +290,8 @@
 
 						
 					</div>
-				</div>								
+				</div>
+                        </div>
 			
 			</div>
 

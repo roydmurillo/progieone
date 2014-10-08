@@ -9,15 +9,28 @@
 	$currency = $this->native_session->get("currency");
 ?>
 
-<nav class="navbar-default">
+<header class="navbar-default">
             <div class="container">
                     <a class="navbar-brand" href="<?php echo base_url();?>">CYBERWATCH CAFE</a>      	      	
                     <ul class="nav navbar-nav pull-right">
-                        <li><a class="link" href="<?php echo base_url() ?>forums/">FORUM</a></li>
-                        <li><a class="link" href="<?php echo base_url();?>dashboard/messages">My Messages</a></li>
-                        <li><a class="link" href="<?php echo base_url();?>dashboard/friends">Friend Updates</a></li>
-                        <li><a class="btn btn-default navbar-btn" href="<?php echo base_url();?>dashboard/account">My Account</a></li>      	
-                        <li><a class="btn btn-default navbar-btn" href="<?php echo base_url();?>dashboard/logout">Logout</a></li>       	
+                        <li><a class="link" href="<?php echo base_url() ?>forums/">Forum</a></li>   
+                        <li class="dropdown">
+                            <a class="link dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo base_url();?>dashboard/account">Admin</a></li>
+                                <li><a href="<?php echo base_url();?>dashboard/messages">Inbox</a></li>
+                                <li><a href="<?php echo base_url();?>dashboard/friends">Friends</a></li> 
+                                <li class="divider"></li>
+                                <li><a href="<?php echo base_url();?>dashboard/logout">Logout</a></li>       
+                            </ul>
+                        </li>      	
+                        	
                     </ul>
             </div>
-</nav>
+</header>
+
+
+<?php 
+
+$this->load->view('view_template_menu');
+?>

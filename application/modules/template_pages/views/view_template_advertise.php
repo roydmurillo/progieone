@@ -26,42 +26,38 @@ border:1px solid #CCC;
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage">
+<div id="advertise">
 
  		<?php
-		if($this->function_login->is_user_loggedin()){
-    	  $this->load->module('template_sideleft_loggedin');
-		  $this->template_sideleft_loggedin->view_template_sideleft_loggedin(); 
-		} else {
-		  $this->load->module('template_sideleft');
-		  $this->template_sideleft->view_template_sideleft(); 
-		}
+//		if($this->function_login->is_user_loggedin()){
+//    	  $this->load->module('template_sideleft_loggedin');
+//		  $this->template_sideleft_loggedin->view_template_sideleft_loggedin(); 
+//		} else {
+//		  $this->load->module('template_sideleft');
+//		  $this->template_sideleft->view_template_sideleft(); 
+//		}
 		?>
         
-		<div class="title_bar">
-			ADVERTISE
+		<div class="title">
+			<h1>Advertise</h1>
 		</div>
 		
-		<div id="inner_dashboard">
-			<div style="float:left; width:700px; min-height:300px; margin:0px 0px 80px 40px; font-family:arial; color:#333; font-size:14px">
-				<h1 class="page-title">Advertise with Us</h1>
-				<p style="text-align: justify;">Cyberwatchcafe is an ecommerce website for watch enthusiasts that aims at collectors and afficionados of high-end and practical watches, and altough Cyberwatchcafe has a lot of sources within the watch industry, watches are emphasized from a consumer’s perspective. This, including the unbiased and honest opinion in the forum sections, is the key to the success of Cyberwatchcafe. Started just recently, Cyberwatchcafe is the first of its kind. That, and the high number of watches from user makes Cyberwatchcafe continuously grow in the seo world of watches.</p>
-				<p style="text-align: justify;">More and more unique visitors of Cyberwatchcafe will see your advertising banners. Each potential customers who visited the site will clearly see your advertisements. Visitors increases every month and will continuosly do so as more and more will become members of the site.</p>
-				<p style="text-align: justify;">The important traffic comes from watch buyers and enthusiasts all over the world and from Europe and US are the expected top visitor's locations, but Cyberwatchcafe sees more and more visitors from other countries as well.</p>
-				<br>
-				<p style="text-align: justify;">
-				<b>Technical Specs:</b><br><br>
+		<div class="body">
+			<div>
+                            <p style="text-indent:50px;">Cyberwatchcafe is an ecommerce website for watch enthusiasts that aims at collectors and afficionados of high-end and practical watches, and altough Cyberwatchcafe has a lot of sources within the watch industry, watches are emphasized from a consumer’s perspective. This, including the unbiased and honest opinion in the forum sections, is the key to the success of Cyberwatchcafe. Started just recently, Cyberwatchcafe is the first of its kind. That, and the high number of watches from user makes Cyberwatchcafe continuously grow in the seo world of watches.</p>
+				<p>More and more unique visitors of Cyberwatchcafe will see your advertising banners. Each potential customers who visited the site will clearly see your advertisements. Visitors increases every month and will continuosly do so as more and more will become members of the site.</p>
+				<p>The important traffic comes from watch buyers and enthusiasts all over the world and from Europe and US are the expected top visitor's locations, but Cyberwatchcafe sees more and more visitors from other countries as well.</p>
+				<p>
+                                <h5><strong>Technical Specs:</strong></h5>
 				<ul>
-				<li>203x60, 203x203, or 728x90, maximum file size of 25 KB</li>
-				<li>GIF, animated GIF or JPEG</li>
-				</ul><br>
-				We reserve the right to refuse advertisements and make any changes to our advertising terms and conditions without prior notice.<br><br>
-				
-				Once we have received your request it will be processed within 48 hours. You will receive a confirmation email with your account details to view your reports.<br><br>
-				
-				We accept all major credit cards.<br>
+                                    <li>203x60, 203x203, or 728x90, maximum file size of 25 KB</li>
+                                    <li>GIF, animated GIF or JPEG</li>
+				</ul>
+				<p>We reserve the right to refuse advertisements and make any changes to our advertising terms and conditions without prior notice.<br>	
+				Once we have received your request it will be processed within 48 hours. You will receive a confirmation email with your account details to view your reports.<br>
+                                We accept all major credit cards.</p>
 				Cyberwatchcafe is an ecommerce advertising website listings for watch enthusiasts<br>
-				Contact Us at admin@cyberwatchcafe.com
+                                Contact us <a class="link" href="#">click here</a>
 				</p>
 			</div>
 		</div>

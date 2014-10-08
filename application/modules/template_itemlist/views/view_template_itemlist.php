@@ -8,9 +8,9 @@ $this->load->module("function_country");
 $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
 
-<div class="breadcrumb">
-    FEATURED WATCHES
-    <a href="<?php echo base_url() ?>all-watches">View All</a>
+<div class="heading-bar row">
+    <div class="col-md-6">FEATURED WATCHES</div>
+    <div class="col-md-6 text-right"><a href="<?php echo base_url() ?>all-watches">View All</a></div>
 </div>
 <!-- item lists here -->
 <div class="row">
