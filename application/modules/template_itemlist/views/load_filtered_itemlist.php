@@ -9,8 +9,6 @@ background: #FFF; /* Old browsers */
 .inner_seller{ float:left; margin:3px 0px 0px 12px; font-size:12px; font-weight:bold; color:#333;}
 .item_title{margin-top:0px !important; height:48px; color:#333; width:143px; text-align:left; margin-top:-10px; margin-left:18px; font-weight:bold; text-transform:none !important;}
 .add_wishlist{margin: 3px 0px 0px 23px;}
-#filter_return{float:left; font-size:12px; font-family:Verdana; width:759px; border:1px dashed #CCC; border-left:none; border-right:none; height:30px; line-height:30px; vertical-align:middle; margin:0px 0px 10px 0px;}
-#total_message{float:left; height:30px; line-height:30px; color:#555; font-size:12px; font-weight:bold;  clear:both; width:100%; font-family:arial; }
 .list_a{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px -24px; margin-left:5px; margin-top:3px;}
 .list_b{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) -25px -24px; margin-left:5px; margin-top:3px;}
 .list_a:hover{ cursor:pointer; cursor:hand; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px 0px;}
@@ -24,7 +22,6 @@ if($display_by == "display_list" || $display_by == ""){?>
 .item_seller{width: 194px; right: 0px; top: 98px;}
 .item_title{ width: 335px; height: 50px; overflow: hidden;}
 .item_price{position: absolute; right: 22px; top: 50px}
-.add_wishlist{position: absolute; right: 85px;}
 .item_seller{display:block !important; top:80px; background: rgba(0, 0, 0, 0.06);}
 .additional_info{display:block;}
 <?php
@@ -46,68 +43,43 @@ if(empty($item_list)){
 	  $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
    
-<div class="title_bar">
+<div >
 	<?php
 		echo trim(strtoupper(str_replace("-"," ",$this->uri->segment(1))));
 	?>
 </div>
 <!-- item lists here -->
 <div class="item_list_watches">
-	<div id="total_message" 
-	 <?php
-	     if(empty($item_list)){
-			 echo ' style="float: left;
-					height: 30px;
-					line-height: 30px;
-					color: red;
-					width:580px;
-					font-size: 12px;
-					font-weight: bold;
-					clear: both;
-					font-family: arial;
-					border: 1px solid #F00;
-					padding: 5px 20px;
-					margin: 5px 0px 12px;
-					background: none repeat scroll 0% 0% #FFFACD;"';
-		 }
-	 ?>>
-			<?php 
-			if(!empty($item_list)){
-				echo "<b>".$total_count ."</b> Result(s) Found.";
-			} else {	
-				echo "0 Watch Items Found with the current search / filter. You may be interested with these other watches";
-			}
-			?>
+    <div class="display-result-count">
+        <div id="total_message" >
+            <?php 
+            if(!empty($item_list)){
+                    echo "<b>".$total_count ."</b> Result(s) Found.";
+            } else {	
+                    echo "0 Watch Items Found with the current search / filter. You may be interested with these other watches";
+            }
+            ?>
 	</div>
 	<div id="filter_return">
-
 	        <form method="POST">
-	        <div class="fleft">
-				<b>Sort By:</b>
+                        <div>
+                            <b>Sort By:</b>
+                            <input type="hidden" value="" name="sort_by" id="sort_by">
+                            <select id="sort_by_dropdown">
+                                    <option value="" <?php echo ($sort_by == "")? "selected='selected'":""; ?>>Relevance & Date</option>
+                                    <option value="cheapest" <?php echo ($sort_by == "cheapest")? "selected='selected'":""; ?>>Cheapest First</option>
+                                    <option value="expensive" <?php echo ($sort_by == "expensive")? "selected='selected'":""; ?>>Expensive First</option>
+                                    <option value="az" <?php echo ($sort_by == "az")? "selected='selected'":""; ?>>Name A - Z</option>
+                                    <option value="za" <?php echo ($sort_by == "za")? "selected='selected'":""; ?>>Name Z - A</option>
+                                    <option value="advertised" <?php echo ($sort_by == "advertised")? "selected='selected'":""; ?>>Date Advertised</option>
+                            </select>
 			</div>
-			<div class="fleft" style="margin-left:12px;">
-			    <input type="hidden" value="" name="sort_by" id="sort_by">
-				<select id="sort_by_dropdown">
-					<option value="" <?php echo ($sort_by == "")? "selected='selected'":""; ?>>Relevance & Date</option>
-					<option value="cheapest" <?php echo ($sort_by == "cheapest")? "selected='selected'":""; ?>>Cheapest First</option>
-					<option value="expensive" <?php echo ($sort_by == "expensive")? "selected='selected'":""; ?>>Expensive First</option>
-					<option value="az" <?php echo ($sort_by == "az")? "selected='selected'":""; ?>>Name A - Z</option>
-					<option value="za" <?php echo ($sort_by == "za")? "selected='selected'":""; ?>>Name Z - A</option>
-					<option value="advertised" <?php echo ($sort_by == "advertised")? "selected='selected'":""; ?>>Date Advertised</option>
-				</select>
-			</div>
-	        <div class="fleft" style="margin-left:22px;">
-				<b>Display:</b>
-			</div>
-			<div class="fleft" style="margin-left:0px;"> 
-			    <input type="hidden" value="" name="display_by" id="display_by">
-				<div class="fleft" style="margin-left:12px;">Grid</div> <div class="list_a display_type" title="display_grid"></div>
-				<div class="fleft" style="margin-left:5px;">List</div> <div class="list_b display_type" title="display_list"></div>
-			</div>
-			<input type="submit" name="submit_filter" id="submit_filter" style="display:none">
-			</form>			
+                        
+                <input type="submit" name="submit_filter" id="submit_filter" style="display:none">
+		</form>			
 	</div>
-	
+    </div>
+    <div class="row item-list">
 	<?php
 	// ============================================================
 	// load items
@@ -172,110 +144,61 @@ if(empty($item_list)){
 			
 			?>
 			
-			<div class="iteminfo">
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
-			    <div class="item_seller">
-								<div class="inner_seller">
-								    <table>
-										<tr>
-											<td><div class="fright" style="margin-right:5px">Seller :</div></td>
-											<td> <a href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></td>
-										</tr>
-										<tr>
-											<td><div class="fright" style="margin-right:5px">Rating :</div></td>
-											<td><?php $this->function_rating->get_stars($featured->item_user_id); ?></td>
-										</tr>
-										<tr>
-											<td><div class="fright" style="margin-right:5px">Country :</div></td>
-											<td><div class="flag flag-<?php echo strtolower($data["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($data["user_country"]); ?>"></div></td>
-										</tr>
-									</table>
-								
-								</div>	
-							</div>
-				<a href="<?php echo $url; ?>" class="a_class">
-					<div class="image_holder">
-						<img alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" />
-					</div>
-				</a>
-				<a href="<?php echo $url; ?>" class="item_title">
-					<?php 
-					if($display_by == "display_list" || $display_by == ""){
-						if(strlen(trim($featured->item_name)) > 120)
-							$n = substr(ucwords(strtolower($featured->item_name)),0,120)."...";
-						else 
-							$n = substr(ucwords(strtolower($featured->item_name)),0,120);
-					} else {
-						if(strlen(trim($featured->item_name)) > 35){
-							$n = substr(ucwords(strtolower($featured->item_name)),0,35) ."...";
-						} else {
-							$n = substr(ucwords(strtolower($featured->item_name)),0,35);
-						}
-					}
-					echo $n; 
-					?>       
-				</a>
-				<div class="item_price"><?php echo $this->function_currency->format($price); ?></div>
-				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
+                            <figure class="thumbnail">
+                                    <a href="<?php echo $url; ?>">
+                                            <div class="">
+                                                    <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" />
+                                            </div>
+                                    </a>
+                            <h5>
+                                <a href="<?php echo $url; ?>" class="text-center">
+                                    <?php 
+                                    if($display_by == "display_list" || $display_by == ""){
+                                            if(strlen(trim($featured->item_name)) > 120)
+                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,120)."...";
+                                            else 
+                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,120);
+                                    } else {
+                                            if(strlen(trim($featured->item_name)) > 35){
+                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,35) ."...";
+                                            } else {
+                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,35);
+                                            }
+                                    }
+                                    echo $n; 
+                                    ?>       
+                                </a>
+                            </h5>
+                                
+				<div class=""><?php echo $this->function_currency->format($price); ?></div>
+                            <input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
 				<?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
 					} else {
-						echo '<a href="javascript:;" class="add_wishlist">In Watchlist</a>';  
+						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
 				}
 				?>
-				<div class="additional_info">
-						<table>
-							<tbody>
-								<tr>
-									<td style="text-align:right"><b>Posted</b>&nbsp;:&nbsp;&nbsp;</td><td><?php echo $this->template_itemlist->last_updated($featured->item_created); ?></td>
-								</tr>							
-								<tr>
-									<td style="text-align:right"><b>Brand</b>&nbsp;:&nbsp;&nbsp;</td><td><?php echo ucwords(str_replace("_"," ",(trim($featured->item_brand)))); ?></td>
-								</tr>
-								<tr>
-									<td style="text-align:right"><b>Category</b>&nbsp;:&nbsp;&nbsp;</td><td><?php echo $this->function_category->get_category_fields("category_name", $featured->item_category_id); ?></td>
-								</tr>
-								<tr>
-									<td style="text-align:right"><b>Case Type</b>&nbsp;:&nbsp;&nbsp;</td><td>
-										<?php 
-											if($featured->item_case == ""){
-												echo "n/a";
-											} else {
-												echo ucwords(str_replace("_"," ",(trim($featured->item_case)))); 
-											}
-										?>
-									</td>
-								</tr>
-								<tr>
-									<td style="text-align:right"><b>Bracelet Type</b>&nbsp;:&nbsp;&nbsp;</td><td>
-										<?php 
-											if($featured->item_bracelet == ""){
-												echo "n/a";
-											} else {
-												echo ucwords(str_replace("_"," ",(trim($featured->item_bracelet)))); 
-											}
-											?>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-				</div>
+                            </figure>
+				
 
-			</div>			
+			</div>
+    
 		
 		<?php
 		}
-		
-		 echo "<div class='pagination_links' style='float:left; clear:both; margin-top:20px; font-family:verdana; font-size:14px;'>";
+                    echo "<div class='clear'></div>";
+		 echo "<ul class='pagination'>";
 		  if($item_links){
 			  echo $item_links;
 		  }
-		  echo "</div>";
+		  echo "</ul>";
 				
 	} else {
 		
@@ -339,33 +262,15 @@ if(empty($item_list)){
 			
 			?>
 			
-			<div class="iteminfo">
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
-			    <div class="item_seller" style="width:189px;">
-								<div class="inner_seller">
-								    <table>
-										<tr>
-											<td><div class="fright" style="margin-right:5px">Seller :</div></td>
-											<td> <a href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></td>
-										</tr>
-										<tr>
-											<td><div class="fright" style="margin-right:5px">Rating :</div></td>
-											<td><?php $this->function_rating->get_stars($featured->item_user_id); ?></td>
-										</tr>
-										<tr>
-											<td><div class="fright" style="margin-right:5px">Country :</div></td>
-											<td><div class="flag flag-<?php echo strtolower($data["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($data["user_country"]); ?>"></div></td>
-										</tr>
-									</table>
-								
-								</div>	
-							</div>
-				<a href="<?php echo $url; ?>" class="a_class">
-					<div class="image_holder">
+                            <figure class="thumbnail">
+                                <a href="<?php echo $url; ?>" class="a_class">
+					<div class="">
 						<img alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" />
 					</div>
 				</a>
-				<a href="<?php echo $url; ?>" class="item_title">
+                                <h5><a href="<?php echo $url; ?>">
 					<?php 
 					if($display_by == "display_list" || $display_by == ""){
 						if(strlen(trim($featured->item_name)) > 120)
@@ -382,59 +287,22 @@ if(empty($item_list)){
 					echo $n; 
 					?>       
 				</a>
-				<div class="item_price"><?php echo $this->function_currency->format($price); ?></div>
+                                </h5>
+				<div class=""><?php echo $this->function_currency->format($price); ?></div>
 				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
 				<?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
 					} else {
-						echo '<a href="javascript:;" class="add_wishlist">In Watchlist</a>';  
+						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
 				}
 				?>
-				
-				<div class="additional_info">
-						<table>
-							<tbody>
-								<tr>
-									<td style="text-align:right"><b>Posted</b>&nbsp;:&nbsp;&nbsp;</td><td><?php echo $this->template_itemlist->last_updated($featured->item_created); ?></td>
-								</tr>							
-								<tr>
-									<td style="text-align:right"><b>Brand</b>&nbsp;:&nbsp;&nbsp;</td><td><?php echo ucwords(str_replace("_"," ",(trim($featured->item_brand)))); ?></td>
-								</tr>
-								<tr>
-									<td style="text-align:right"><b>Category</b>&nbsp;:&nbsp;&nbsp;</td><td><?php echo $this->function_category->get_category_fields("category_name", $featured->item_category_id); ?></td>
-								</tr>
-								<tr>
-									<td style="text-align:right"><b>Case Type</b>&nbsp;:&nbsp;&nbsp;</td><td>
-										<?php 
-											if($featured->item_case == ""){
-												echo "n/a";
-											} else {
-												echo ucwords(str_replace("_"," ",(trim($featured->item_case)))); 
-											}
-										?>
-									</td>
-								</tr>
-								<tr>
-									<td style="text-align:right"><b>Bracelet Type</b>&nbsp;:&nbsp;&nbsp;</td><td>
-										<?php 
-											if($featured->item_bracelet == ""){
-												echo "n/a";
-											} else {
-												echo ucwords(str_replace("_"," ",(trim($featured->item_bracelet)))); 
-											}
-											?>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-				</div>
-
-				
+			 </figure>	
+	
 			</div>			
 		
 		<?php
@@ -452,6 +320,7 @@ if(empty($item_list)){
 	
 	}
 	?>
+    </div>
 </div>
 <script type="text/javascript">
 jQuery(document).ready(function(){

@@ -11,11 +11,11 @@
 
 <header class="navbar-default">
             <div class="container">
-                    <a class="navbar-brand" href="<?php echo base_url();?>">CYBERWATCH CAFE</a>      	      	
+                    <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
                     <ul class="nav navbar-nav pull-right">
-                        <li><a class="link" href="<?php echo base_url() ?>forums/">Forum</a></li>   
+                        <li><a class="btn btn-sm btn-default" href="<?php echo base_url() ?>forums/">Forum</a></li>   
                         <li class="dropdown">
-                            <a class="link dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
+                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="<?php echo base_url();?>dashboard/account">Admin</a></li>
                                 <li><a href="<?php echo base_url();?>dashboard/messages">Inbox</a></li>

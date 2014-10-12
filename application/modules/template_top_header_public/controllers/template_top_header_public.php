@@ -11,5 +11,9 @@ class template_top_header_public extends MX_Controller {
 	{
 		$this->load->view('view_top_header_public');
 	}
+        public function index2()
+	{
+		$this->load->view('view_top_header_public2');
+	}
 
 }

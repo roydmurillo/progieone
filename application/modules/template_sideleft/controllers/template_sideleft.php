@@ -96,14 +96,11 @@ class template_sideleft extends MX_Controller {
 		$brands = $this->db->query($query);
 		
 		if($brands->num_rows() > 0){
-			$htm .= "<div style='float: left;
-								width: 203px;
-								margin: 0px;
-								padding: 10px 0px;'>";
+			$htm .= "<div>";
 
 		if($get != "" && $uri_process == "data"){
 			   ?>
-			   <div style='float:left; clear:both; font-family:arial; width:195px; font-size:14px; padding:5px 0px 5px 9px; background:#444; font-weight:bold; color:#FFF'>
+			   <div>
 					Selected Filters
 			   </div> 
 			   <?php
@@ -120,99 +117,107 @@ class template_sideleft extends MX_Controller {
 			}
 			$data = $brands->result();			
 			//gender
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Gender</div>";
+			$htm .= "<div>Gender</div>";
+                        
 			$main_url = $this->reconstruct_url($uri_process,$url,$GET,"gender");
 			$brands = explode(",",$data[0]->item_gender);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<ul class='list-unstyled'>";
 			$gender_arr = array(1 => "Mens", 2 => "Womens", 3 => "Unisex");
 			foreach($brands as $b){
+                            $htm .= "<li>";
 				@$nam = $gender_arr[(int)$b];
-				@$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$nam."</a>";
+				@$htm .= "<a  href='".$main_url.$b."'>".$nam."</a>";
+                            $htm .= "</li>";
 			}
-			$htm .= "</div>";					
-
+			$htm .= "</ul>";					
+                        
 			// brands
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Brands</div>";
+			$htm .= "<div>Brands</div>";
 			$main_url = $this->reconstruct_url($uri_process,$url,$GET,"brand");
 			$brands = explode(",",$data[0]->item_brand);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<ul class='list-unstyled'>";
 			$count = count($brands);
 			$ctr = 1;
 			foreach($brands as $b){
+                                $htm .= "<li>";
 				if($ctr == 7){
-					@$htm .= "<a id='show_more_brands' style='float:left; clear:both; font-family:arial; color:brown; margin-left:12px; margin-top:12px; font-size:12px' href='javascript:;'>more brands [+]</a>";
+					@$htm .= "<a id='show_more_brands' style=' ' href='javascript:;'>more brands [+]</a>";
 					$htm .= "<div id='more_brands' style='float:left; clear:both; display:none'>";
 				}
 				if($ctr >= 7){
-				    @$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$this->function_brands->watch_brands($b)."</a>";
+				    @$htm .= "<a   href='".$main_url.$b."'>".$this->function_brands->watch_brands($b)."</a>";
 				} else {
-				    @$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$this->function_brands->watch_brands($b)."</a>";
+				    @$htm .= "<a   href='".$main_url.$b."'>".$this->function_brands->watch_brands($b)."</a>";
 				}
 				$ctr++;
+                                $htm .= "</li>";
 			}
 			if($ctr > 7){
-				@$htm .= "<a id='show_less_brands' style='float:left; clear:both; font-family:arial; color:brown; margin-left:12px; margin-top:12px; font-size:12px' href='javascript:;'>less brands [-]</a>";
+				@$htm .= "<a id='show_less_brands' style=' ' href='javascript:;'>less brands [-]</a>";
 				$htm .= "</div>";
 			}
-			$htm .= "</div>";
+			$htm .= "</ul>";
 
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Categories</div>";
+			$htm .= "<div>Categories</div>";
 			$main_url = $this->reconstruct_url($uri_process,$url,$GET,"category");
 			$brands = explode(",",$data[0]->item_category);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<ul class='list-unstyled'>";
 			foreach($brands as $b){
+                                $htm .= "<li>";
 				@$nam = $this->function_category->get_category_fields("category_name", $b);
-				@$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$nam."</a>";
+				@$htm .= "<a   href='".$main_url.$b."'>".$nam."</a>";
+                                $htm .= "</li>";
 			}
-			$htm .= "</div>";
+			$htm .= "</ul>";
 
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Case Type</div>";
+			$htm .= "<div>Case Type</div>";
 			$main_url = $this->reconstruct_url($uri_process,$url,$GET,"case_type");
 			$brands = explode(",",$data[0]->item_case);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<ul class='list-unstyled'>";
 			foreach($brands as $b){
+                            $htm .= "<li>";
 				@$nam = ucfirst($b);
-				@$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$nam."</a>";
+				@$htm .= "<a   href='".$main_url.$b."'>".$nam."</a>";
+                            $htm .= "</li>";
 			}
-			$htm .= "</div>";
+			$htm .= "</ul>";
 
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Bracelet Type</div>";
+			$htm .= "<div>Bracelet Type</div>";
 			$main_url = $this->reconstruct_url($uri_process,$url,$GET,"bracelet_type");
 			$brands = explode(",",$data[0]->item_case);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<ul class='list-unstyled'>";
 			foreach($brands as $b){
+                            $htm .= "<li>";
 				@$nam = ucfirst($b);
-				@$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$nam."</a>";
+				@$htm .= "<a   href='".$main_url.$b."'>".$nam."</a>";
+                            $htm .= "</li>";
 			}
-			$htm .= "</div>";
+			$htm .= "</ul>";
 
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Condition</div>";
+			$htm .= "<div>Condition</div>";
 			$main_url = $this->reconstruct_url($uri_process,$url,$GET,"condition");
 			$brands = explode(",",$data[0]->cond);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<ul class='list-unstyled'>";
 			foreach($brands as $b){
+                            $htm .= "<li>";
 				@$nam = str_replace("_"," ",ucfirst($b));
-				@$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$nam."</a>";
+				@$htm .= "<a   href='".$main_url.$b."'>".$nam."</a>";
+                            $htm .= "</li>";
 			}			
-			$htm .= "</div>";
+			$htm .= "</ul>";
 			
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Price Range</div>";
-			$htm .= "<div style='float:left; clear:both; font-family:arial; color:navy; font-size:12px' href='".$main_url.$b."'>
-						<table style='float:left; margin:2px 0px 0px 8px'>
-						<tbody>
-							<tr>
-								<td>Min Price <br><input type='text' id='min_price' class='int' value=''></td>
-							</tr>
-							<tr>
-								<td>Max Price <br><input type='text' id='max_price' class='int' value=''></td>
-							</tr>
-							<tr>
-								<td><input type='button' id='filter_price' class='css_btn_c0' style='padding:0px 12px; margin-top:12px;' value='Filter Price' style='margin-top:5px;'></td>
-							</tr>
-						</tbody>
-						</table>
-						
-					</div>";
+			$htm .= "<div>Price Range</div>";
+			$htm .= "<div style=' ' href='".$main_url.$b."'>
+                                    <div class='form-group'>
+                                        <label for='min_price'>Min Price</label>
+                                        <input class='form-control' type='text' id='min_price' class='int' value=''>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='max_price'>Max Price </label>
+                                        <input class='form-control' type='text' id='max_price' class='int' value=''>
+                                    </div>
+                                    <input type='button' id='filter_price' class='btn btn-success' value='Filter Price' style='margin-top:5px;'>
+				</div>";
 		}
 
 		$htm .="</div>";
@@ -283,27 +288,27 @@ class template_sideleft extends MX_Controller {
 								
 
 			// brands
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Country</div>";
+			$htm .= "<div  >Country</div>";
 			$data = $users->result();
 			$main_url = $this->reconstruct_url_sellers($uri_process,$url,$GET,"country");
 			$users = explode(",",$data[0]->user_country);
-			$htm .= "<div style='float:left; clear:both; margin:12px 0px'>";
+			$htm .= "<div  >";
 			$count = count($users);
 			$ctr = 1;
 			foreach($users as $b){
 				if($ctr == 20){
-					@$htm .= "<a id='show_more_brands' style='float:left; clear:both; font-family:arial; color:brown; margin-left:12px; margin-top:12px; font-size:12px' href='javascript:;'>more country [+]</a>";
+					@$htm .= "<a id='show_more_brands' style=' ' href='javascript:;'>more country [+]</a>";
 					$htm .= "<div id='more_brands' style='float:left; clear:both; display:none'>";
 				}
 				if($ctr >= 20){
-				    @$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$this->function_country->get_country_name($b)."</a>";
+				    @$htm .= "<a   href='".$main_url.$b."'>".$this->function_country->get_country_name($b)."</a>";
 				} else {
-				    @$htm .= "<a style='float:left; clear:both; font-family:arial; color:navy; margin-left:12px; font-size:12px' href='".$main_url.$b."'>".$this->function_country->get_country_name($b)."</a>";
+				    @$htm .= "<a   href='".$main_url.$b."'>".$this->function_country->get_country_name($b)."</a>";
 				}
 				$ctr++;
 			}
 			if($ctr > 7){
-				@$htm .= "<a id='show_less_brands' style='float:left; clear:both; font-family:arial; color:brown; margin-left:12px; margin-top:12px; font-size:12px' href='javascript:;'>less brands [-]</a>";
+				@$htm .= "<a id='show_less_brands' style=' ' href='javascript:;'>less brands [-]</a>";
 				$htm .= "</div>";
 			}
 			$htm .= "</div>";
@@ -324,8 +329,8 @@ class template_sideleft extends MX_Controller {
 			} 
 			
 			$main_url = $this->reconstruct_url_sellers($uri_process,$url,$GET,"rating");
-			$htm .= "<div style='float:left; clear:both; font-family:arial; width:194px; padding:5px 0px 5px 9px; background:ghostwhite; font-weight:bold; color:#555'>Member Rating</div>";
-			$htm .= "<div style='float:left; clear:both; font-family:arial; color:navy; font-size:12px; margin-top:12px;'>";
+			$htm .= "<div  >Member Rating</div>";
+			$htm .= "<div style=' ; margin-top:12px;'>";
 
 					for($x = 5; $x >= 0; $x--){
 						$htm .= '<div style="float:left; clear:both; width:200px; margin-left:12px;">';
@@ -424,11 +429,11 @@ class template_sideleft extends MX_Controller {
 	public function display_properties($n1){
 		if($n1[0] == "brand" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div >
 				<input type="hidden" class="filter_type" value="brand">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Brand:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo $this->function_brands->watch_brands($n1[1]); ?>
 				</div>
 			</div>			
@@ -436,11 +441,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "category" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div>
 				<input type="hidden" class="filter_type" value="category">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Category:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo $this->function_category->get_category_fields("category_name", $n1[1]); ?>
 				</div>
 			</div>			
@@ -448,11 +453,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "case_type" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div>
 				<input type="hidden" class="filter_type" value="case_type">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Case Type:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo ucfirst($n1[1]); ?>
 				</div>
 			</div>			
@@ -460,11 +465,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "bracelet_type" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="bracelet_type">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class=""delete_filter style=" ">remove</a>
 				<b>Case Type:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo ucfirst($n1[1]); ?>
 				</div>
 			</div>			
@@ -472,11 +477,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "condition" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="condition">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Condition:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo ucfirst($n1[1]); ?>
 				</div>
 			</div>			
@@ -484,11 +489,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "min_price" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="min_price">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Min Price:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo $n1[1]; ?>
 				</div>
 			</div>			
@@ -496,11 +501,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "max_price" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="max_price">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Max Price:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo $n1[1]; ?>
 				</div>
 			</div>			
@@ -508,11 +513,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "s"){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="s">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Search:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					if($n1[1] == ""){
 						echo "No String Search";
@@ -525,11 +530,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "year_model" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="year_model">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Year Model:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php echo $n1[1]; ?>
 				</div>
 			</div>			
@@ -537,11 +542,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "gender" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="gender">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Gender:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					$gender = array("1" => "Mens", "2" => "Womens", "3" => "Unisex");
 					echo $gender[(string)$n1[1]]; ?>
@@ -551,11 +556,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "kids" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="kids">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>For Kids:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					$g = array("1" => "Yes", "0" => "No");
 					echo $g[(string)$n1[1]]; ?>
@@ -565,11 +570,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "certificate" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="certificate">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>With Certificate:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					$g = array("1" => "Yes", "0" => "No");
 					echo $g[(string)$n1[1]]; ?>
@@ -579,11 +584,11 @@ class template_sideleft extends MX_Controller {
 		}										
 		elseif($n1[0] == "box" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="box">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>With Box:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					$g = array("1" => "Yes", "0" => "No");
 					echo $g[(string)$n1[1]]; ?>
@@ -593,11 +598,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "case_width" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="case_width">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Case Width:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo $n1[1]; ?> mm
 				</div>
@@ -606,11 +611,11 @@ class template_sideleft extends MX_Controller {
 		}										
 		elseif($n1[0] == "case_thickness" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="case_thickness">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Case Thickness:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo $n1[1]; ?> mm
 				</div>
@@ -619,11 +624,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "item_type" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="item_type">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Item Type:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo ucfirst($n1[1]); ?> & Accessories
 				</div>
@@ -632,11 +637,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "part_type" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="part_type">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Part Type:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo ucfirst($n1[1]); ?> 
 				</div>
@@ -645,11 +650,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "country" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="country">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Country:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo $this->function_country->get_country_name($n1[1]); ?> 
 				</div>
@@ -658,11 +663,11 @@ class template_sideleft extends MX_Controller {
 		}	
 		elseif($n1[0] == "rating" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="rating">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>Rating:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo $n1[1] . " stars"; ?> 
 				</div>
@@ -671,11 +676,11 @@ class template_sideleft extends MX_Controller {
 		}
 		elseif($n1[0] == "user" && $n1[1] != ""){
 			?>
-			<div style='float:left; clear:both; font-family:arial; position:relative; width:195px; padding:20px 0px 5px 9px; font-size:14px; background:#ADD8E6; border-bottom:2px solid #FFF; color:#333'>
+			<div  >
 				<input type="hidden" class="filter_type" value="user">
-				<a href="javascript:;" class="delete_filter css_btn_c0" style="position:absolute; font-size:11px; right:9px; top:5px; padding:2px 12px; color: #000 !important">remove</a>
+				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
 				<b>User Name:</b><br>
-				<div style="min-height:12px">
+				<div  >
 					<?php 
 					echo $n1[1]; ?> 
 				</div>

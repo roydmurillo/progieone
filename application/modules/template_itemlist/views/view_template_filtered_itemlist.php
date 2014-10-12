@@ -1,8 +1,8 @@
 <!-- content goes here -->
 <img src='<?php echo base_url(); ?>assets/images/refine_loader.gif' style='display:none'>
 <div id="homepage">
-
-        <div class="fleft">
+    <diV class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
 			<?php
             //load sidebar left
                 $this->load->module('template_sideleft');
@@ -10,12 +10,12 @@
             ?>
         </div>
 
-		<div class="fleft" style="width:765px; margin-right:12px;">
+		<div class="col-sm-9 col-md-10 main">
 			
 			<?php
 			$this->load->view('load_filtered_itemlist'); 
 			?>
 
 		</div>
-        
+    </div>
 </div>

@@ -12,7 +12,7 @@ class template_homepage extends MX_Controller {
 	{
 		//load header
 		$this->load->module('template_header');
-		$this->template_header->index($data); 		
+		$this->template_header->index2($data); 		
 		//$this->load->view('view_banner_homepage');
                 
 		$this->load->view('view_template_homepage', $data);

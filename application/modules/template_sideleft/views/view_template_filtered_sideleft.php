@@ -1,35 +1,13 @@
 <!-- content goes here -->
-<div id="sidebar_left">
-  
-  <?php 
-	$this->load->module("function_login");
-	$validate = $this->function_login->is_user_loggedin();
-	if($validate === false){?>
-		  <div id="member_login">
-			<div id="wish_title">BECOME A MEMBER</div>
-			<p> <a href="<?php echo base_url() ?>secure/register">Create an Account</a></p>
-			<p> <a href="<?php echo base_url() ?>secure/retrieve_password">Lost your password?</a> </p>
-			<p> <a class="css_btn_c0" style="color: #000 !important; padding: 5px 20px !important; float: left; margin-top: 12px;" href="<?php echo base_url() ?>secure/sign-in">Member Login</a> </p>
-		  </div>
-	<?php
-	} 
-  ?>
-  <?php 
-	if($validate === false){?>
-	  <div class="title_bar" style="margin:10px 0px 0px 0px; width:182px; position:relative;">
-		REFINE LIST
-		<div id="refine_loader" style='position:absolute; z-index:100; left:82px; bottom:-130px; display:none'><img src='<?php echo base_url(); ?>assets/images/refine_loader.gif'></div>
-	  </div> 	
-	<?php
-	} else { ?>
-	  <div class="title_bar" style="margin:0px 0px; width:182px; position:relative">
-		REFINE LIST
-		<div id="refine_loader" style='position:absolute; z-index:100; left:82px; bottom:-130px; display:none'><img src='<?php echo base_url(); ?>assets/images/refine_loader.gif'></div>
-	  </div> 	
-<?php }	?>
+<div class="sidebar-inner">
+	
+    <div>
+        REFINE LIST
+    </div> 	
+
   
   
-  <div id="refine_search" style="float:left; padding:10px 0px; margin:0px; width:203px; min-height:100px;">
+  <div id="refine_search">
 
   </div> 	
   <input type="hidden" value="<?php echo $uri_process; ?>" id="uri_process">
@@ -61,7 +39,7 @@
 </div>
 <!-- content goes here -->
 <?php $this->load->module("function_security"); 
-	  $ajax = $this->function_security->encode("load_refine_search"); ?>
+      $ajax = $this->function_security->encode("load_refine_search"); ?>
 <input id="load_initial2" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
 <input id="base_url2" type="hidden" value="<?php echo base_url(); ?>">
 

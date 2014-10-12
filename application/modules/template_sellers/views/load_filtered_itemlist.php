@@ -8,8 +8,6 @@
 .item_title{margin-top:0px !important; height:48px; color:#333; width:143px; text-align:left; margin-top:-10px; margin-left:18px; font-weight:bold; text-transform:none !important;}
 .item_price{margin-top: -20px !important; margin-bottom:10px; margin-left: 23px; text-align:left; font-size: 17px;}
 .add_wishlist{margin: 3px 0px 0px 23px;}
-#filter_return{float:left; font-size:12px; font-family:Verdana; width:759px; border:1px dashed #CCC; border-left:none; border-right:none; height:30px; line-height:30px; vertical-align:middle; #CCC; margin:0px 0px 10px 0px;}
-#total_message{float:left; height:30px; line-height:30px; color:#555; font-size:12px; font-weight:bold;  clear:both; width:100%; font-family:arial; }
 .list_a{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px -24px; margin-left:5px; margin-top:3px;}
 .list_b{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) -25px -24px; margin-left:5px; margin-top:3px;}
 .list_a:hover{ cursor:pointer; cursor:hand; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px 0px;}
@@ -59,7 +57,7 @@ if(empty($user_list)){
 	?>
 </div>
 <!-- item lists here -->
-<div class="item_list_watches">
+<div>
 	<div id="total_message" 
 	 <?php
 	     if($total_count==""){

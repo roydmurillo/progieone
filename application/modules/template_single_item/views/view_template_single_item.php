@@ -19,7 +19,7 @@
 <div id="homepage">
 
 		<div class="fleft" style="width:765px; margin-right:12px;">
-		
+		wefefwe
 		<?php
 		$bool = array("1" => "Yes", "0" => "No");
 		// work with the data
@@ -30,7 +30,7 @@
 			$owner = $this->function_users->get_user_fields_by_id(array("user_name","user_avatar","user_country"),$item_details[0]->item_user_id);
 		?>
 			<!-- item images -->
-			<div style="float:left; width:94px; min-height:300px; margin-top:12px; position:relative">
+			<ul class="list-inline img-thumbs-container">
 				
 				<?php $im2 = base_url() . "assets/images/no-image.png";
 			          $i = base_url() . "assets/images/no-image.png";	
@@ -46,19 +46,19 @@
 									  $im2 = $im[0] ."." . $im[1] . "_large_thumb." . $im[2];
 								  }
 				             ?>
-							<div class="thumbnail">
+							<li class="thumbnail">
 								<img src="<?php echo $im2; ?>">
-							</div>
+							</li>
 			        <?php } 
 			             }
 		             } 
 				?>	
 
-			</div>		
+			</ul>		
 		
 			<!-- image view holder -->
 			<div id="image_viewer">
-			    <div class="large" style="background:url(<?php echo $im2; ?>) no-repeat"></div>
+<!--			    <div class="large" style="background:url() no-repeat"></div>-->
 				<img class="img-thumbnail" src="<?php echo $im2; ?>">
 			</div>
 
@@ -124,7 +124,7 @@
 							</div>
 				</div>
 			</div>
-			
+<!--			 description tab-->
 			<div class="details_container">
 				<ul class="nav nav-tabs" role="tablist">
                                     <li class="active"><a href="#description" role="tab" data-toggle="tab">Details</a></li>
@@ -132,6 +132,7 @@
                                     <li><a href="#contact" role="tab" data-toggle="tab">Contact Seller</a></li>	
 <!--					<li>
 						<?php
+                                                // adding to watchlist snippets
 //						if($this->function_login->is_user_loggedin()){
 //							$user_id = unserialize($this->native_session->get("user_info"));
 //							$user_id = $user_id["user_id"];

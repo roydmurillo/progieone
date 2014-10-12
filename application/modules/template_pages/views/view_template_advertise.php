@@ -56,9 +56,7 @@ border:1px solid #CCC;
 				<p>We reserve the right to refuse advertisements and make any changes to our advertising terms and conditions without prior notice.<br>	
 				Once we have received your request it will be processed within 48 hours. You will receive a confirmation email with your account details to view your reports.<br>
                                 We accept all major credit cards.</p>
-				Cyberwatchcafe is an ecommerce advertising website listings for watch enthusiasts<br>
-                                Contact us <a class="link" href="#">click here</a>
-				</p>
+				<p>Cyberwatchcafe is an ecommerce advertising website listings for watch enthusiasts <a class="link" href="#">Contact us</a></p>
 			</div>
 		</div>
 </div>

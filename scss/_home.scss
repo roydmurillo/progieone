@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 11, 14, 9:50:14 PM
+    Author     : macbook
+*/
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+$cont-color: #fff;
+
+#home{
+    .home-banner{
+        background: url('../assets/images/home-banner.jpg') no-repeat;
+        background-size:cover;
+        min-height: 728px;
+        box-sizing:content-box;
+        .intro{
+            margin-top:100px;
+            color:$cont-color;
+            width:50%;
+            h1{
+                font-weight:300;
+            }
+        }
+        .navbar-nav a {
+         @include background-opacity(#777, 0.5); 
+         &:hover{color:#f0f0f0;}
+        }
+        h1, p{
+            color:$cont-color;
+        }
+        p{
+            font-size:16px;
+        }
+        .home-search{
+            max-width:30%;
+            margin:0 auto;
+            margin-top:24px;
+            a{
+                 color:$cont-color;
+                 &:hover{
+                     text-decoration: none;
+                 }
+            }
+        }
+    }
+    
+}

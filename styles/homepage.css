@@ -289,13 +289,6 @@ width:200px;
 /*---------------------------
  item lists
 ------------------------------*/
-.item_list_watches{
-float:left;
-margin:0px 10px 20px 14px;
-width:788px;
-min-height:230px;
-
-}
 
 .iteminfo{
 float: left;
@@ -528,28 +521,7 @@ width: 90%;
 clear: both;
 padding: 0px 10px;
 }
-.add_wishlist{
-text-decoration: none;
-font-size: 10px;
-font-family: Tahoma;
-float: left;
-clear: both;
-text-align: center;
-height: 14px;
-overflow: hidden;
-width: 109px;
-padding: 3px 0px;
-font-weight:bold;
-color:#FFF;
-background: #ef3e3e; /* Old browsers */
-background: -moz-linear-gradient(top,  #ef3e3e 0%, #a52a2a 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ef3e3e), color-stop(100%,#a52a2a)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #ef3e3e 0%,#a52a2a 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #ef3e3e 0%,#a52a2a 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #ef3e3e 0%,#a52a2a 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #ef3e3e 0%,#a52a2a 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3e3e', endColorstr='#a52a2a',GradientType=0 ); /* IE6-9 */
-}
+
 .add_compare:hover{
 color:#000;
 }

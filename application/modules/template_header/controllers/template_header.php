@@ -22,5 +22,18 @@ class template_header extends MX_Controller {
 		}
 		$this->load->view('view_template_header',$data);
 	}
+        public function index2($data)
+	{       // set currency
+		if(isset($_GET["currency"])){
+			if($this->function_currency->get_name($_GET["currency"]) != "" ){
+				$this->native_session->set("currency",$_GET["currency"]);		
+			}
+		} else {
+			if($this->native_session->get("currency") === false){
+				$this->native_session->set("currency","USD");
+			}
+		}
+		$this->load->view('view_template_header2',$data);
+	}
 
 }

@@ -1,0 +1,114 @@
+/*
+    this css is compiled from main.sass
+*/
+body {
+  background-color: #FAFAFA;
+  font-family: "Lato", sans-serif; }
+
+h1, h2, h3, h4, h5, .title, .name {
+  font-family: 'Lato', sans-serif; }
+
+.name {
+  font-style: italic; }
+
+p {
+  font-family: 'Merriweather', serif;
+  font-size: 13.84615px; }
+
+.clear {
+  clear: left; }
+
+.container-center {
+  min-height: 500px; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 11, 14, 9:50:14 PM
+    Author     : macbook
+*/
+#home .home-banner {
+  background: url("../assets/images/home-banner.jpg") no-repeat;
+  background-size: cover;
+  min-height: 728px;
+  box-sizing: content-box; }
+  #home .home-banner .intro {
+    margin-top: 100px;
+    color: white;
+    width: 50%; }
+    #home .home-banner .intro h1 {
+      font-weight: 300; }
+  #home .home-banner .navbar-nav a {
+    background: #777777;
+    /* The Fallback */
+    background: rgba(119, 119, 119, 0.5); }
+    #home .home-banner .navbar-nav a:hover {
+      color: #f0f0f0; }
+  #home .home-banner h1, #home .home-banner p {
+    color: white; }
+  #home .home-banner p {
+    font-size: 16px; }
+  #home .home-banner .home-search {
+    max-width: 30%;
+    margin: 0 auto;
+    margin-top: 24px; }
+    #home .home-banner .home-search a {
+      color: white; }
+      #home .home-banner .home-search a:hover {
+        text-decoration: none; }
+
+header.navbar-default {
+  background-color: #157b9e; }
+  header.navbar-default .navbar-nav {
+    margin-top: 15px; }
+    header.navbar-default .navbar-nav > li > a {
+      background-color: #157b9e;
+      color: #ccc;
+      margin-left: 12px; }
+      header.navbar-default .navbar-nav > li > a:hover {
+        color: #a6a6a6; }
+header .container, header .navbar-brand {
+  padding-left: 0;
+  padding-right: 0;
+  height: auto; }
+
+footer {
+  padding: 15px;
+  margin-top: 24px;
+  background: #ddd; }
+  footer .container > p {
+    text-align: center; }
+  footer .copy > div, footer .container {
+    padding: 0; }
+
+.pagination {
+  padding: 20px; }
+
+.item {
+  min-height: 350px; }
+  .item-list .item {
+    min-height: 280px; }
+    .item-list .item img {
+      max-height: 125px; }
+  .item img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; }
+
+.img-thumbs-container {
+  width: 100px; }
+
+.sidebar {
+  background: #f0f0f0; }
+  .sidebar .active {
+    background: #e3e3e3; }
+
+.nav.navbar-nav {
+  max-width: 510px;
+  margin: 0 auto;
+  float: none; }
+
+/*# sourceMappingURL=style.css.map */

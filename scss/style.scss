@@ -1,0 +1,89 @@
+/*
+    this css is compiled from main.sass
+*/
+$heading-size:36px;
+$p-font-size: $heading-size / 2.6;
+$base-color:#157b9e;
+$base-font: 'Lato', sans-serif;
+$sub-font: 'Merriweather', serif; 
+
+body{
+    background-color:#FAFAFA;
+    font-family: $base-font;
+}
+
+h1,h2,h3,h4,h5, .title, .name{
+    font-family: 'Lato', sans-serif;
+}
+.name{
+    font-style: italic;
+}
+p{
+  font-family: 'Merriweather', serif;  
+  font-size: $p-font-size;
+}
+
+.clear{
+    clear:left;
+}
+.container-center{min-height:500px;}
+// preprocessor from this point down
+
+//home
+@import 'home';
+
+// header
+header{
+    &.navbar-default{
+        background-color:$base-color;
+        .navbar-nav{
+            margin-top:15px;
+            &> li > a{
+                background-color:$base-color;
+                color:#ccc;
+                margin-left:12px;
+                &:hover{color:grayscale(lighten($base-color,30%));}
+            }
+        }
+    }
+    .container, .navbar-brand{padding-left:0;padding-right:0;height:auto;}
+}
+
+// footer
+footer{
+    padding:15px;margin-top:24px;background:#ddd;
+    .container > p{text-align:center;}
+    .copy > div, .container{padding:0;}
+}
+//pagination
+.pagination{padding:20px;}
+// item list
+.item{
+    .item-list &{
+        min-height:280px;
+        img{
+            max-height:125px;
+        }
+    }
+    min-height:350px;
+    img{width:100%;height:auto;max-height:200px; } 
+    
+}
+
+//item single page
+.img-thumbs-container{
+    width:100px;
+}
+
+// sidebar
+.sidebar{
+    background:#f0f0f0;
+    .active{background:#e3e3e3;}
+}
+
+//nav bar
+.nav.navbar-nav{
+    max-width: 510px;
+    margin: 0 auto;
+    float: none;
+}
