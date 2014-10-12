@@ -1,7 +1,7 @@
 <!-- preload -->
 <img src='<?php echo base_url(); ?>assets/images/trash.png' alt='preload' style="display:none">
 <img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="display:none">
-<?php
+<?php 
 // parse data
 foreach($item_info as $i){
 	$item_name = $i->item_name;
@@ -44,11 +44,14 @@ foreach($item_info as $i){
 	  $type_update = $this->function_security->encode("sellupdate_item");
 	  $type_remove_image = $this->function_security->encode("delete_new_image"); 
 	  $type_addimg = $this->function_security->encode("add_new_image"); 	  
+	  $type_setdefault = $this->function_security->encode("type_setdefault"); 	  
 	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?>dashboard/<?php echo $ajax; ?>">
+<input id="set_default_url" type="hidden" value="<?php echo base_url(); ?>dashboard/setDefaultImage">
 <input id="type_update" type="hidden" value="<?php echo $type_update; ?>">
 <input id="type_delimg" type="hidden" value="<?php echo $type_remove_image; ?>">
 <input id="type_addimg" type="hidden" value="<?php echo $type_addimg; ?>">
+<input id="type_setdefault" type="hidden" value="<?php echo $type_setdefault; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <div id="homepage">
@@ -383,16 +386,36 @@ foreach($item_info as $i){
 										</div>
 										<div id="add_image"><a id="upload_item_images" href="javascript:;" class="css_btn_c2">Click Here to Upload Images</a></div>
 										<div id="added_images" style="width:100%; max-height: 500px; margin:20px">
+                                            
 										<?php 
+
 											if(count($item_images) > 0 && $item_images != false){
 												foreach($item_images as $i){
-													echo '<div class="img">
+
+                                                    $new_default = '';
+                                                    $image_default = $i[0];
+                                                    $image_src = $i[1];
+                                                    if($image_default == 0){
+                                                        $new_default = 'set as default';
+                                                    }
+                                                    else{
+                                                        $new_default = 'default';
+                                                    }
+
+													echo '
+                                                    <div>
+                                                        <div class="img">
 															<input type="hidden" value="'.$item_id.'" class="item_id">
-															<input type="hidden" value="'.$i.'" class="actual_image">
+															<input type="hidden" value="'.$image_src.'" class="actual_image">
 															<input type="hidden" value="'.$item_folder.'" class="image_folder">
 															<div class="del_im" title="Delete this Image"></div>
-															<img class="ad_im" src="'.$i.'">
-														  </div>';										
+															<img class="ad_im" src="'.$image_src.'">
+														  </div>
+                                                          <a class="set_as_default" data-id="'.$item_id.'" data-src="'.$image_src.'" data-default="0">
+                                                              '.$new_default.'
+                                                              </a>
+                                                    </div>
+                                                          ';
 												}
 											}
 										?>
@@ -419,6 +442,7 @@ foreach($item_info as $i){
 		</div>
         
 </div>
+
 <script type="text/javascript">
 jQuery(document).ready(function(){
 	jQuery("#item_wholepart").change(function(){
