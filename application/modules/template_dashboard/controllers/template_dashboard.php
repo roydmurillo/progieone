@@ -199,6 +199,17 @@ class template_dashboard extends MX_Controller {
                     }
 					
                 } 
+                
+                /*===================================================================
+                * name : set default image
+                * desc : for watch default image
+                * parm : n/a
+                * return : boolean
+                *===================================================================*/   
+                elseif ($this->uri->segment(2) == "setDefaultImage"){
+                    
+                 $this->dashboard_setDefaultImage();
+                } 
 				
                 else {
                     
@@ -208,6 +219,12 @@ class template_dashboard extends MX_Controller {
                 
 	}
 
+        public function dashboard_setDefaultImage(){
+            //load header
+            $this->load->module('function_ajax');
+            $this->function_ajax->ajax(); 		
+            
+        }     
         public function dashboard_ajax(){
             //load header
             $this->load->module('function_ajax');
