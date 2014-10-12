@@ -19,7 +19,7 @@ class function_items extends MX_Controller {
         public function store_images($item_id = NULL, $args = NULL){
                 
                 $array_images = $this->image_array($item_id);
-                $array_images[] = $args["item_images"];
+                $array_images[] = array(0 => 0, 1 => $args["item_images"]);
                 $serial = serialize($array_images);
                 $update = array("item_images" => $serial);
                 
@@ -27,6 +27,48 @@ class function_items extends MX_Controller {
                     $this->db->where('item_id', $item_id);
                     $this->db->update('watch_items', $update); 
                     return $array_images;
+                }
+                
+                return false;
+            
+        }        
+        
+	/*===================================================================
+	* name : store_images()
+	* desc : updating item_images field in watch_items
+	* parm : $item_id = item_id
+        *        $args = item images
+	* return : dashboard
+	*===================================================================*/         
+        public function save_setdefault($item_id = NULL, $src = NULL){
+
+            
+                $q = $this->db->query("SELECT item_images FROM watch_items WHERE item_id = ?",$item_id);
+
+                if($q->num_rows() > 0){
+                    $item = $q->row_array();
+                    $item = $item['item_images'];
+                    $new_items = unserialize($item);
+
+                    $new_array = array();
+
+                    foreach ($new_items as $x=>$items){
+                        if($items[1] != $src){
+                            $new_array[] = array(0 => 0, 1 => $items[1]);
+                        }
+                        else{
+                            $new_array[] = array(0 => 1, 1 => $items[1]);
+                        }
+                    }
+                }
+
+                $serial = serialize($new_array);
+                $update = array("item_images" => $serial);
+
+                if($item_id !== NULL){
+                    $this->db->where('item_id', $item_id);
+                    $this->db->update('watch_items', $update); 
+                    return TRUE;
                 }
                 
                 return false;
@@ -327,9 +369,9 @@ class function_items extends MX_Controller {
                 $i_folder = $this->get_item_fields("item_folder",$item_id);
                 $path = $i_folder ."/";
                 
-                $valid_formats = array("jpg", "png", "gif", "bmp","JPG", "PNG", "GIF", "BMP");
+                $valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "JPG", "PNG", "GIF", "BMP", "JPEG");
                 
-                if(isset($_POST))
+                if(count($_FILES) > 0)
 		        {
 					$name = $_FILES['photoimg_add']['name'];
 					$size = $_FILES['photoimg_add']['size'];
@@ -337,7 +379,11 @@ class function_items extends MX_Controller {
 					
 					if(strlen($name))
 						{
-							list($txt, $ext) = explode(".", $name);
+//							list($txt, $ext) = explode(".", $name);
+                            $img_part = explode(".", $name);
+                            $img_part_len = count($img_part) - 1;
+                            $txt = $img_part[0];
+                            $ext = $img_part[$img_part_len];
 							if(in_array($ext,$valid_formats))
 							{
 							if($size<(1024*1024))
@@ -369,6 +415,21 @@ class function_items extends MX_Controller {
 			   exit("Upload Error: Please select image..!");
 			 }     
         }
+       /*===================================================================
+	* name : upload_images()
+	* desc : upload item images to folder and update table
+	* parm : $_POST data
+	* return : images display
+	*===================================================================*/         
+        public function set_defaultimage($args){
+                $args = json_decode($args);
+
+                $item_id = $args->item_id;
+                $src = $args->src;
+
+                $images = $this->function_items->save_setdefault($item_id,$src);
+
+        }
 
        /*===================================================================
 	* name : display_images()
@@ -384,13 +445,20 @@ class function_items extends MX_Controller {
 			
             foreach($image_array as $i){
 
-                $html.= '<div class="img">
+                $image_default = $i[0];
+                $image_src = $i[1];
+
+                $html.= '
+                    <div>
+                        <div class="img">
                                 <input type="hidden" value="'.$item_id.'" class="item_id">
-                                <input type="hidden" value="'.$i.'" class="actual_image">
+                                <input type="hidden" value="'.$image_src.'" class="actual_image">
                                 <input type="hidden" value="'.$item_folder.'" class="image_folder">
                                 <div class="del_im" title="Delete this Image"></div>
-                                <img class="ad_im" src="'.$i.'">
-                          </div>';	
+                                <img class="ad_im" src="'.$image_src.'">
+                          </div>
+                          <a class="set_as_default" data-id="'.$item_id.'" data-src="'.$image_src.'" data-default="0">set as default</a>
+                    </div>';	
                 
             }
 			
@@ -417,7 +485,15 @@ class function_items extends MX_Controller {
             
             //update database
             $images_array = unserialize($this->get_item_fields("item_images",$item_id));
-            $images_array = serialize(array_diff($images_array,$tmp_array));
+            $new_images_array = array();
+            
+            foreach($images_array as $z){
+                if($z[1] != $actual_image){
+                    $new_images_array[] = $z;
+                }
+            }
+
+            $images_array = serialize($new_images_array);
             $update_data = array(
             'item_images' => $images_array
             );
