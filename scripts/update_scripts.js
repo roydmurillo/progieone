@@ -110,8 +110,8 @@ jQuery(document).ready(function() {
 		jQuery('body').on('click', '.del_im', function(){
 			var r=confirm("You are about to delete an image.\n Proceed to delete?");
 			if (r==true)
-			  {	
-			  		var ths = jQuery(this).parent();
+			  {
+			  		var ths = jQuery(this).parent().parent();
 					var data_obj = {item_id:jQuery(this).prevAll(".item_id").val(), image_folder: jQuery(this).prevAll(".image_folder").val() , image: jQuery(this).prevAll(".actual_image").val()};
 					data_obj = jQuery.toJSON(data_obj);
 					loader();
@@ -132,6 +132,23 @@ jQuery(document).ready(function() {
 		});	
 		jQuery('body').on('mouseout', '.img', function(){
 			jQuery(this).find(".del_im").eq(0).hide();
+		});	
+        jQuery('body').on('click', '.set_as_default', function(){
+            $.each($('.set_as_default'), function(key, value){
+                $(this).text('set as default');
+            });
+
+            $(this).text('default');
+            
+            var data_obj = {item_id:jQuery(this).attr("data-id"), src: jQuery(this).attr("data-src")};
+            data_obj = jQuery.toJSON(data_obj);
+            jQuery.ajax({
+                type: "POST",
+                url: jQuery("#set_default_url").val(),
+                cache: false,
+                data: { type:jQuery("#type_setdefault").val(), args:data_obj}
+            });
+
 		});	
 			
 		
