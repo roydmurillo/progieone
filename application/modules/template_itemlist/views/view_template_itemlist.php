@@ -81,15 +81,15 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                     if($default_image == $no_image){
                         $default_image = $xx[1];
                     }
-                    else{
-                        if(strpos($default_image,"localhost") > -1){
-                            $default_image = explode(".",$default_image);
-                            $default_image = $default_image[0] . "_thumb." . $default_image[1];
-                        } else {
-                            $default_image = explode(".",$default_image);
-                            $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[2];
-                        }
-                    }
+//                    else{
+//                        if(strpos($default_image,"localhost") > -1){
+//                            $default_image = explode(".",$default_image);
+//                            $default_image = $default_image[0] . "_thumb." . $default_image[1];
+//                        } else {
+//                            $default_image = explode(".",$default_image);
+//                            $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
+//                        }
+//                    }
                 }
             }
 
