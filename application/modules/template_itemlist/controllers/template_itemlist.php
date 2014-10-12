@@ -18,7 +18,7 @@ class template_itemlist extends MX_Controller {
 	{
 		    // get featured items
             $this->load->module('function_items');
-            $data["item_list"] = $this->get_featured_items();	
+            $data["item_list"] = $this->get_featured_items();
 	    $this->load->view('view_template_itemlist',$data);
 	}
 
@@ -351,7 +351,7 @@ class template_itemlist extends MX_Controller {
                 $result = $this->db->query("SELECT * FROM watch_items 
                                             WHERE item_paid = 1 
                                  	    AND item_expire > CURDATE()
-					    ORDER BY item_created DESC LIMIT 8");
+					    ORDER BY item_created DESC LIMIT 4");
                 
                 if($result->num_rows() > 0){
                     return $result->result();
