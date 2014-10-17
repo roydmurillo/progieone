@@ -68,6 +68,8 @@ and open the template in the editor.
   min-height: 320px; }
   .ww-tab-container .ww-tab-panel .btn {
     margin-top: 24px; }
+  .ww-tab-container .ww-tab-panel .container.text-center {
+    margin-bottom: 12px; }
 .ww-tab-container .active {
   display: block; }
 
