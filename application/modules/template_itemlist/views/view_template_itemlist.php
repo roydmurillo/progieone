@@ -8,10 +8,6 @@ $this->load->module("function_country");
 $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
 
-<div class="heading-bar row">
-    <div class="col-md-6">FEATURED WATCHES</div>
-    <div class="col-md-6 text-right"><a href="<?php echo base_url() ?>all-watches">View All</a></div>
-</div>
 <!-- item lists here -->
 <div class="row">
     <?php
@@ -101,7 +97,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
                     <figure class="thumbnail">
-                        <a href="<?php echo $url; ?>">
+                        <a class="img-slot" href="<?php echo $url; ?>">
                             <?php
                                 $new_images = unserialize($featured->item_images);
                                 $no_image = base_url() . "assets/images/no-image.png";
@@ -120,7 +116,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                             ?>
                             <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
                         </a>
-                        <h5 class="text-center"><a class="name" href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></h5>
+<!--                        <h5 class="text-center"><a class="name" href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></h5>-->
                             <figcaption class="caption">
                             <a class="title" href="<?php echo $url; ?>">
                                 <?php
@@ -133,17 +129,17 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                                 ?>
                                 </a>
                             <div class="clearfix">
-                                <div class="pull-left"><?php echo $this->function_currency->format($price); ?></div>
+                                <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
                                 <input type="hidden" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
                                 <div class="pull-right"><?php
                                 if($this->function_login->is_user_loggedin()){
                                     if($this->template_itemlist->not_exist_wishlist($user,$item_id)){
-                                        echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
+                                        echo '<a href="javascript:;" class="btn btn-primary add_wishlist">Add to Watchlist</a>';
                                     } else {
-                                        echo '<a href="javascript:;" class="btn btn-primary">In Watchlist</a>';
+                                        echo '<a href="javascript:;" class="btn btn-primary add_wishlist">In Watchlist</a>';
                                     }
                                 } else {
-                                    echo '<a href="javascript:;" class="btn btn-primary">Add to Watchlist</a>';
+                                    echo '<a href="javascript:;" class="btn btn-primary add_wishlist">Add to Watchlist</a>';
                                 }
                                 ?></div>
                             </div>
@@ -157,3 +153,4 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
     }
     ?>
 </div>
+<div class="text-center"><a class="link" href="<?php echo base_url() ?>all-watches">View All</a></div>

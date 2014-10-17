@@ -13,14 +13,33 @@ and open the template in the editor.
 }
 $cont-color: #fff;
 
+@import "tabs";
+@import "bootstrap";
 #home{
+    .container-center,#homepage{
+        min-height: 0 !important;
+    }
+    #homepage{
+        .container{
+            padding-top:24px;
+            padding-bottom:24px;
+        }
+    }
     .home-banner{
         background: url('../assets/images/home-banner.jpg') no-repeat;
         background-size:cover;
         min-height: 728px;
         box-sizing:content-box;
+        .fix{
+            position:fixed;
+            width:100%;
+            z-index:1;
+        }
+        .fix-bg{
+            background-color:$base-color !important;
+        }
         .intro{
-            margin-top:100px;
+            padding-top:200px;
             color:$cont-color;
             width:50%;
             h1{
@@ -29,16 +48,68 @@ $cont-color: #fff;
         }
         .navbar-nav a {
          @include background-opacity(#777, 0.5); 
-         &:hover{color:#f0f0f0;}
+         &:hover{color:#a6a6a6;}
+        }
+        .ww-tabs{
+            border:none;
+            max-width:63%;
+            margin:0 auto;
+            margin-top:160px;
+            padding:0;
+            li{
+               display:inline;
+               max-width: 25%;
+               width:100%;
+               text-align: center;
+               float:left;
+               .help-block{
+                    color:darken($cont-color,20%);
+                    font-family:$base-font;
+                    font-size: .245em;
+                    font-weight: 700;
+                }
+               a{
+                    background:transparent;
+                    border:none;
+                    font-size:4em;
+                    color:darken($cont-color,20%);
+                    text-decoration:none;
+                    &:hover span{
+                       background:transparent;
+                       border:none;
+                       color:lighten(grayscale($base-color),80%);
+                    }
+                }
+                &.active 
+                    {
+                     a{
+                        background:transparent;
+                        border:none;
+                        span{
+                            color:grayscale($base-color);;
+                        }
+                        &:hover{
+                           background:transparent;
+                           border:none;
+                           color:grayscale($base-color);
+                           span{
+                               color:grayscale($base-color);
+                           }
+                        }   
+                    }
+                    }
+            }
         }
         h1, p{
             color:$cont-color;
         }
         p{
             font-size:16px;
+            font-family: 'Georgia';
+            -webkit-font-smoothing: antialiased;
         }
         .home-search{
-            max-width:30%;
+            max-width:34%;
             margin:0 auto;
             margin-top:24px;
             a{
@@ -49,5 +120,6 @@ $cont-color: #fff;
             }
         }
     }
-    
+    @include price(1.7em,1.7em);
+    @include thumb();
 }

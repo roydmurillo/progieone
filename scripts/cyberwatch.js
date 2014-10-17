@@ -23,6 +23,39 @@ jQuery(document).ready(function(){
 		jQuery("#currency_converter").hide();
 		window.location.href = jQuery("#base_loc").val() + "?currency=" + jQuery("#val_currency").val();
 	});	
+        
+        // scroll fix
+        var scrolled=0;
+            $('.ww-tabs').on('click','a',function(e){
+                $('.ww-tab-container > .ww-tab-panel').removeClass('active');
+                var x = $(this).attr('href');
+                $(x).addClass('active');
+                scrolled = scrolled - 300;
+
+                $(".fix").animate({
+                    scrollTop: scrolled
+                });//
+            });
+            
+            
+            var t = $("header").offset().top;
+            
+            $(document).scroll(function(){
+                if($(this).scrollTop() > 400)
+                {   
+                   $('.ww-tabs').css('margin-top','287px');
+                   $('.home-search').addClass('fix-search');
+                   $('.fix, .fix .btn').addClass('fix-bg');
+                   
+                }else{
+                   $('.ww-tabs').css('margin-top','170px');
+                   $('.home-search').removeClass('fix-search');
+                   $('.fix, .fix .btn').removeClass('fix-bg');
+                }
+            });
+
+            
+        
 //	
 //	jQuery("#search_button").click(function(){
 //	
@@ -36,10 +69,14 @@ jQuery(document).ready(function(){
 	
 });
 
-jQuery(window).scroll(function() {
-	if (jQuery(window).scrollTop() > jQuery('#header_menu').offset().top) {
-		jQuery("#top_bar_header_background").css({"position":"fixed", "box-shadow":"1px 1px 2px 1px #333","z-index":"99999"});
-	} else {
-		jQuery("#top_bar_header_background").css({"position":"", "box-shadow":"","z-index":""});
-	}
-});
+//jQuery(window).scroll(function() {
+//	if (jQuery(window).scrollTop() > jQuery('#header_menu').offset().top) {
+//		jQuery("#top_bar_header_background").css({"position":"fixed", "box-shadow":"1px 1px 2px 1px #333","z-index":"99999"});
+//	} else {
+//		jQuery("#top_bar_header_background").css({"position":"", "box-shadow":"","z-index":""});
+//	}
+//});
+
+$(document).ready(function(){
+            
+        });

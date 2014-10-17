@@ -38,4 +38,5 @@ jQuery(document).ready(function($) {
 		}
 		resizeTimer = setTimeout(rowPolyfill, 400);
 	});
+        
 });

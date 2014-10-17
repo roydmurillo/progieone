@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 	}).done(function( msg ) {
 		jQuery("#cyber_watch_tweets").html(msg);
 	});
-});	
+        
 </script>
 </div><!-- main wristwatch container -->
 </div><!-- center wristwatch container -->
@@ -41,8 +41,14 @@ jQuery(document).ready(function(){
   ga('create', 'UA-53906304-1', 'auto');
   ga('send', 'pageview');
 </script>
+<script>
+        
+        
+        
+</script>
 <script type="text/javascript" src="<?php echo base_url();?>scripts/ie-row-fix.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>scripts/bootstrap.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>scripts/smoothscroll.js"></script>
 </body>
 </html>
 

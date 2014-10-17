@@ -1,14 +1,11 @@
 /*
     this css is compiled from main.sass
 */
-$heading-size:36px;
-$p-font-size: $heading-size / 2.6;
-$base-color:#157b9e;
-$base-font: 'Lato', sans-serif;
-$sub-font: 'Merriweather', serif; 
+@import 'variables';
+@import 'mixins';
 
 body{
-    background-color:#FAFAFA;
+    background-color:#F5f5f5;
     font-family: $base-font;
 }
 
@@ -26,11 +23,14 @@ p{
 .clear{
     clear:left;
 }
-.container-center{min-height:500px;}
-// preprocessor from this point down
 
+// preprocessor from this point down
 //home
 @import 'home';
+
+.container-center{min-height:500px;background-color:#f5f5f5;}
+.dropdown-menu{left: 12px;min-width: 107px;}
+
 
 // header
 header{
@@ -51,23 +51,19 @@ header{
 
 // footer
 footer{
-    padding:15px;margin-top:24px;background:#ddd;
+    padding:15px;background:#ddd;
     .container > p{text-align:center;}
     .copy > div, .container{padding:0;}
 }
 //pagination
 .pagination{padding:20px;}
-// item list
-.item{
-    .item-list &{
-        min-height:280px;
-        img{
-            max-height:125px;
-        }
-    }
-    min-height:350px;
-    img{width:100%;height:auto;max-height:200px; } 
-    
+
+//item list
+
+
+.item_list_watches{
+    @include price(1.3em,1.9em);
+    @include thumb(125px);
 }
 
 //item single page

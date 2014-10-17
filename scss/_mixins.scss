@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 15, 14, 6:28:58 PM
+    Author     : macbook
+*/
+
+@mixin price($font-size: 1.7em, $line-height: $font-size){
+    .price{
+        font-size: $font-size;
+        color: rgb(127, 203, 44);
+        line-height: $line-height;
+    }
+}
+
+@mixin thumb($item-min-height:280px,$img-min-height: 200px){
+    .item{
+        min-height:$item-min-height;
+        img{width:100%;height:auto;}
+        .thumbnail{
+            .img-slot{
+                min-height: $img-min-height;
+                display: block;
+            }
+        }
+        .caption{
+            .title{
+                text-transform: capitalize;
+            }
+        }
+    }
+}

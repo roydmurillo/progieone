@@ -153,8 +153,13 @@ class function_items extends MX_Controller {
 								$val = preg_replace("/[^A-Za-z0-9 ]/",'',$val);
 							}
                             $this->db->set($key, $val);
+                        }else if($key != "type" && $key != "args" && $val == ""){
+                            $this->db->set($key, '');
                         }
+                            
                     }
+                     $this->db->set("item_images", '');
+                     $this->db->set("item_folder", '');
                     
                     // not in post items
                     $this->db->set("item_created", date("Y-m-d H:i:s"));
@@ -189,6 +194,7 @@ class function_items extends MX_Controller {
                     }
 
                     $this->db->insert('watch_items'); 
+                   // echo $this->db->last_query();die;
                     
                     $inserted_id = $this->db->insert_id(); 
                     

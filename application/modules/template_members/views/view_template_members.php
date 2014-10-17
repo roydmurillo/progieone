@@ -259,12 +259,12 @@ if(empty($items)){
 				<?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$featured->item_id)){ 
-						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
 					} else {
-						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
 				}
 				?>
                             </figure>

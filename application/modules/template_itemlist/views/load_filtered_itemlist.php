@@ -8,7 +8,6 @@ background: #FFF; /* Old browsers */
 .item_seller{ width:189px;}
 .inner_seller{ float:left; margin:3px 0px 0px 12px; font-size:12px; font-weight:bold; color:#333;}
 .item_title{margin-top:0px !important; height:48px; color:#333; width:143px; text-align:left; margin-top:-10px; margin-left:18px; font-weight:bold; text-transform:none !important;}
-.add_wishlist{margin: 3px 0px 0px 23px;}
 .list_a{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px -24px; margin-left:5px; margin-top:3px;}
 .list_b{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) -25px -24px; margin-left:5px; margin-top:3px;}
 .list_a:hover{ cursor:pointer; cursor:hand; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px 0px;}
@@ -17,7 +16,7 @@ background: #FFF; /* Old browsers */
 <?php 
 if($display_by == "display_list" || $display_by == ""){?>
 .iteminfo{width:757px !important; height:146px !important; margin:3px; margin-bottom:12px;}
-.item_title, .item_price, .add_wishlist{clear:none !important;}
+.item_title, .item_price{clear:none !important;}
 .list_b{ background:url(<?php echo base_url() ?>assets/images/grid-list.png) -25px 0px; }
 .item_seller{width: 194px; right: 0px; top: 98px;}
 .item_title{ width: 335px; height: 50px; overflow: hidden;}
@@ -172,7 +171,7 @@ if(empty($item_list)){
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
                                     <a href="<?php echo $url; ?>">
-                                            <div class="">
+                                            <div class="img-slot">
                                                     <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
                                             </div>
                                     </a>
@@ -195,20 +194,23 @@ if(empty($item_list)){
                                     ?>       
                                 </a>
                             </h5>
-                                
-				<div class=""><?php echo $this->function_currency->format($price); ?></div>
+                                <div class="clearfix">    
+				<div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
                             <input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-				<?php
+				<div class="pull-right">
+                                    <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
 					} else {
-						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
 				}
 				?>
+                                </div>
+                                </div>
                             </figure>
 				
 
@@ -336,19 +338,23 @@ if(empty($item_list)){
 					?>       
 				</a>
                                 </h5>
-				<div class=""><?php echo $this->function_currency->format($price); ?></div>
-				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-				<?php
+                                <div class="clearfix">
+                                    <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
+                                    <input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
+                                    <div class="pull-right">
+                                <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
 					} else {
-						echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger" href="javascript:;" class="add_wishlist">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
 				}
 				?>
+                                    </div>
+                                </div>
 			 </figure>	
 	
 			</div>			

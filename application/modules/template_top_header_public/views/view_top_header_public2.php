@@ -1,11 +1,13 @@
 
         <header class="home-banner navbar-default">
-            <div class="container">
+            <div class="fix">
+                <div class="container">
                 <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
                     <ul class="nav navbar-nav pull-right">
                         <li><a class="btn btn-default btn-sm" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
                         <li><a class="btn btn-default btn-sm" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	
                     </ul>
+                </div>
             </div>
             <div class="container text-center intro">
                 <h1>A social hub for watch enthusiasts</h1>
@@ -16,7 +18,35 @@
                     <input type="search" class="form-control" placeholder="type in keyword here...">
                     <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div> 
                 </div>
-                <span class="text-center help-block"><a href="">click for help</a></span>
             </div>
+            <ul class="ww-tabs row">
+                <li class="col-md-3">
+                    <a href="#buy" class="smoothScroll">
+                        <span class="fa fa-shopping-cart"></span>
+                        <span class="help-block">BUY</span>
+                    </a>
+                   
+                </li>
+                <li class="col-md-3">
+                    <a href="#sell" class="smoothScroll">
+                     <span class="fa fa-money"></span>
+                     <span class="help-block">SELL</span>
+                    </a>
+                   
+                </li>
+                <li class="col-md-3">
+                    <a href="#discuss" class="smoothScroll">
+                        <span class="fa fa-comments-o"></span>
+                        <span class="help-block">DISCUSS</span>
+                    </a>
+                </li>
+                <li class="col-md-3">
+                    <a href="#social" class="smoothScroll">
+                        <span class="fa fa-users"></span>
+                        <span class="help-block">SOCIAL</span>                    
+                    </a>
+                </li>
+            </ul>
         </header>
+
     
