@@ -241,6 +241,13 @@ class template_createaccount extends MX_Controller {
             
             $this->load->library('encrypt');
             
+            $this->load->module("function_paypal");
+            $paypal = $this->function_paypal->get_details();
+            $paypalid = 0;
+            if($paypal != false){
+                $paypalid = $paypal['paypal_id'];
+            }
+            
             $username = trim($_POST["username"]);
             $salt = $this->salt_this();
             $password = md5(trim($_POST["password"]).$salt);
@@ -259,6 +266,7 @@ class template_createaccount extends MX_Controller {
             $this->db->set('user_country', $_POST["user_country"]);
             $this->db->set('user_activation', $encode);
 			$this->db->set('user_date',date('Y-m-d H:i:s'));
+            $this->db->set('user_listprice_id',$paypalid);
             $this->db->insert('watch_users'); 
             
             $inserted_id = $this->db->insert_id();
