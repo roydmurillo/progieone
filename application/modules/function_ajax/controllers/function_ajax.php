@@ -403,7 +403,15 @@ class function_ajax extends MX_Controller {
             elseif($this->function_security->encode("update_paypal") == $type){
 		    $this->load->module("function_paypal");
                     $this->function_paypal->update_paypal($args);
-            } 	            
+            }
+            /*===================================================================
+            * name : 
+            * desc : for adding friends
+            *===================================================================*/        
+            elseif($this->function_security->encode("update_single_paypal") == $type){
+		    $this->load->module("function_paypal");
+                    $this->function_paypal->update_single_paypal($args);
+            }
             /*===================================================================
             * name : 
             * desc : for adding friends
