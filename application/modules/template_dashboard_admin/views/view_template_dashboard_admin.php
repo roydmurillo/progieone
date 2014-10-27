@@ -2,9 +2,11 @@
 
 <?php $this->load->module("function_security"); 
 	  $type_add = $this->function_security->encode("update_paypal");
+      $type_single = $this->function_security->encode("update_single_paypal");
 	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?>dashboard/<?php echo $ajax; ?>">
 <input id="type_update" type="hidden" value="<?php echo $type_add; ?>">
+<input id="type_single" type="hidden" value="<?php echo $type_single; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
@@ -124,6 +126,39 @@
                                
                            </div> 
 
+                           <table width="100%" border="1">
+                                <?php 
+                                if($users){
+                                ?>
+                               <tr>
+                                   <td>Name</td>
+                                   <td>Username</td>
+                                   <td>Email</td>
+                                   <td>Action</td>
+                               </tr>
+                                <?php
+                                }
+                                    foreach ($users as $nkey1 => $fields){
+                                        
+                                ?>
+                                        <tr>
+                                            <td><?php echo ucfirst($fields['user_fname']).' '. ucfirst($fields['user_lname']);?></td>
+                                            <td><?php echo ucfirst($fields['user_name'])?></td>
+                                            <td><?php echo ucfirst($fields['user_email'])?></td>
+                                            <td>
+                                                <input type="hidden" id="userid<?php echo $fields['user_id']?>" class="paypal_price" data-userid="<?php echo $fields['user_id']?>" data-listid="<?php echo $fields['user_listprice_id']?>" value="<?php echo $fields['paypal_price']?>">
+                                                <a href="Javascript:;" class="userpaypal" id="userpaypal<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>">price</a>
+                                                <a href="Javascript:;" class="userdelete" id="userdelete<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | delete</a>
+                                                <a href="Javascript:;" class="userblock" id="userblock<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | block</a>
+                                            </td>
+                                        </tr>
+                                <?php
+                                    }
+                                ?>
+                                    
+                                
+                           </table>
+
 			</div>
                         <!-- 
                         <div style="float: left;
@@ -182,6 +217,49 @@
                     }).done(function( msg ) {
                             jQuery("#remarks").html("Successfully Updated!");
                     });
+                });
+                
+                $('.userpaypal').click(function(){
+                    
+                    var eventtrig = $(this).attr('data-bond');
+                    var obj = $('#userid' + eventtrig);
+                    
+                    if(obj.attr('type') == 'hidden'){
+                        obj.attr('type', 'text');
+                        $('#userpaypal' + eventtrig).css('display', 'none');
+                        $('#userdelete' + eventtrig).css('display', 'none');
+                        $('#userblock' + eventtrig).css('display', 'none');
+                    }
+                });
+
+                $('.userdelete').click(function(){
+                    alert('b');
+                });
+
+                $('.userblock').click(function(){
+                    alert('c');
+                });
+                
+                $('.paypal_price').keydown(function(evt){
+                    evt = evt.which || evt.keyCode
+                    var dis = this;
+                    if(evt == 13){
+
+                        var data_obj = {user_id : $(dis).attr('data-userid'), listprice : $(dis).val(), listid : $(dis).attr('data-listid')}
+                        data_obj = $.toJSON(data_obj);
+
+                        jQuery.ajax({
+                            type: "POST",
+                            url: jQuery("#load_initial").val(),
+                            cache: false,
+                            data: { type:jQuery("#type_single").val(), args:data_obj }
+                        }).done(function( msg ) {
+                            $(dis).attr('type', 'hidden');
+                            $('#userpaypal' + $(dis).attr('data-userid')).css('display', '');
+                            $('#userdelete' + $(dis).attr('data-userid')).css('display', '');
+                            $('#userblock' + $(dis).attr('data-userid')).css('display', '');
+                        });
+                    }
                 });
        });
         
