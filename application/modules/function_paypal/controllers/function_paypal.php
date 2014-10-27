@@ -74,6 +74,29 @@ class function_paypal extends MX_Controller {
                     
                     $r = $query->result();
                     $return = array();
+                    $return["paypal_id"] = $r[0]->paypal_id;
+                    $return["activate"] = $r[0]->paypal_activate;
+                    $return["price"] = $r[0]->paypal_price;
+                    $return["days"] = $r[0]->paypal_days;
+                    $return["date"] = $r[0]->paypal_date;
+                    
+                    return $return;
+                    
+                }
+            
+            return false;
+            
+        }
+        
+        public function get_listing_details($id){
+            
+                
+                $query = $this->db->query("SELECT * FROM watch_paypal WHERE paypal_id = '".$id."' ");
+                
+                if($query->num_rows() > 0){
+                    
+                    $r = $query->result();
+                    $return = array();
                     $return["activate"] = $r[0]->paypal_activate;
                     $return["price"] = $r[0]->paypal_price;
                     $return["days"] = $r[0]->paypal_days;
@@ -116,11 +139,42 @@ class function_paypal extends MX_Controller {
             $this->db->set("paypal_activate",$data->activated);
             $this->db->set("paypal_days",$data->days);
             $this->db->set("paypal_date",date("Y-m-d H:i:s"));
+            $this->db->where("paypal_id",1);
             $this->db->update("watch_paypal");
             
         }
-        
-  
-        
-        
+
+        public function update_single_paypal($args){
+            
+            $data = json_decode($args);
+            
+            $prev_recs = $this->db->query(" select * from watch_paypal where paypal_id = '".$data->listid."' ");
+            $row = $prev_recs->row_array();
+            
+            $check_records = $this->db->query(" select * from watch_paypal where paypal_price = '".$data->listprice."' ");
+
+            if($check_records->num_rows() > 0){
+                $row2 = $check_records->row_array();
+
+                $this->db->set("user_listprice_id",$row2['paypal_id']);
+                $this->db->where("user_id",$data->user_id);
+                $this->db->update("watch_users");
+            }
+            else{
+
+                $insert = array();
+                $insert['paypal_price'] = $data->listprice;
+                $insert['paypal_activate'] = $row['paypal_activate'];
+                $insert['paypal_days'] = $row['paypal_days'];
+                $insert['paypal_date'] = date("Y-m-d H:i:s");
+                $this->db->insert("watch_paypal", $insert);
+                $last_id = $this->db->insert_id();
+
+                $this->db->set("user_listprice_id",  $last_id);
+                $this->db->where("user_id",$data->user_id);
+                $this->db->update("watch_users");
+            }
+
+            echo json_encode(array('success' => true));
+        }
 }
