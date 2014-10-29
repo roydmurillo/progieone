@@ -342,14 +342,11 @@ jQuery(document).ready(function() {
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
     	?>
-		<div class="title_bar">
+	<div class="col-sm-9 col-md-10 main">
+                <div class="title_bar">
 			SELL ITEMS
 		</div>
-		
-		<div id="inner_dashboard">
-
-			<div id="inner_dashboard_tab">
-				
+            <div id="inner_dashboard_tab" class="btn-group">	
 				<a href="<?php echo base_url(); ?>dashboard/sell/for_sale">
 					<div class="tab_inner"> 
 						Item Listings
