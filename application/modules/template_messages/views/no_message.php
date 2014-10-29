@@ -5,13 +5,10 @@
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 		?>
-        
+        <div class="col-sm-9 col-md-10 main">
 		<div class="title_bar">
 			MESSAGES
 		</div>
-		
-		<div id="inner_dashboard">
-		
 			<div id="inner_dashboard_tab">
 				
 				<a href="<?php echo base_url(); ?>dashboard/messages">

@@ -95,7 +95,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
             if($data["user_activated"] != "deactivated"){
                 ?>
 
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 item">
                     <figure class="thumbnail">
                         <a class="img-slot" href="<?php echo $url; ?>">
                             <?php

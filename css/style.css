@@ -42,6 +42,24 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
+    Created on : 10 15, 14, 5:51:49 PM
+    Author     : macbook
+*/
+.btn-primary {
+  background-color: #fff;
+  color: #357ebd; }
+
+.btn-danger {
+  color: #d9534f;
+  border-color: #d43f3a;
+  background-color: #fff; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
     Created on : 10 11, 14, 9:50:14 PM
     Author     : macbook
 */
@@ -73,22 +91,9 @@ and open the template in the editor.
 .ww-tab-container .active {
   display: block; }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10 15, 14, 5:51:49 PM
-    Author     : macbook
-*/
-.btn-primary {
-  background: #fff;
-  color: #357ebd; }
-
 #home .container-center, #home #homepage {
   min-height: 0 !important; }
-#home #homepage .container {
+#home .homepage .container {
   padding-top: 24px;
   padding-bottom: 24px; }
 #home .home-banner {
@@ -105,7 +110,7 @@ and open the template in the editor.
   #home .home-banner .intro {
     padding-top: 200px;
     color: white;
-    width: 50%; }
+    width: 70%; }
     #home .home-banner .intro h1 {
       font-weight: 300; }
   #home .home-banner .navbar-nav a {
@@ -181,6 +186,72 @@ and open the template in the editor.
   #home .item .caption .title {
     text-transform: capitalize; }
 
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 24, 14, 6:00:46 PM
+    Author     : macbook
+*/
+#homepage {
+  margin-top: 24px; }
+  #homepage #avatar {
+    margin: 12px auto;
+    clear: both;
+    height: 150px;
+    border: 3px solid #777;
+    text-align: center;
+    line-height: 143px;
+    overflow: hidden;
+    background: black;
+    margin-bottom: 0; }
+  #homepage #upload_avatar {
+    background: #f0f0f0;
+    padding: 3px;
+    width: 100%;
+    display: block;
+    text-align: center; }
+  #homepage .logout {
+    border-top: 1px solid #ccc; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 29, 14, 2:09:38 PM
+    Author     : macbook
+*/
+#inner_dashboard_tab {
+  float: left;
+  max-width: 763px;
+  width: 100%;
+  padding-left: 7px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle; }
+
+.tab_inner_active {
+  float: left; }
+
+.tab_inner {
+  float: left; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 24, 14, 7:55:51 PM
+    Author     : macbook
+*/
+.row.item-list {
+  padding-top: 24px; }
+
 .container-center {
   min-height: 500px;
   background-color: #f5f5f5; }
@@ -199,6 +270,8 @@ header.navbar-default {
       margin-left: 12px; }
       header.navbar-default .navbar-nav > li > a:hover {
         color: #a6a6a6; }
+header .col-sm-6 {
+  padding-bottom: 14px; }
 header .container, header .navbar-brand {
   padding-left: 0;
   padding-right: 0;
@@ -234,13 +307,32 @@ footer {
   width: 100px; }
 
 .sidebar {
-  background: #f0f0f0; }
+  background: #fff;
+  padding: 12px 15px; }
   .sidebar .active {
     background: #e3e3e3; }
 
 .nav.navbar-nav {
-  max-width: 510px;
   margin: 0 auto;
-  float: none; }
+  float: none;
+  width: 100%; }
+  header .nav.navbar-nav {
+    max-width: 280px; }
+  nav .nav.navbar-nav {
+    max-width: 460px; }
+
+.logo {
+  padding-top: 14px; }
+  @media (max-width: 561px) {
+    .logo {
+      text-align: center; } }
+
+.topnav li {
+  max-width: 140px;
+  width: 100%;
+  float: left; }
+@media (max-width: 561px) {
+  .topnav {
+    float: none !important; } }
 
 /*# sourceMappingURL=style.css.map */

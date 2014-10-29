@@ -8,28 +8,25 @@
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 		?>
-        
+        <div class="col-sm-9 col-md-10 main">
 		<div class="title_bar">
 			MESSAGES
 		</div>
-		
-		<div id="inner_dashboard">
-		
-			<div id="inner_dashboard_tab">
+            <div id="inner_dashboard_tab" class="btn-group">
 				
-				<a href="<?php echo base_url(); ?>dashboard/messages">
+				<a class="btn btn-default" href="<?php echo base_url(); ?>dashboard/messages">
 					<div class="<?php echo ($this->uri->segment(3) == "") ? "tab_inner_active":"tab_inner"; ?>"> 
 						Inbox
 					</div>
 				</a>
 				
-				<a href="<?php echo base_url(); ?>dashboard/messages/create">
+				<a class="btn btn-default" href="<?php echo base_url(); ?>dashboard/messages/create">
 					<div class="<?php echo ($this->uri->segment(3) == "create") ? "tab_inner_active":"tab_inner checkout"; ?>"> 
 						Create Message
 					</div>
 				</a>
 				
-				<a href="<?php echo base_url(); ?>dashboard/messages/create">
+				<a class="btn btn-default" href="<?php echo base_url(); ?>dashboard/messages/create">
 					<div class="tab_inner_active"> 
 						Message Details
 					</div>

@@ -2,11 +2,12 @@
         <header class="home-banner navbar-default">
             <div class="fix">
                 <div class="container">
-                <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
-                    <ul class="nav navbar-nav pull-right">
-                        <li><a class="btn btn-default btn-sm" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
-                        <li><a class="btn btn-default btn-sm" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	
-                    </ul>
+                    <div class="col-sm-6 logo"><a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a></div>      	      	
+                    <div class="col-sm-6">    <ul class="nav navbar-nav pull-right topnav">
+                            <li><a class="btn btn-default" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
+                            <li><a class="btn btn-default" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="container text-center intro">

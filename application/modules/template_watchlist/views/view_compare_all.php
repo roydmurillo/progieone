@@ -34,32 +34,21 @@
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 		?>
-        
+    <div class="col-sm-9 col-md-10 main">
 		<div class="title_bar">
-			WATCHLIST
+			Watchlist
 		</div>
-		
-		<div id="inner_dashboard">
-
-			<div id="inner_dashboard_tab">
-				
-				<a href="<?php echo base_url(); ?>dashboard/watchlist">
-					<div id="all_watchlist" class="<?php echo ($this->uri->segment(3) == "") ? "tab_inner_active":"tab_inner"; ?>"> 
+			<div id="inner_dashboard_tab" class="btn-group">
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/watchlist"> 
 						All Watchlist
-					</div>
 				</a>
 
-				<a id="checkout" href="<?php echo base_url(); ?>dashboard/watchlist/compare">
-					<div class="<?php echo ($this->uri->segment(3) == "compare") ? "tab_inner_active":"tab_inner checkout"; ?>"> 
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "compare") ? "active":"tab_inner checkout"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/watchlist/compare"> 
 						Compare All
-					</div>
 				</a>				
-			
-			</div>
-						
+			</div>				
 			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>
-			
 		
-		</div>
+    </div>
         
 </div>

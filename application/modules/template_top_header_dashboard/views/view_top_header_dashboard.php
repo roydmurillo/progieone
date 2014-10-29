@@ -20,6 +20,7 @@
                                 <li><a href="<?php echo base_url();?>dashboard/account">Admin</a></li>
                                 <li><a href="<?php echo base_url();?>dashboard/messages">Inbox</a></li>
                                 <li><a href="<?php echo base_url();?>dashboard/friends">Friends</a></li> 
+                                <li><a href="<?php echo base_url() ?>dashboard/profile">Profile</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url();?>dashboard/logout">Logout</a></li>       
                             </ul>

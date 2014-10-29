@@ -14,12 +14,11 @@ and open the template in the editor.
 $cont-color: #fff;
 
 @import "tabs";
-@import "bootstrap";
 #home{
     .container-center,#homepage{
         min-height: 0 !important;
     }
-    #homepage{
+    .homepage{
         .container{
             padding-top:24px;
             padding-bottom:24px;
@@ -41,7 +40,7 @@ $cont-color: #fff;
         .intro{
             padding-top:200px;
             color:$cont-color;
-            width:50%;
+            width:70%;
             h1{
                 font-weight:300;
             }

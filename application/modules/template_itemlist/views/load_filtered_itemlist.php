@@ -42,15 +42,15 @@ if(empty($item_list)){
 	  $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
    
-<div >
-	<?php
-		echo trim(strtoupper(str_replace("-"," ",$this->uri->segment(1))));
-	?>
-</div>
 <!-- item lists here -->
 <div class="item_list_watches">
-    <div class="display-result-count">
-        <div id="total_message" >
+    <div class="display-result-count row">
+        <div id="total_message" class="col-md-6">
+            <div style="float: left;margin-right: 12px;">
+                <?php
+                        echo trim(strtoupper(str_replace("-"," ",$this->uri->segment(1))));
+                ?>
+            </div>
             <?php 
             if(!empty($item_list)){
                     echo "<b>".$total_count ."</b> Result(s) Found.";
@@ -59,7 +59,7 @@ if(empty($item_list)){
             }
             ?>
 	</div>
-	<div id="filter_return">
+	<div id="filter_return" class="col-md-6 text-right">
 	        <form method="POST">
                         <div>
                             <b>Sort By:</b>
@@ -362,11 +362,12 @@ if(empty($item_list)){
 		<?php
 		}
 		
-		 echo "<div class='pagination_links' style='float:left; clear:both; margin-top:20px; font-family:verdana; font-size:14px;'>";
+		 echo "<div class='clear'></div>";
+		 echo "<ul class='pagination'>";
 		  if($item_links){
 			  echo $item_links;
 		  }
-	     echo "</div>";
+		  echo "</ul>";
 
 		
 		

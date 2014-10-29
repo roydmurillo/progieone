@@ -128,8 +128,40 @@
 
 		?>
     <div class="col-sm-9 col-md-10 main">
-		
-		<div id="inner_dashboard" style="margin-left: 15px !important; width: 760px !important">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h2>Watchlist</h2>
+                <p>Current watch list: 10</p>
+                <p>Current items for sale: 20</p>
+                <a class="btn btn-primary">post item</a>
+                <a class="btn btn-danger">checkout</a>
+                <a class="btn btn-primary">view item list</a>
+                <a class="btn btn-primary">view watch list</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h2>Messages</h2>
+                <p>Inbox: 10</p>
+                <p>Unread messages: 20</p>
+                <a class="btn btn-primary">read messages</a>
+                <a class="btn btn-primary">create new message</a>
+            </div>
+            <div class="clear"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h2>Friends</h2>
+                <p>Current friends: 10</p>
+                <p>Pending friend request: 20</p>
+                <a class="btn btn-primary">view friend list</a>
+                <a class="btn btn-primary">view friend updates</a>
+                <a class="btn btn-primary">view friend request</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h2>Forum</h2>
+                <p>Help or ask questions</p>
+                <a class="btn btn-primary">visit forum</a>
+            </div>
+            
+        </div>
+<!--		<div id="inner_dashboard" style="margin-left: 15px !important; width: 760px !important">
                     
 			<div class="inner_box"> 
 			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/watchlist">
@@ -144,48 +176,8 @@
 							<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/watchlist/compare" title="Browse all latest watches">Compare Watchlist</a></td>
 						</tr>
 					</table>
-					<div class="chart_info">Latest on Your Watchlist</div>
-					<div class="chart">
 					
-						<?php
-						    // aps12
-							//$user_id = $this->function_users->get_user_fields("user_id");
-							$user_id = unserialize($this->native_session->get("user_info"));
-							$userid = $user_id["user_id"];
-							
-							$result = $this->db->query("SELECT * FROM watch_watchlist WHERE watchlist_user_id = $userid ORDER By watchlist_Date DESC LIMIT 1");
-							
-							if($result->num_rows() > 0){
-							
-								$r = $result->result();
-								
-								$this->db->where("item_id",$r[0]->watchlist_item_id);
-								$item = $this->db->get("watch_items");
-								$i = $item->result();
-								$images = unserialize($i[0]->item_images);
-								
-								$img = $images[rand(0, count($images) - 1)];
-								
-								echo "<div style='float:left;width:100%; height:100%'>
-										<div style='float:left; margin-left:12px; overflow:hidden; width:80px; height:80px; text-align:center; line-height:75px; background:white; border:1px solid #CCC'>
-											<img src='$img' style='max-height:80px; max-width:80px; vertical-align:middle'>
-										</div>
-										<div style='float:left; width:93px; height:110px; overflow:hidden; margin-left:8px; font-size:13px; font-family:arial; '><b>Watch Name:</b><br>".
-											@$i[0]->item_name
-										."</div>
-									  </div>";
-							} else {
-							echo "<div style='float:left;width:100%; height:100%'>
-									<div style='float:left; width:193px; color:red; height:110px; margin-left:15px; font-size:13px; font-family:arial; '>
-										You have 0 items in your watchlist.
-									</div>
-								  </div>";							
-							}
-						?>
-						
-						
-
-					</div>
+					
 			</div>
 			<div class="inner_box"> 
 			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/messages">
@@ -199,50 +191,7 @@
 					<tr>
 						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/messages/create" title="Create New Message">Create New Message</a></td>						
 					</tr>
-				</table>
-					<div class="chart_info">Latest On Your Inbox</div>
-					<div class="chart">
-					
-						<?php
-							//aps12
-							//$userid = $this->function_users->get_user_fields("user_id");
-
-							$str = "Select * From watch_messages 
-											 Where message_date In(
-												Select Max(message_date)
-												From watch_messages
-												WHERE  message_recipient_id = $userid
-												Group By message_parent_id
-											) AND message_recipient_id = $userid AND message_trash <> '1' ORDER BY message_date DESC LIMIT 1";
-						
-							$query = $this->db->query($str);							
-							
-							if($query->num_rows() > 0){
-								$result = $query->result();
-								$user_info = $this->function_users->get_user_fields_by_id(array("user_name","user_avatar"),$result[0]->message_user_id);
-								if($user_info["user_avatar"] != ""){
-								   $im = $user_info["user_avatar"];
-								} else {
-								   $im = base_url()."assets/images/avatar.jpg";
-								} 
-								echo "<div style='float:left;width:100%; height:100%'>
-										<div style='float:left; margin-left:12px; overflow:hidden; width:80px; height:80px; text-align:center; line-height:75px; background:white; border:1px solid #CCC'>
-											<img src='".$im."' style='max-height:80px; max-width:80px; vertical-align:middle'>
-										</div>
-										<div style='float:left; width:93px; height:120px; margin-left:8px; font-size:13px; font-family:arial;'><b>From:</b><br>".
-											$user_info["user_name"]
-										."<br><br><b>Subject:</b><br>".substr($result[0]->message_title,0,30)."...</div>
-									  </div>";								
-							} else {
-							echo "<div style='float:left;width:100%; height:100%'>
-									<div style='float:left; width:193px; color:red; height:120px; margin-left:25px; font-size:13px; font-family:arial; '>
-										You have 0 messages.
-									</div>
-								  </div>";								
-							}
-						?>
-
-					</div>
+				</table>	
 			</div>
 			<div class="inner_box"> 
 			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/sell">
@@ -262,30 +211,7 @@
 					</tr>	
                                         <?php } ?>
 				</table>
-				<div class="chart_info">Weekly View Count<br><?php echo date("F") ." ".trim($first)." - ". trim($last).", " . date("Y");  ?></div>
-				<div class="chart_origin">
-					Origin of Views<br>
-					<?php 
-					    if($country){
-							$country = trim($country,"-");
-							$country = explode("-", $country);
-							$check = array();
-							$ctr=1;
-							foreach($country as $c){
-								if(!in_array($c, $check) && $ctr <= 12){
-									$check[] = $c;
-									echo "<div class='flag flag-".strtolower($c)."' style='margin:2px;' title='".$this->function_country->get_country_name($c)."'></div>";
-								}
-								$ctr++;
-							}
-						} else {
-							echo "<span style='color:red'>You have 0 weeky views.</span>";
-						}
-					?>
-					
 				
-				</div>
-				<div id="chart1" class="chart"></div>
 			</div>
 			<div class="inner_box"> 
    			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/inquiry">
@@ -300,28 +226,7 @@
 						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/inquiry/being_watched" title="View all Watches Bought">Your Items Being Watch</a></td>
 					</tr>					
 				</table>
-				<div class="chart_info">Weekly Inquiry Count<br><?php echo date("F") ." ".trim($first)." - ". trim($last).", " . date("Y");  ?></div>
-					<div class="chart_origin">
-					Origin of Inquiries<br>
-					<?php 
-						if($country2){
-						$country2 = trim($country2,"-");
-						$country2 = explode("-", $country2);
-						$check = array();
-						$ctr=1;
-						foreach($country2 as $c){
-							if(!in_array($c, $check) && $ctr <= 12){
-								$check[] = $c;
-								echo "<div class='flag flag-".strtolower($c)."' style='margin:2px;' title='".$this->function_country->get_country_name($c)."'></div>";
-							}
-							$ctr++;
-						}
-						} else {
-							echo "<span style='color:red'>You have 0 weekly inquiries.</span>";
-						}
-					?>
-				</div>
-				<div id="chart2" class="chart"></div>
+				
 			</div>
 			<div class="inner_box"> 
    			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/friends">
@@ -339,43 +244,7 @@
 						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/friends/invites" title="View all your friend invites.">Friend Invites</a></td>
 					</tr>
 				</table>
-				<div class="chart_info">Latest Friend Invites:</div>
-				<div class="chart" style="height:160px !important; bottom:-17px !important">
-				
-				<?php
-				// latest friend invite
-				$invite = $this->db->query("SELECT friend_user_id FROM watch_friends WHERE friend_friend_id = $userid AND friend_accepted = 0 LIMIT 1");
-				if($invite->num_rows() > 0){
-					$invite = $invite->result();
-					$ui = $this->function_users->get_user_fields_by_id(array("user_name","user_avatar"),$invite[0]->friend_user_id);
-						if($ui["user_avatar"] != ""){
-						   $im = $ui["user_avatar"];
-						} else {
-						   $im = base_url()."assets/images/avatar.jpg";
-					    } 
-					
-					echo "<div style='float:left;width:100%; height:100%; margin-left:12px;'>
-							<div style='float:left; margin-left:12px; overflow:hidden; width:80px; height:80px; text-align:center; line-height:75px; background:white; border:1px solid #CCC'>
-								<img src='".$im."' style='max-height:80px; max-width:80px; vertical-align:middle'>
-							</div>
-							<div style='float:left; width:93px; height:120px; margin-left:8px; font-size:13px; font-family:arial;'><b>From:</b><br>".
-								$ui["user_name"]
-							."<br><br></div>
-						  </div>";
-										
-				} else {
-					echo "<div style='float:left;width:100%; height:100%; margin-left:12px;'>
-						<div style='float:left; width:193px; color:red; height:110px; margin-left:15px; font-size:13px; font-family:arial; '>
-							You have 0 friend invitations.
-						</div>
-					  </div>";	
-				
-				}
-				
-				?>
-				
-				
-				</div>				
+							
 			</div>
 			<div class="inner_box"> 
    			    <input type="hidden" class="link" value="<?php echo base_url(); ?>forums">
@@ -399,11 +268,10 @@
 						<td><a class="a_dash" href="<?php echo base_url(); ?>forums/start_thread" title="Start a New Thread">Start a New Thread</a></td>
 					</tr>	
 				</table>
-				<div class="chart_info">Weekly Forum Activities<br><?php echo date("F") ." $first-$last, " . date("Y");  ?></div>
-				<div id="forum" class="chart" style="height:160px !important; bottom:-17px !important"></div>
+				
 			</div>
 		
-		</div>
+		</div>-->
     </div>
 </div>
 
