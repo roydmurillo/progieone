@@ -136,7 +136,7 @@ if(empty($items)){
 					<div style="float:left; clear:both; margin-top:12px; ">
 						<a id="filter_show" href="javascript:;" style="display:none; padding: 5px 0px;
 																		width: 145px;
-																		text-align: center;" class="css_btn_c2">Show Item Filters</a>
+																		text-align: center;" class="btn btn-primary">Show Item Filters</a>
 					</div>
 		
 				</div>								

@@ -19,7 +19,7 @@
 if($results != NULL || !empty($results)){?>
 	
 	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-		<input id="filter_status" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
 		<div class="status2" style="width:335px">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
@@ -112,7 +112,7 @@ if($results != NULL || !empty($results)){?>
 			?>
 				
 				<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-					<input id="filter_status" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+					<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
 					<div class="status2" style="width:335px">
 						<h3 class="h3title">Filter</h3>
 						<table><tbody>

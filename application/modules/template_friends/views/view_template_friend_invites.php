@@ -34,32 +34,17 @@
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 		?>
         
-		<div class="title_bar">
-			FRIENDS
-		</div>
-		
-		<div id="inner_dashboard">
-		
-			<div id="inner_dashboard_tab">
-				
-				<a href="<?php echo base_url(); ?>dashboard/friends">
-					<div class="<?php echo ($this->uri->segment(3) == "") ? "tab_inner_active":"tab_inner"; ?>"> 
+		<div class="col-sm-9 col-md-10 main">
+                        <div id="inner_dashboard_tab" class="btn-group">
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/friends">
 						Friends
-					</div>
 				</a>
-
-				<a href="<?php echo base_url(); ?>dashboard/friends/activities">
-					<div class="<?php echo ($this->uri->segment(3) == "activities") ? "tab_inner_active":"tab_inner"; ?>"> 
-						Friend Activities
-					</div>
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "activities") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/friends/activities">
+						Friend Activities	
 				</a>				
-
-				<a id="checkout" href="<?php echo base_url(); ?>dashboard/friends/invites">
-					<div class="<?php echo ($this->uri->segment(3) == "invites") ? "tab_inner_active":"tab_inner checkout"; ?>"> 
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "invites") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/friends/invites">
 						Friend Invites
-					</div>
 				</a>				
-			
 			</div>
 			
 			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>

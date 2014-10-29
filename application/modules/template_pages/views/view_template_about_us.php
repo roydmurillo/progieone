@@ -32,7 +32,7 @@ border:1px solid #CCC;
 			<h1>About Us</h1>
 		</div>
 		
-		<div class="body">
+		<div class="body static-page">
                     <p class="lead">I would personally like to thank and welcome you for visiting cyberwatchcafe.com</p>
                     <p style="text-indent:50px;">My passion for watches gave me the inspiration to create this website for people sharing the same interest about watches. To get to know other collectors, connect with enthusiasts, share opinions on our forum site, or just buy and sell watches & watch parts. You can list and sell any watch, low end watches, vintage watches, luxury watches, complicated watches, mainstream watches, designer watches, pocketwatches, clocks and all watch parts and accessories. 
                     <p>Cyberwatchcafe is a social hub for watch lovers around the world. Watch enthusiasts, watch bloggers, watch sellers & buyers, watchnuts, individuals or shops are welcome to share their products and opinions on our site. Our terms and conditions apply.</p>

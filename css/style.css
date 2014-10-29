@@ -23,15 +23,22 @@ body {
   background-color: #F5f5f5;
   font-family: "Lato", sans-serif; }
 
+figure {
+  margin: 2px; }
+
 h1, h2, h3, h4, h5, .title, .name {
   font-family: 'Lato', sans-serif; }
-
-.name {
-  font-style: italic; }
 
 p {
   font-family: 'Merriweather', serif;
   font-size: 13.84615px; }
+
+.static-page {
+  background-color: #fff;
+  padding: 24px; }
+
+.name {
+  font-style: italic; }
 
 .clear {
   clear: left; }
@@ -84,17 +91,13 @@ and open the template in the editor.
 .ww-tab-container .ww-tab-panel {
   display: none;
   min-height: 320px; }
-  .ww-tab-container .ww-tab-panel .btn {
-    margin-top: 24px; }
-  .ww-tab-container .ww-tab-panel .container.text-center {
-    margin-bottom: 12px; }
 .ww-tab-container .active {
   display: block; }
 
 #home .container-center, #home #homepage {
   min-height: 0 !important; }
 #home .homepage .container {
-  padding-top: 24px;
+  padding-top: 12px;
   padding-bottom: 24px; }
 #home .home-banner {
   background: url("../assets/images/home-banner.jpg") no-repeat;
@@ -106,7 +109,7 @@ and open the template in the editor.
     width: 100%;
     z-index: 1; }
   #home .home-banner .fix-bg {
-    background-color: #157b9e !important; }
+    background-color: #1990b9 !important; }
   #home .home-banner .intro {
     padding-top: 200px;
     color: white;
@@ -261,7 +264,7 @@ and open the template in the editor.
   min-width: 107px; }
 
 header.navbar-default {
-  background-color: #157b9e; }
+  background-color: #1990b9; }
   header.navbar-default .navbar-nav {
     margin-top: 15px; }
     header.navbar-default .navbar-nav > li > a {
@@ -289,7 +292,7 @@ footer {
   padding: 20px; }
 
 .item_list_watches .price {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #7fcb2c;
   line-height: 1.9em; }
 .item_list_watches .item {

@@ -176,33 +176,17 @@ jQuery(document).ready(function() {
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 		?>
-        
-		<div class="title_bar">
-			CHECKOUT ITMES
-		</div>
-		
-		<div id="inner_dashboard">
-		
-			<div id="inner_dashboard_tab">
-				
-				<a href="<?php echo base_url(); ?>dashboard/sell/for_sale">
-					<div class="tab_inner"> 
+        <div class="col-sm-9 col-md-10 main">
+            <div id="inner_dashboard_tab" class="btn-group">
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "for_sale") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/for_sale">
 						Item Listings
-					</div>
 				</a>
-
-				<a href="<?php echo base_url(); ?>dashboard/sell/new">
-					<div class="tab_inner"> 
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "for_sale") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 						Sell New Items
-					</div>
-				</a>				
-
-				<a id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
-					<div class="tab_inner_active"> 
+				</a>
+				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 						Checkout
-					</div>
-				</a>				
-			
+				</a>
 			</div>
 			
 			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>

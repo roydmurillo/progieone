@@ -233,7 +233,7 @@ class function_items extends MX_Controller {
                                 </form>
                      </div>
                      <div id="add_image" style="float:left; width:700px">
-					 	<a id="upload_item_images" href="javascript:;" class="css_btn_c2" style="float:left;">Click Here to Upload Images</a>
+					 	<a id="upload_item_images" href="javascript:;" class="btn btn-primary" style="float:left;">Click Here to Upload Images</a>
 					 	<a id="checkout_item" href="'.base_url().'dashboard/checkout/item/'.$id.'" class="css_btn_c0" style="float:left; margin-left:12px; display:none">Checkout This Watch Item</a>
 					 </div>
                      <div id="added_images" style="min-height: 0px;

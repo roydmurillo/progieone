@@ -13,10 +13,6 @@
       $this->load->module("function_country"); 
 	  $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url() . $type_initial; ?>">
-   
-<div class="title_bar">
-	FEATURED WATCHES
-</div>
 <!-- item lists here -->
 <div class="item_list_watches">
 	

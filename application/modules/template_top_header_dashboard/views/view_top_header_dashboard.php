@@ -11,7 +11,7 @@
 
 <header class="navbar-default">
             <div class="container">
-                    <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
+                    <a class="navbar-brand" href="<?php echo base_url();?>/all-watches"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
                     <ul class="nav navbar-nav pull-right">
                         <li><a class="btn btn-sm btn-default" href="<?php echo base_url() ?>forums/">Forum</a></li>   
                         <li class="dropdown">

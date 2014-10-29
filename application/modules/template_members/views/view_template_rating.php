@@ -138,7 +138,7 @@
 					<div style="float:left; clear:both; margin-top:12px; ">
 						<a id="rate_show" href="#rate" style="padding: 5px 0px;
 																		width: 145px;
-																		text-align: center;" class="css_btn_c2">Rate This User</a>
+																		text-align: center;" class="btn btn-primary">Rate This User</a>
 					</div>
 		
 				</div>								

@@ -20,7 +20,7 @@ $cont-color: #fff;
     }
     .homepage{
         .container{
-            padding-top:24px;
+            padding-top:12px;
             padding-bottom:24px;
         }
     }
@@ -35,7 +35,7 @@ $cont-color: #fff;
             z-index:1;
         }
         .fix-bg{
-            background-color:$base-color !important;
+            background-color:lighten($base-color,6%) !important;
         }
         .intro{
             padding-top:200px;

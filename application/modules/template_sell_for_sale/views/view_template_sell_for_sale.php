@@ -31,26 +31,17 @@
 		$this->load->module('template_sideleft_dashboard');
 		$this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
 		?>
-        <div class="col-sm-9 col-md-10 main">
-		<div class="title_bar">
-			SELL ITEMS
-		</div>	
+        <div class="col-sm-9 col-md-10 main">	
             <div id="inner_dashboard_tab" class="btn-group">
-                <a class="btn btn-default" href="<?php echo base_url(); ?>dashboard/sell/for_sale">
-					<div class="tab_inner_active"> 
+                <a class="btn btn-default <?php echo ($this->uri->segment(3) == "for_sale") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/for_sale">
 						Item Listings
-					</div>
 				</a>
-				<a class="btn btn-default" href="<?php echo base_url(); ?>dashboard/sell/new">
-					<div class="tab_inner"> 
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 						Sell New Items
-					</div>
 				</a>				
                                 <?php if($this->function_paypal->check_active()){ ?>
-				<a class="btn btn-default" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
-					<div class="tab_inner checkout"> 
+				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 						Checkout
-					</div>
 				</a>
                                 <?php } ?>
 			</div>                  

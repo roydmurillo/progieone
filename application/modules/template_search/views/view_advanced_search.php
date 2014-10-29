@@ -36,12 +36,7 @@ border:1px solid #CCC;
 		  $this->load->module('template_sideleft');
 		  $this->template_sideleft->view_template_sideleft(); 
 		}
-		?>
-        
-		<div class="title_bar">
-			ADVANCED SEARCH
-		</div>
-		
+		?>		
 		<div id="inner_dashboard">
 
 				<div id="filter_return">

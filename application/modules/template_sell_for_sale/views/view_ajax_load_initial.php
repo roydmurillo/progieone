@@ -8,7 +8,7 @@
 if($results != NULL || !empty($results)){?>
 	
 	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-		<input id="filter_status" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
 		<div class="status2">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
@@ -146,9 +146,9 @@ if($results != NULL || !empty($results)){?>
 				<td class='tb7'>$registered</td>
 				<td class='tb7'>$expire</td>
 				<td class='tb7'>
-					<a href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'><img class='act' src='".base_url()."assets/images/view.png'></a>
-					<a href='".base_url()."dashboard/sell/update/{$r->item_id}' title='Edit Details'><img class='act' src='".base_url()."assets/images/edit.png'></a>
-					<a class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'><input type='hidden' value='".$r->item_id."' class='id'><img class='act' src='".base_url()."assets/images/delete.png'></a></td>				
+					<a href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'>details</a>
+					<a href='".base_url()."dashboard/sell/update/{$r->item_id}' title='Edit Details'>edit</a>
+					<a class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'>delete</a></td>				
 			  </tr>";	 
 		$ctr ++;	  
     }		
@@ -164,7 +164,7 @@ if($results != NULL || !empty($results)){?>
 			?>
 				
 				<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-					<input id="filter_status" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+					<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
 					<div class="status2">
 						<h3 class="h3title">Filter</h3>
 						<table><tbody>

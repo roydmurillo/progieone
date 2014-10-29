@@ -15,57 +15,31 @@
 		}
 		?>
         
-		<div class="title_bar">
-			FORUM OVERVIEW
-		</div>
-		
-		<div id="inner_dashboard">
-			
-			<?php 
-			    
+		<div class="col-sm-9 col-md-10 main">
+			<?php
 				//this tab is for logged in users only
 				// this is for new, popular, own threads only
-				
 				if($user_logged_in){ ?>
-			
-				<div id="inner_dashboard_tab">
-					
-					<a href="<?php echo base_url(); ?>forums">
-						<div class="<?php echo ($this->uri->segment(2) == "") ? "tab_inner_active":"tab_inner"; ?>"> 
-							Forums
-						</div>
+                    <div id="inner_dashboard_tab" class="btn-group">
+                                        <a class="btn btn-default <?php echo ($this->uri->segment(2) == "") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums">
+						Forums
 					</a>
-					
-					<a href="<?php echo base_url(); ?>forums/your_thread">
-						<div class="<?php echo ($this->uri->segment(2) == "your_thread") ? "tab_inner_active":"tab_inner"; ?>"> 
+					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "your/thread") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/your_thread"> 
 							Your Threads
-						</div>
 					</a>
-	
-					<a href="<?php echo base_url(); ?>forums/new">
-						<div class="<?php echo ($this->uri->segment(2) == "new") ? "tab_inner_active":"tab_inner"; ?>"> 
+					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/new">
 							New Threads
-						</div>
-					</a>	
-					
-					<a href="<?php echo base_url(); ?>forums/popular">
-						<div class="<?php echo ($this->uri->segment(2) == "popular") ? "tab_inner_active":"tab_inner"; ?>"> 
+					</a>
+					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "popular") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/popular">
 							Popular Threads
-						</div>
-					</a>									
-	
-					<a id="checkout" href="<?php echo base_url(); ?>forums/start_thread">
-						<div class="<?php echo ($this->uri->segment(2) == "start_thread") ? "tab_inner_active":"tab_inner checkout"; ?>" style="width:120px !important"> 
+					</a>
+					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "start_thread") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>forums/start_thread">
 							Start a Thread
-						</div>
-					</a>				
-				
+					</a>
 				</div>
 			
-			<?php } ?>
-			
-			<div id="dashboard_content" style="<?php echo ($this->function_login->is_user_loggedin()) ? "margin-top:20px":"margin-top:-12px" ?>">
-				
+			<?php } ?>	
+			<div id="dashboard_content" style="<?php echo ($this->function_login->is_user_loggedin()) ? "margin-top:20px":"margin-top:-12px" ?>">	
 				<?php
 					
 					$data["form_data"] = $forum_data;
@@ -76,8 +50,7 @@
 						$function_view = $forum_type . "_forum";
 						$this->load->view($function_view,$data);
 					}					
-				?>			
-			
+				?>
 			</div>
 		
 		</div>
