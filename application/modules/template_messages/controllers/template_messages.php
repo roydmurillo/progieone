@@ -180,5 +180,57 @@ class template_messages extends MX_Controller {
 		$this->load->view("show_inbox",$data);
 		
 	}        
+    
+    public function count_inbox(){
+
+        $user_id = unserialize($this->native_session->get("user_info"));
+        $user_id = $user_id["user_id"];
+
+
+        //count total number of rows
+        $total_count = 0;
+        $str = "Select COUNT(1) as total From watch_messages 
+                             Where message_date In(
+                                Select Max(message_date)
+                                From watch_messages
+                                WHERE message_recipient_id = $user_id
+                                Group By message_parent_id
+                            ) AND message_recipient_id = $user_id AND message_trash <> '1'";
+
+        $total = $this->db->query($str);
+        if($total->num_rows() > 0){
+            foreach($total->result() as $t){
+                $total_count = $t->total;
+            } 
+        }
+        
+        return $total_count;
+    }
+    
+    public function count_unread_inbox(){
+
+        $user_id = unserialize($this->native_session->get("user_info"));
+        $user_id = $user_id["user_id"];
+
+
+        //count total number of rows
+        $total_count = 0;
+        $str = "Select COUNT(1) as total From watch_messages 
+                             Where message_date In(
+                                Select Max(message_date)
+                                From watch_messages
+                                WHERE message_recipient_id = $user_id
+                                Group By message_parent_id
+                            ) AND message_recipient_id = $user_id AND message_trash <> '1' and message_open = '0'";
+
+        $total = $this->db->query($str);
+        if($total->num_rows() > 0){
+            foreach($total->result() as $t){
+                $total_count = $t->total;
+            } 
+        }
+        
+        return $total_count;
+    }
 
 }
