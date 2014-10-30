@@ -188,5 +188,27 @@ class template_watchlist extends MX_Controller {
 			exit();
             
         }
+        
+    public function count_watchlist(){
+
+        $userid = unserialize($this->native_session->get("user_info"));
+        $userid = $userid["user_id"];
+
+        $total_count = 0;
+        $total = $this->db->query("SELECT COUNT(1) as total FROM watch_watchlist
+                                  LEFT JOIN
+                                  watch_items 
+                                  ON watch_items.item_id = watch_watchlist.watchlist_item_id 
+                                  WHERE watch_watchlist.watchlist_user_id = $userid
+                                  AND watch_items.item_expire > CURDATE() ");
+
+        if($total->num_rows() > 0){
+            foreach($total->result() as $t){
+                $total_count = $t->total;
+            } 
+        }			
+        return $total_count;
+
+    }
 
 }
