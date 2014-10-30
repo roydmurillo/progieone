@@ -27,52 +27,25 @@ jQuery(document).ready(function() {
 					err = err + "Parts / Accessories Type is a required field.\n";
 				}
 			}
-			if(jQuery("#item_brand_id").val() == ""){
+			if(jQuery("#item_brand").val() == ""){
 				err = err + "Make is a required field.\n";
 			}
 			if(jQuery("#item_name").val() == ""){
-				err = err + "Model name is a required field.\n";
+				err = err + "Title is a required field.\n";
 			}
-			//===============================================
-			// this can be optional if only itemparts is sold
-			//===============================================
-			if(jQuery(".item_parts").hasClass("is_visible")){
-			   // just skip these validations if its for items
-			} else {
-				if(jQuery("#item_movement").val() == ""){
-					err = err + "Movement type is a required field.\n";
-				}	
-				if(jQuery("#item_case").val() == ""){
-					err = err + "Case type is a required field.\n";
-				}	
-				if(jQuery("#item_bracelet").val() == ""){
-					err = err + "Bracelet type is a required field.\n";
-				}
-				if(jQuery("#item_case_width").val() == "" || jQuery("#item_case_width").val() == "0"){
-					err = err + "Case width cannot be 0 or blanks.\n";
-				}	
-				if(jQuery("#item_case_thickness").val() == "" || jQuery("#item_case_thickness").val() == "0"){
-					err = err + "Case thickness cannot be 0 or blanks.\n";
-				}	
-							
-				if(jQuery("#item_year_model").val() == ""){
-					err = err + "Year Model is a required field.\n";
-				} else {
-					if(jQuery("#item_year_model").val() < 1000 || jQuery("#item_year_model").val() > 2100){
-						err = err + "Year Model is invalid.\n";
-					} 
-				}
+            if(jQuery("#short_description").val() == ""){
+				err = err + "Short description is a required field.\n";
 			}
-			if(jQuery("#item_condition").val() == ""){
+            if(jQuery("#item_price").val() == ""){
+				err = err + "Must enter an item price value.\n";
+			}
+            if(jQuery("#item_condition").val() == ""){
 				err = err + "Item Condition is a required field.\n";
-			}			
-			if(jQuery("#item_category").val() == ""){
+			}
+            if(jQuery("#item_category").val() == ""){
 				err = err + "Category is a required field.\n";
-			}	
-			//===============================================
-			// this can be optional if only itemparts is sold
-			//===============================================
-			if(jQuery(".item_parts").hasClass("is_visible")){
+			}
+            if(jQuery(".item_parts").hasClass("is_visible")){
 			   // just skip these validations if its for items
 			} else {
 				if(jQuery("#item_gender").val() == ""){
@@ -81,16 +54,50 @@ jQuery(document).ready(function() {
 				if(jQuery("#item_kids").val() == ""){
 					err = err + "Must select if item is for kids.\n";
 				}			
-			}			
-			if(jQuery("#item_certificate").val() == ""){
-				err = err + "Must select the appropriate certificate.\n";
-			}						
-			if(jQuery("#item_box").val() == ""){
-				err = err + "Must select the appropriate box.\n";
-			}	
-			if(jQuery("#item_price").val() == ""){
-				err = err + "Must enter an item price value.\n";
-			}		
+			}
+			//===============================================
+			// this can be optional if only itemparts is sold
+			//===============================================
+			if(jQuery(".item_parts").hasClass("is_visible")){
+			   // just skip these validations if its for items
+			} else {
+//				if(jQuery("#item_movement").val() == ""){
+//					err = err + "Movement type is a required field.\n";
+//				}	
+//				if(jQuery("#item_case").val() == ""){
+//					err = err + "Case type is a required field.\n";
+//				}	
+//				if(jQuery("#item_bracelet").val() == ""){
+//					err = err + "Bracelet type is a required field.\n";
+//				}
+//				if(jQuery("#item_case_width").val() == "" || jQuery("#item_case_width").val() == "0"){
+//					err = err + "Case width cannot be 0 or blanks.\n";
+//				}	
+//				if(jQuery("#item_case_thickness").val() == "" || jQuery("#item_case_thickness").val() == "0"){
+//					err = err + "Case thickness cannot be 0 or blanks.\n";
+//				}	
+							
+//				if(jQuery("#item_year_model").val() == ""){
+//					err = err + "Year Model is a required field.\n";
+//				} else {
+//					if(jQuery("#item_year_model").val() < 1000 || jQuery("#item_year_model").val() > 2100){
+//						err = err + "Year Model is invalid.\n";
+//					} 
+//				}
+			}
+			
+				
+			//===============================================
+			// this can be optional if only itemparts is sold
+			//===============================================
+						
+//			if(jQuery("#item_certificate").val() == ""){
+//				err = err + "Must select the appropriate certificate.\n";
+//			}						
+//			if(jQuery("#item_box").val() == ""){
+//				err = err + "Must select the appropriate box.\n";
+//			}	
+					
 			if(tinyMCE.get('item_description').getContent() == ""){
 				err = err + "Item description is required.\n";
 			}	
@@ -169,53 +176,26 @@ jQuery(document).ready(function() {
 				if(jQuery("#item_parttype").val() == ""){
 					err = err + "Parts / Accessories Type is a required field.\n";
 				}
-			}	
-			if(jQuery("#item_brand_id").val() == ""){
+			}
+			if(jQuery("#item_brand").val() == ""){
 				err = err + "Make is a required field.\n";
 			}
 			if(jQuery("#item_name").val() == ""){
-				err = err + "Model Name is a required field.\n";
+				err = err + "Title is a required field.\n";
 			}
-			//===============================================
-			// this can be optional if only itemparts is sold
-			//===============================================
-			if(jQuery(".item_parts").hasClass("is_visible")){
-			   // just skip these validations if its for items
-			} else {
-				if(jQuery("#item_movement").val() == ""){
-					err = err + "Movement type is a required field.\n";
-				}	
-				if(jQuery("#item_case").val() == ""){
-					err = err + "Case type is a required field.\n";
-				}	
-				if(jQuery("#item_bracelet").val() == ""){
-					err = err + "Bracelet type is a required field.\n";
-				}
-				if(jQuery("#item_case_width").val() == ""){
-					err = err + "Case width is a required field.\n";
-				}	
-				if(jQuery("#item_case_thickness").val() == ""){
-					err = err + "Case thickness is a required field.\n";
-				}	
-							
-				if(jQuery("#item_year_model").val() == ""){
-					err = err + "Year Model is a required field.\n";
-				} else {
-					if(jQuery("#item_year_model").val() < 1000 || jQuery("#item_year_model").val() > 2100){
-						err = err + "Year Model is invalid.\n";
-					} 
-				}
+			if(jQuery("#short_description").val() == ""){
+				err = err + "Short description is a required field.\n";
 			}
-			if(jQuery("#item_condition").val() == ""){
+            if(jQuery("#item_price").val() == ""){
+				err = err + "Must enter an item price value.\n";
+			}
+            if(jQuery("#item_condition").val() == ""){
 				err = err + "Item Condition is a required field.\n";
-			}			
-			if(jQuery("#item_category").val() == ""){
+			}
+            if(jQuery("#item_category").val() == ""){
 				err = err + "Category is a required field.\n";
-			}	
-			//===============================================
-			// this can be optional if only itemparts is sold
-			//===============================================
-			if(jQuery(".item_parts").hasClass("is_visible")){
+			}
+            if(jQuery(".item_parts").hasClass("is_visible")){
 			   // just skip these validations if its for items
 			} else {
 				if(jQuery("#item_gender").val() == ""){
@@ -225,15 +205,49 @@ jQuery(document).ready(function() {
 					err = err + "Must select if item is for kids.\n";
 				}			
 			}
-			if(jQuery("#item_certificate").val() == ""){
-				err = err + "Must select the appropriate certificate.\n";
-			}						
-			if(jQuery("#item_box").val() == ""){
-				err = err + "Must select the appropriate box.\n";
-			}	
-			if(jQuery("#item_price").val() == ""){
-				err = err + "Must enter an item price value.\n";
-			}		
+			//===============================================
+			// this can be optional if only itemparts is sold
+			//===============================================
+			if(jQuery(".item_parts").hasClass("is_visible")){
+			   // just skip these validations if its for items
+			} else {
+//				if(jQuery("#item_movement").val() == ""){
+//					err = err + "Movement type is a required field.\n";
+//				}	
+//				if(jQuery("#item_case").val() == ""){
+//					err = err + "Case type is a required field.\n";
+//				}	
+//				if(jQuery("#item_bracelet").val() == ""){
+//					err = err + "Bracelet type is a required field.\n";
+//				}
+//				if(jQuery("#item_case_width").val() == ""){
+//					err = err + "Case width is a required field.\n";
+//				}	
+//				if(jQuery("#item_case_thickness").val() == ""){
+//					err = err + "Case thickness is a required field.\n";
+//				}	
+							
+//				if(jQuery("#item_year_model").val() == ""){
+//					err = err + "Year Model is a required field.\n";
+//				} else {
+//					if(jQuery("#item_year_model").val() < 1000 || jQuery("#item_year_model").val() > 2100){
+//						err = err + "Year Model is invalid.\n";
+//					} 
+//				}
+			}
+						
+				
+			//===============================================
+			// this can be optional if only itemparts is sold
+			//===============================================
+			
+//			if(jQuery("#item_certificate").val() == ""){
+//				err = err + "Must select the appropriate certificate.\n";
+//			}						
+//			if(jQuery("#item_box").val() == ""){
+//				err = err + "Must select the appropriate box.\n";
+//			}	
+			
 			if(err == ""){
 				if(jQuery(this).attr("id") == "description" || jQuery(this).attr("id") == "add_next"){ 
 					jQuery(".details_").hide();
@@ -290,19 +304,19 @@ jQuery(document).ready(function() {
 			jQuery("#basic").addClass("add_active");
 		});
 		jQuery("#item_price").autoNumeric('init',{aSep: ''});
-		jQuery(".validateYear").keydown(function(event) {
-			if (!((event.keyCode == 46 || 
-				event.keyCode == 8  || 
-				event.keyCode == 37 || 
-				event.keyCode == 39 || 
-				event.keyCode == 9) || 
-				(event.ctrlKey && event.keyCode == 86) ||  
-				((event.keyCode >= 48 && event.keyCode <= 57) ||
-				(event.keyCode >= 96 && event.keyCode <= 105)))) {
-				event.preventDefault();
-				return false;
-			}
-		});
+//		jQuery(".validateYear").keydown(function(event) {
+//			if (!((event.keyCode == 46 || 
+//				event.keyCode == 8  || 
+//				event.keyCode == 37 || 
+//				event.keyCode == 39 || 
+//				event.keyCode == 9) || 
+//				(event.ctrlKey && event.keyCode == 86) ||  
+//				((event.keyCode >= 48 && event.keyCode <= 57) ||
+//				(event.keyCode >= 96 && event.keyCode <= 105)))) {
+//				event.preventDefault();
+//				return false;
+//			}
+//		});
 		jQuery(".int").keydown(function(event) {
 			if (!((event.keyCode == 46 || 
 				event.keyCode == 8  || 
@@ -316,12 +330,12 @@ jQuery(document).ready(function() {
 				return false;
 			}
 		});		
-		jQuery(".validateYear").change(function(event) {
-			var value =  $(this).val();
-			value = value.replace(/[^0-9]/g,'');
-			value = value.substr(0,4);
-			jQuery(this).val(value);
-		});			
+//		jQuery(".validateYear").change(function(event) {
+//			var value =  $(this).val();
+//			value = value.replace(/[^0-9]/g,'');
+//			value = value.substr(0,4);
+//			jQuery(this).val(value);
+//		});			
 });
 </script>
 
@@ -348,11 +362,11 @@ jQuery(document).ready(function() {
 						Item Listings
 				</a>
 
-				<a class="btn btn-default btn-green <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
+				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 						Sell New Items
 				</a>	
 				<?php if($this->function_paypal->check_active()){ ?>
-				<a class="btn btn-default btn-red <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
+				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 						Checkout 
 				</a>							
                                  <?php } ?>
@@ -381,27 +395,15 @@ jQuery(document).ready(function() {
 									width: 565px;">
 							<table class="table_add" style="float: left; margin-left: 70px;">
 								<tbody>
-									<tr>
-										<td><div class="h2_title" style=" font-size:16px;
-														float: left;
-														clear: both;
-														width: 400px;
-														margin-top:15px;
-														margin-bottom: -5px;
-														padding:5px 0px;
-														color:#333;
-														text-align:center">Item Type</div>
-										</td>
-									</tr>
-									<tr>
-										<td><div class="title_thread" style="width:350px">Whole Watch or Parts/Accessories Only</div> <br>
+                                    <tr>
+										<td><div class="title_thread" style="width:350px">Item type</div> <br>
 										<select id="item_wholepart" name="item_wholepart" class="input">
 												<option value="1" selected="selected"> Whole Watch </option>
 												<option value="0"> Parts/Accessories Only </option>
 											</select>
 										</td>
 									</tr>
-									<tr class="item_parts" style="display:none;">
+                                    <tr class="item_parts" style="display:none;">
 										<td><div class="title_thread" style="width:350px">Type of Parts/Accessories Only</div> <br>
 										<select id="item_parttype" name="item_parttype" class="input">
 												<option value=""> - Select - </option>
@@ -417,21 +419,8 @@ jQuery(document).ready(function() {
 												<option value="others"> Others </option>
 											</select>
 										</td>
-									</tr>																	
-									<tr>
-										<td><div class="h2_title" style="font-size: 16px;
-														float: left;
-														clear: both;
-														width: 400px;
-														margin-bottom: -5px;
-														margin-top:12px;
-														font-family: tahoma;
-														padding:5px 0px;
-														color:#333;
-														text-align:center">Brief Specifications</div>
-										</td>
-									</tr>	
-									<tr>
+									</tr>
+                                    <tr>
 										<td><div class="title_thread">Make</div><br>
 										 <select id="item_brand" name="item_brand" class="input">
 												<option value=""> - Select - </option>
@@ -445,12 +434,67 @@ jQuery(document).ready(function() {
 												?>
 											</select>
 										</td>
-									</tr>	
-									<tr>
+									</tr>
+                                    <tr>
 										<td><div class="title_thread">Title</div><br>
 										<input type="text" value="" id="item_name" name="item_name" class="input"></td>
-									</tr>	
+									</tr>
+                                    <tr>
+										<td><div class="title_thread">Short Description</div><br>
+										<input type="text" value="" id="short_description" name="short_description" class="input"></td>
+									</tr>
+                                    <tr>
+										<td><div class="title_thread">Classified Price($)</div><br>
+										<input type="text" value="" id="item_price" name="item_price" class="auto input"></td>
+									</tr>
+                                    <tr>
+										<td><div class="title_thread">Item Condition</div><br>
+										<select id="item_condition" name="item_condition" class="input">
+												<option value=""> - Select - </option>
+												<option value="new"> Brand New </option>
+												<option value="preowned"> Pre Owned </option>
+											</select>
+										</td>
+									</tr>
+                                    <tr>
+										<td><div class="title_thread">Category</div> <br>
+										<select id="item_category" name="item_category_id" class="input">
+												<option value=""> - Select - </option>
+												<?php 
+												    $item_categories =  $this->native_session->get("watch_category_dropdown");
+													if($item_categories){
+														foreach($item_categories as $key => $val){
+															echo '<option value="'.$key.'"> '.$val.' </option>';												
+														}
+													}
+												?>
+											</select>
+										</td>
+									</tr>
+                                    <tr>
+										<td><div class="title_thread">Gender</div><br>
+										<select id="item_gender" name="item_gender" class="input">
+												<option value=""> - Select - </option>
+												<option value="1"> Mens </option>
+												<option value="2"> Womens </option>
+												<option value="3"> Unisex </option>
+											</select>
+										</td>
+									</tr>
 									<tr>
+										<td><div class="title_thread">For Kids</div><br>
+										<select id="item_kids" name="item_kids" class="input">
+												<option value=""> - Select - </option>
+												<option value="1"> Yes </option>
+												<option value="0"> No </option>
+											</select>
+										</td>
+									</tr>
+                                    <tr>
+                                        <td><div class="title_thread"><button id="additional_option" onclick="return false;">Additional Options</button></div><br>
+										</td>
+									</tr>
+                                    <tr class="hidden additional">
 										<td><div class="title_thread">Movement Type</div><br>
 										 <select id="item_movement" name="item_movement" class="input">
 												<option value=""> - Select - </option>
@@ -464,7 +508,7 @@ jQuery(document).ready(function() {
 											</select>
 										</td>
 									</tr>
-									<tr>
+                                    <tr class="hidden additional">
 										<td><div class="title_thread">Case Type</div><br>
 										 <select id="item_case" name="item_case" class="input">
 												<option value=""> - Select - </option>
@@ -488,8 +532,8 @@ jQuery(document).ready(function() {
 												<option value="others"> Others </option>
 											</select>
 										</td>
-									</tr>	
-									<tr>
+									</tr>
+                                    <tr class="hidden additional">
 										<td><div class="title_thread">Bracelet Type</div><br>
 										 <select id="item_bracelet" name="item_bracelet" class="input">
 												<option value=""> - Select - </option>
@@ -520,87 +564,12 @@ jQuery(document).ready(function() {
 												<option value="others"> Others </option>										
 											</select>
 										</td>
-									</tr>																											
-									<tr>
-										<td><div class="title_thread">Case Width (in millimeters)</div><br>
-										<input type="text" value="" id="item_case_width" name="item_case_width" class="int input" maxlength="4"></td>
 									</tr>
-									<tr>
-										<td><div class="title_thread">Case Thickness (in millimeters)</div><br>
-										<input type="text" value="" id="item_case_thickness" name="item_case_thickness" class="int input" maxlength="4"></td>
-									</tr>									
-									<tr>
+                                    <tr class="hidden additional">
 										<td><div class="title_thread">Year Model</div><br>
-										<input type="text" value="<?php echo date('Y'); ?>" id="item_year_model" name="item_year_model" class="validateYear input" maxlength="4"></td>
-									</tr>	
-									<tr>
-										<td><div class="h2_title" style=" font-size:16px;
-														float: left;
-														clear: both;
-														width: 400px;
-														margin-top:15px;
-														margin-bottom: -5px;
-														padding:5px 0px;
-														color:#333;
-														text-align:center">Classifications</div>
-										</td>
+										<input type="text" value="" id="item_year_model" name="item_year_model" class="validateYear input" maxlength="150"></td>
 									</tr>
-									<tr>
-										<td><div class="title_thread">Item Condition</div><br>
-										<select id="item_condition" name="item_condition" class="input">
-												<option value=""> - Select - </option>
-												<option value="new"> Brand New </option>
-												<option value="preowned"> Pre Owned </option>
-											</select>
-										</td>
-									</tr>										
-									<tr>
-										<td><div class="title_thread">Category</div> <br>
-										<select id="item_category" name="item_category_id" class="input">
-												<option value=""> - Select - </option>
-												<?php 
-												    $item_categories =  $this->native_session->get("watch_category_dropdown");
-													if($item_categories){
-														foreach($item_categories as $key => $val){
-															echo '<option value="'.$key.'"> '.$val.' </option>';												
-														}
-													}
-												?>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td><div class="title_thread">Gender</div><br>
-										<select id="item_gender" name="item_gender" class="input">
-												<option value=""> - Select - </option>
-												<option value="1"> Mens </option>
-												<option value="2"> Womens </option>
-												<option value="3"> Unisex </option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td><div class="title_thread">For Kids</div><br>
-										<select id="item_kids" name="item_kids" class="input">
-												<option value=""> - Select - </option>
-												<option value="1"> Yes </option>
-												<option value="0"> No </option>
-											</select>
-										</td>
-									</tr>									
-									<tr>
-										<td><div class="h2_title" style=" font-size:16px;
-														float: left;
-														clear: both;
-														width: 400px;
-														margin-top:15px;
-														margin-bottom: -5px;
-														padding:5px 0px;
-														color:#333;
-														text-align:center">Item Coverage / Price</div>
-										</td>
-									</tr>
-									<tr>
+                                    <tr class="hidden additional">
 										<td><div class="title_thread">With Certificate</div><br>
 										<select id="item_certificate" name="item_certificate" class="input">
 												<option value=""> - Select - </option>
@@ -609,7 +578,7 @@ jQuery(document).ready(function() {
 											</select>
 										</td>
 									</tr>
-									<tr>
+                                    <tr class="hidden additional">
 										<td><div class="title_thread">With Box</div><br>
 										<select id="item_box" name="item_box" class="input">
 												<option value=""> - Select - </option>
@@ -618,10 +587,6 @@ jQuery(document).ready(function() {
 											</select>
 										</td>
 									</tr>
-									<tr>
-										<td><div class="title_thread">Classified Price($)</div><br>
-										<input type="text" value="" id="item_price" name="item_price" class="auto input"></td>
-									</tr>																						
 								</tbody>
 							</table>
 						</div>
@@ -686,5 +651,15 @@ jQuery(document).ready(function(){
 			jQuery(".item_parts").removeClass("is_visible");
 		}
 	});
+    
+    jQuery("#additional_option").click(function(){
+        if(jQuery('.additional').hasClass('hidden')){
+            jQuery('.additional').removeClass('hidden');
+        }
+        else{
+            jQuery('.additional').addClass('hidden');
+        }
+        
+    });
 });
 </script>
