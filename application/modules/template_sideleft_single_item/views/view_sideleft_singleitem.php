@@ -53,23 +53,49 @@
 			$price = $featured->item_price;
 			
 			//get primary image
-			$images = unserialize($featured->item_images);
-			$count = count($images) - 1;
-			$rand = rand(0,$count);
-			@$primary = $images[$rand];
+//			$images = unserialize($featured->item_images);
+//			$count = count($images) - 1;
+//			$rand = rand(0,$count);
+//			@$primary = $images[$rand];
 			
 			//if no image
-			if($primary == ""){
-				$primary = base_url() . "assets/images/no-image.png";
-			} else {
-				if(strpos($primary,"localhost") > -1){
-					$primary = explode(".",$primary);
-					$primary = $primary[0] . "_thumb." . $primary[1];
-				} else {
-					$primary = explode(".",$primary);
-					$primary = $primary[0] ."." . $primary[1] . "_thumb." . $primary[2];
-				}
-			}
+//			if($primary == ""){
+//				$primary = base_url() . "assets/images/no-image.png";
+//			} else {
+//				if(strpos($primary,"localhost") > -1){
+//					$primary = explode(".",$primary);
+//					$primary = $primary[0] . "_thumb." . $primary[1];
+//				} else {
+//					$primary = explode(".",$primary);
+//					$primary = $primary[0] ."." . $primary[1] . "_thumb." . $primary[2];
+//				}
+//			}
+            
+            
+            $new_images = unserialize($featured->item_images);
+            $no_image = base_url() . "assets/images/no-image.png";
+            $default_image = $no_image;
+            if(is_array($new_images)){
+                foreach ($new_images as $xx){
+                    if($xx[0] == 1){
+                        $default_image = $xx[1];
+                    }
+
+                    if($default_image == $no_image){
+                        $default_image = $xx[1];
+                    }
+
+//                    if(strpos($default_image,"localhost") > -1){
+//                        $default_image = explode(".",$default_image);
+//                        $default_image = $default_image[0] . "_thumb." . $default_image[1];
+//                    } else {
+//                        $default_image = explode(".",$default_image);
+//                        $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
+//                    }
+
+                }
+            }
+
 			
 			//country
 			$data = ($this->function_users->get_user_fields_by_id(array("user_name", "user_country"), $featured->item_user_id));
@@ -83,7 +109,7 @@
 						<img title="<?php 
 						$n = ucwords(strtolower($featured->item_name));
 						echo $n; 
-						?>" alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" style="max-width:130px; max-height:130px" />
+						?>" alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" style="max-width:130px; max-height:130px" />
 					</div>
 				</a>
 				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
