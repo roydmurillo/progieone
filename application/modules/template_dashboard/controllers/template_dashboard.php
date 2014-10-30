@@ -255,10 +255,22 @@ class template_dashboard extends MX_Controller {
             //load header
             $this->load->module('template_header');
             $this->template_header->index($data); 		
-			
-			
-			
-            $this->load->view('view_template_dashboard');
+
+            $this->load->module('template_friends');
+			$datus['friends_count'] = $this->template_friends->count_friends();
+            $datus['count_friend_invites'] = $this->template_friends->count_friend_invites();
+
+            $this->load->module('template_messages');
+			$datus['message_count'] = $this->template_messages->count_inbox();
+            $datus['message_unread_count'] = $this->template_messages->count_unread_inbox();
+            
+            $this->load->module('template_watchlist');
+            $datus['current_watch_list'] = $this->template_watchlist->count_watchlist();
+            
+            $this->load->module('function_items');
+            $datus['count_sell_items'] = $this->function_items->count_sell_item();
+
+            $this->load->view('view_template_dashboard', $datus);
 
             //load footer
             $this->load->module('template_footer');
