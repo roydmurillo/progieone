@@ -1,18 +1,18 @@
 <div id="loader"><div id="loader_inner"></div></div>
 
 <!-- content goes here -->
-<h2 class="h2_title">Items You Watch</h2>
+<h2 class="h2_title" style="margin-top:0px !important">Items You Watch</h2>
 
-<div class="item_list_watches" id="single_item">
+<div class="item_list_watches" id="single_item" style="width:700px !important; display:none">
 </div>
-	<div id="filter_container">
-		<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
-		<input id="compare_watch" class="btn btn-primary" type="button" value="Compare Selected">
+
+	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
+		<input id="filter_status" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-22px; left:12px" value="Filter">
+		<input id="compare_watch" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-22px; left:85px" value="Compare Selected">
 		<div class="status2" style="width:330px !important">
 			<h3 class="h3title">Filter</h3>
-			<table>
-                            <tbody>
-                            <tr>
+			<table><tbody>
+			<tr>
 				<td class='s1'>
 					<div style="float:left; margin-right:12px; width:76px;">Show Entries:</div>
 				</td>				<td class='s1'>
@@ -33,8 +33,8 @@
 					</select>
 				</td> 
 				<td class='s1'></td>
-                            </tr>
-                            <tr>
+			</tr>
+			<tr>
 				<td class='s1'>
 					<input id="search_dashboard_items_button" class="button_class1" type="button" value="search" style="float:left; width:80px; margin-top:3px;">
 				</td>
@@ -42,16 +42,16 @@
 					<input id="search_dashboard_items" type="text" style="float:left; width:200px; margin-top:4px;" value="<?php echo $this->native_session->get("search_item"); ?>">
 				</td> 
 				<td class='s1'></td>
-                            </tr>	
-                            </tbody>
-                        </table>
+			</tr>	
+			</tbody></table>
+			
 		</div>
 	
 	</div>
 
-<div class="clear"></div>
+
 <!-- item lists here -->
-<div class="item_list_watches row" id="multiple_item">
+<div class="item_list_watches" id="multiple_item" style="width:700px !important; margin-top:35px !important">
 	
 	<?php
 	// ============================================================
@@ -75,39 +75,75 @@
 			$price = number_format($featured->item_price, 2);
 			
 			//get primary image
-			$images = unserialize($featured->item_images);
-			$count = count($images) - 1;
-			$rand = rand(0,$count);
-			@$primary = $images[$rand];
+//			$images = unserialize($featured->item_images);
+//			$count = count($images) - 1;
+//			$rand = rand(0,$count);
+//			@$primary = $images[$rand];
 			
 			//if no image
-			if($primary == "" || $primary === false || empty($primary)){
-				$primary = base_url() . "assets/images/no-image.png";
-			} else {
-				if(strpos($primary,"localhost") > -1){
-					$primary = explode(".",$primary);
-					$primary = $primary[0] . "_thumb." . $primary[1];
-				} else {
-					$primary = explode(".",$primary);
-					$primary = $primary[0] ."." . $primary[1] . "_thumb." . $primary[2];
-				}
-			}
+//			if($primary == "" || $primary === false || empty($primary)){
+//				$primary = base_url() . "assets/images/no-image.png";
+//			} else {
+//				if(strpos($primary,"localhost") > -1){
+//					$primary = explode(".",$primary);
+//					$primary = $primary[0] . "_thumb." . $primary[1];
+//				} else {
+//					$primary = explode(".",$primary);
+//					$primary = $primary[0] ."." . $primary[1] . "_thumb." . $primary[2];
+//				}
+//			}
+            
+            
+            $new_images = unserialize($featured->item_images);
+            $no_image = base_url() . "assets/images/no-image.png";
+            $default_image = $no_image;
+            if(is_array($new_images)){
+                foreach ($new_images as $xx){
+                    if($xx[0] == 1){
+                        $default_image = $xx[1];
+                    }
+
+                    if($default_image == $no_image){
+                        $default_image = $xx[1];
+                    }
+
+//                    if(strpos($default_image,"localhost") > -1){
+//                        $default_image = explode(".",$default_image);
+//                        $default_image = $default_image[0] . "_thumb." . $default_image[1];
+//                    } else {
+//                        $default_image = explode(".",$default_image);
+//                        $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
+//                    }
+                    
+                }
+            }
 			
 			?>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
-			<div class="iteminfo">
-				<figure class="thumbnail">
-					<img src="<?php echo $primary; ?>" />
-                                        <input type="hidden" value="<?php echo $featured->item_id; ?>" class="uid">
-                                        <h5><a href="javascript:;" class="item_title"><?php echo $featured->item_name; ?></a></h5>
-                                    <div class="price">$ <?php echo $price; ?></div>
-                                    <a href="javascript:;" class="remove_watchlist">Remove from Watchlist</a>
-                                    <input type="checkbox" class="sel_compare"> 
-                                    <span>Select to Compare</span> 
-                                </figure>
-				
-			</div>
-                </div>
+
+			<div class="iteminfo" style="height:260px !important; margin:5px; border:1px solid #CCC; background:ghostwhite">
+				<div class="image_holder">
+					<img src="<?php echo $default_image; ?>" />
+				</div>
+				<input type="hidden" value="<?php echo $featured->item_id; ?>" class="uid">
+				<a href="javascript:;" class="item_title">
+					<?php echo $featured->item_name; ?>       
+				</a>
+				<div class="item_price" style="text-align: center; margin-left: 10px;">$ <?php echo $price; ?></div>
+				<a href="javascript:;" class="remove_watchlist" style="float:left; clear:both">
+					Remove from Watchlist       
+				</a>
+				<input type="checkbox" class="sel_compare" style="float: left;
+																clear: both;
+																margin-top: 6px;
+																margin-left: 25px;"> 
+				<span style="float: left;
+							font-family: arial;
+							font-size: 13px;
+							margin-left: 2px;
+							margin-top: 5px;
+							color: navy;">Select to Compare</span> 
+   
+			</div>			
 		
 		<?php
 		}
