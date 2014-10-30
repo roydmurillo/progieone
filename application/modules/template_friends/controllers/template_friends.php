@@ -354,6 +354,44 @@ class template_friends extends MX_Controller {
                     $this->load->module('template_footer');
                     $this->template_footer->index(); 
                 
-	}		
+	}
+    
+    public function count_friends(){
+
+			$user_ = unserialize($this->native_session->get("user_info"));
+			$user =  $user_["user_id"];
+
+			//count total number of rows
+			$total_count = 0;
+            $total = $this->db->query("SELECT COUNT(1) as total FROM watch_friends
+                                       WHERE friend_user_id = $user AND friend_accepted = 1");
+			
+			if($total->num_rows() > 0){
+				foreach($total->result() as $t){
+					$total_count = $t->total;
+				}
+			}
+            
+            return $total_count;
+	}
+
+    public function count_friend_invites(){
+
+			$user_ = unserialize($this->native_session->get("user_info"));
+			$user =  $user_["user_id"];
+
+			//count total number of rows
+			$total_count = 0;
+            $total = $this->db->query("SELECT COUNT(1) as total FROM watch_friends
+                                       WHERE friend_user_id = $user AND friend_accepted = 0");
+			
+			if($total->num_rows() > 0){
+				foreach($total->result() as $t){
+					$total_count = $t->total;
+				} 
+			}
+
+            return $total_count;
+	}
 
 }
