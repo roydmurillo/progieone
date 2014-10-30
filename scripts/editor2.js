@@ -93,8 +93,8 @@ function reset_data(){
 	jQuery(".input").val('');
 	tinyMCE.get("item_description").setContent('');
 	tinyMCE.get("item_shipping").setContent('');
-	var yearnow = new Date().getFullYear();
-	jQuery("#item_year_model").val(yearnow);
+//	var yearnow = new Date().getFullYear();
+//	jQuery("#item_year_model").val(yearnow);
 }
 jQuery(window).load(function(){
 	tinyMCE.get("item_description").setContent(jQuery("#i_desc").html(),{format : 'raw'});
