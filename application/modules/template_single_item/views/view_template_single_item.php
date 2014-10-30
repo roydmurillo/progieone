@@ -19,7 +19,6 @@
 <div id="homepage">
 
 		<div class="fleft" style="width:765px; margin-right:12px;">
-		wefefwe
 		<?php
 		$bool = array("1" => "Yes", "0" => "No");
 		// work with the data
@@ -31,35 +30,44 @@
 		?>
 			<!-- item images -->
 			<ul class="list-inline img-thumbs-container">
-				
-				<?php $im2 = base_url() . "assets/images/no-image.png";
-			          $i = base_url() . "assets/images/no-image.png";	
-				      if($item_details[0]->item_images != ""){
-						  $images = unserialize($item_details[0]->item_images); $im ="";
-						  if(!empty($images)) {
-						  foreach($images as $i){ 
-				  				  if(strpos($i,"localhost") > -1){
-									  $im = explode(".", $i);
-									  $im2 = $im[0] . "_large_thumb." . $im[1];
-								  } else {
-									  $im = explode(".", $i);
-									  $im2 = $im[0] ."." . $im[1] . "_large_thumb." . $im[2];
-								  }
-				             ?>
-							<li class="thumbnail">
-								<img src="<?php echo $im2; ?>">
+
+			        <?php
+                     
+                        $new_images = unserialize($item_details[0]->item_images);
+                        $no_image = base_url() . "assets/images/no-image.png";
+                        $default_image = $no_image;
+                        if(is_array($new_images)){
+                            foreach ($new_images as $xx){
+                                if($xx[0] == 1){
+                                    $default_image = $xx[1];
+                                }
+
+                                if($default_image == $no_image){
+                                    $default_image = $xx[1];
+                                }
+
+            //                    if(strpos($default_image,"localhost") > -1){
+            //                        $default_image = explode(".",$default_image);
+            //                        $default_image = $default_image[0] . "_thumb." . $default_image[1];
+            //                    } else {
+            //                        $default_image = explode(".",$default_image);
+            //                        $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
+            //                    }
+
+                            }
+                        }
+				?>
+                            
+                            <li class="thumbnail">
+								<img src="<?php echo $default_image; ?>">
 							</li>
-			        <?php } 
-			             }
-		             } 
-				?>	
 
 			</ul>		
 		
 			<!-- image view holder -->
 			<div id="image_viewer">
 <!--			    <div class="large" style="background:url() no-repeat"></div>-->
-				<img class="img-thumbnail" src="<?php echo $im2; ?>">
+				<img class="img-thumbnail" src="<?php echo $default_image; ?>">
 			</div>
 
 			<!-- brief info -->
