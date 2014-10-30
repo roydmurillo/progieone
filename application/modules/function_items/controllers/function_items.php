@@ -143,6 +143,7 @@ class function_items extends MX_Controller {
                     $this->load->module("function_xss");
                     
                     // load type
+//                    print_r($post);die;
                     foreach($post as $key => $val){
                         if($key != "type" && $key != "args" && $val != ""){
                             if($key != "item_desc" && $key != "item_name" && $key != "item_shipping" && $key != "item_brand" && $key != "item_movement"
@@ -176,7 +177,7 @@ class function_items extends MX_Controller {
                             $date2 = strtotime($startDate);
                             $dateDiff = $date1 - $date2;
                             $fullDays = floor($dateDiff/(60*60*24));										
-                            $this->db->set("item_days", $fullDays);	
+                            $this->db->set("item_days", $fullDays);
                     } else {
                         if($this->function_paypal->check_active() == false){
                             $paypal = $this->native_session->get("paypal");
@@ -189,13 +190,12 @@ class function_items extends MX_Controller {
                             //$date2 = strtotime($startDate);
                             //$dateDiff = $date1 - $date2;
                             $fullDays = $paypal["days"];										
-                            $this->db->set("item_days", $fullDays);                        
+                            $this->db->set("item_days", $fullDays);
                         }
                     }
 
                     $this->db->insert('watch_items'); 
-                   // echo $this->db->last_query();die;
-                    
+
                     $inserted_id = $this->db->insert_id(); 
                     
                     //create folder for this item
