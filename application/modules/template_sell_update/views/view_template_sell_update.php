@@ -26,6 +26,7 @@ foreach($item_info as $i){
 	$item_case_thickness = $i->item_case_thickness;	
 	$item_condition = $i->item_condition;
 	$item_parttype = $i->item_parttype;	
+    $short_description = $i->short_description;	
 }
 ?>
 
@@ -69,12 +70,12 @@ foreach($item_info as $i){
 						Item Listings
 					</div>
 				</a>
-                <a class="btn btn-default btn-green <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
+                <a class="btn btn-default <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 					<div class="tab_inner"> 
 						Sell New Items
 					</div>
 				</a>
-                <a class="btn btn-default btn-red <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
+                <a class="btn btn-default <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 					<div class="tab_inner checkout"> 
 						Checkout
 					</div>
@@ -117,7 +118,7 @@ foreach($item_info as $i){
 									<table class="table_add">
 										<tbody>
 											<tr>
-												<td>Whole Watch or Parts/Accessories Only:</td>
+												<td>Item Type</td>
 												<td><select id="item_wholepart" name="item_wholepart" class="input">
 														<?php 
 															$arr = array("Whole Watch" => 1, "Parts Only" => 0);
@@ -133,9 +134,9 @@ foreach($item_info as $i){
 													</select>
 												</td>
 											</tr>
-											<tr class="item_parts" 
+                                            <tr class="item_parts" 
 											<?php
-											if($item_parttype == 0){
+											if($item_wholepart == 0){
 												echo "style='display:block'";	
 											} else {
 												echo "style='display:none'";	
@@ -158,8 +159,8 @@ foreach($item_info as $i){
 													<option value="others" <?php echo ($item_parttype == "others") ? "selected='selected'":""; ?>> Others </option>
 												</select>
 												</td>
-											</tr>												
-											<tr>
+											</tr>
+                                            <tr>
 												<td>Make:</td>
 												<td><select id="item_brand" name="item_brand" class="input">
 														<option value=""> - Select - </option>
@@ -177,110 +178,30 @@ foreach($item_info as $i){
 														?>
 													</select>
 												</td>
-											</tr>	
-											<tr>
-												<td>Model:</td>
+											</tr>
+                                            <tr>
+												<td>Title:</td>
 												<td><input type="text" value="<?php echo $item_name; ?>" id="item_name" name="item_name" class="input"></td>
-											</tr>	
-										<tr>
-										 <td>Movement Type:</td>
-										 <td>
-										 <select id="item_movement" name="item_movement" class="input">
-												<option value=""> - Select - </option>
-												 	<option value="automatic" <?php echo ($item_movement == "automatic") ? "selected='selected'":""; ?>>Automatic</option>												
-												 	<option value="mechanical" <?php echo ($item_movement == "mechanical") ? "selected='selected'":""; ?>>Mechanical</option>												
-												    <option value="mech_quartz" <?php echo ($item_movement == "mecha_quartz") ? "selected='selected'":""; ?>>Mecha Quartz</option>												
-												    <option value="quartz" <?php echo ($item_movement == "quartz") ? "selected='selected'":""; ?>>Quartz</option>												
-												    <option value="eco_drive" <?php echo ($item_movement == "eco_drive") ? "selected='selected'":""; ?>>Eco Drive(Citizen)</option>												
-												    <option value="kinetic" <?php echo ($item_movement == "kinetic") ? "selected='selected'":""; ?>>Kinetic(Seiko)</option>												
-												    <option value="others" <?php echo ($item_movement == "others") ? "selected='selected'":""; ?>>Others</option>												
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>Case Type:</td>
-										<td>
-										 <select id="item_case" name="item_case" class="input">
-												<option value=""> - Select - </option>
-												<option value="aluminum" <?php echo ($item_case == "aluminum") ? "selected='selected'":""; ?>>Aluminum</option>
-												<option value="carbon" <?php echo ($item_case == "carbon") ? "selected='selected'":""; ?>>Carbon</option>
-												<option value="ceramic" <?php echo ($item_case == "ceramic") ? "selected='selected'":""; ?>>Ceramic</option>
-												<option value="gold_steel" <?php echo ($item_case == "gold_steel") ? "selected='selected'":""; ?>>Gold/Steel</option>
-												<option value="gold_plate" <?php echo ($item_case == "gold_plate") ? "selected='selected'":""; ?>>Gold Plate</option>
-												<option value="palladium" <?php echo ($item_case == "palladium") ? "selected='selected'":""; ?>>Palladium</option>
-												<option value="pink_gold" <?php echo ($item_case == "pink_gold") ? "selected='selected'":""; ?>>Pink gold</option>
-												<option value="plastic" <?php echo ($item_case == "plastic") ? "selected='selected'":""; ?>>Plastic</option>
-												<option value="platinum" <?php echo ($item_case == "platinum") ? "selected='selected'":""; ?>>Platinum</option>
-												<option value="red_gold" <?php echo ($item_case == "red_gold") ? "selected='selected'":""; ?>>Red gold</option>
-												<option value="silver" <?php echo ($item_case == "silver") ? "selected='selected'":""; ?>>Silver</option>
-												<option value="steel" <?php echo ($item_case == "steel") ? "selected='selected'":""; ?>>Steel</option>
-												<option value="tantalum" <?php echo ($item_case == "tantalum") ? "selected='selected'":""; ?>>Tantalum</option>
-												<option value="titanium" <?php echo ($item_case == "titanium") ? "selected='selected'":""; ?>>Titanium</option>
-												<option value="white_gold" <?php echo ($item_case == "white_gold") ? "selected='selected'":""; ?>>White gold</option>
-												<option value="wolfram" <?php echo ($item_case == "wolfram") ? "selected='selected'":""; ?>>Wolfram</option>
-												<option value="yellow_gold" <?php echo ($item_case == "yellow_gold") ? "selected='selected'":""; ?>>Yellow gold</option>
-												<option value="others" <?php echo ($item_case == "others") ? "selected='selected'":""; ?>>Others</option>
-											</select>
-										</td>
-									</tr>	
-									<tr>
-										<td>Bracelet Type:</td>
-										<td>
-										 <select id="item_bracelet" name="item_bracelet" class="input">
-												<option value=""> - Select - </option>
-												<option value="aluminum" <?php echo ($item_bracelet == "aluminum") ? "selected='selected'":""; ?>>Aluminium</option>
-												<option value="calfskin" <?php echo ($item_bracelet == "calfskin") ? "selected='selected'":""; ?>>Calfskin</option>
-												<option value="ceramic" <?php echo ($item_bracelet == "ceramic") ? "selected='selected'":""; ?>>Ceramic </option>
-												<option value="crocodile_skin" <?php echo ($item_bracelet == "crocodile_skin") ? "selected='selected'":""; ?>>Crocodile skin</option>
-												<option value="gold_steel" <?php echo ($item_bracelet == "gold_steel") ? "selected='selected'":""; ?>>Gold/Steel</option>
-												<option value="gold_plate" <?php echo ($item_case == "gold_plate") ? "selected='selected'":""; ?>>Gold Plate</option>
-												<option value="leather" <?php echo ($item_bracelet == "leather") ? "selected='selected'":""; ?>>Leather</option>
-												<option value="lizard_skin" <?php echo ($item_bracelet == "lizard_skin") ? "selected='selected'":""; ?>>Lizard skin</option>
-												<option value="ostrichskin" <?php echo ($item_bracelet == "ostrichskin") ? "selected='selected'":""; ?>>Ostrich skin</option>
-												<option value="pink_gold" <?php echo ($item_bracelet == "pink_gold") ? "selected='selected'":""; ?>>Pink Gold</option>
-												<option value="plastic" <?php echo ($item_bracelet == "plastic") ? "selected='selected'":""; ?>>Plastic</option>
-												<option value="platinum" <?php echo ($item_bracelet == "platinum") ? "selected='selected'":""; ?>>Platinum</option>
-												<option value="red_gold" <?php echo ($item_bracelet == "red_gold") ? "selected='selected'":""; ?>>Red Gold</option>
-												<option value="rubber" <?php echo ($item_bracelet == "rubber") ? "selected='selected'":""; ?>>Rubber</option>
-												<option value="satin" <?php echo ($item_bracelet == "satin") ? "selected='selected'":""; ?>>Satin</option>
-												<option value="sharksin" <?php echo ($item_bracelet == "sharkskin") ? "selected='selected'":""; ?>>Sharkskin</option>
-												<option value="silicon" <?php echo ($item_bracelet == "silicon") ? "selected='selected'":""; ?>>Silicon</option>
-												<option value="silver" <?php echo ($item_bracelet == "silver") ? "selected='selected'":""; ?>>Silver</option>
-												<option value="snake_skin" <?php echo ($item_bracelet == "snake_skin") ? "selected='selected'":""; ?>>Snake skin</option>
-												<option value="steel" <?php echo ($item_bracelet == "steel") ? "selected='selected'":""; ?>>Steel</option>
-												<option value="textile" <?php echo ($item_bracelet == "textile") ? "selected='selected'":""; ?>>Textile</option>
-												<option value="titanium" <?php echo ($item_bracelet == "titanium") ? "selected='selected'":""; ?>>Titanium</option>
-												<option value="white_gold" <?php echo ($item_bracelet == "white_gold") ? "selected='selected'":""; ?>>White Gold</option>
-												<option value="yellow_gold" <?php echo ($item_bracelet == "yellow_gold") ? "selected='selected'":""; ?>>Yellow Gold</option>											
-												<option value="others" <?php echo ($item_bracelet == "others") ? "selected='selected'":""; ?>>Others</option>											
-											</select>
-										</td>
-									</tr>																											
-									<tr>
-										<td>Case Width (in millimeters)</td>
-										<td>
-										<input type="text" value="<?php echo $item_case_width; ?>" id="item_case_width" name="item_case_width" class="int input" maxlength="4"></td>
-									</tr>
-									<tr>
-										<td>Case Thickness (in millimeters)</td>
-										<td>
-										<input type="text" value="<?php echo $item_case_thickness; ?>" id="item_case_thickness" name="item_case_thickness" class="int input" maxlength="4"></td>
-									</tr>																				
-											<tr>
-												<td>Year:</td>
-												<td><input type="text" value="<?php echo $item_year_model; ?>" id="item_year_model" name="item_year_model" class="validateYear input"></td>
-											</tr>	
-									<tr>
-										<td>Item Condition</td>
-										<td>
-										<select id="item_condition" name="item_condition" class="input">
-												<option value=""> - Select - </option>
-												<option value="new" <?php echo ($item_condition == "new") ? "selected='selected'":""; ?>> Brand New </option>
-												<option value="preowned" <?php echo ($item_condition == "preowned") ? "selected='selected'":""; ?>> Pre Owned </option>
-											</select>
-										</td>
-									</tr>
-											<tr>
+											</tr>
+                                            <tr>
+                                                <td>Short Description:</td>
+                                                <td><input type="text" value="<?php echo $short_description;?>" id="short_description" name="short_description" class="input"></td>
+                                            </tr>
+                                            <tr>
+												<td>Classified Price($):</td>
+												<td><input type="text" value="<?php echo $item_price; ?>" id="item_price" name="item_price" class="auto input"></td>
+											</tr>
+                                            <tr>
+                                                <td>Item Condition</td>
+                                                <td>
+                                                <select id="item_condition" name="item_condition" class="input">
+                                                        <option value=""> - Select - </option>
+                                                        <option value="new" <?php echo ($item_condition == "new") ? "selected='selected'":""; ?>> Brand New </option>
+                                                        <option value="preowned" <?php echo ($item_condition == "preowned") ? "selected='selected'":""; ?>> Pre Owned </option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
 												<td>Category:</td>
 												<td><select id="item_category" name="item_category_id" class="input">
 														<option value=""> - Select - </option>
@@ -299,7 +220,7 @@ foreach($item_info as $i){
 													</select>
 												</td>
 											</tr>
-											<tr>
+                                            <tr>
 												<td>Gender:</td>
 												<td><select id="item_gender" name="item_gender" class="input">
 														<option value=""> - Select - </option>
@@ -309,7 +230,7 @@ foreach($item_info as $i){
 													</select>
 												</td>
 											</tr>
-											<tr>
+                                            <tr>
 												<td>For Kids:</td>
 												<td><select id="item_kids" name="item_kids" class="input">
 														<option value=""> - Select - </option>
@@ -317,8 +238,89 @@ foreach($item_info as $i){
 														<option value="0" <?php echo (0 == $item_kids) ? 'selected="selected"' : ''; ?>> No </option>
 													</select>
 												</td>
-											</tr>							
-											<tr>
+											</tr>
+                                            <tr>
+                                                <td colspan="2">Additional Options</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Movement Type:</td>
+                                                <td>
+                                                <select id="item_movement" name="item_movement" class="input">
+                                                       <option value=""> - Select - </option>
+                                                           <option value="automatic" <?php echo ($item_movement == "automatic") ? "selected='selected'":""; ?>>Automatic</option>												
+                                                           <option value="mechanical" <?php echo ($item_movement == "mechanical") ? "selected='selected'":""; ?>>Mechanical</option>												
+                                                           <option value="mech_quartz" <?php echo ($item_movement == "mecha_quartz") ? "selected='selected'":""; ?>>Mecha Quartz</option>												
+                                                           <option value="quartz" <?php echo ($item_movement == "quartz") ? "selected='selected'":""; ?>>Quartz</option>												
+                                                           <option value="eco_drive" <?php echo ($item_movement == "eco_drive") ? "selected='selected'":""; ?>>Eco Drive(Citizen)</option>												
+                                                           <option value="kinetic" <?php echo ($item_movement == "kinetic") ? "selected='selected'":""; ?>>Kinetic(Seiko)</option>												
+                                                           <option value="others" <?php echo ($item_movement == "others") ? "selected='selected'":""; ?>>Others</option>												
+                                                   </select>
+                                               </td>
+                                           </tr>
+                                            <tr>
+                                                <td>Case Type:</td>
+                                                <td>
+                                                 <select id="item_case" name="item_case" class="input">
+                                                        <option value=""> - Select - </option>
+                                                        <option value="aluminum" <?php echo ($item_case == "aluminum") ? "selected='selected'":""; ?>>Aluminum</option>
+                                                        <option value="carbon" <?php echo ($item_case == "carbon") ? "selected='selected'":""; ?>>Carbon</option>
+                                                        <option value="ceramic" <?php echo ($item_case == "ceramic") ? "selected='selected'":""; ?>>Ceramic</option>
+                                                        <option value="gold_steel" <?php echo ($item_case == "gold_steel") ? "selected='selected'":""; ?>>Gold/Steel</option>
+                                                        <option value="gold_plate" <?php echo ($item_case == "gold_plate") ? "selected='selected'":""; ?>>Gold Plate</option>
+                                                        <option value="palladium" <?php echo ($item_case == "palladium") ? "selected='selected'":""; ?>>Palladium</option>
+                                                        <option value="pink_gold" <?php echo ($item_case == "pink_gold") ? "selected='selected'":""; ?>>Pink gold</option>
+                                                        <option value="plastic" <?php echo ($item_case == "plastic") ? "selected='selected'":""; ?>>Plastic</option>
+                                                        <option value="platinum" <?php echo ($item_case == "platinum") ? "selected='selected'":""; ?>>Platinum</option>
+                                                        <option value="red_gold" <?php echo ($item_case == "red_gold") ? "selected='selected'":""; ?>>Red gold</option>
+                                                        <option value="silver" <?php echo ($item_case == "silver") ? "selected='selected'":""; ?>>Silver</option>
+                                                        <option value="steel" <?php echo ($item_case == "steel") ? "selected='selected'":""; ?>>Steel</option>
+                                                        <option value="tantalum" <?php echo ($item_case == "tantalum") ? "selected='selected'":""; ?>>Tantalum</option>
+                                                        <option value="titanium" <?php echo ($item_case == "titanium") ? "selected='selected'":""; ?>>Titanium</option>
+                                                        <option value="white_gold" <?php echo ($item_case == "white_gold") ? "selected='selected'":""; ?>>White gold</option>
+                                                        <option value="wolfram" <?php echo ($item_case == "wolfram") ? "selected='selected'":""; ?>>Wolfram</option>
+                                                        <option value="yellow_gold" <?php echo ($item_case == "yellow_gold") ? "selected='selected'":""; ?>>Yellow gold</option>
+                                                        <option value="others" <?php echo ($item_case == "others") ? "selected='selected'":""; ?>>Others</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bracelet Type:</td>
+                                                <td>
+                                                 <select id="item_bracelet" name="item_bracelet" class="input">
+                                                        <option value=""> - Select - </option>
+                                                        <option value="aluminum" <?php echo ($item_bracelet == "aluminum") ? "selected='selected'":""; ?>>Aluminium</option>
+                                                        <option value="calfskin" <?php echo ($item_bracelet == "calfskin") ? "selected='selected'":""; ?>>Calfskin</option>
+                                                        <option value="ceramic" <?php echo ($item_bracelet == "ceramic") ? "selected='selected'":""; ?>>Ceramic </option>
+                                                        <option value="crocodile_skin" <?php echo ($item_bracelet == "crocodile_skin") ? "selected='selected'":""; ?>>Crocodile skin</option>
+                                                        <option value="gold_steel" <?php echo ($item_bracelet == "gold_steel") ? "selected='selected'":""; ?>>Gold/Steel</option>
+                                                        <option value="gold_plate" <?php echo ($item_case == "gold_plate") ? "selected='selected'":""; ?>>Gold Plate</option>
+                                                        <option value="leather" <?php echo ($item_bracelet == "leather") ? "selected='selected'":""; ?>>Leather</option>
+                                                        <option value="lizard_skin" <?php echo ($item_bracelet == "lizard_skin") ? "selected='selected'":""; ?>>Lizard skin</option>
+                                                        <option value="ostrichskin" <?php echo ($item_bracelet == "ostrichskin") ? "selected='selected'":""; ?>>Ostrich skin</option>
+                                                        <option value="pink_gold" <?php echo ($item_bracelet == "pink_gold") ? "selected='selected'":""; ?>>Pink Gold</option>
+                                                        <option value="plastic" <?php echo ($item_bracelet == "plastic") ? "selected='selected'":""; ?>>Plastic</option>
+                                                        <option value="platinum" <?php echo ($item_bracelet == "platinum") ? "selected='selected'":""; ?>>Platinum</option>
+                                                        <option value="red_gold" <?php echo ($item_bracelet == "red_gold") ? "selected='selected'":""; ?>>Red Gold</option>
+                                                        <option value="rubber" <?php echo ($item_bracelet == "rubber") ? "selected='selected'":""; ?>>Rubber</option>
+                                                        <option value="satin" <?php echo ($item_bracelet == "satin") ? "selected='selected'":""; ?>>Satin</option>
+                                                        <option value="sharksin" <?php echo ($item_bracelet == "sharkskin") ? "selected='selected'":""; ?>>Sharkskin</option>
+                                                        <option value="silicon" <?php echo ($item_bracelet == "silicon") ? "selected='selected'":""; ?>>Silicon</option>
+                                                        <option value="silver" <?php echo ($item_bracelet == "silver") ? "selected='selected'":""; ?>>Silver</option>
+                                                        <option value="snake_skin" <?php echo ($item_bracelet == "snake_skin") ? "selected='selected'":""; ?>>Snake skin</option>
+                                                        <option value="steel" <?php echo ($item_bracelet == "steel") ? "selected='selected'":""; ?>>Steel</option>
+                                                        <option value="textile" <?php echo ($item_bracelet == "textile") ? "selected='selected'":""; ?>>Textile</option>
+                                                        <option value="titanium" <?php echo ($item_bracelet == "titanium") ? "selected='selected'":""; ?>>Titanium</option>
+                                                        <option value="white_gold" <?php echo ($item_bracelet == "white_gold") ? "selected='selected'":""; ?>>White Gold</option>
+                                                        <option value="yellow_gold" <?php echo ($item_bracelet == "yellow_gold") ? "selected='selected'":""; ?>>Yellow Gold</option>											
+                                                        <option value="others" <?php echo ($item_bracelet == "others") ? "selected='selected'":""; ?>>Others</option>											
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Year:</td>
+                                                <td><input type="text" value="<?php echo $item_year_model; ?>" id="item_year_model" name="item_year_model" class="validateYear input"></td>
+                                            </tr>
+                                            <tr>
 												<td>With Certificate</td>
 												<td><select id="item_certificate" name="item_certificate" class="input">
 														<option value=""> - Select - </option>
@@ -327,7 +329,7 @@ foreach($item_info as $i){
 													</select>
 												</td>
 											</tr>
-											<tr>
+                                            <tr>
 												<td>With Box:</td>
 												<td><select id="item_box" name="item_box" class="input">
 														<option value=""> - Select - </option>
@@ -335,11 +337,7 @@ foreach($item_info as $i){
 														<option value="0" <?php echo (0 == $item_box) ? 'selected="selected"' : ''; ?>> No </option>
 													</select>
 												</td>
-											</tr>
-											<tr>
-												<td>Classified Price($):</td>
-												<td><input type="text" value="<?php echo $item_price; ?>" id="item_price" name="item_price" class="auto input"></td>
-											</tr>																						
+											</tr>																				
 										</tbody>
 									</table>
 									
