@@ -133,7 +133,7 @@
                 <h2>Watchlist</h2>
                 <p>Current watch list: <?php echo $current_watch_list;?></p>
                 <p>Current items for sale: <?php echo $count_sell_items;?></p>
-                <a class="btn btn-primary">post item</a>
+                <a class="btn btn-primary btn-green">post item</a>
                 <a class="btn btn-danger">checkout</a>
                 <a class="btn btn-primary">view item list</a>
                 <a class="btn btn-primary">view watch list</a>

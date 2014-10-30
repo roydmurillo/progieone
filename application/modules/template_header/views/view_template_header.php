@@ -45,7 +45,7 @@
     <div id="top" class="bg-success">
             <div class="container clearfix">
                 <p class="pull-left">$0.50 per item posting, post now!</p>
-            
+                <a href="">start here</a>
             </div>
     </div>
 <?php

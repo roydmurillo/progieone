@@ -348,11 +348,11 @@ jQuery(document).ready(function() {
 						Item Listings
 				</a>
 
-				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
+				<a class="btn btn-default btn-green <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 						Sell New Items
 				</a>	
 				<?php if($this->function_paypal->check_active()){ ?>
-				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
+				<a class="btn btn-default btn-red <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 						Checkout 
 				</a>							
                                  <?php } ?>

@@ -24,6 +24,14 @@ $cont-color: #fff;
             padding-bottom:24px;
         }
     }
+    .social{
+        padding-top:12px;
+        box-sizing: content-box;
+        p{
+            font-family:$base-font !important;
+            
+        }
+    }
     .home-banner{
         background: url('../assets/images/home-banner.jpg') no-repeat;
         background-size:cover;
@@ -46,14 +54,14 @@ $cont-color: #fff;
             }
         }
         .navbar-nav a {
-         @include background-opacity(#777, 0.5); 
+         @include background-opacity($base-color, 0.7); 
          &:hover{color:#a6a6a6;}
         }
         .ww-tabs{
             border:none;
             max-width:63%;
             margin:0 auto;
-            margin-top:160px;
+            margin-top:120px;
             padding:0;
             li{
                display:inline;
@@ -110,7 +118,7 @@ $cont-color: #fff;
         .home-search{
             max-width:34%;
             margin:0 auto;
-            margin-top:24px;
+            margin-top:60px;
             a{
                  color:$cont-color;
                  &:hover{

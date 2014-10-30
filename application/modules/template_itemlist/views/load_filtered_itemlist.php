@@ -60,6 +60,7 @@ if(empty($item_list)){
             ?>
 	</div>
 	<div id="filter_return" class="col-md-6 text-right">
+            
 	        <form method="POST">
                         <div>
                             <b>Sort By:</b>
@@ -179,18 +180,20 @@ if(empty($item_list)){
                                 <a href="<?php echo $url; ?>" class="text-center">
                                     <?php 
                                     if($display_by == "display_list" || $display_by == ""){
-                                            if(strlen(trim($featured->item_name)) > 120)
-                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,120)."...";
+                                            if(strlen(trim($featured->item_name)) > 26)
+                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,23)."...";
                                             else 
-                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,120);
+                                                    $n = ucwords(strtolower($featured->item_name));
+                                                    
                                     } else {
-                                            if(strlen(trim($featured->item_name)) > 35){
-                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,35) ."...";
+                                            if(strlen(trim($featured->item_name)) > 26){
+                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,23) ."...";
                                             } else {
-                                                    $n = substr(ucwords(strtolower($featured->item_name)),0,35);
+                                                    $n = ucwords(strtolower($featured->item_name));
                                             }
                                     }
-                                    echo $n; 
+                                    echo $n;
+                                    
                                     ?>       
                                 </a>
                             </h5>
@@ -323,15 +326,15 @@ if(empty($item_list)){
                                 <h5><a href="<?php echo $url; ?>">
 					<?php 
 					if($display_by == "display_list" || $display_by == ""){
-						if(strlen(trim($featured->item_name)) > 120)
-							$n = substr(ucwords(strtolower($featured->item_name)),0,120)."...";
+						if(strlen(trim($featured->item_name)) > 26)
+							$n = substr(ucwords(strtolower($featured->item_name)),0,23)."...";
 						else 
-							$n = substr(ucwords(strtolower($featured->item_name)),0,120);
+							$n = ucwords(strtolower($featured->item_name));
 					} else {
-						if(strlen(trim($featured->item_name)) > 35){
-							$n = substr(ucwords(strtolower($featured->item_name)),0,35) ."...";
+						if(strlen(trim($featured->item_name)) > 26){
+							$n = substr(ucwords(strtolower($featured->item_name)),0,23) ."...";
 						} else {
-							$n = substr(ucwords(strtolower($featured->item_name)),0,35);
+							$n = ucwords(strtolower($featured->item_name));
 						}
 					}
 					echo $n; 

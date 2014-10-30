@@ -1,6 +1,12 @@
 
         <header class="home-banner navbar-default">
             <div class="fix">
+                <div id="top" class="bg-success">
+                        <div class="container clearfix">
+                            <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
+                            <a href="">start here</a>
+                        </div>
+                </div>
                 <div class="container">
                     <div class="col-sm-6 logo"><a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a></div>      	      	
                     <div class="col-sm-6">    <ul class="nav navbar-nav pull-right topnav">
@@ -19,6 +25,14 @@
                     <input type="search" class="form-control" placeholder="type in keyword here...">
                     <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div> 
                 </div>
+                
+            </div>
+            <div class="container text-center social">
+                <p>follow us</p>
+                <a href="" class="st-icon-facebook"></a>
+                <a href="" class="st-icon-twitter"></a>
+                <a href="" class="st-icon-instagram"></a>
+                <a href="" class="st-icon-googleplus"></a>
             </div>
             <ul class="ww-tabs row">
                 <li class="col-md-3">

@@ -14,10 +14,11 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url();?>css/stackicons-min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/multi-columns-row.css">
     <link rel="stylesheet" href="<?php echo base_url();?>styles/cyberwatchcafe.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/style.css"> 
     <script type="text/javascript" src="<?php echo base_url();?>scripts/jquery.js"></script>
 	
     <?php
@@ -43,6 +44,7 @@
 </head>
 
 <body id="home">
+    
 <?php
 	//load sidebar left
 	$session_data = $this->native_session->get('verified');

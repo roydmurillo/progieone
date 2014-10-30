@@ -41,6 +41,7 @@ jQuery(document).ready(function(){
             var t = $("header").offset().top;
             
             $(document).scroll(function(){
+                
                 if($(this).scrollTop() > 400)
                 {   
                    $('.ww-tabs').css('margin-top','287px');
@@ -48,7 +49,7 @@ jQuery(document).ready(function(){
                    $('.fix, .fix .btn').addClass('fix-bg');
                    
                 }else{
-                   $('.ww-tabs').css('margin-top','170px');
+                   $('.ww-tabs').css('margin-top','120px');
                    $('.home-search').removeClass('fix-search');
                    $('.fix, .fix .btn').removeClass('fix-bg');
                 }

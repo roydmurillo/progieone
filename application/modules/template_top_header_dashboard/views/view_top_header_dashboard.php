@@ -13,7 +13,7 @@
             <div class="container">
                     <a class="navbar-brand" href="<?php echo base_url();?>/all-watches"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
                     <ul class="nav navbar-nav pull-right">
-                        <li><a class="btn btn-sm btn-default" href="<?php echo base_url() ?>forums/">Forum</a></li>   
+<!--                        <li><a class="btn btn-sm btn-default" href="<?php echo base_url() ?>forums/">Forum</a></li>   -->
                         <li class="dropdown">
                             <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">

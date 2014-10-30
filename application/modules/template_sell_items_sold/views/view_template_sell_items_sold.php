@@ -18,10 +18,10 @@
 				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "item_sold") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/items_sold">
 						Item's Sold
 				</a>
-				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
+				<a class="btn btn-default btn-green <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 						Sell New Items
 				</a>						
-				<a class="btn btn-default" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
+				<a class="btn btn-default btn-red" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 						Checkout
 				</a>	
 			</div>

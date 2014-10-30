@@ -61,6 +61,17 @@ and open the template in the editor.
   border-color: #d43f3a;
   background-color: #fff; }
 
+.btn-green {
+  border-color: #06ad06;
+  color: #06ad06; }
+  .btn-green:hover {
+    background-color: #06ad06;
+    color: #fff; }
+
+.btn-red {
+  border-color: #df1818;
+  color: #df1818; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -99,6 +110,11 @@ and open the template in the editor.
 #home .homepage .container {
   padding-top: 12px;
   padding-bottom: 24px; }
+#home .social {
+  padding-top: 12px;
+  box-sizing: content-box; }
+  #home .social p {
+    font-family: "Lato", sans-serif !important; }
 #home .home-banner {
   background: url("../assets/images/home-banner.jpg") no-repeat;
   background-size: cover;
@@ -117,16 +133,16 @@ and open the template in the editor.
     #home .home-banner .intro h1 {
       font-weight: 300; }
   #home .home-banner .navbar-nav a {
-    background: #777777;
+    background: #157b9e;
     /* The Fallback */
-    background: rgba(119, 119, 119, 0.5); }
+    background: rgba(21, 123, 158, 0.7); }
     #home .home-banner .navbar-nav a:hover {
       color: #a6a6a6; }
   #home .home-banner .ww-tabs {
     border: none;
     max-width: 63%;
     margin: 0 auto;
-    margin-top: 160px;
+    margin-top: 120px;
     padding: 0; }
     #home .home-banner .ww-tabs li {
       display: inline;
@@ -169,7 +185,7 @@ and open the template in the editor.
   #home .home-banner .home-search {
     max-width: 34%;
     margin: 0 auto;
-    margin-top: 24px; }
+    margin-top: 60px; }
     #home .home-banner .home-search a {
       color: white; }
       #home .home-banner .home-search a:hover {
@@ -263,16 +279,34 @@ and open the template in the editor.
   left: 12px;
   min-width: 107px; }
 
+#top {
+  padding: 8px 0;
+  background: #fa6938; }
+  #top .container p {
+    margin: 0;
+    color: #FFF;
+    margin-right: 12px; }
+  #top .container a {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none; }
+    #top .container a:hover {
+      background: rgba(0, 0, 0, 0.4); }
+
 header.navbar-default {
   background-color: #1990b9; }
   header.navbar-default .navbar-nav {
     margin-top: 15px; }
-    header.navbar-default .navbar-nav > li > a {
-      background-color: #157b9e;
-      color: #ccc;
-      margin-left: 12px; }
-      header.navbar-default .navbar-nav > li > a:hover {
-        color: #a6a6a6; }
+    header.navbar-default .navbar-nav > li {
+      float: right; }
+      header.navbar-default .navbar-nav > li > a {
+        background-color: #157b9e;
+        color: #ccc;
+        margin-left: 12px; }
+        header.navbar-default .navbar-nav > li > a:hover {
+          color: #a6a6a6; }
 header .col-sm-6 {
   padding-bottom: 14px; }
 header .container, header .navbar-brand {
@@ -287,6 +321,9 @@ footer {
     text-align: center; }
   footer .copy > div, footer .container {
     padding: 0; }
+  footer .footer-link ul li {
+    display: inline;
+    list-style: none; }
 
 .pagination {
   padding: 20px; }

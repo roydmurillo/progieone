@@ -20,9 +20,13 @@ jQuery(document).ready(function(){
                 <div class="col-md-6">
                     Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo base_url() ?>">CyberwatchCafe Inc.</a> All Rights Reserved.
                 </div>
-                <div class="col-md-6 text-right"> 
-                    <a href="<?php echo base_url() ?>about_us">About us</a>&emsp;<a href="<?php echo base_url() ?>advertise">Advertise</a>&emsp;
-                    <a href="<?php echo base_url() ?>contact_us">Contact</a>&emsp;<a href="<?php echo base_url() ?>terms_and_conditions">Terms And Conditions</a>
+                <div class="col-md-6 text-right footer-link"> 
+                    <ul
+                        <li><a href="<?php echo base_url() ?>about_us">About us</a></li>
+                        <li><a href="<?php echo base_url() ?>advertise">Advertise</a></li>
+                        <li><a href="<?php echo base_url() ?>contact_us">Contact</a></li>
+                        <li><a href="<?php echo base_url() ?>terms_and_conditions">Terms And Conditions</a></li>
+                    </ul>
                 </div>
 <!--                <span><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=OTTw7Bt3FGeC8BgoEtJjAOzw5Pxrz9wSkUeA0ndtil5Gq5JhLs8Q6gG8g"></script></span>-->
             </div>
