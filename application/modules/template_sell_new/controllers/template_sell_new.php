@@ -12,7 +12,8 @@ class template_sell_new extends MX_Controller {
                     // save data
                     $cat["form_image"] = "";
                     if(isset($_POST["submit_add"])){
-                        $arr = array("item_name","item_brand","item_case","item_movement","item_condition","item_bracelet","item_case_width","item_case_thickness","item_year_model","item_shipping","item_wholepart","item_parttype","item_category_id","item_gender","item_kids","item_certificate","item_box","item_price","item_desc");
+//                        $arr = array("item_name","item_brand","item_case","item_movement","item_condition","item_bracelet","item_case_width","item_case_thickness","item_year_model","item_shipping","item_wholepart","item_parttype","item_category_id","item_gender","item_kids","item_certificate","item_box","item_price","item_desc");
+                        $arr = array("item_name","item_brand","item_case","item_movement","item_condition","item_bracelet","item_year_model","item_shipping","item_wholepart","item_parttype","item_category_id","item_gender","item_kids","item_certificate","item_box","item_price","item_desc","short_description");
                         $args = array();
 
                         foreach($arr as $a){
