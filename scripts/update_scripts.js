@@ -24,19 +24,39 @@ jQuery(document).ready(function() {
 			if(jQuery("#item_name").val() == ""){
 				err = err + "Model Name is a required field.\n";
 			}
+			if(jQuery("#short_description").val() == ""){
+				err = err + "Short description is a required field.\n";
+			}
+            if(jQuery("#item_price").val() == ""){
+				err = err + "Must enter an item price value.\n";
+			}
+            if(jQuery("#item_condition").val() == ""){
+				err = err + "Item Condition is a required field.\n";
+			}
+            if(jQuery("#item_category").val() == ""){
+				err = err + "Category is a required field.\n";
+			}
+            if(jQuery("#item_wholepart").val() == "1"){
+				if(jQuery("#item_gender").val() == ""){
+					err = err + "Must select the appropriate gender.\n";
+				}
+				if(jQuery("#item_kids").val() == ""){
+					err = err + "Must select if item is for kids.\n";
+				}			
+			}
 			//===============================================
 			// this can be optional if only itemparts is sold
 			//===============================================
 			if(jQuery("#item_wholepart").val() == "1"){
-				if(jQuery("#item_movement").val() == ""){
-					err = err + "Movement type is a required field.\n";
-				}	
-				if(jQuery("#item_case").val() == ""){
-					err = err + "Case type is a required field.\n";
-				}	
-				if(jQuery("#item_bracelet").val() == ""){
-					err = err + "Bracelet type is a required field.\n";
-				}
+//				if(jQuery("#item_movement").val() == ""){
+//					err = err + "Movement type is a required field.\n";
+//				}	
+//				if(jQuery("#item_case").val() == ""){
+//					err = err + "Case type is a required field.\n";
+//				}	
+//				if(jQuery("#item_bracelet").val() == ""){
+//					err = err + "Bracelet type is a required field.\n";
+//				}
 				if(jQuery("#item_case_width").val() == "" || jQuery("#item_case_width").val() == "0"){
 					err = err + "Case width cannot be 0 or blanks.\n";
 				}	
@@ -44,40 +64,27 @@ jQuery(document).ready(function() {
 					err = err + "Case thickness cannot be 0 or blanks.\n";
 				}	
 							
-				if(jQuery("#item_year_model").val() == ""){
-					err = err + "Year Model is a required field.\n";
-				} else {
-					if(jQuery("#item_year_model").val() < 1000 || jQuery("#item_year_model").val() > 2100){
-						err = err + "Year Model is invalid.\n";
-					} 
-				}
+//				if(jQuery("#item_year_model").val() == ""){
+//					err = err + "Year Model is a required field.\n";
+//				} else {
+//					if(jQuery("#item_year_model").val() < 1000 || jQuery("#item_year_model").val() > 2100){
+//						err = err + "Year Model is invalid.\n";
+//					} 
+//				}
 			}
-			if(jQuery("#item_condition").val() == ""){
-				err = err + "Item Condition is a required field.\n";
-			}			
-			if(jQuery("#item_category").val() == ""){
-				err = err + "Category is a required field.\n";
-			}	
+						
+				
 			//===============================================
 			// this can be optional if only itemparts is sold
 			//===============================================
-			if(jQuery("#item_wholepart").val() == "1"){
-				if(jQuery("#item_gender").val() == ""){
-					err = err + "Must select the appropriate gender.\n";
-				}
-				if(jQuery("#item_kids").val() == ""){
-					err = err + "Must select if item is for kids.\n";
-				}			
-			}			
-			if(jQuery("#item_certificate").val() == ""){
-				err = err + "Must select the appropriate certificate.\n";
-			}	
-			if(jQuery("#item_box").val() == ""){
-				err = err + "Must select the appropriate box.\n";
-			}	
-			if(jQuery("#item_price").val() == ""){
-				err = err + "Must enter an item price value.\n";
-			}		
+						
+//			if(jQuery("#item_certificate").val() == ""){
+//				err = err + "Must select the appropriate certificate.\n";
+//			}	
+//			if(jQuery("#item_box").val() == ""){
+//				err = err + "Must select the appropriate box.\n";
+//			}	
+					
 			if(tinyMCE.get('item_description').getContent() == ""){
 				err = err + "Item description is required.\n";
 			}	
@@ -168,20 +175,20 @@ jQuery(document).ready(function() {
 				}).submit();		
 		});
 		jQuery("#item_price").autoNumeric('init',{aSep: ''});
-		jQuery(".validateYear").keydown(function(event) {
-			if (!((event.keyCode == 46 || 
-				event.keyCode == 8  || 
-				event.keyCode == 37 || 
-				event.keyCode == 39 || 
-				event.keyCode == 9) || 
-				(event.ctrlKey && event.keyCode == 86) ||  
-				jQuery(this).val().length < 4 &&
-				((event.keyCode >= 48 && event.keyCode <= 57) ||
-				(event.keyCode >= 96 && event.keyCode <= 105)))) {
-				event.preventDefault();
-				return false;
-			}
-		});		
+//		jQuery(".validateYear").keydown(function(event) {
+//			if (!((event.keyCode == 46 || 
+//				event.keyCode == 8  || 
+//				event.keyCode == 37 || 
+//				event.keyCode == 39 || 
+//				event.keyCode == 9) || 
+//				(event.ctrlKey && event.keyCode == 86) ||  
+//				jQuery(this).val().length < 4 &&
+//				((event.keyCode >= 48 && event.keyCode <= 57) ||
+//				(event.keyCode >= 96 && event.keyCode <= 105)))) {
+//				event.preventDefault();
+//				return false;
+//			}
+//		});		
 		jQuery(".int").keydown(function(event) {
 			if (!((event.keyCode == 46 || 
 				event.keyCode == 8  || 
@@ -196,10 +203,10 @@ jQuery(document).ready(function() {
 			}
 		});	
 		
-		jQuery(".validateYear").change(function(event) {
-			var value =  $(this).val();
-			value = value.replace(/[^0-9]/g,'');
-			value = value.substr(0,4);
-			jQuery(this).val(value);
-		});			
+//		jQuery(".validateYear").change(function(event) {
+//			var value =  $(this).val();
+//			value = value.replace(/[^0-9]/g,'');
+//			value = value.substr(0,4);
+//			jQuery(this).val(value);
+//		});			
 });
