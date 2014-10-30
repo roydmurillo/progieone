@@ -28,21 +28,44 @@ if($item_list != ""){?>
 					$item_box = $i->item_box;
 					$item_year_model = $i->item_year_model;
 					$item_images = unserialize($i->item_images);
-					$count = count($item_images) - 1;
-					$image = $item_images[rand(0,$count)];
+//					$count = count($item_images) - 1;
+//					$image = $item_images[rand(0,$count)];
 					
 								//if no image
-					if($image == "" || $image === false || empty($image)){
-						$image = base_url() . "assets/images/no-image.png";
-					} else {
-						if(strpos($image,"localhost") > -1){
-							$image = explode(".",$image);
-							$image = $image[0] . "_thumb." . $image[1];
-						} else {
-							$image = explode(".",$image);
-							$image = $image[0] ."." . $image[1] . "_thumb." . $image[2];
-						}
-					}
+//					if($image == "" || $image === false || empty($image)){
+//						$image = base_url() . "assets/images/no-image.png";
+//					} else {
+//						if(strpos($image,"localhost") > -1){
+//							$image = explode(".",$image);
+//							$image = $image[0] . "_thumb." . $image[1];
+//						} else {
+//							$image = explode(".",$image);
+//							$image = $image[0] ."." . $image[1] . "_thumb." . $image[2];
+//						}
+//					}
+
+                    $no_image = base_url() . "assets/images/no-image.png";
+                    $default_image = $no_image;
+                    if(is_array($item_images)){
+                        foreach ($item_images as $xx){
+                            if($xx[0] == 1){
+                                $default_image = $xx[1];
+                            }
+
+                            if($default_image == $no_image){
+                                $default_image = $xx[1];
+                            }
+
+        //                    if(strpos($default_image,"localhost") > -1){
+        //                        $default_image = explode(".",$default_image);
+        //                        $default_image = $default_image[0] . "_thumb." . $default_image[1];
+        //                    } else {
+        //                        $default_image = explode(".",$default_image);
+        //                        $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
+        //                    }
+
+                        }
+                    }
 					
 					$item_price = $i->item_price;
 					$item_id = $i->item_id;
@@ -61,7 +84,7 @@ if($item_list != ""){?>
 						<div style="float:left; margin:0px; clear:both; width:100%; height:120px; text-align:center; font-size:12px">
 								
 								<div style="margin:-5px 12px 12px; border:1px solid #CCC; line-height:117px; float:left; overflow:hidden; height:120px; width:200px; text-align:center">
-									<img src="<?php echo $image; ?>" style="max-height:120px; max-width:150px; line-height:100px; vertical-align:middle;">
+									<img src="<?php echo $default_image; ?>" style="max-height:120px; max-width:150px; line-height:100px; vertical-align:middle;">
 								</div>
 							
 						</div>
