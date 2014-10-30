@@ -131,8 +131,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Watchlist</h2>
-                <p>Current watch list: 10</p>
-                <p>Current items for sale: 20</p>
+                <p>Current watch list: <?php echo $current_watch_list;?></p>
+                <p>Current items for sale: <?php echo $count_sell_items;?></p>
                 <a class="btn btn-primary">post item</a>
                 <a class="btn btn-danger">checkout</a>
                 <a class="btn btn-primary">view item list</a>
@@ -140,16 +140,16 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Messages</h2>
-                <p>Inbox: 10</p>
-                <p>Unread messages: 20</p>
+                <p>Inbox: <?php echo $message_count;?></p>
+                <p>Unread messages: <?php echo $message_unread_count;?></p>
                 <a class="btn btn-primary">read messages</a>
                 <a class="btn btn-primary">create new message</a>
             </div>
             <div class="clear"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Friends</h2>
-                <p>Current friends: 10</p>
-                <p>Pending friend request: 20</p>
+                <p>Current friends: <?php echo $friends_count;?></p>
+                <p>Pending friend request: <?php echo $count_friend_invites;?></p>
                 <a class="btn btn-primary">view friend list</a>
                 <a class="btn btn-primary">view friend updates</a>
                 <a class="btn btn-primary">view friend request</a>
