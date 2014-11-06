@@ -129,7 +129,7 @@
 					<?php echo substr(ucwords(strtolower($featured->item_name)),0,23)."..."; ?>       
                                     </a></h5>
 				<div class="price">$ <?php echo $price; ?></div>
-				<a href="javascript:;" class="remove_watchlist">
+				<a href="javascript:;" class="remove_watchlist" data-itemid="<?php echo $featured->item_id; ?>">
 					Remove from Watchlist       
 				</a>
 				<input type="checkbox" class="sel_compare"> 
