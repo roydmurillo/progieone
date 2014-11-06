@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
 				type: "POST",
 				url: jQuery("#load_initial").val(),
 				cache: false,
-				data: { iid: jQuery(this).prevAll(".item").val() }
+				data: { iid: jQuery('#item' + $(this).attr('data-id')).val()}
 			}).done(function( msg ) {
 				if(msg.indexOf("logged") > -1){
 					this_elem.html("Add to Wishlist");
