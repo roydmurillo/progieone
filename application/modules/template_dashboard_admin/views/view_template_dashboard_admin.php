@@ -110,6 +110,7 @@
                                    <td>Username</td>
                                    <td>Email</td>
                                    <td>Action</td>
+                                   <td>Price</td>
                                </tr>
                                 <?php
                                 }
@@ -126,6 +127,7 @@
                                                 <a href="Javascript:;" class="userdelete" id="userdelete<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | delete</a>
                                                 <a href="Javascript:;" class="userblock" id="userblock<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | block</a>
                                             </td>
+                                            <td><label id="user_price<?php echo $fields['user_id']?>"><?php echo $fields['paypal_price']?></label></td>
                                         </tr>
                                 <?php
                                     }
@@ -234,6 +236,7 @@
                             $('#userpaypal' + $(dis).attr('data-userid')).css('display', '');
                             $('#userdelete' + $(dis).attr('data-userid')).css('display', '');
                             $('#userblock' + $(dis).attr('data-userid')).css('display', '');
+                            $('#user_price' + $(dis).attr('data-userid')).text($(dis).val());
                         });
                     }
                 });
