@@ -25,9 +25,9 @@ jQuery(document).ready(function() {
 	});
 	jQuery("body").on("click", ".remove_watchlist", function(){ 
 		var ths = jQuery(this);
-		jQuery(this).parents(".iteminfo").hide("slow",
+		jQuery(this).parents(".item").hide("slow",
   		    function(){
-				var data_obj = {item:ths.prevAll(".uid").val(),
+				var data_obj = {item:ths.attr("data-itemid"),
 				                user:jQuery("#ud").val()};
 				data_obj = jQuery.toJSON(data_obj);
 				jQuery.ajax({
