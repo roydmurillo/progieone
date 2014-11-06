@@ -131,28 +131,28 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Watchlist</h2>
-                <p>Current watch list: <?php echo $current_watch_list;?></p>
-                <p>Current items for sale: <?php echo $count_sell_items;?></p>
-                <a class="btn btn-primary btn-green">post item</a>
-                <a class="btn btn-danger">checkout</a>
-                <a class="btn btn-primary">view item list</a>
-                <a class="btn btn-primary">view watch list</a>
+                <p>Current watch list: <span class="badge"><?php echo $current_watch_list;?></span></p>
+                <p>Current items for sale: <span class="badge"><?php echo $count_sell_items;?></span></p>
+                <a href="<?php echo base_url(); ?>dashboard/sell/new" title="post new item" class="btn btn-primary btn-green">post item</a>
+                <a href="<?php echo base_url(); ?>dashboard/checkout" title="checkout item posted" class="btn btn-danger">checkout</a>
+                <a href="<?php echo base_url(); ?>dashboard/sell/for_sale" title="view item list" class="btn btn-primary">view item list</a>
+                <a href="<?php echo base_url(); ?>dashboard/watchlist" title="view watch list" class="btn btn-primary">view watch list</a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Messages</h2>
-                <p>Inbox: <?php echo $message_count;?></p>
-                <p>Unread messages: <?php echo $message_unread_count;?></p>
-                <a class="btn btn-primary">read messages</a>
-                <a class="btn btn-primary">create new message</a>
+                <p>Inbox: <span class="badge"><?php echo $message_count;?></span></p>
+                <p>Unread messages: <span class="badge"><?php echo $message_unread_count;?></span></p>
+                <a href="<?php echo base_url(); ?>dashboard/messages" title="read messages" class="btn btn-primary">read messages</a>
+                <a href="<?php echo base_url(); ?>dashboard/create" title="create new message" class="btn btn-primary">create new message</a>
             </div>
             <div class="clear"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Friends</h2>
-                <p>Current friends: <?php echo $friends_count;?></p>
-                <p>Pending friend request: <?php echo $count_friend_invites;?></p>
-                <a class="btn btn-primary">view friend list</a>
-                <a class="btn btn-primary">view friend updates</a>
-                <a class="btn btn-primary">view friend request</a>
+                <p>Current friends: <span class="badge"><?php echo $friends_count;?></span></p>
+                <p>Pending friend request: <span class="badge"><?php echo $count_friend_invites;?></span></p>
+                <a href="<?php echo base_url(); ?>dashboard/friends" title="view friend list" class="btn btn-primary">view friend list</a>
+                <a href="<?php echo base_url(); ?>dashboard/friends/activities" title="view friend updates" class="btn btn-primary">view friend updates</a>
+                <a href="<?php echo base_url(); ?>dashboard/friends/invites" title="view friend request" class="btn btn-primary">view friend request</a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h2>Forum</h2>
@@ -161,117 +161,7 @@
             </div>
             
         </div>
-<!--		<div id="inner_dashboard" style="margin-left: 15px !important; width: 760px !important">
-                    
-			<div class="inner_box"> 
-			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/watchlist">
-					<div class="box_title">
-						<img class="icon_inner img_title" src="<?php echo base_url(); ?>assets/images/list.png"><div class="inner_title">Watchlist</div>
-					</div>
-					<table>
-						<tr>
-							<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/watchlist" title="View all your items in watchlist">Browse Your Watchlist</a></td>
-						</tr>
-						<tr>
-							<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/watchlist/compare" title="Browse all latest watches">Compare Watchlist</a></td>
-						</tr>
-					</table>
-					
-					
-			</div>
-			<div class="inner_box"> 
-			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/messages">
-				<div class="box_title">
-					<img class="icon_inner img_title" src="<?php echo base_url(); ?>assets/images/mail.png"><div class="inner_title">Messages</div>
-				</div>
-				<table>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/messages/" title="View Inbox Messages">Message Inbox</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/messages/create" title="Create New Message">Create New Message</a></td>						
-					</tr>
-				</table>	
-			</div>
-			<div class="inner_box"> 
-			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/sell">
-				<div class="box_title">
-					<img class="icon_inner img_title" src="<?php echo base_url(); ?>assets/images/sell.png"><div class="inner_title">Sell Watch Items</div>
-				</div>
-				<table>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/sell/for_sale" title="View all Items Sold">Item Listings</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/sell/new" title="Add new Watch to Sell">Sell New Watch</a></td>
-					</tr>
-                                        <?php if($this->function_paypal->check_active()){ ?>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/checkout" title="Checkout Watch Items">Checkout</a></td>
-					</tr>	
-                                        <?php } ?>
-				</table>
-				
-			</div>
-			<div class="inner_box"> 
-   			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/inquiry">
-				<div class="box_title">
-					<img class="icon_inner img_title" src="<?php echo base_url(); ?>assets/images/inquiry.png"><div class="inner_title">Inquiry</div>
-				</div>
-				<table>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/inquiry" title="View all Watches Bought">Inquiries To Your Watches</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/inquiry/being_watched" title="View all Watches Bought">Your Items Being Watch</a></td>
-					</tr>					
-				</table>
-				
-			</div>
-			<div class="inner_box"> 
-   			    <input type="hidden" class="link" value="<?php echo base_url(); ?>dashboard/friends">
-				<div class="box_title">
-					<img class="icon_inner img_title" src="<?php echo base_url(); ?>assets/images/friends.png"><div class="inner_title">Friends</div>
-				</div>	
-				<table>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/friends" title="View all your items in watchlist">Browse all Friends</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/friends/activities" title="Browse all latest watches">View Recent Activities</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>dashboard/friends/invites" title="View all your friend invites.">Friend Invites</a></td>
-					</tr>
-				</table>
-							
-			</div>
-			<div class="inner_box"> 
-   			    <input type="hidden" class="link" value="<?php echo base_url(); ?>forums">
-				<div class="box_title">
-					<img class="icon_inner img_title" src="<?php echo base_url(); ?>assets/images/forum.png"><div class="inner_title">Forums</div>
-				</div>	
-				<table>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>forums/your_thread" title="View All Your Threads">
-						<div class="square" style="background:#eaa228"></div>Your Threads</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>forums/popular" title="Browse Popular Threads">
-						<div class="square" style="background:#579575; margin-bottom:10px !important;"></div>Popular Threads</a></td>
-					</tr>
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>forums/new" title="Browse Latest Threads">
-						<div class="square" style="background:#c5b47f"></div>New Threads</a></td>
-					</tr>	
-					<tr>
-						<td><a class="a_dash" href="<?php echo base_url(); ?>forums/start_thread" title="Start a New Thread">Start a New Thread</a></td>
-					</tr>	
-				</table>
-				
-			</div>
-		
-		</div>-->
+
     </div>
 </div>
 

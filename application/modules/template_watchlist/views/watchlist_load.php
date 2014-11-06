@@ -1,20 +1,20 @@
 <div id="loader"><div id="loader_inner"></div></div>
 
 <!-- content goes here -->
-<h2 class="h2_title" style="margin-top:0px !important">Items You Watch</h2>
+<h2 class="h2_title">Items You Watch</h2>
 
-<div class="item_list_watches" id="single_item" style="width:700px !important; display:none">
+<div class="item_list_watches" id="single_item">
 </div>
 
-	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-		<input id="filter_status" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-22px; left:12px" value="Filter">
-		<input id="compare_watch" class="css_btn_c2" type="button" style="padding:2px 12px;position:absolute; top:-22px; left:85px" value="Compare Selected">
-		<div class="status2" style="width:330px !important">
+	<div id="filter_container">
+		<input id="filter_status" class="btn btn-default" type="button" value="Filter">
+		<input id="compare_watch" class="btn btn-default" type="button" value="Compare Selected">
+		<div class="status2">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
 			<tr>
 				<td class='s1'>
-					<div style="float:left; margin-right:12px; width:76px;">Show Entries:</div>
+					<div>Show Entries:</div>
 				</td>				<td class='s1'>
 					<?php $entry = $this->native_session->get('watchlist_show_entry'); ?>
 					<select id="show_entry" style="float:left; width:80px; margin-top:-5px">
@@ -36,10 +36,10 @@
 			</tr>
 			<tr>
 				<td class='s1'>
-					<input id="search_dashboard_items_button" class="button_class1" type="button" value="search" style="float:left; width:80px; margin-top:3px;">
+					<input id="search_dashboard_items_button" class="button_class1" type="button" value="search">
 				</td>
 				<td class='s1'>
-					<input id="search_dashboard_items" type="text" style="float:left; width:200px; margin-top:4px;" value="<?php echo $this->native_session->get("search_item"); ?>">
+					<input id="search_dashboard_items" type="text" value="<?php echo $this->native_session->get("search_item"); ?>">
 				</td> 
 				<td class='s1'></td>
 			</tr>	
@@ -51,7 +51,7 @@
 
 
 <!-- item lists here -->
-<div class="item_list_watches" id="multiple_item" style="width:700px !important; margin-top:35px !important">
+<div class="item_list_watches" id="multiple_item">
 	
 	<?php
 	// ============================================================
@@ -119,32 +119,24 @@
             }
 			
 			?>
-
-			<div class="iteminfo" style="height:260px !important; margin:5px; border:1px solid #CCC; background:ghostwhite">
-				<div class="image_holder">
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+			<figure class="thumbnail">
+				<div class="img-slot">
 					<img src="<?php echo $default_image; ?>" />
 				</div>
 				<input type="hidden" value="<?php echo $featured->item_id; ?>" class="uid">
-				<a href="javascript:;" class="item_title">
-					<?php echo $featured->item_name; ?>       
-				</a>
-				<div class="item_price" style="text-align: center; margin-left: 10px;">$ <?php echo $price; ?></div>
-				<a href="javascript:;" class="remove_watchlist" style="float:left; clear:both">
+                                <h5><a href="javascript:;" class="item_title">
+					<?php echo substr(ucwords(strtolower($featured->item_name)),0,23)."..."; ?>       
+                                    </a></h5>
+				<div class="price">$ <?php echo $price; ?></div>
+				<a href="javascript:;" class="remove_watchlist">
 					Remove from Watchlist       
 				</a>
-				<input type="checkbox" class="sel_compare" style="float: left;
-																clear: both;
-																margin-top: 6px;
-																margin-left: 25px;"> 
-				<span style="float: left;
-							font-family: arial;
-							font-size: 13px;
-							margin-left: 2px;
-							margin-top: 5px;
-							color: navy;">Select to Compare</span> 
+				<input type="checkbox" class="sel_compare"> 
+				<span >Select to Compare</span> 
    
-			</div>			
-		
+                        </figure>			
+    </div>	
 		<?php
 		}
     ?>

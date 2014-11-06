@@ -362,11 +362,11 @@ jQuery(document).ready(function() {
 						Item Listings
 				</a>
 
-				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
+				<a class="btn btn-default btn-green <?php echo ($this->uri->segment(3) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>dashboard/sell/new">
 						Sell New Items
 				</a>	
 				<?php if($this->function_paypal->check_active()){ ?>
-				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
+				<a class="btn btn-default btn-red <?php echo ($this->uri->segment(2) == "checkout") ? "active":"tab_inner"; ?>" id="checkout" href="<?php echo base_url(); ?>dashboard/checkout">
 						Checkout 
 				</a>							
                                  <?php } ?>
@@ -384,19 +384,15 @@ jQuery(document).ready(function() {
 						<h2 class="h2_title">Fill Up Complete Details for New Watch</h2>
 						<div id="add_remarks"></div>
 						
-						<div id="add_info_links" style="float:left; clear:both; width:600px; margin:20px 0px 5px 0px">
-							<a href="javascript:;" class="add_act add_active" id="basic" style="margin-left:0px !important">ADD BASIC INFORMATION</a> <img src="<?php echo base_url() ?>assets/images/nex.png"> <a class="add_act" id="description" href="javascript:;">ADD WATCH DESCRIPTION</a> <img src="<?php echo base_url() ?>assets/images/nex.png"> <a class="add_act" id="shipping" href="javascript:;">ADD SHIPPING INFORMATION</a>	
+						<div id="add_info_links" class="clearfix">
+							<a href="javascript:;" class="add_act add_active pull-left" id="basic">Add Basic Information</a> <span class="glyphicon glyphicon-circle-arrow-right pull-left"></span> <a class="add_act pull-left" id="description" href="javascript:;">Add Watch Description</a> <span class="glyphicon glyphicon-circle-arrow-right pull-left"></span> <a class="add_act pull-left" id="shipping" href="javascript:;">Add Shipping Information</a>	
 						</div>
 						
-						<div id="details_basic" class="details_" style="float: left;
-									clear: both;
-									padding: 20px;
-									background: none repeat scroll 0% 0% #F8F8FF; 
-									width: 565px;">
-							<table class="table_add" style="float: left; margin-left: 70px;">
+						<div id="details_basic" class="details_" >
+							<table class="table_add">
 								<tbody>
                                     <tr>
-										<td><div class="title_thread" style="width:350px">Item type</div> <br>
+										<td><div class="title_thread">Item type</div> <br>
 										<select id="item_wholepart" name="item_wholepart" class="input">
 												<option value="1" selected="selected"> Whole Watch </option>
 												<option value="0"> Parts/Accessories Only </option>
@@ -404,7 +400,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr class="item_parts" style="display:none;">
-										<td><div class="title_thread" style="width:350px">Type of Parts/Accessories Only</div> <br>
+										<td><div class="title_thread">Type of Parts/Accessories Only</div> <br>
 										<select id="item_parttype" name="item_parttype" class="input">
 												<option value=""> - Select - </option>
 												<option value="bracelet_strap"> Bracelet / Strap </option>
@@ -491,7 +487,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr>
-                                        <td><div class="title_thread"><button id="additional_option" onclick="return false;">Additional Options</button></div><br>
+                                        <td><div class="title_thread"><button id="additional_option" class="btn btn-info" onclick="return false;">Additional Options</button></div><br>
 										</td>
 									</tr>
                                     <tr class="hidden additional">
@@ -591,34 +587,26 @@ jQuery(document).ready(function() {
 							</table>
 						</div>
 
-						<div id="details_description"  class="details_" style="float: left;
-									clear: both;
-									padding: 20px;
-									background: none repeat scroll 0% 0% #F8F8FF; 
-									width: 565px; display:none">
-									<div class="t_area" style="margin: 10px 0px 0px 5px !important;">
+						<div id="details_description"  class="details_" >
+									<div class="t_area" >
 										<div class="title_thread">Watch Description</div><br>
-										<div style="float:left; clear:both;">
-											<textarea id="item_description" name="item_desc" style="width:550px; height:300px;"></textarea>
+										<div >
+											<textarea id="item_description" name="item_desc" ></textarea>
 										</div>
 									</div>
 						</div>
 
-						<div id="details_shipping"  class="details_" style="float: left;
-									clear: both;
-									padding: 20px;
-									background: none repeat scroll 0% 0% #F8F8FF; 
-									width: 565px; display:none">
-									<div class="t_area" style="margin: 10px 0px 0px 5px !important;">
+						<div id="details_shipping"  class="details_" >
+									<div class="t_area" >
 										<div class="title_thread">Shipping Information</div><br>
-										<div style="float:left; clear:both;">
-											<textarea id="item_shipping" name="item_shipping" style="width:550px; height:300px;"></textarea>
+										<div >
+											<textarea id="item_shipping" name="item_shipping"></textarea>
 										</div>
 									</div>
 						</div>						
 						
-						<input id="add_reset" class='css_btn_c0' type="button" onclick="reset_data()" value="Reset All"/>
-						<input id="add_next" class='css_btn_c0 n1' type="button" value="Next">
+						<input id="add_reset" class='btn btn-danger' type="button" onclick="reset_data()" value="clear"/>
+						<input id="add_next" class='btn btn-primary btn-green' type="button" value="Next">
 						<input id="add_next2" class='css_btn_c0 n1' style="display:none" type="button" value="Next">
 						<input id="add_forsale" class='css_btn_c0 n1' type="button" style="display:none" value="Submit Info">
 						<input id="submit_add" name="submit_add" type="submit" value="Submit Info" style="display:none">
@@ -630,7 +618,7 @@ jQuery(document).ready(function() {
 						
 					}?>
 					
-					<div style="float:left; margin:12px 0px; width:100%; clear:both; color:#555; width:600px; font-size:12px; font-family:Verdana, Geneva, sans-serif">
+					<div >
 						*Kindly complete all field details to make your watch items more searchable for buyers.<br><br>*For Parts/Accessories Only items, you can choose "others" for fields
 						that might not be appropriate for your item/s.
 					</div>				

@@ -110,7 +110,7 @@
 									
 									echo '<div class="forum_container" style="margin-bottom:15px !important">
 										  <div class="forum_title" style="padding:0px 10px !important">
-											<div class="div_td1" style="width:480px !important">
+											<div class="div_td1">
 												Sent '.$this->function_forums->last_updated($r->message_date).' 
 											</div>
 										</div><!-- forum_title -->';

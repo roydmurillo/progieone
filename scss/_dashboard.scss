@@ -7,7 +7,11 @@ and open the template in the editor.
     Created on : 10 29, 14, 2:09:38 PM
     Author     : macbook
 */
-
+.bg-success{
+    .container{
+        padding-left:0;
+    }
+}
 #inner_dashboard_tab{
 float:left; max-width:763px; width:100%; padding-left:7px; height:40px; line-height:40px; vertical-align:middle; 
 

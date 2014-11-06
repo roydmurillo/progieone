@@ -1,6 +1,6 @@
 <div class="forum_container">
-	
-	<div class="forum_title">
+	<!--== MAIN FORUM ==-->
+	<div class="forum_title clearfix">
 		
 		<div class="div_td1">
 			

@@ -75,7 +75,7 @@ jQuery(document).ready(function(){
                     if($this->exclude_settings->excluded_user($user_["user_name"])){
                 ?>
                 
-            <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "administrator" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/administrator">Admin</a></li>
+            <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "administrator" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/administrator">Settings</a></li>
 		
                  <?php } ?>
                 

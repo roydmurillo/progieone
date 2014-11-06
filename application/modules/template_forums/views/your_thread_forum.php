@@ -2,7 +2,7 @@
 	
 	<div class="forum_title">
 		
-		<div class="div_td1" style="width:480px !important">
+		<div class="div_td1">
 			
 			Threads
 			
@@ -37,11 +37,11 @@
 					$clean_url = $this->function_forums->clean_url($category_name);
 					
 					echo "<div class='div_td_content' $class>
-					        <div class='f_info' style='min-height:30px !important; width:470px !important'>
+					        <div class='f_info' style='min-height:30px !important;'>
 					      		<div class='forum_t'><a href='".base_url()."forums/thread/$r->thread_id/".$this->function_forums->clean_url($r->thread_title)."'>".$r->thread_title."</a></div>
 						  		<div class='forum_d'>Posted at <a style='color:#3e6876' href='".base_url()."forums/category/$clean_url/'>$category_name</a></div>
 						  	</div>
-			                <div class='f_info2' style='min-height:30px !important; width:250px !important'>
+			                <div class='f_info2' style='min-height:30px !important;'>
 					      		<div class='forum_count'>".$count."</div>";
 						  
 						   echo "<div class='forum_updated'>".$this->function_forums->last_updated_by_thread($r->thread_id,$r->thread_user_id,$r->thread_date)."</div>";

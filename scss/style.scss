@@ -48,6 +48,9 @@ p{
             margin:0;
             color: #FFF;
             margin-right:12px;
+            font-family: 'Georgia';
+            -webkit-font-smoothing: antialiased; 
+            font-size: 16px;
         }
         a{
                 background: rgba(0,0,0,0.2);
@@ -93,6 +96,7 @@ footer{
             li{
                 display:inline;
                 list-style:none;
+                margin-left:12px;
                 a{
                     
                 }

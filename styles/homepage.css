@@ -294,44 +294,7 @@ width:200px;
 .ilast{
 margin:0px 0px 10px 0px;
 }
-.image_holder{
-float: left;
-width: 140px;
-height: 140px;
-margin: 0px 10px 20px 24px;
-display: table-cell;
-line-height: 135px;
-vertical-align: middle;
-text-align: center;
-border: 1px solid rgba(0, 0, 0, 0.4);
-box-shadow: 1px 0px 2px 1px #CCC;
-overflow:hidden;
-background:#FFF
-}
-.image_holder img{
-max-width: 140px;
-max-height: 140px;
-vertical-align: middle;
-}
-.item_title{
-text-decoration: none;
-font-size: 12px;
-font-weight: normal;
-text-transform: uppercase;
-font-family: Tahoma;
-float: left;
-clear: both;
-color: #000;
-text-align: center;
-height: 30px;
-overflow: hidden;
-width: 159px;
-margin-left: 10px;
-padding: 2px 5px;
-}
-.item_title:hover{
-color:#000;
-}
+
 .item_price{
 float: left;
 clear: both;

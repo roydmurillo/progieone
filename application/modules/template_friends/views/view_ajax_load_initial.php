@@ -7,14 +7,14 @@
 <?php
 if($results != NULL || !empty($results)){?>
 	
-	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px; position:absolute; top:-24px; left:12px" value="Filter">
+	<div id="filter_container">
+		<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
 		<div class="status2">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
 			<tr>
 				<td class='s1'>
-					<div style="float:left; margin-right:12px; width:76px;">Show Entries:</div>
+					<div >Show Entries:</div>
 				</td>
 				<td class='s1'>
 					<?php $entry = $this->native_session->get('show_entry'); ?>
@@ -90,7 +90,7 @@ if($results != NULL || !empty($results)){?>
    //load brand obj
    $this->load->module("function_brands");
    	
-   echo "<table id='tbl_for_sale' style='float:left; clear:both; margin-top:12px'><tbody>
+   echo "<table id='tbl_for_sale'><tbody>
    			<tr class='tb_head'>
 				<td class='tb1'>Status</td>
 				<td class='tb2'><a class='sort watch-name' href='javascript:;' title='Sort Model Name'>Model Name</a></td>

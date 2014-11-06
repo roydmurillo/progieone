@@ -7,8 +7,8 @@
 <?php
 if($results != NULL || !empty($results)){?>
 	
-	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+	<div id="filter_container">
+		<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
 		<div class="status2">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
@@ -90,15 +90,15 @@ if($results != NULL || !empty($results)){?>
    //load brand obj
    $this->load->module("function_brands");
    	
-   echo "<table id='tbl_for_sale' style='float:left; clear:both; margin-top:12px'><tbody>
-   			<tr class='tb_head'>
-				<td class='tb1'>Status</td>
-				<td class='tb2'><a class='sort watch-name' href='javascript:;' title='Sort Model Name'>Model Name</a></td>
-				<td class='tb3'><a class='sort watch-price' href='javascript:;' title='Sort Price'>Watch Price</a> </td>
-				<td class='tb3'><a class='sort watch-brand' href='javascript:;' title='Sort Make'>Make</a></td>
-				<td class='tb7'><a class='sort watch-created' href='javascript:;' title='Sort Date Created'>Created</a></td>
-				<td class='tb7'><a class='sort watch-expire' href='javascript:;' title='Sort Expiry Date'>Expiry</a></td>
-				<td class='tb7 tlast' style='width:55px'> Actions </td>				
+   echo "<table id='tbl_for_sale' class='table table-striped'><tbody>
+   			<tr>
+				<td>Status</td>
+				<td><a class='sort watch-name' href='javascript:;' title='Sort Model Name'>Model Name</a></td>
+				<td><a class='sort watch-price' href='javascript:;' title='Sort Price'>Watch Price</a> </td>
+				<td><a class='sort watch-brand' href='javascript:;' title='Sort Make'>Make</a></td>
+				<td><a class='sort watch-created' href='javascript:;' title='Sort Date Created'>Created</a></td>
+				<td><a class='sort watch-expire' href='javascript:;' title='Sort Expiry Date'>Expiry</a></td>
+				<td class='tlast'> Actions </td>				
 			</tr>
    		 "; 	 
    $ctr = 2;	
@@ -140,9 +140,9 @@ if($results != NULL || !empty($results)){?>
 		
         echo "<tr class='".$class."'>  
 				<td class='tb1'><div class='".$status."'></div></td>
-			  	<td class='tb2'><div style='float:left; width:100%; min-height:30px; margin-top:18px; line-height:12px; vertical-align:mmiddle'>".strtoupper($r->item_name)."</div></td>
+			  	<td class='tb2'><div>".strtoupper($r->item_name)."</div></td>
 			  	<td class='tb3 tbprice'>$ $r->item_price</td>
-				<td class='tbdata'><div style='float:left; width:100%; min-height:40px; margin-top:18px; line-height:12px; vertical-align:mmiddle'>".$this->function_brands->get_brand($r->item_brand)."</div></td>
+				<td class='tbdata'><div>".$this->function_brands->get_brand($r->item_brand)."</div></td>
 				<td class='tb7'>$registered</td>
 				<td class='tb7'>$expire</td>
 				<td class='tb7'>
@@ -163,8 +163,8 @@ if($results != NULL || !empty($results)){?>
 	if( $this->native_session->get('filter_type') || $this->native_session->get('search_item')){
 			?>
 				
-				<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-					<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+				<div id="filter_container">
+					<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
 					<div class="status2">
 						<h3 class="h3title">Filter</h3>
 						<table><tbody>

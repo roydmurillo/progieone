@@ -50,8 +50,8 @@ jQuery(document).ready(function() {
 <?php
 if($results != NULL || !empty($results)){?>
 
-	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+	<div id="filter_container">
+		<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
 		<div class="status2">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
@@ -128,7 +128,7 @@ if($results != NULL || !empty($results)){?>
 		 <input type='hidden' name='upload' value='1'>
 		 <input type='hidden' name='business' value='".$this->paypal_settings->business_email()."'>";
    	
-   echo "<table id='tbl_for_sale' style='float:left; clear:both; margin-top:12px'><tbody>
+   echo "<table id='tbl_for_sale' class='table table-striped'><tbody>
    			<tr class='tb_head'>
 				<td class='tb1'>Status</td>
 				<td class='tb2'><a class='sort watch-name' href='javascript:;' title='Sort Model Name'>Model Name</a></td>
@@ -187,7 +187,7 @@ if($results != NULL || !empty($results)){?>
 		echo "<input type='hidden' name='amount_".$count."' value='".$paypal["price"]."'>";
 		echo "<input type='hidden' class='q_".$count."' name='quantity_".$count."' value='1'>";
 				
-		echo "		<div style='float:left; width:100%; min-height:30px; margin-top:18px; line-height:12px; vertical-align:mmiddle'>".strtoupper($r->item_name)."</div>
+		echo "		<div >".strtoupper($r->item_name)."</div>
 				</td>
 			  	<td class='tb3 tbprice'>$ $r->item_price</td>
 				<td class='tb7' style='width:100px !important'>$ ".$paypal["price"]." / ".$paypal["days"]." days</td>
@@ -202,7 +202,7 @@ if($results != NULL || !empty($results)){?>
 
    echo "</tbody></table>"; 	
    
-   echo "<div style='float:left; clear:both; width:50%; text-align:right; font-family:verdana; color:green; font-size:15px; font-weight:bold; margin-left:280px;'>Total Amount For Checkout: $ <div id='total'></div></div>";
+   echo "<div>Total Amount For Checkout: $ <div id='total'></div></div>";
    
    //paypal	bottom form
    echo "<input type='hidden' id='custom_value' name='custom' value=''>";
@@ -213,7 +213,7 @@ if($results != NULL || !empty($results)){?>
    echo "<input type='hidden' name='cancel_return' value='".base_url()."dashboard/checkout'>";
    echo "<input type='hidden' name='lc' value='US'>";
    echo "<input type='hidden' name='currency_code' value='USD'>";
-   echo "<input type='button' class='checkout_btn' value='Proceed To Chekout'>";
+   echo "<input type='button' class='btn btn-success' value='Proceed To Chekout'>";
    echo "<input type='submit' id='checkout_btn' value='Proceed To Chekout' style='display:none'>";
    echo "</form>";
    
@@ -221,8 +221,8 @@ if($results != NULL || !empty($results)){?>
 	if( $this->native_session->get('filter_type') || $this->native_session->get('search_item')){
 		?>
 		
-			<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
-				<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px;position:absolute; top:-24px; left:12px" value="Filter">
+			<div id="filter_container">
+				<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
 				<div class="status2">
 					<h3 class="h3title">Filter</h3>
 					<table><tbody>

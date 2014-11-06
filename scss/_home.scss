@@ -29,7 +29,9 @@ $cont-color: #fff;
         box-sizing: content-box;
         p{
             font-family:$base-font !important;
-            
+        }
+        a{
+            font-size:2em;
         }
     }
     .home-banner{
@@ -51,10 +53,15 @@ $cont-color: #fff;
             width:70%;
             h1{
                 font-weight:300;
+                text-shadow: 1px 1px 3px #000;
+            }
+            p{
+                text-shadow: 1px 1px 3px #000;
             }
         }
         .navbar-nav a {
-         @include background-opacity($base-color, 0.7); 
+         @include background-opacity(#428bca, 0.9); 
+         color:#fff;
          &:hover{color:#a6a6a6;}
         }
         .ww-tabs{
@@ -70,7 +77,7 @@ $cont-color: #fff;
                text-align: center;
                float:left;
                .help-block{
-                    color:darken($cont-color,20%);
+                    color:darken($cont-color,2%);
                     font-family:$base-font;
                     font-size: .245em;
                     font-weight: 700;
@@ -79,12 +86,12 @@ $cont-color: #fff;
                     background:transparent;
                     border:none;
                     font-size:4em;
-                    color:darken($cont-color,20%);
+                    color:darken($cont-color,2%);
                     text-decoration:none;
                     &:hover span{
                        background:transparent;
                        border:none;
-                       color:lighten(grayscale($base-color),80%);
+                       color:lighten(grayscale($base-color),50%);
                     }
                 }
                 &.active 

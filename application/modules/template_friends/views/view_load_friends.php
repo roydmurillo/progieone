@@ -49,7 +49,7 @@ if($results != NULL || !empty($results)){
 	
 	</div>
     
-	<div style="float:left; width:100%; clear:both; margin:10px 0px 0px 9px">
+<div class="item_list_watches" style="float:left; width:100%; clear:both; margin:10px 0px 0px 9px">
 	<?php 
 	 $user_id = unserialize($this->native_session->get("user_info"));
 	 $user_id = $user_id["user_id"];
@@ -60,27 +60,28 @@ if($results != NULL || !empty($results)){
 		
 		$u = $this->function_users->get_user_fields_by_id(array("user_avatar","user_name","user_id"),$r->friend_friend_id);
 		
-	?>
-			<div class="iteminfo" style="height:200px !important; width:158px; border:1px solid #CCC; margin:5px; background:ghostwhite">
-				<div class="image_holder" style="margin:0px 10px 10px 9px !important; width:140px !important; line-height:140px !important; height:140px !important;">
+                ?>  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+			<figure class="iteminfo thumbnail" >
+				<div class="img-slot" >
 					<?php 
 						if($u["user_avatar"] != ""){
 					?>
-						<img src="<?php echo $u["user_avatar"]; ?>" style="max-width:140px !important; max-height:140px !important; " />
+						<img src="<?php echo $u["user_avatar"]; ?>"  />
 					<?php 
 						} else {
 					?>
-						<img src="<?php echo base_url(); ?>assets/images/no-image.png"  style="max-width:140px !important; max-height:140px !important; " />
+						<img src="<?php echo base_url(); ?>assets/images/no-image.png" />
 					<?php } ?>
 				</div>
 				<input type="hidden" value="<?php echo $r->friend_friend_id; ?>" class="uid">
-				<a href="javascript:;" class="item_title" style="width:140px !important; margin-left:4px !important; background:none; border:none;">
+				<a href="javascript:;" class="item_title" >
 					<?php echo $u["user_name"]; ?>       
 				</a>
-				<a href="javascript:;" class="remove_watchlist remove_friend" style="float:left; clear:both; margin-left:26px !important;">
+				<a href="javascript:;" class="remove_watchlist remove_friend">
 					Remove from Friends       
 				</a>
-			</div>
+			</figure>
+                </div>
 	
 	<?php 
 		}

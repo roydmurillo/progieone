@@ -67,13 +67,13 @@
 							
 							<div class="t_area">
 								<div class="title_thread">Watch Description</div><br>
-								<div style="float:left; clear:both;">
-									<textarea id="item_description" name="message_content" style="width:150%; height:300px;"></textarea>
+								<div>
+									<textarea id="item_description" name="message_content"></textarea>
 								</div>
 							</div>
 							
-							<input class='css_btn_c0' type="button" onclick="reset_data()" value="Reset"/>
-							<input id="submit_new_message" class='css_btn_c0' type="button" value="Submit Info">
+							<input class='btn btn-danger' type="button" onclick="reset_data()" value="Reset"/>
+							<input id="submit_new_message" class='btn btn-default btn-green' type="button" value="Submit Info">
 							<input id="submit_message" name="submit_message" type="submit" value="Submit Info" style="display:none">
 						</form>
 						

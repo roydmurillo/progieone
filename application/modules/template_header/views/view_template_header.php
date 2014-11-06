@@ -44,8 +44,8 @@
 <body>
     <div id="top" class="bg-success">
             <div class="container clearfix">
-                <p class="pull-left">$0.50 per item posting, post now!</p>
-                <a href="">start here</a>
+                <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
+                <a class="pull-left" href="<?php echo base_url(); ?>secure/register" title="post new item">start here</a>
             </div>
     </div>
 <?php

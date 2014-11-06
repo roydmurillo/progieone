@@ -5,7 +5,7 @@
 	
 	<div class="forum_title">
 		
-		<div class="div_td1" style="width:480px !important">
+		<div class="div_td1">
 			
 			Threads
 			

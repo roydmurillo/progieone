@@ -4,7 +4,7 @@
                 <div id="top" class="bg-success">
                         <div class="container clearfix">
                             <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
-                            <a href="">start here</a>
+                            <a class="pull-left" href="<?php echo base_url(); ?>secure/register" title="post new item">start here</a>
                         </div>
                 </div>
                 <div class="container">
@@ -27,12 +27,20 @@
                 </div>
                 
             </div>
-            <div class="container text-center social">
+            <div class="container text-center social st-multi-color">
                 <p>follow us</p>
-                <a href="" class="st-icon-facebook"></a>
-                <a href="" class="st-icon-twitter"></a>
-                <a href="" class="st-icon-instagram"></a>
-                <a href="" class="st-icon-googleplus"></a>
+                <a href="" class="st-icon-facebook">
+                    <span></span>
+                </a>
+                <a href="" class="st-icon-twitter">
+                    <span></span>
+                </a>
+                <a href="" class="st-icon-instagram">
+                    <span></span>
+                </a>
+                <a href="" class="st-icon-googleplus">
+                    <span></span>
+                </a>
             </div>
             <ul class="ww-tabs row">
                 <li class="col-md-3">

@@ -76,10 +76,6 @@ background: #148c82; }
 box-shadow: 1px 1px 2px 1px #CCC; }
 #watch_list:hover { background: beige; }
 #awatch { text-decoration: none; color: #333; border: none !important; }
-.title_bar { float: left; margin: 0px 0px 10px 10px; width: 748px; padding-left: 20px; height: 30px; line-height: 30px; vertical-align: middle; font-family: arial; color: #fff; font-size: 14px; 
-background:#333;
-
-}
 .error { float: left; width: 100%; margin: 5px 0px; height: 20px; background: lightgoldenrodyellow; color: #F00; text-align: center; font-family: arial; font-size: 12px; line-height: 20px; vertical-align: middle; font-weight: bold; }
 #create_account { float: left; display: inline; width: 100%; min-height: 820px; }
 .inner_acct { margin: 20px; font-size: 12px; }

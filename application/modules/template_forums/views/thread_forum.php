@@ -78,7 +78,7 @@
 					
 					echo '<div class="forum_container" style="margin-bottom:15px !important">
 						  <div class="forum_title" style="padding:0px 10px !important">
-							<div class="div_td1" style="width:480px !important">
+							<div class="div_td1">
 								Posted '.$this->function_forums->last_updated($r->thread_date).' <span style="font-weight:normal !important; font-size:11px !important">( Thread Starter )</span>
 							</div>
 						</div><!-- forum_title -->';
@@ -140,7 +140,7 @@
 					
 					echo '<div class="forum_container" style="margin-bottom:15px !important">
 					 	  <div class="forum_title" style="padding:0px 10px !important;">
-							<div class="div_td1" style="width:480px !important">
+							<div class="div_td1">
 								Posted '.$this->function_forums->last_updated($r->reply_date).'
 							</div>
 						</div><!-- forum_title -->';					
