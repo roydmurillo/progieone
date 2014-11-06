@@ -213,8 +213,7 @@ if($results != NULL || !empty($results)){?>
    echo "<input type='hidden' name='cancel_return' value='".base_url()."dashboard/checkout'>";
    echo "<input type='hidden' name='lc' value='US'>";
    echo "<input type='hidden' name='currency_code' value='USD'>";
-   echo "<input type='button' class='btn btn-success' value='Proceed To Chekout'>";
-   echo "<input type='submit' id='checkout_btn' value='Proceed To Chekout' style='display:none'>";
+   echo "<input type='submit' id='checkout_btn' value='Proceed To Chekout'>";
    echo "</form>";
    
 } else {
