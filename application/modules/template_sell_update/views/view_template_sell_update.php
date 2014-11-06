@@ -26,7 +26,6 @@ foreach($item_info as $i){
 	$item_case_thickness = $i->item_case_thickness;	
 	$item_condition = $i->item_condition;
 	$item_parttype = $i->item_parttype;	
-    $short_description = $i->short_description;	
 }
 ?>
 
@@ -183,10 +182,6 @@ foreach($item_info as $i){
 												<td>Title:</td>
 												<td><input type="text" value="<?php echo $item_name; ?>" id="item_name" name="item_name" class="input"></td>
 											</tr>
-                                            <tr>
-                                                <td>Short Description:</td>
-                                                <td><input type="text" value="<?php echo $short_description;?>" id="short_description" name="short_description" class="input"></td>
-                                            </tr>
                                             <tr>
 												<td>Classified Price($):</td>
 												<td><input type="text" value="<?php echo $item_price; ?>" id="item_price" name="item_price" class="auto input"></td>
