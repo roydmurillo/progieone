@@ -199,17 +199,17 @@ if(empty($item_list)){
                             </h5>
                                 <div class="clearfix">    
 				<div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
-                            <input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
+                            <input type="hidden" class="item" id="item<?php echo $user.$item_id?> value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
 				<div class="pull-right">
                                     <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
 					} else {
-						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
 				}
 				?>
                                 </div>
@@ -343,17 +343,17 @@ if(empty($item_list)){
                                 </h5>
                                 <div class="clearfix">
                                     <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
-                                    <input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
+                                    <input type="hidden" class="item" id="item<?php echo $user.$item_id?>" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
                                     <div class="pull-right">
                                 <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
 					} else {
-						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">In Watchlist</a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
 				}
 				?>
                                     </div>
