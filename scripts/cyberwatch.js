@@ -54,7 +54,22 @@ jQuery(document).ready(function(){
                    $('.fix, .fix .btn').removeClass('fix-bg');
                 }
             });
-
+            
+            $('.filter-btn').on('click',function(){
+              $('.desktop-sidebar').addClass('go-mobile');    
+              $('.desktop-sidebar').fadeIn();  
+              $('.dim').addClass('dimmer');
+            });
+            $('.dim').on('click',function(){
+               $('.desktop-sidebar').removeClass('go-mobile');
+               $('.dim').removeClass('dimmer');
+            });
+            $('.menu-btn').on('click',function(){
+                $('.black-nav').toggle(function(){
+                    $('.menu-btn').css('background-color','black');
+                });
+                
+            });
             
         
 //	
@@ -78,6 +93,3 @@ jQuery(document).ready(function(){
 //	}
 //});
 
-$(document).ready(function(){
-            
-        });

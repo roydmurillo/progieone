@@ -1,4 +1,4 @@
-<div class="col-sm-3 col-md-2 sidebar">
+<div class="col-sm-3 col-md-2 sidebar desktop-sidebar">
 <?php
 	$this->load->module("function_users");
 	if(!$this->native_session->get("user_name")){
@@ -95,5 +95,7 @@ jQuery(document).ready(function(){
 <!--<a href="<?php echo base_url() ?>advertise" style="border:0px; border:none;"><img  style="float:left; clear:both; width:160px; margin:5px 20px 20px 20px" src="<?php echo base_url() ?>assets/images/advertise.png"></a>-->
 
 </div>
+<button class="btn btn-default filter-btn visible-sm visible-xs"><i class="fa fa-bars"></i> dashboard</button>
+<div class="dim"></div>
 
 

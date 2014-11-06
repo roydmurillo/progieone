@@ -35,7 +35,7 @@
 					} else {
 						$class='';
 					}
-					echo "<div class='div_td_content' $class>
+					echo "<div class='div_td_content clearfix' $class>
 					        <div class='f_info'>
 					      		<div class='forum_t'><a href='".base_url()."forums/category/".str_replace(" ","-",(trim($r->category_title)))."'>".$r->category_title."</a></div>
 								<div class='forum_d'>".$r->category_desc."</div>

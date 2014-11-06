@@ -32,6 +32,5 @@
 
 
 <?php 
-
 $this->load->view('view_template_menu');
 ?>

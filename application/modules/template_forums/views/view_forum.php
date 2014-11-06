@@ -3,17 +3,6 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination.js"></script>
 
 <div id="homepage">
-		
- 		<?php
-		if($user_logged_in){
-    	 //load sidebar left
-		  $this->load->module('template_sideleft_dashboard');
-		  $this->template_sideleft_dashboard->view_template_sideleft_dashboard(); 
-		} else {
-		  $this->load->module('template_sideleft');
-		  $this->template_sideleft->view_template_sideleft(); 
-		}
-		?>
         
 		<div class="col-sm-9 col-md-10 main">
 			<?php

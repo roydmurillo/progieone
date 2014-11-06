@@ -1,8 +1,6 @@
 <?php $this->native_session->force_regenerate_session(); ?>
 <style>
 .field{margin-left:125px;}
-.hdr input {width:335px;}
-#user_country {width:360px !important;}
 input[type="checkbox"] {
     width:auto !important;
 }
@@ -86,7 +84,7 @@ input[type="checkbox"] {
 					?>
 						<div>
 							<input type="hidden" name="captcha_key" value="<?php echo $key; ?>">
-							<input class="inp"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code" style="width:335px">
+							<input class="inp"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code">
 						</div>					
 					</div>
 				</div>	

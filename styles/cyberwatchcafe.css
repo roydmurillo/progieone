@@ -86,9 +86,7 @@ box-shadow: 1px 1px 2px 1px #CCC; }
 }
 .reg_table { margin: 0px auto; font-size: 12px; }
 .reg_table tr { float: left; margin: 12px; }
-.hdr { float: left; text-align: left; width: 200%; }
 .mbottom { margin-bottom: -30px; }
-.inp { width: 200px; height: 30px; padding: 0px 12px; float: left; }
 .field { margin: 5px auto; width: 225px; }
 #remarks { margin: 12px; font-size: 12px; color: red; }
 .css_btn_c0 { font-size: 16px; font-family: Arial; font-weight: normal; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #ffaa22; padding: 9px 18px; text-decoration: none; background: -moz-linear-gradient( center top, #ffec64 5%, #ffab23 100% ); background: -ms-linear-gradient( top, #ffec64 5%, #ffab23 100% );  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23');

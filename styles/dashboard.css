@@ -498,8 +498,6 @@ width:12px;
 
 
 .forum_container{
-float:left;
-width:750px;
 min-height:100px;
 background: none repeat scroll 0% 0% #FFF;
 border: 1px solid #E2E2E2;
@@ -512,7 +510,6 @@ margin-left:10px;
 }
 
 .forum_title{
-   float:left;
    margin:0px;
 	border-top: 1px solid #fbfbfb;
   color: #374437;
@@ -568,8 +565,6 @@ text-align: right;
 
 }
 .div_td_content{
-width: 750px;
-float:left;
 min-height:20px;
 padding:20px 0px;
 font-family:arial;
