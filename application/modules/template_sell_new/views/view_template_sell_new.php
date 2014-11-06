@@ -33,9 +33,6 @@ jQuery(document).ready(function() {
 			if(jQuery("#item_name").val() == ""){
 				err = err + "Title is a required field.\n";
 			}
-            if(jQuery("#short_description").val() == ""){
-				err = err + "Short description is a required field.\n";
-			}
             if(jQuery("#item_price").val() == ""){
 				err = err + "Must enter an item price value.\n";
 			}
@@ -183,9 +180,6 @@ jQuery(document).ready(function() {
 			if(jQuery("#item_name").val() == ""){
 				err = err + "Title is a required field.\n";
 			}
-			if(jQuery("#short_description").val() == ""){
-				err = err + "Short description is a required field.\n";
-			}
             if(jQuery("#item_price").val() == ""){
 				err = err + "Must enter an item price value.\n";
 			}
@@ -258,8 +252,8 @@ jQuery(document).ready(function() {
 					jQuery("#description").addClass("add_active");				
 				} else {
 					jQuery(".details_").hide();
+                    jQuery("#details_description").hide();
 					jQuery("#details_shipping").show();
-					jQuery(".n1").hide();
 					jQuery("#add_forsale").show();
 					jQuery(".add_act").removeClass("add_active");
 					jQuery("#shipping").addClass("add_active");				
@@ -335,7 +329,25 @@ jQuery(document).ready(function() {
 //			value = value.replace(/[^0-9]/g,'');
 //			value = value.substr(0,4);
 //			jQuery(this).val(value);
-//		});			
+//		});		
+
+    jQuery('body').on('click', '.set_as_default', function(){
+        $.each($('.set_as_default'), function(key, value){
+            $(this).text('set as default');
+        });
+
+        $(this).text('default');
+
+        var data_obj = {item_id:jQuery(this).attr("data-id"), src: jQuery(this).attr("data-src")};
+        data_obj = jQuery.toJSON(data_obj);
+        jQuery.ajax({
+            type: "POST",
+            url: jQuery("#set_default_url").val(),
+            cache: false,
+            data: { type:jQuery("#type_setdefault").val(), args:data_obj}
+        });
+
+    });
 });
 </script>
 
@@ -344,12 +356,16 @@ jQuery(document).ready(function() {
 	  $type_add = $this->function_security->encode("add_new_item");
 	  $type_addimg = $this->function_security->encode("add_new_image");
 	  $type_delimg = $this->function_security->encode("delete_new_image"); 	  
-	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
+	  $ajax = $this->function_security->encode("dashboard-ajax");
+      $type_setdefault = $this->function_security->encode("type_setdefault");
+?>
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?>dashboard/<?php echo $ajax; ?>">
 <input id="type_add" type="hidden" value="<?php echo $type_add; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
+<input id="set_default_url" type="hidden" value="<?php echo base_url(); ?>dashboard/setDefaultImage">
 <input id="type_addimg" type="hidden" value="<?php echo $type_addimg ?>">
 <input id="type_delimg" type="hidden" value="<?php echo $type_delimg; ?>">
+<input id="type_setdefault" type="hidden" value="<?php echo $type_setdefault; ?>">
 <div id="homepage">
  		<?php
     	//load sidebar left
@@ -434,10 +450,6 @@ jQuery(document).ready(function() {
                                     <tr>
 										<td><div class="title_thread">Title</div><br>
 										<input type="text" value="" id="item_name" name="item_name" class="input"></td>
-									</tr>
-                                    <tr>
-										<td><div class="title_thread">Short Description</div><br>
-										<input type="text" value="" id="short_description" name="short_description" class="input"></td>
 									</tr>
                                     <tr>
 										<td><div class="title_thread">Classified Price($)</div><br>
@@ -587,7 +599,7 @@ jQuery(document).ready(function() {
 							</table>
 						</div>
 
-						<div id="details_description"  class="details_" >
+						<div id="details_description" style="display:none;">
 									<div class="t_area" >
 										<div class="title_thread">Watch Description</div><br>
 										<div >
@@ -596,7 +608,7 @@ jQuery(document).ready(function() {
 									</div>
 						</div>
 
-						<div id="details_shipping"  class="details_" >
+						<div id="details_shipping" style="display:none;">
 									<div class="t_area" >
 										<div class="title_thread">Shipping Information</div><br>
 										<div >
@@ -606,7 +618,7 @@ jQuery(document).ready(function() {
 						</div>						
 						
 						<input id="add_reset" class='btn btn-danger' type="button" onclick="reset_data()" value="clear"/>
-						<input id="add_next" class='btn btn-primary btn-green' type="button" value="Next">
+						<input id="add_next" class='btn btn-primary btn-green details_' type="button" value="Next">
 						<input id="add_next2" class='css_btn_c0 n1' style="display:none" type="button" value="Next">
 						<input id="add_forsale" class='css_btn_c0 n1' type="button" style="display:none" value="Submit Info">
 						<input id="submit_add" name="submit_add" type="submit" value="Submit Info" style="display:none">
