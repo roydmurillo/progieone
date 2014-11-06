@@ -24,9 +24,6 @@ jQuery(document).ready(function() {
 			if(jQuery("#item_name").val() == ""){
 				err = err + "Model Name is a required field.\n";
 			}
-			if(jQuery("#short_description").val() == ""){
-				err = err + "Short description is a required field.\n";
-			}
             if(jQuery("#item_price").val() == ""){
 				err = err + "Must enter an item price value.\n";
 			}
