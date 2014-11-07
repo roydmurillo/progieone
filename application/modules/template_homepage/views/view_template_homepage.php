@@ -4,6 +4,22 @@
 
     <div class="container">
         <div class="ww-tab-container">
+            <?php
+                $this->load->module("function_login");
+                if($this->function_login->is_user_loggedin()){
+            ?>
+                   <form method="GET" action="<?php echo base_url('search');?>">
+                       <div class="home-search form-group">
+                           <div class="input-group">
+                               <input type="text" name="s" class="form-control" placeholder="type in keyword here...">
+                               <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div> 
+                           </div>
+                       </div>
+                   </form>
+            <?php
+                }
+            ?>
+            
             <div class="ww-tab-panel active" id="buy">
                 <div class="container text-center">
                     <h2>We love watches so much we can't stop looking at them</h2>

@@ -28,9 +28,6 @@
 			$this->template_single_item->display_links($title);
 			$owner = $this->function_users->get_user_fields_by_id(array("user_name","user_avatar","user_country"),$item_details[0]->item_user_id);
 		?>
-			<!-- item images -->
-			<ul class="list-inline img-thumbs-container">
-
 			        <?php
                      
                         $new_images = unserialize($item_details[0]->item_images);
@@ -45,30 +42,29 @@
                                 if($default_image == $no_image){
                                     $default_image = $xx[1];
                                 }
-
-            //                    if(strpos($default_image,"localhost") > -1){
-            //                        $default_image = explode(".",$default_image);
-            //                        $default_image = $default_image[0] . "_thumb." . $default_image[1];
-            //                    } else {
-            //                        $default_image = explode(".",$default_image);
-            //                        $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
-            //                    }
-
                             }
                         }
-				?>
-                            
-                            <li class="thumbnail">
-								<img src="<?php echo $default_image; ?>">
-							</li>
-
-			</ul>		
+				?>		
 		
 			<!-- image view holder -->
 			<div id="image_viewer">
 <!--			    <div class="large" style="background:url() no-repeat"></div>-->
 				<img class="img-thumbnail" src="<?php echo $default_image; ?>">
 			</div>
+            <ul class="list-inline img-thumbs-container">
+                
+                <?php
+                    if(is_array($new_images)){
+                        foreach ($new_images as $xx){
+                            ?>
+                                <li class="thumbnail">
+                                    <img src="<?php echo $xx[1]; ?>">
+                                </li>
+                            <?php
+                        }
+                    }
+				?>
+			</ul>	
 
 			<!-- brief info -->
 			<div id="brief_container" style="position:relative">
@@ -176,16 +172,6 @@
 							<?php if($item_details[0]->item_movement != ""){ ?>
 							<tr>
 								<td class="title5">Movement</td><td class="desc5"><?php echo ucwords(str_replace("_"," ",$item_details[0]->item_movement)); ?></td>
-							</tr>
-							<?php } ?>
-							<?php if($item_details[0]->item_case_width != "" && $item_details[0]->item_case_width != "0"){ ?>
-							<tr>
-								<td class="title5">Case Width</td><td class="desc5"><?php echo $item_details[0]->item_case_width; ?>mm</td>
-							</tr>
-							<?php } ?>
-							<?php if($item_details[0]->item_case_thickness != "" && $item_details[0]->item_case_thickness != "0"){ ?>
-							<tr>
-								<td class="title5">Case Thickness</td><td class="desc5"><?php echo $item_details[0]->item_case_thickness; ?>mm</td>
 							</tr>
 							<?php } ?>
 							<?php if($item_details[0]->item_case != ""){ ?>
