@@ -11,7 +11,6 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url();?>styles/bootstrap.css">
@@ -46,7 +45,7 @@
     <div id="top" class="bg-success">
             <div class="container clearfix">
                 <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
-                <a class="pull-left" href="<?php echo base_url(); ?>secure/register" title="post new item">start here</a>
+                <a class="pull-left" href="<?php echo base_url(); ?>" title="post new item">start here</a>
             </div>
     </div>
 <?php
