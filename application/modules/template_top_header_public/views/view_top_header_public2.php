@@ -20,13 +20,14 @@
                 <h1>A social hub for watch enthusiasts</h1>
                 <p>Here at cyberwatchcafe, You can register for free and avail our website amenities that will help you buy and sell your watches and get more cafe friends at the same time!</p>
             </div>
-            <div class="home-search form-group">
-                <div class="input-group">
-                    <input type="search" class="form-control" placeholder="type in keyword here...">
-                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div> 
+            <form method="GET" action="<?php echo base_url('search');?>">
+                <div class="home-search form-group">
+                    <div class="input-group">
+                        <input type="text" name="s" class="form-control" placeholder="type in keyword here...">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div> 
+                    </div>
                 </div>
-                
-            </div>
+            </form>
             <div class="container text-center social st-multi-color">
                 <p>follow us</p>
                 <a href="" class="st-icon-facebook">
