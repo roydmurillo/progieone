@@ -294,7 +294,7 @@ if($results != NULL || !empty($results)){
 				
 		}		
 		
-		echo "<div class='forum_container' style='margin-bottom:15px !important; width:720px !important'>
+		echo "<div class='forum_container'>
 				<div class='forum_title' style='padding:0px 10px !important'>
 					<div class='div_td1' style='width:480px !important'>
 						 ".$activity[trim($r->activity_type)]." ".$this->function_forums->last_updated($r->activity_date)." <span style='font-weight:normal !important; font-size:11px !important'></span>

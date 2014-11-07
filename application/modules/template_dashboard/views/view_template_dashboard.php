@@ -17,7 +17,7 @@
 </script>
 
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage">
 <?php
 		$week_number = date("W");
 		$year = date("Y");
@@ -130,34 +130,50 @@
     <div class="col-sm-9 col-md-10 main">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <h2>Watchlist</h2>
-                <p>Current watch list: <span class="badge"><?php echo $current_watch_list;?></span></p>
-                <p>Current items for sale: <span class="badge"><?php echo $count_sell_items;?></span></p>
-                <a href="<?php echo base_url(); ?>dashboard/sell/new" title="post new item" class="btn btn-primary btn-green">post item</a>
-                <a href="<?php echo base_url(); ?>dashboard/checkout" title="checkout item posted" class="btn btn-danger">checkout</a>
-                <a href="<?php echo base_url(); ?>dashboard/sell/for_sale" title="view item list" class="btn btn-primary">view item list</a>
-                <a href="<?php echo base_url(); ?>dashboard/watchlist" title="view watch list" class="btn btn-primary">view watch list</a>
+                <div class="panel panel-primary">
+                    <h2 class="panel-heading">Watchlist</h2>
+                    <div class="panel-body">
+                        <p>Current watch list: <span class="badge"><?php echo $current_watch_list;?></span></p>
+                        <p>Current items for sale: <span class="badge"><?php echo $count_sell_items;?></span></p>
+                        <a href="<?php echo base_url(); ?>dashboard/sell/new" title="post new item" class="btn btn-primary btn-green">post item</a>
+                        <a href="<?php echo base_url(); ?>dashboard/checkout" title="checkout item posted" class="btn btn-danger">checkout</a>
+                        <a href="<?php echo base_url(); ?>dashboard/sell/for_sale" title="view item list" class="btn btn-primary">view item list</a>
+                        <a href="<?php echo base_url(); ?>dashboard/watchlist" title="view watch list" class="btn btn-primary">view watch list</a>
+                    </div>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <h2>Messages</h2>
-                <p>Inbox: <span class="badge"><?php echo $message_count;?></span></p>
-                <p>Unread messages: <span class="badge"><?php echo $message_unread_count;?></span></p>
-                <a href="<?php echo base_url(); ?>dashboard/messages" title="read messages" class="btn btn-primary">read messages</a>
-                <a href="<?php echo base_url(); ?>dashboard/create" title="create new message" class="btn btn-primary">create new message</a>
+                <div class="panel panel-primary">
+                    <h2 class="panel-heading">Messages</h2>
+                    <div class="panel-body">
+                        <p>Inbox: <span class="badge"><?php echo $message_count;?></span></p>
+                        <p>Unread messages: <span class="badge"><?php echo $message_unread_count;?></span></p>
+                        <a href="<?php echo base_url(); ?>dashboard/messages" title="read messages" class="btn btn-primary">read messages</a>
+                        <a href="<?php echo base_url(); ?>dashboard/create" title="create new message" class="btn btn-primary">create new message</a>
+                    </div>
+                </div>
             </div>
             <div class="clear"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <h2>Friends</h2>
-                <p>Current friends: <span class="badge"><?php echo $friends_count;?></span></p>
-                <p>Pending friend request: <span class="badge"><?php echo $count_friend_invites;?></span></p>
-                <a href="<?php echo base_url(); ?>dashboard/friends" title="view friend list" class="btn btn-primary">view friend list</a>
-                <a href="<?php echo base_url(); ?>dashboard/friends/activities" title="view friend updates" class="btn btn-primary">view friend updates</a>
-                <a href="<?php echo base_url(); ?>dashboard/friends/invites" title="view friend request" class="btn btn-primary">view friend request</a>
+                <div class="panel panel-primary">
+                    <h2 class="panel-heading">Friends</h2>
+                    <div class="panel-body">
+                        <p>Current friends: <span class="badge"><?php echo $friends_count;?></span></p>
+                        <p>Pending friend request: <span class="badge"><?php echo $count_friend_invites;?></span></p>
+                        <a href="<?php echo base_url(); ?>dashboard/friends" title="view friend list" class="btn btn-primary">view friend list</a>
+                        <a href="<?php echo base_url(); ?>dashboard/friends/activities" title="view friend updates" class="btn btn-primary">view updates</a>
+                        <a href="<?php echo base_url(); ?>dashboard/friends/invites" title="view friend request" class="btn btn-primary">view request</a>
+                    </div>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <h2>Forum</h2>
-                <p>Help or ask questions</p>
-                <a class="btn btn-primary">visit forum</a>
+                <div class="panel panel-primary">
+                    <h2 class="panel-heading">Forum</h2>
+                    <div class="panel-body">
+                        <p>Help or ask questions</p>
+                        <a class="btn btn-primary">visit forum</a>
+                    </div>
+                </div>
             </div>
             
         </div>

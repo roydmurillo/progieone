@@ -155,7 +155,7 @@ class function_items extends MX_Controller {
 							}
                             $this->db->set($key, $val);
                         }else if($key != "type" && $key != "args" && $val == ""){
-                            $this->db->set($key, '');
+//                            $this->db->set($key, '');
                         }
                             
                     }

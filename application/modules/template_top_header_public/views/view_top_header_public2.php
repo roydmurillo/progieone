@@ -2,13 +2,13 @@
         <header class="home-banner navbar-default">
             <div class="fix">
                 <div id="top" class="bg-success">
-                        <div class="container clearfix">
+                        <div class="container clearfix mobile-center top">
                             <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
                             <a class="pull-left" href="<?php echo base_url(); ?>secure/register" title="post new item">start here</a>
                         </div>
                 </div>
                 <div class="container">
-                    <div class="col-sm-6 logo"><a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a></div>      	      	
+                    <div class="col-sm-6 logo"><a href="<?php echo base_url();?>"><img class="img-responsive" src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a></div>      	      	
                     <div class="col-sm-6">    <ul class="nav navbar-nav pull-right topnav">
                             <li><a class="btn btn-default" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
                             <li><a class="btn btn-default" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	

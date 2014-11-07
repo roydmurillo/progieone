@@ -89,9 +89,39 @@ header{
     .col-sm-6{padding-bottom:14px;}
     .container, .navbar-brand{
         padding-left:0;padding-right:0;height:auto;
-        @media (max-width:480px){
-            padding-left:12px;
-        }
+    }
+    .myaccount-btn{
+        clear:left;
+        padding:12px;
+        background:#333;
+        color:#fff;
+        text-align: center;
+        border-bottom:1px solid #4F4F4F;
+    }
+    .myaccount-menu{
+            display:none;
+            background:#333;
+            ul{
+                margin:0;
+                padding:0;
+                li{
+                    list-style:none;
+                    padding:12px;
+                    padding-left:33px;
+                    a{
+                      color:white;
+                      font-size:1em;
+                    }
+                    &.logout{
+                        border-top:1px solid #4f4f4f;
+                    }
+                    &:nth-child(even){
+                        background:#2C2C2C;
+                    }
+                }
+                
+            }
+        
     }
 }
 
@@ -169,6 +199,20 @@ footer{
     }
     @media (max-width: 561px) {
     float: none !important;
+    }
+}
+
+.mobile-center{
+    @media (max-width:768px){
+        display: block;
+        margin: 0 auto;
+        float: none;
+        width: 50%;
+    }
+    &.top{
+       @media (max-width:768px){
+        width: 58%;
+        } 
     }
 }
 

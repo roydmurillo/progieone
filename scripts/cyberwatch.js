@@ -68,7 +68,11 @@ jQuery(document).ready(function(){
                 $('.black-nav').toggle(function(){
                     $('.menu-btn').css('background-color','black');
                 });
-                
+            });
+            $('.myaccount-btn').on('click',function(){
+                $('.myaccount-menu').toggle(function(){
+                    $('.myaccount-btn').css('background-color','black');
+                });
             });
             
         

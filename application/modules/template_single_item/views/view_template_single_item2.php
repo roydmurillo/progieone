@@ -51,13 +51,13 @@
 		             } 
 				?>	
 			</div>		
-		
+                            
 			<!-- image view holder -->
 			<div id="image_viewer">
 			    <div class="large" style="background:url(<?php echo $im2; ?>) no-repeat"></div>
 				<img id="image_view" src="<?php echo $im2; ?>">
 			</div>
-
+                                                                    
 			<!-- brief info -->
 			<div id="brief_container">
 				<div id="brief_info"><?php echo strtoupper($item_details[0]->item_name); ?></div>

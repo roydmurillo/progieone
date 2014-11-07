@@ -19,7 +19,7 @@ and open the template in the editor.
 @mixin thumb($item-min-height:280px,$img-min-height: 200px){
     .item{
         min-height:$item-min-height;
-        img{width:100%;height:auto;}
+        img{width:100%;height:auto;max-height:200px;}
         .thumbnail{
             .img-slot{
                 min-height: $img-min-height;

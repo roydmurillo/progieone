@@ -192,6 +192,11 @@ and open the template in the editor.
     max-width: 34%;
     margin: 0 auto;
     margin-top: 60px; }
+    @media (max-width: 768px) {
+      #home .home-banner .home-search {
+        max-width: 70%; } }
+    #home .home-banner .home-search.fix-search {
+      display: none; }
     #home .home-banner .home-search a {
       color: white; }
       #home .home-banner .home-search a:hover {
@@ -204,7 +209,8 @@ and open the template in the editor.
   min-height: 280px; }
   #home .item img {
     width: 100%;
-    height: auto; }
+    height: auto;
+    max-height: 200px; }
   #home .item .thumbnail .img-slot {
     min-height: 200px;
     display: block; }
@@ -261,7 +267,6 @@ and open the template in the editor.
   float: left;
   max-width: 763px;
   width: 100%;
-  padding-left: 7px;
   height: 40px;
   line-height: 40px;
   vertical-align: middle; }
@@ -271,6 +276,9 @@ and open the template in the editor.
 
 .tab_inner {
   float: left; }
+
+.filter-btn {
+  margin: 0 0 12px 15px; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -369,9 +377,30 @@ header .container, header .navbar-brand {
   padding-left: 0;
   padding-right: 0;
   height: auto; }
-  @media (max-width: 480px) {
-    header .container, header .navbar-brand {
-      padding-left: 12px; } }
+header .myaccount-btn {
+  clear: left;
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #4F4F4F; }
+header .myaccount-menu {
+  display: none;
+  background: #333; }
+  header .myaccount-menu ul {
+    margin: 0;
+    padding: 0; }
+    header .myaccount-menu ul li {
+      list-style: none;
+      padding: 12px;
+      padding-left: 33px; }
+      header .myaccount-menu ul li a {
+        color: white;
+        font-size: 1em; }
+      header .myaccount-menu ul li.logout {
+        border-top: 1px solid #4f4f4f; }
+      header .myaccount-menu ul li:nth-child(even) {
+        background: #2C2C2C; }
 
 footer {
   padding: 15px;
@@ -396,7 +425,8 @@ footer {
   min-height: 125px; }
   .item_list_watches .item img {
     width: 100%;
-    height: auto; }
+    height: auto;
+    max-height: 200px; }
   .item_list_watches .item .thumbnail .img-slot {
     min-height: 200px;
     display: block; }
@@ -443,6 +473,16 @@ footer {
 @media (max-width: 561px) {
   .topnav {
     float: none !important; } }
+
+@media (max-width: 768px) {
+  .mobile-center {
+    display: block;
+    margin: 0 auto;
+    float: none;
+    width: 50%; } }
+@media (max-width: 768px) {
+  .mobile-center.top {
+    width: 58%; } }
 
 .hdr img {
   width: 100%; }
