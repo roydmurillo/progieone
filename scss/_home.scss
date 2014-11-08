@@ -1,11 +1,5 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10 11, 14, 9:50:14 PM
-    Author     : macbook
+home
 */
 @mixin background-opacity($color, $opacity: 0.3) {
     background: $color; /* The Fallback */
@@ -42,7 +36,7 @@ $cont-color: #fff;
         .fix{
             position:fixed;
             width:100%;
-            z-index:1;
+            z-index:10;
         }
         .fix-bg{
             background-color:lighten($base-color,6%) !important;
@@ -54,6 +48,7 @@ $cont-color: #fff;
             h1{
                 font-weight:300;
                 text-shadow: 1px 1px 3px #000;
+                margin-top: 56px;
             }
             p{
                 text-shadow: 1px 1px 3px #000;

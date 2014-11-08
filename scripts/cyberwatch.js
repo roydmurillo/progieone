@@ -42,10 +42,10 @@ jQuery(document).ready(function(){
             
             $(document).scroll(function(){
                 
-                if($(this).scrollTop() > 400)
+                if($(this).scrollTop() > 10)
                 {   
                    $('.ww-tabs').css('margin-top','287px');
-                   $('.home-search').addClass('fix-search');
+                   //$('.home-search').addClass('fix-search');
                    $('.fix, .fix .btn').addClass('fix-bg');
                    
                 }else{

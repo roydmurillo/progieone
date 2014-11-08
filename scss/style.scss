@@ -182,7 +182,7 @@ footer{
         max-width: 280px;
     }
     nav &{
-        max-width:460px;
+        max-width:538px;
     }
 }
 .logo{
@@ -196,6 +196,9 @@ footer{
         max-width: 138px;
         width: 100%;
         float: left;
+        @media (max-width: 480px) {
+        max-width: 100%;
+    }
     }
     @media (max-width: 561px) {
     float: none !important;

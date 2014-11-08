@@ -1,11 +1,5 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10 14, 14, 6:26:25 PM
-    Author     : macbook
+sidebar
 */
 .red{background:red;}
 .fix-search{position: fixed;top: 0;right: 33%;z-index:10;}
@@ -17,4 +11,9 @@ and open the template in the editor.
     .active{
         display:block;
     }
+    .home-search{
+        width: 60%;
+        margin:48px auto 24px auto;
+    }
+    
 }
