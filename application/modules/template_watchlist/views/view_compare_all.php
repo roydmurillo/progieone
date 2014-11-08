@@ -44,8 +44,13 @@
 						Compare All
 				</a>				
 			</div>				
-			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>
-		
+<!--			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>-->
+			<div id="dashboard_content">
+                <?php 
+                    $this->load->module("template_watchlist");
+                    $this->template_watchlist->ajax_compare_all_new();
+                ?>
+            </div>
     </div>
         
 </div>

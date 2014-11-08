@@ -691,6 +691,112 @@ class function_items extends MX_Controller {
                     $this->load->module("template_sell_for_sale");
                     $this->template_sell_for_sale->ajax_load_view($return);
         }
+        
+        
+        public function for_sale_load_initial_new(){
+                    
+//                    $data = json_decode($args);
+//                    $start = $data->start;
+                    $start = 0;
+
+                    //get sort
+                    $sortby = "";
+                    $sorttype = "";
+                    if(isset($data->sortmode) && ($data->sortmode != "")){
+                        $this->sort_by_data($data->sortmode);
+                        $sort = $this->native_session->get('sort_forsale');
+                        $sortby = $sort['sortmode']; 
+                        $sorttype = $sort['sorttype']; 
+                    } else {
+					    if($sort = $this->native_session->get('sort_forsale')){
+							$sortby = $sort['sortmode']; 
+							$sorttype = $sort['sorttype']; 
+						}
+                    }
+                    
+                    $srch = "";    
+                    if(isset($data->search_item) && ($data->search_item != "")){
+                        $this->load->module("function_xss");
+                        $search = $this->function_xss->xss_this($data->search_item);
+                        $srch = "AND item_name LIKE '%$search%'";
+                        $this->native_session->set('search_item',$search);
+                    } else{
+                        $sr = $this->native_session->delete('search_item');
+                    } 
+
+                    $filter_type = "";    
+                    if(isset($data->filter_type) && ($data->filter_type != "")){
+                        $filter_type = $this->filter_by_itemtype($data->filter_type);
+                        $this->native_session->set('filter_type',$data->filter_type);
+                    } else{
+                        $this->native_session->delete('filter_type');
+                    }   
+					
+					$per_page = 5;	
+                    if(isset($data->show_entry) && ($data->show_entry != "")){
+                        $per_page = $data->show_entry;
+                        $this->native_session->set('show_entry',$data->show_entry);
+                    } else{
+                        $this->native_session->delete('show_entry');
+                    }                       
+					$start_main = ($start * $per_page) - $per_page;
+					if($start_main < 0) $start_main = 0;
+					                    
+                    // reset data
+                    $return["results"] = NULL;
+                    
+                    //get user id
+                    $this->load->module("function_users");
+					
+					// aps12
+                    //$user_id = $this->function_users->get_user_fields("user_id");
+                    $user_id = unserialize($this->native_session->get("user_info"));
+					$user_id = $user_id["user_id"];
+					
+                    //count total number of rows
+                    $total_count = 0;
+                    $total = $this->db->query("SELECT COUNT(1) as total FROM watch_items
+                                               WHERE item_user_id = $user_id 
+                                               $srch $filter_type");
+                    if($total->num_rows() > 0){
+                        foreach($total->result() as $t){
+                            $total_count = $t->total;
+                        } 
+                    }
+                    
+                    //load items
+                    $where_string = "item_user_id = $user_id $srch $filter_type";
+                    $this->db->where($where_string,null,false);  
+                    if($sortby != ""){
+                        $this->db->order_by($sortby, $sorttype);
+                    } else {
+                        $this->db->order_by("item_created", "desc");
+                    } 
+                    
+                    if($per_page == "All"){
+                        $query = $this->db->get("watch_items"); 
+                    } else {
+                        $query = $this->db->get("watch_items",$per_page, $start_main); 
+                    }
+                    
+                    if($query->num_rows() > 0){
+                        $return["results"] = $query->result();
+                        //setup pagination
+                        $this->load->module('function_pagination');
+                        $this->load->module('function_security');
+						$ajax = $this->function_security->encode("dashboard-ajax");
+						$base_url = base_url() . 'dashboard/'.$ajax;
+                        $total_rows = $total_count;
+                        $per_page = $per_page;
+                        $return["paginate"] = $this->function_pagination->pagination($base_url,$total_rows,$per_page,$start);
+                        
+                    }             
+                    
+                    //load template
+                    $return["view_mode"] = 'view_ajax_load_initial';
+                    $this->load->module("template_sell_for_sale");
+                    $this->template_sell_for_sale->ajax_load_view($return);
+        }
 
        /*===================================================================
 	* name : load_initial_paypal()
@@ -702,6 +808,85 @@ class function_items extends MX_Controller {
                     
                     $data = json_decode($args);
                     $start = $data->start;
+                    
+                    //get sort
+                    $sortby = "";
+                    $sorttype = "";
+                    if(isset($data->sortmode) && ($data->sortmode != "")){
+                        $this->sort_by_data($data->sortmode);
+                        $sort = $this->native_session->get('sort_forsale');
+                        $sortby = $sort['sortmode']; 
+                        $sorttype = $sort['sorttype']; 
+                    }
+                    
+                    $srch = "";    
+                    if(isset($data->search_item) && ($data->search_item != "")){
+                        $this->load->module("function_xss");
+                        $search = $this->function_xss->xss_this($data->search_item);
+                        $srch = "AND item_name LIKE '%$search%'";
+                        $this->native_session->set('search_item',$search);
+                    } else{
+                        $sr = $this->native_session->delete('search_item');
+                    } 
+
+                    if(isset($data->item) && ($data->item != "") && ($data->item != "0")){
+                        $srch .= " AND item_id = $data->item";
+                    } 					
+
+                    $filter_type = "";    
+                    if(isset($data->filter_type) && ($data->filter_type != "")){
+                        $filter_type = $this->filter_by_itemtype($data->filter_type);
+                        $this->native_session->set('filter_type',$data->filter_type);
+                    } else{
+                        $this->native_session->delete('filter_type');
+                    }   
+
+                    // reset data
+                    $return["results"] = NULL;
+                    
+                    //get user id
+					// aps12
+                    //$user_id = $this->function_users->get_user_fields("user_id");
+                    $user_id = unserialize($this->native_session->get("user_info"));
+					$user_id = $user_id["user_id"];
+                    
+                    //count total number of rows
+                    $total_count = 0;
+                    $total = $this->db->query("SELECT COUNT(1) as total FROM watch_items
+                                               WHERE item_user_id = $user_id 
+                                               $srch $filter_type");
+                    if($total->num_rows() > 0){
+                        foreach($total->result() as $t){
+                            $total_count = $t->total;
+                        } 
+                    }
+                    
+                    //load items
+                    $where_string = "item_user_id = $user_id $srch $filter_type";
+                    $this->db->where($where_string,null,false);  
+                    if($sortby != ""){
+                        $this->db->order_by($sortby, $sorttype);
+                    } else {
+                        $this->db->order_by("item_created", "desc");
+                    } 
+                    
+                    $query = $this->db->get("watch_items"); 
+                    
+                    if($query->num_rows() > 0){
+                        $return["results"] = $query->result();
+                    }             
+                    
+                    //load template
+                    $return["view_mode"] = 'view_ajax_load_initial';
+                    $this->load->module("template_paypal");
+                    $this->template_paypal->ajax_load_view($return);
+        }      
+        
+        public function load_initial_paypal_new(){
+                    
+//                    $data = json_decode($args);
+//                    $start = $data->start;
+                    $start = 0;
                     
                     //get sort
                     $sortby = "";

@@ -75,8 +75,6 @@ if($item_list != ""){?>
 					$item_movement = $i->item_movement;
 					$item_case = $i->item_case;	
 					$item_bracelet = $i->item_bracelet;	
-					$item_case_width = $i->item_case_width;	
-					$item_case_thickness = $i->item_case_thickness;	
 					$item_condition = $i->item_condition;
 					$item_desc = $i->item_desc;?>	
 					
@@ -102,13 +100,7 @@ if($item_list != ""){?>
 						</div>	
 						<div style="float:left; margin:0px; clear:both; width:100%; height:46px; text-align:center; padding:7px 12px 5px 12px; font-size:12px; border:2px solid #FFF; background:ghostwhite">
 							<b>Bracelet Type:</b><br><?php echo ucfirst($item_bracelet); ?>
-						</div>	
-						<div style="float:left; margin:0px; clear:both; width:100%; height:46px; text-align:center; padding:7px 12px 5px 12px; font-size:12px; border:2px solid #FFF; background:ghostwhite">
-							<b>Case Width:</b><br><?php echo $item_case_width; ?> mm
-						</div>	
-						<div style="float:left; margin:0px; clear:both; width:100%; height:46px; text-align:center; padding:7px 12px 5px 12px; font-size:12px; border:2px solid #FFF; background:ghostwhite">
-							<b>Case Thickness:</b><br><?php echo $item_case_thickness; ?> mm
-						</div>	
+						</div>
 						<div style="float:left; margin:0px; clear:both; width:100%; height:46px; text-align:center; padding:7px 12px 5px 12px; font-size:12px; border:2px solid #FFF; background:ghostwhite">
 							<b>Year Model:</b><br><?php echo $item_year_model; ?>
 						</div>	

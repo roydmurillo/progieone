@@ -41,7 +41,13 @@
 				</a>
 			</div>
 			
-			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>
+<!--			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>-->
+			<div id="dashboard_content">
+                <?php 
+                    $this->load->module("function_messages");
+                    $this->function_messages->show_inbox_new();
+                ?>
+            </div>
 			
 		
         </div>

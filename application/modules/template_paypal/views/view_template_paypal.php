@@ -34,11 +34,11 @@ jQuery(document).ready(function() {
             jQuery("#loader_inner").html("");
             jQuery("#loader").hide();
     }
-    if(jQuery("#load_initial").val() != ""){
-		var data_obj = {start:jQuery("#start").val(),item:jQuery("#itemwatch").val()};
-		data_obj = jQuery.toJSON(data_obj);
-        ajax_load(data_obj);
-    }
+//    if(jQuery("#load_initial").val() != ""){
+//		var data_obj = {start:jQuery("#start").val(),item:jQuery("#itemwatch").val()};
+//		data_obj = jQuery.toJSON(data_obj);
+//        ajax_load(data_obj);
+//    }
 	jQuery('body').on('click', '.delete_item', function(){
 		var r=confirm("You are about to "+jQuery(this).attr("title")+".\n Proceed?");
 		if (r==true){
@@ -189,7 +189,13 @@ jQuery(document).ready(function() {
 				</a>
 			</div>
 			
-			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>
+<!--			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>-->
+			<div id="dashboard_content">
+                <?php 
+                    $this->load->module("function_items");
+                    $this->function_items->load_initial_paypal_new();
+                ?>
+            </div>
 			
 		
 		</div>

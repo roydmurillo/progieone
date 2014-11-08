@@ -123,6 +123,113 @@ class function_messages extends MX_Controller {
                     $this->load->module("template_messages");
                     $this->template_messages->show_inbox($return);
         }
+        public function show_inbox_new(){
+
+                    $start = 0;
+                    
+                    $sortby = "";
+                    $sorttype = "";
+//                    if(isset($data->sortmode) && ($data->sortmode != "")){
+//                        $this->sort_by_data($data->sortmode);
+//                        $sort = $this->native_session->get('sort_messages');
+//                        $sortby = $sort['sortmode']; 
+//                        $sorttype = $sort['sorttype']; 
+//                    }
+                    
+                    $srch = "";    
+//                    if(isset($data->search_item) && ($data->search_item != "")){
+//                        $this->load->module("function_xss");
+//                        $search = $this->function_xss->xss_this($data->search_item);
+//                        $srch = "AND message_title LIKE '%$search%'";
+//                        $this->native_session->set('search_item_topic',$search);
+//                    } else{
+                        $sr = $this->native_session->delete('search_item_topic');
+//                    }
+                    
+                    //get sort
+                    $per_page = 5;
+//                    if(isset($data->show_entry) && ($data->show_entry != "")){
+//                        $per_page = $data->show_entry;
+//                        $this->native_session->set('show_entry_message',$data->show_entry);
+//                    } else{
+                        $this->native_session->delete('show_entry_message');
+//                    }          
+					
+					$start = ($start * $per_page) - $per_page;
+					if($start < 0) $start = 0;             
+                    
+                    // reset data
+                    $return["results"] = NULL;
+                    
+                    //get user id
+					// aps12
+                    //$user_id = $this->function_users->get_user_fields("user_id");
+                    $user_id = unserialize($this->native_session->get("user_info"));
+					$user_id = $user_id["user_id"];
+					
+                    
+                    //count total number of rows
+                    $total_count = 0;
+					$str = "Select COUNT(1) as total From watch_messages 
+										 Where message_date In(
+											Select Max(message_date)
+											From watch_messages
+											WHERE message_recipient_id = $user_id
+											Group By message_parent_id
+										) $srch AND message_recipient_id = $user_id AND message_trash <> '1'";
+   	
+                    $total = $this->db->query($str);
+                    if($total->num_rows() > 0){
+                        foreach($total->result() as $t){
+                            $total_count = $t->total;
+                        } 
+                    }
+
+                    if($per_page == "All"){
+                        $LIMIT = ""; 
+                    } else {
+                        $LIMIT = "LIMIT $start,$per_page"; 
+                    }
+
+					if( $sortby != "" && $sorttype != ""){
+						$ORDER = "ORDER BY $sortby $sorttype";
+					} else {
+						$ORDER = "ORDER BY message_date desc";
+					}
+
+					$str = "Select * From watch_messages 
+									 Where message_date In(
+										Select Max(message_date)
+										From watch_messages
+										WHERE  message_recipient_id = $user_id
+										Group By message_parent_id
+									) $srch AND  message_recipient_id = $user_id AND message_trash <> '1' $ORDER $LIMIT";
+   				
+					$query = $this->db->query($str);
+                    
+                    //if($per_page == "All"){
+                    //    $query = $this->db->get("watch_messages"); 
+                    //} else {
+                    //    $query = $this->db->get("watch_messages",$per_page, $start); 
+                   // }
+                                       
+                    if($query->num_rows() > 0){
+                        $return["results"] = $query->result();
+                        //setup pagination
+                        $this->load->module('function_pagination');
+                        $this->load->module('function_security');
+						$ajax = $this->function_security->encode("dashboard-ajax");
+						$base_url = base_url() . 'dashboard/'.$ajax;
+                        $total_rows = $total_count;
+                        $per_page = $per_page;
+                        $return["paginate"] = $this->function_pagination->pagination($base_url,$total_rows,$per_page,$start);
+                        
+                    }             
+                    
+                    //load template
+                    $this->load->module("template_messages");
+                    $this->template_messages->show_inbox($return);
+        }
 
        /*===================================================================
 	* name : sort_by_data()
