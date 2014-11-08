@@ -16,15 +16,25 @@
                            </div>
                        </div>
                    </form>
+                   <div class="container text-center" style="margin-bottom: 24px;">
+                    <h4>Search watches from A - Z</h4>
+                </div>
             <?php
                 }
             ?>
             
             <div class="ww-tab-panel active" id="buy">
+             <?php
+                $this->load->module("function_login");
+                if(!$this->function_login->is_user_loggedin()){
+            ?>
                 <div class="container text-center">
                     <h2>We love watches so much we can't stop looking at them</h2>
                     <h4>Search for all kinds and types of watch from other cyberwatch users</h4>
                 </div>
+            <?php
+                }
+            ?>
                 <?php
                 //item listings
                 $this->load->module('template_itemlist');
@@ -46,7 +56,7 @@
                 <h4>make friends and connect with other watch enthusiasts anywhere across the globe</h4>
                 <a class="btn btn-primary btn-lg" href="">Get more social</a>
             </div>
-            
+                
         </div>
     </div>
     <script>
@@ -56,12 +66,7 @@
                 $('.ww-tab-container > .ww-tab-panel').removeClass('active');
                 var x = $(this).attr('href');
                 $(x).addClass('active');
-            });
-            
-
-            
-
-            
+            });    
         });
         
     </script>

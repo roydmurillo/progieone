@@ -9,7 +9,6 @@
                 $this->template_sideleft->view_template_filtered_sideleft(); 
             ?>
         </div>
-        
         <div class="col-sm-9 col-md-10 main site-wrapper">
             <button class="btn btn-default filter-btn visible-xs"><i class="fa fa-bars"></i> filter items</button>
             <div class="dim"></div>

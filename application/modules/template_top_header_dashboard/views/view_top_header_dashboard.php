@@ -25,8 +25,7 @@
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url();?>dashboard/logout">Logout</a></li>       
                             </ul>
-                        </li>      	
-                        	
+                        </li>      	     	
                     </ul>
                     <!--== menu mobile ==-->
                     <div class="myaccount-btn visible-xs">my account <i class="fa fa-chevron-circle-up"></i></div>

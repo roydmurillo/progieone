@@ -114,7 +114,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                                     }
                                 }
                             ?>
-                            <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
+                            <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
                         </a>
 <!--                        <h5 class="text-center"><a class="name" href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></h5>-->
                             <figcaption class="caption">
