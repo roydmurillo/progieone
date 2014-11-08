@@ -173,7 +173,7 @@ if(empty($item_list)){
                             <figure class="thumbnail">
                                     <a href="<?php echo $url; ?>">
                                             <div class="img-slot">
-                                                    <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
+                                                    <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
                                             </div>
                                     </a>
                             <h5>
