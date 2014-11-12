@@ -28,7 +28,7 @@ class function_pagination extends MX_Controller {
                      
 					     if($ceiling > 1){
                                       
-                                      $html .= "<div style='padding:12px;float:left; clear:both'>";
+                                      $html .= "<div style='padding:12px;float:left; clear:both' id='divpager'>";
 
                                       if(($ceiling - $selected_page) != ($ceiling - 1) && ($selected_page != 0)){
                                          $html .= "<a href='javascript:;' id='prev' style='margin:12px'>prev</a>";
