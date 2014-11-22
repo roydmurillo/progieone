@@ -1,4 +1,16 @@
 // JavaScript Document
+
+function loader2(){
+	jQuery('#loader').css('opacity','0');
+	jQuery('#loader').show();
+	jQuery('#loader_inner').html('<img src=\"'+jQuery('#base_url').val()+'assets/images/loader.gif\" style=\"margin:200px auto 0px 280px\">');
+	jQuery('#loader').animate({opacity:1},500);
+}
+function unloader2(){
+		jQuery('#loader').animate({opacity:0},500);
+		jQuery('#loader_inner').html('');
+		jQuery('#loader').hide();
+}
 jQuery('body').on('click','.newpager',function(){
 
 	var data_obj = {start:jQuery(this).text()};

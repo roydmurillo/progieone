@@ -2,7 +2,8 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>styles/scroll.css">
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/scroll.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/watchlist_scripts.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination3.js"></script>
+<!--<script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination3.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/ajax_pagination.js"></script>
 
 <!-- content goes here -->
 <?php $this->load->module("function_security"); 
