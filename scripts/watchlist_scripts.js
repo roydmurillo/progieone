@@ -53,6 +53,7 @@ jQuery(document).ready(function() {
         }).done(function( msg ) {
             unloader();
             jQuery("#dashboard_content").html(msg);
+            create_pager();
         });
 	}
     function loader(){
