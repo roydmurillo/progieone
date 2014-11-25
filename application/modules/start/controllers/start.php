@@ -183,7 +183,7 @@ class start extends MX_Controller {
 					   $this->uri->segment(1) == "all-watches"
 					    
 			    ){
-				  $this->native_session->force_regenerate_session();  
+				  //$this->native_session->force_regenerate_session();  
                   $this->watches(); 
 	           } else {
 				  $this->native_session->force_regenerate_session();  
