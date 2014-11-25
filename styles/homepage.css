@@ -380,15 +380,10 @@ border:1px solid #CCC; border-bottom:none;
 float:left; clear:both; width: 764px; min-height:350px; margin:10px 0px; display:none;
 }
 .title5{
-float:left;
-width:120px;
-margin:12px 20px 0px 65px;
-font-family:verdana;
-font-weight:bold;
-font-size:13px;
+
 color:#333;
 text-align:left;
-background:beige;
+background:#f0f0f0;
 padding:5px 20px;
 }
 .title52{
@@ -403,18 +398,16 @@ text-align:left;
 padding:5px 20px;
 }
 .desc5{
-float:left;
 color:#555;
 font-family:arial;
 margin:17px 0px 0px 0px;
 font-size:13px;
 font-family:verdana;
-width:450px;
 min-height:13px;
 }
 .inp_public{
-width: 300px;
-border: 3px solid #CCC;
+max-width: 300px;
+width: 100%;
 padding: 3px 12px;
 margin-top: -6px;
 float: left;

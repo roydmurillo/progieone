@@ -10,24 +10,9 @@
 }(document, 'script', 'facebook-jssdk'));</script> 
 
 <!-- content goes here -->
-<div id="sidebar_left">
+<div id="cross-sell">
   
-  <div style="float:left; clear:both; width:203px; min-height:200px; padding-bottom:12px;">
- 
- 
-<!--  <a href="<?php echo base_url() ?>advertise" style="border:0px; border:none;"><img  style="float:left; clear:both; margin:8px 0px" src="<?php echo base_url() ?>assets/images/advertise.png"></a>-->
-  <div id="fb_like" style="height:265px;">
-    <div class="fb-like-box" 
-        data-href="https://www.facebook.com/cyberwatchcafe" 
-        data-width="202" 
-        data-height="265" 
-        data-colorscheme="light" 
-        data-show-faces="true" 
-        data-header="true" 
-        data-stream="false" 
-        data-show-border="true"></div>
-  </div>
-  	
+  <div >  	
 		<?php 
 		
 		if(!empty($other_items)){

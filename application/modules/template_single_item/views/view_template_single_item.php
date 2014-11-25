@@ -17,8 +17,8 @@
 
 <!-- content goes here -->
 <div id="homepage">
-
-		<div class="fleft" style="width:765px; margin-right:12px;">
+    <div class="row">
+		<div class="col-md-8">
 		<?php
 		$bool = array("1" => "Yes", "0" => "No");
 		// work with the data
@@ -51,7 +51,7 @@
 <!--			    <div class="large" style="background:url() no-repeat"></div>-->
 				<img class="img-thumbnail" src="<?php echo $default_image; ?>">
 			</div>
-            <ul class="list-inline img-thumbs-container">
+            <ul class="thumb-list-inline img-thumbs-container">
                 
                 <?php
                     if(is_array($new_images)){
@@ -65,15 +65,12 @@
                     }
 				?>
 			</ul>	
-
-			<!-- brief info -->
-			<div id="brief_container" style="position:relative">
-			    <div style="position: absolute;
-							margin: 354px 0px 0px -455px !important;
-							border: medium none !important;
-							padding: 5px 10px;
-							background: rgba(0, 0, 0, 0.05);">
-				<!-- AddThis Button BEGIN -->
+                </div>
+                	<!-- brief info -->
+                        <div class="col-md-4">
+			<div id="brief_container" >
+			    <div>
+				<!-- AddThis Button BEGIN ->
 				<div class="addthis_toolbox addthis_default_style addthis_16x16_style">
 				<a class="addthis_button_facebook"></a>
 				<a class="addthis_button_twitter"></a>
@@ -85,23 +82,13 @@
 				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506f074158c05f68"></script>
 				<!-- AddThis Button END -->
 				</div>	
-				<div id="brief_info" style="max-height:100px; min-height:50px"><?php echo ucfirst($item_details[0]->item_name); ?></div>
-				<div style="color: green;
-				            float:left;
-							font-size: 25px;
-							font-weight: 700;
-							line-height: 25px;">
+				<div id="brief_info"><?php echo ucfirst($item_details[0]->item_name); ?></div>
+				<div>
 							<div class="single_desc">Selling Price:</div>
 							<div class="single_data"><?php echo $pricing = $this->function_currency->format($item_details[0]->item_price);?></div>
 							
-							<div style="position: absolute;
-										left: 10px;
-										width: 200px;
-										min-height: 20px;
-										background: #FFF;
-										bottom: 5px;
-										padding: 0px 3px 8px 0px;">
-							<div class="single_desc" style="margin-top:2px">Online Seller:</div>
+							<div>
+							<div class="single_desc" >Online Seller:</div>
 								<div class="seller_avatar">
 								    <?php 
 										if($owner["user_avatar"] != ""){
@@ -110,24 +97,26 @@
 											$avatar = base_url() . "assets/images/avatar.jpg";
 										}
 									?>
-									<img src="<?php echo $avatar; ?>" style="max-width:80px; max-height:80px; vertical-align:middle">
+									<img src="<?php echo $avatar; ?>" >
 								</div>
 								<div class="seller_info">
 									<div class="small_info">
 										<a class="u_name" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>"><?php echo $owner["user_name"]; ?></a>
 									</div>
 									<div class="small_info2"><?php $this->function_rating->get_stars($item_details[0]->item_user_id); ?></div>
-								    <div class="small_info2" style="margin: 3px 8px -3px;"><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>
+								    <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>
 									<div class="small_info" style="float:left">
 									    <input type="hidden" id="uid" value="<?php echo $item_details[0]->item_user_id; ?>">
-										<a href="javascript:;" id="add_friend" style="color:#333">Add as Friend</a>
+										<a href="javascript:;" id="add_friend" >Add as Friend</a>
 									</div>
 								</div>
-							    <input id="contact_seller" style="float:left; width:185px; clear:both; margin-left:10px;margin-top:-5px; padding:6px 18px;" type="button" value="Contact Seller" class="css_btn_c0">
+							    <input id="contact_seller" type="button" value="Contact Seller" class="css_btn_c0">
 
 							</div>
 				</div>
 			</div>
+                        </div>
+</div>
 <!--			 description tab-->
 			<div class="details_container">
 				<ul class="nav nav-tabs" role="tablist">
@@ -153,7 +142,7 @@
 				</ul>
                             <div class="tab-content">	
 				<div class="tab-pane active" id="description">
-					<div style="float:left; margin:10px 0px">
+					<div >
 						<table>
 							<tr>
 								<td class="title5">Model Name</td><td class="desc5"><?php echo $item_details[0]->item_name; ?></td>
@@ -194,24 +183,24 @@
 								<td class="title5">Selling Price</td><td class="desc5"><?php echo $pricing;?></td>
 							</tr>
 							<tr>
-								<td class="title5">Description</td><td class="desc5"><div style="float:left; margin-top:-13px;"><?php echo $item_details[0]->item_desc ?></div></td>
+								<td class="title5">Description</td><td class="desc5"><div><?php echo $item_details[0]->item_desc ?></div></td>
 							</tr>
 						</table>
 					</div>
 				</div>
 
 				<div class="tab-pane" id="shipping">
-					<div style="float:left; margin:10px 0px">
+					<div >
 						<table>
 							<tr>
-								<td class="title5">Shipping Details</td><td class="desc5"><div style="float:left; margin-top:-13px;"><?php echo $item_details[0]->item_shipping; ?></div></td>
+								<td class="title5">Shipping Details</td><td class="desc5"><div><?php echo $item_details[0]->item_shipping; ?></div></td>
 							</tr>
 						</table>
 					</div>
 				</div>
 				
 				<div class="tab-pane" id="contact">
-					<div style="float:left; margin:10px 0px">
+					<div >
 						<table>
 							<tr>
 								<td class="title5">Title</td><td class="desc5">Inquiry for <?php echo $item_details[0]->item_name; ?>
@@ -246,7 +235,7 @@
 							</tr>
 							<tr>
 								<td class="title5">Country</td><td class="desc5">
-									<select id="contact_country" class="inp_public" style="width: 330px !important;">
+									<select id="contact_country" class="inp_public">
 										<option value=""> -- Select Country --</option>
 										<?php 
 											
@@ -260,7 +249,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="title5">Message</td><td class="desc5"><textarea id="contact_message" class="inp_public" style="height:150px !important; resize:none"></textarea></td>
+								<td class="title5">Message</td><td class="desc5"><textarea id="contact_message" class="inp_public"></textarea></td>
 							</tr>
 							<tr>
 								<td class="title5">Verify Captcha</td>
@@ -272,14 +261,14 @@
 										$key = $cap["key"];
 										echo $image["image"];
 								?>
-									<div style="float:left; clear:both; margin-left:0px">
+									<div>
 									    <input type="hidden" id="captcha_key" value="<?php echo $key; ?>">
-										<input class="input1"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code" style="padding:5px; width:349px">
+										<input class="input1"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code">
 									</div>
 							</td>
 							</tr>							
 							<tr>
-								<td class="title52"></td><td class="desc5"><input type="button" class="fleft css_btn_c0" id="reset" value="Reset"><input id="send_message" style="margin-left:12px" class="fleft css_btn_c0" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
+								<td class="title52"></td><td class="desc5"><input type="button" class="fleft css_btn_c0" id="reset" value="Reset"><input id="send_message" class="fleft css_btn_c0" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
 							</tr>
 						</table>
 
