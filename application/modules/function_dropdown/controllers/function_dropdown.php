@@ -37,7 +37,7 @@ class function_dropdown extends MX_Controller {
 		$type = $data["type"];
 		 
 		if($this->native_session->get("watch_brands_dropdown") === false){
-//			 $this->native_session->set("watch_brands_dropdown",$this->function_brands->watch_brands()); 
+			 $this->native_session->set("watch_brands_dropdown",$this->function_brands->watch_brands()); 
 		}
 		if($type == "watch_category"){
 			$this->load->model("model_dropdown");
