@@ -47,7 +47,7 @@ class template_sideleft_single_item extends MX_Controller {
 		if($other_user_items->num_rows() > 0){
 			$data["other_items"] = $other_user_items->result();
 			$data["title_items"] = "Other User Items";
-			$data["all_links"] = '<a href="'.base_url().'member_profile/'.$user_info["user_name"].'" style="'.$css.'" class="a_class"><b>View More User Items</b></a>';
+			$data["all_links"] = '<a href="'.base_url().'member_profile/'.$user_info["user_name"].'" class="a_class"><b>View More User Items</b></a>';
 		} else {
 			$other_user_items2 = $this->db->query("SELECT * FROM watch_items WHERE item_id <> ".$item_info[0]->item_id." AND item_gender = ".$item_info[0]->item_gender." AND item_category_id = ". $item_info[0]->item_category_id . " LIMIT 4");
 			if($other_user_items2->num_rows() > 0){

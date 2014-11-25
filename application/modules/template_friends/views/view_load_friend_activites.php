@@ -9,7 +9,7 @@
 if($results != NULL || !empty($results)){
 	?>
 	
-	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
+<!--	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
 		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px; position:absolute; top:-24px; left:12px" value="Filter">
 		<div class="status2" style="width:330px !important">
 			<h3 class="h3title">Filter</h3>
@@ -48,7 +48,7 @@ if($results != NULL || !empty($results)){
 			
 		</div>
 	
-	</div>
+	</div>-->
     
 	<div style="float:left; width:100%; clear:both; margin-top:20px">
 	<?php 
@@ -295,42 +295,24 @@ if($results != NULL || !empty($results)){
 		}		
 		
 		echo "<div class='forum_container'>
-				<div class='forum_title' style='padding:0px 10px !important'>
-					<div class='div_td1' style='width:480px !important'>
+				<div class='forum_title' >
+					<div class='div_td1' >
 						 ".$activity[trim($r->activity_type)]." ".$this->function_forums->last_updated($r->activity_date)." <span style='font-weight:normal !important; font-size:11px !important'></span>
 					</div>
 				</div>
-		        <div class='div_td_content' style='padding:0px !important; position:relative; min-height:160px; overflow:hidden;'>
+		        <div class='div_td_content'>
 					
-				    <div style='position:absolute;
-								width: 100px;
-								height: 100%;
-								border-right: 1px solid #CCC;
-								padding: 20px;
-								left:0px;
-								background:#fafafa'>
+				    <div >
 						
-						<div style='float:left;
-									clear: both;
-									width: 100px;
-									height: 100px;
-									border: 1px solid #777;
-									text-align: center;
-									line-height: 95px;
-									overflow: hidden;'>
+						<div >
 									".$img."
 						</div>
-						<a style='float:left; color:#E56718; margin-top:8px' href='".base_url()."member_profile/".$u["user_name"]."'>".$u["user_name"]."</a>	 
+						<a  href='".base_url()."member_profile/".$u["user_name"]."'>".$u["user_name"]."</a>	 
 					 
 					
 					</div>	
 					
-					<div style='float: left;
-								width: 400px;
-								margin-left:140px;
-								height: 100%;
-								padding: 20px;
-								'>
+					<div >
 								".$htm."
 					</div>									
 			   </div>
@@ -345,7 +327,7 @@ if($results != NULL || !empty($results)){
    <?php
 
    
-   echo "<div style='float:left; clear:both; margin:20px 0px;'>". $paginate ."</div>"; 
+   echo "<div >". $paginate ."</div>"; 
 
 
 } else {

@@ -9,7 +9,7 @@
 if($results != NULL || !empty($results)){
 	?>
 	
-	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
+<!--	<div id="filter_container" style="position:relative; float:left; clear:both; margin:20px 0px 0px 0px;">
 		<input id="filter_status" class="btn btn-primary" type="button" style="padding:2px 12px; position:absolute; top:-24px; left:12px" value="Filter">
 		<div class="status2" style="width:330px !important">
 			<h3 class="h3title">Filter</h3>
@@ -47,7 +47,7 @@ if($results != NULL || !empty($results)){
 			
 		</div>
 	
-	</div>
+	</div>-->
     
 <div class="item_list_watches" style="float:left; width:100%; clear:both; margin:10px 0px 0px 9px">
 	<?php 

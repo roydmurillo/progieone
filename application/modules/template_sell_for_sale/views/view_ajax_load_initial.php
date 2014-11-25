@@ -7,7 +7,7 @@
 <?php
 if($results != NULL || !empty($results)){?>
 	
-	<div id="filter_container">
+<!--	<div id="filter_container">
 		<input id="filter_status" class="btn btn-primary" type="button" value="Filter">
 		<div class="status2">
 			<h3 class="h3title">Filter</h3>
@@ -84,7 +84,7 @@ if($results != NULL || !empty($results)){?>
 			
 		</div>
 	
-	</div>
+	</div>-->
 
    <?php
    //load brand obj

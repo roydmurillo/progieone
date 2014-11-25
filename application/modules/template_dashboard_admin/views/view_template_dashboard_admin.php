@@ -31,24 +31,26 @@
 
                         ?>
 
-                        <div> 
+                        <div class="paypal-settings settings-wrapper"> 
 					<div class="box_title">
-						<div class="inner_title" style="margin-left:16px">Paypal Settings</div>
+						Paypal Settings
 					</div>
 					<table>
 						<tr>
-							<td><a class="a_dash" href="javascript:;" title="View all your items in watchlist">
-                                                                <label><input class="p_activated" type="radio" value="1" <?php echo ($p["activate"] == "1") ? "checked": ""; ?> name="paypal_active">Turn On Paypal</label>
-                                                            </a></td>
+							<td>
+                                                            <a class="a_dash" href="javascript:;" title="View all your items in watchlist">
+                                                                <input class="p_activated" type="radio" value="1" <?php echo ($p["activate"] == "1") ? "checked": ""; ?> name="paypal_active"> Turn On Paypal
+                                                            </a> &nbsp;
+                                                            <a class="a_dash" href="javascript:;" title="Browse all latest watches">
+                                                                <input  class="p_activated" type="radio" value="0" <?php echo ($p["activate"] == "0") ? "checked": ""; ?> name="paypal_active"> Turn On Free Listing
+                                                            </a> 
+                                                        </td>
 						</tr>
-						<tr>
-							<td><a class="a_dash" href="javascript:;" title="Browse all latest watches">
-                                                                <label><input  class="p_activated" type="radio" value="0" <?php echo ($p["activate"] == "0") ? "checked": ""; ?> name="paypal_active">Turn On Free Listing</a></label></td>
-						</tr>
+						
                                                 
 					</table>
                                         <div>
-                                            <table>
+                                            <table class="global-price-list-adjustment">
                                                     <tr id="prce" <?php echo ($p["activate"] == "0") ? "style='display:none;'" : ""; ?>>
                                                         <td>Price Per Item:<br>
                                                             <input type="input" id="paypal_price" value="<?php echo $p["price"]; ?>"></td>
@@ -57,7 +59,7 @@
                                                         <td>Days:<br>
                                                             <input type="input" id="days" value="<?php echo $p["days"]; ?>"></td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr class="last-update">
                                                         <td>Last Updated:<br>
                                                             <div><?php echo date("l jS \of F Y h:i:s A", strtotime($p["date"])); ?></div></td>
                                                     </tr>                                                    
@@ -83,24 +85,29 @@
 			</div>
                    
     
-                       <div> 
-					<div class="box_title">
-						<div class="inner_title">Registered Users</div>
-					</div>
-                           <div >
-                               <h3 >Total Registered Users:</h3>
-                               <div >
-                               <?php 
-                               $q = $this->db->query("SELECT COUNT(1) as total FROM watch_users");
-                               if($q->num_rows() > 0){
-                                   $q = $q->result();
-                                   echo $q[0]->total . " User/s";
-                               }
-                               ?>
+                    <div class="settings-wrapper"> 
+                        <div class="box_title">
+                                Registered Users
+                        </div>
+                           <div class="row">
+                               <div class="col-sm-6"> 
+                                  Total:
                                </div>
-                               
+                               <div class="col-sm-6">
+                                <?php 
+                                $q = $this->db->query("SELECT COUNT(1) as total FROM watch_users");
+                                if($q->num_rows() > 0){
+                                    $q = $q->result();
+                                    echo $q[0]->total . " User/s";
+                                }
+                                ?>
+                               </div>
                            </div>    
-
+                    </div>
+                    <div class="settings-wrapper">
+                        <div class="box_title">
+                                User Settings
+                        </div>
                            <table width="100%" border="1">
                                 <?php 
                                 if($users){
@@ -131,28 +138,9 @@
                                         </tr>
                                 <?php
                                     }
-                                ?>
-                                    
-                                
+                                ?>       
                            </table>
-
 			</div>
-                        <!-- 
-                        <div style="float: left;
-                                    box-shadow: 0px 0px 3px 0px #CCC;
-                                    border: 1px solid #999;
-                                    height: 250px;
-                                    margin: 5px;
-                                    position: relative;
-                                    width:748px;"> 
-					<div class="box_title">
-						<div class="inner_title" style="margin-left:16px">Reported Items</div>
-					</div>
-
-
-			</div>
-                        -->
-		
 		</div>
     </div>
 </div>

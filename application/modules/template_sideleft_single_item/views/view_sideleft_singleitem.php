@@ -11,13 +11,13 @@
 
 <!-- content goes here -->
 <div id="cross-sell">
-  
-  <div >  	
+    <p>other recommended items</p>
+    <div class="row">  	
 		<?php 
 		
 		if(!empty($other_items)){
 			
-		echo ' <div class="title_bar" style="margin:7px 0px 5px 0px; float:left; width:180px; ">'.$title_items.'</div>';
+		
 			
 		foreach($other_items as $featured){ 
 	
@@ -87,28 +87,33 @@
 			
 			?>
 			
-			<div style="float:left; min-height:130px; min-width:130px; margin:8px;  ">
+			<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
-				<a href="<?php echo $url; ?>" class="a_class">
-					<div class="image_holder" style="height: 130px; margin:0px 0px 0px 30px; width:130px; line-height:125px; box-shadow:none;">
-						<img title="<?php 
+                            <figure
+				<a href="<?php echo $url; ?>" class="a_class img-slot">
+					
+<!--						<img title="<?php 
 						$n = ucwords(strtolower($featured->item_name));
 						echo $n; 
-						?>" alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" style="max-width:130px; max-height:130px" />
-					</div>
+						?>" alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />-->
+                                                <div class="img-slot">
+                                                    <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
+                                                </div>
 				</a>
+                        </figure>
 				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
 			</div>			
 		
 		<?php
 		}
-		echo $all_links;
+		
 		
 		}
 					
 		?> 
 	
   </div>	
-
-  
+    <div class="view-all">
+        <?php echo $all_links; ?>
+    </div>
 </div>

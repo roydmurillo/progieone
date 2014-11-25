@@ -233,6 +233,12 @@ dashboard
   line-height: 40px;
   vertical-align: middle; }
 
+h2.h2_title {
+  padding: 0 12px 15px; }
+
+#filter_container {
+  padding: 12px 15px; }
+
 .tab_inner_active {
   float: left; }
 
@@ -241,6 +247,22 @@ dashboard
 
 .filter-btn {
   margin: 0 0 12px 15px; }
+
+.main .title_bar {
+  font-size: 2em;
+  margin-bottom: 12px; }
+.main .settings-wrapper {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 24px;
+  background: white; }
+  .main .settings-wrapper .global-price-list-adjustment {
+    margin: 12px 0; }
+  .main .settings-wrapper .last-update td {
+    padding: 12px 0; }
+  .main .settings-wrapper .box_title {
+    font-size: 1.3em;
+    margin-bottom: 12px; }
 
 /*
 item list
@@ -253,6 +275,33 @@ item list
   background-position: center center;
   width: 100%;
   height: 200px; }
+
+.item-single-section1 {
+  background: white;
+  padding: 12px; }
+  .item-single-section1 #brief_container {
+    padding: 12px;
+    background: #fafafa; }
+
+.details_container .tab-pane > div {
+  background: #fff; }
+.details_container .desc5 img {
+  width: 100%; }
+
+.single-item-wrapper {
+  margin-top: 36px; }
+
+.seller_avatar .profile-photo {
+  width: 80px;
+  height: 80px;
+  background-size: cover; }
+
+.a_class.img-slot .img-slot {
+  border: 1px solid #ccc; }
+
+#cross-sell .view-all {
+  text-align: center;
+  padding: 12px; }
 
 /*
 sidebar

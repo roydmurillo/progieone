@@ -3,8 +3,8 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination.js"></script>
 
 <div id="homepage">
-        
-		<div class="col-sm-9 col-md-10 main">
+<!--        forum-->
+		<div class="col-xs-12 main">
 			<?php
 				//this tab is for logged in users only
 				// this is for new, popular, own threads only

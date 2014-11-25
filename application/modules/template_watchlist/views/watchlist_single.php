@@ -8,14 +8,14 @@ $whole = array( 1 => "Whole Watch", 0 => "Parts Only" );
 
 if($item_data != ""){?>
 
-	<div style="float:left; width:770px; min-height:500px;">
+	<div >
 		
 		<!-- content goes here -->
-		<h2 class="h2_title" style="margin-top:0px !important;">Watch Item Description</h2>
+		<h2 class="h2_title" >Watch Item Description</h2>
 		
-		<div id="single_content" style="float:left; width:100%; min-height:500px">
+		<div id="single_content" >
 		
-			<div style="float:left; width:120px; margin-left:12px; min-height:500px;">
+			<div >
 				
 				<div style="float:left; margin:0px; clear:both; width:100%; height:20px; text-align:center; padding:50px 0px; font-size:12px">
 				

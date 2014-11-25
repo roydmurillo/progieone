@@ -40,20 +40,20 @@ jQuery(document).ready(function(){
             
             var t = $("header").offset().top;
             
-            $(document).scroll(function(){
-                
-                if($(this).scrollTop() > 10)
-                {   
-                   $('.ww-tabs').css('margin-top','287px');
-                   //$('.home-search').addClass('fix-search');
-                   $('.fix, .fix .btn').addClass('fix-bg');
-                   
-                }else{
-                   $('.ww-tabs').css('margin-top','120px');
-                   $('.home-search').removeClass('fix-search');
-                   $('.fix, .fix .btn').removeClass('fix-bg');
-                }
-            });
+//            $(document).scroll(function(){
+//                
+//                if($(this).scrollTop() > 10)
+//                {   
+//                   $('.ww-tabs').css('margin-top','287px');
+//                   //$('.home-search').addClass('fix-search');
+//                   $('.fix, .fix .btn').addClass('fix-bg');
+//                   
+//                }else{
+//                   $('.ww-tabs').css('margin-top','120px');
+//                   $('.home-search').removeClass('fix-search');
+//                   $('.fix, .fix .btn').removeClass('fix-bg');
+//                }
+//            });
             
             $('.filter-btn').on('click',function(){
               $('.desktop-sidebar').addClass('go-mobile');    

@@ -16,8 +16,8 @@
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage">
-    <div class="row">
+<div class="single-item-wrapper">
+    <div class="row item-single-section1">
 		<div class="col-md-8">
 		<?php
 		$bool = array("1" => "Yes", "0" => "No");
@@ -83,11 +83,11 @@
 				<!-- AddThis Button END -->
 				</div>	
 				<div id="brief_info"><?php echo ucfirst($item_details[0]->item_name); ?></div>
-				<div>
+                                <div class="clearfix">
 							<div class="single_desc">Selling Price:</div>
 							<div class="single_data"><?php echo $pricing = $this->function_currency->format($item_details[0]->item_price);?></div>
 							
-							<div>
+							<div class="clearfix">
 							<div class="single_desc" >Online Seller:</div>
 								<div class="seller_avatar">
 								    <?php 
@@ -97,7 +97,8 @@
 											$avatar = base_url() . "assets/images/avatar.jpg";
 										}
 									?>
-									<img src="<?php echo $avatar; ?>" >
+
+                                                                        <div class='profile-photo' style="background:url('<?php echo $avatar; ?>') center center no-repeat; background-size:cover;"></div>
 								</div>
 								<div class="seller_info">
 									<div class="small_info">
@@ -110,7 +111,7 @@
 										<a href="javascript:;" id="add_friend" >Add as Friend</a>
 									</div>
 								</div>
-							    <input id="contact_seller" type="button" value="Contact Seller" class="css_btn_c0">
+							    <input id="contact_seller" type="button" value="Contact Seller" class="btn btn-primary">
 
 							</div>
 				</div>
@@ -268,7 +269,7 @@
 							</td>
 							</tr>							
 							<tr>
-								<td class="title52"></td><td class="desc5"><input type="button" class="fleft css_btn_c0" id="reset" value="Reset"><input id="send_message" class="fleft css_btn_c0" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
+								<td class="title52"></td><td class="desc5"><input type="button" class="btn btn-primary" id="reset" value="Reset"><input id="send_message" class="btn btn-primary" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
 							</tr>
 						</table>
 
@@ -286,7 +287,7 @@
 
 		<?php } ?>
 		</div>
-        <div class="fleft">
+        <div class="col-xs-12">
 			<?php
             //load sidebar left
 			if(!empty($item_details)){
