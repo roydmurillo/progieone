@@ -164,11 +164,13 @@ class native_session
     
     public function new_regenerate_session(){
         
-        $new_session = $_SESSION;
-        unset($_SESSION);
-        
-        foreach ($new_session as $nkey=>$session){
-            $_SESSION[$nkey] = $session;
+        if(isset($_SESSION['verified'])){
+            $new_session = $_SESSION;
+            unset($_SESSION);
+
+            foreach ($new_session as $nkey=>$session){
+                $_SESSION[$nkey] = $session;
+            }
         }
         
         return true;
