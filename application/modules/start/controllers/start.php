@@ -182,10 +182,7 @@ class start extends MX_Controller {
 					   $this->uri->segment(1) == "category" ||
 					   $this->uri->segment(1) == "all-watches"
 					    
-			    ){
-                   
-                                print_r($_SESSION);
-                                
+			    ){                                
                   $this->watches(); 
 	           } else {
                   $this->home(); 
