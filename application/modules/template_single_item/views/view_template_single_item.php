@@ -49,6 +49,7 @@
 			<!-- image view holder -->
 			<div id="image_viewer">
 <!--			    <div class="large" style="background:url() no-repeat"></div>-->
+                            
 				<img class="img-thumbnail" src="<?php echo $default_image; ?>">
 			</div>
             <ul class="thumb-list-inline img-thumbs-container">
@@ -64,8 +65,18 @@
                         }
                     }
 				?>
-			</ul>	
+			</ul>
+                        
+                        <script>
+                              $('.thumbnail').on('click','img',function(){
+                                  var thumbsrc = $(this).attr('src'),
+                                  defaultimg = $('.img-thumbnail').attr('src');
+                                  $('.img-thumbnail').attr('src',thumbsrc); 
+                                  
+                              });
+                        </script>
                 </div>
+        
                 	<!-- brief info -->
                         <div class="col-md-4">
 			<div id="brief_container" >

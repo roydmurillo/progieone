@@ -85,6 +85,9 @@ header{
                 }
             }
         }
+        .sub-nav{
+            padding-top:45px;
+        }
     }
     .col-sm-6{padding-bottom:14px;}
     .container, .navbar-brand{
@@ -156,7 +159,14 @@ footer{
 
 //item single page
 .img-thumbs-container{
-    width:100px;
+    width:100%;
+    margin-top:12px;
+    
+        .thumbnail{
+            width: 100px;
+            display: inline-block; 
+        }
+    
 }
 
 // sidebar
