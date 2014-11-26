@@ -1,6 +1,7 @@
 <!-- additional scripts -->
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/message_scripts.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination2.js"></script>
+<!--<script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination2.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/ajax_pagination.js"></script>
 
 <!-- content goes here -->
 <?php $this->load->module("function_security"); 
