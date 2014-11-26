@@ -115,7 +115,8 @@ class function_messages extends MX_Controller {
 						$base_url = base_url() . 'dashboard/'.$ajax;
                         $total_rows = $total_count;
                         $per_page = $per_page;
-                        $return["paginate"] = $this->function_pagination->pagination($base_url,$total_rows,$per_page,$start);
+//                        echo $total_rows." ====== ".$per_page." ====== ".$start;die;
+                        $return["paginate"] = $this->function_pagination->pagination($base_url,$total_rows,$per_page,$data->start);
                         
                     }             
                     
