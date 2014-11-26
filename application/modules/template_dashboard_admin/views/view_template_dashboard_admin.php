@@ -108,17 +108,17 @@
                         <div class="box_title">
                                 User Settings
                         </div>
-                           <table width="100%" border="1">
+                           <table class="table table-striped" width="100%" border="1">
                                 <?php 
                                 if($users){
                                 ?>
-                               <tr>
-                                   <td>Name</td>
-                                   <td>Username</td>
-                                   <td>Email</td>
-                                   <td>Action</td>
-                                   <td>Price</td>
-                               </tr>
+                               <thead>
+                                   <th>Name</th>
+                                   <th>Username</th>
+                                   <th>Email</th>
+                                   <th>Action</th>
+                                   <th>Price</th>
+                                </thead>
                                 <?php
                                 }
                                     foreach ($users as $nkey1 => $fields){

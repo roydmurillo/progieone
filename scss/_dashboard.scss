@@ -48,5 +48,23 @@ float:left;
             font-size: 1.3em;
             margin-bottom: 12px;
         }
+        td{
+            padding-left:12px;
+        }
+    }
+    #single_content{
+        .watchlist-container{
+            background:#f3f3f3;
+            border:1px solid #fff;
+            > div{
+                background: white;
+                padding:12px;
+                border:1px solid #f3f3f3;
+                .watchlist-img-container{
+                    width: 100%;
+                    height:180px;
+                }
+            }
+        }
     }
 }

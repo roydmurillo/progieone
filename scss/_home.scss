@@ -45,6 +45,9 @@ $cont-color: #fff;
             padding-top:200px;
             color:$cont-color;
             width:70%;
+            @media (max-width:480px){
+                padding-top:33px;
+            }
             h1{
                 font-weight:300;
                 text-shadow: 1px 1px 3px #000;
@@ -65,6 +68,9 @@ $cont-color: #fff;
             margin:0 auto;
             margin-top:120px;
             padding:0;
+            @media (max-width:480px){
+                max-width:90%;
+            }
             li{
                display:inline;
                max-width: 25%;

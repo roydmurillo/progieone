@@ -78,11 +78,11 @@ if($item_list != ""){?>
 					$item_condition = $i->item_condition;
 					$item_desc = $i->item_desc;?>	
 					
-					<div class="watchlist-container">
+					<div class="watchlist-container col-xs-6">
 						<div>
-                                                    <div class="watchlist-img-container">
-                                                            <img src="<?php echo $default_image; ?>" >
-                                                    </div>
+                                                   
+                                                    <div class='watchlist-img-container' style="background:url('<?php echo $default_image; ?>') center center no-repeat; background-size:cover;"></div>
+                                                    
 						</div>
 						<div >
 							<b>Watch Name:</b><br><?php echo ucwords($item_name); ?>
