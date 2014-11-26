@@ -13,6 +13,7 @@ class native_session
 		//SessionManage::sessionStart('InstallationName');
 		//SessionManage::sessionStart('Blog_myBlog', 0, '/myBlog/', 'www.site.com');
 	    $this->sessionStart('CYBERWATCHCAFE', 0, '/', '', null);
+            $this->new_regenerate_session();
     }
 
 	public function sessionStart($name, $limit = 0, $path = '/', $domain = null, $secure = null)
@@ -159,6 +160,19 @@ class native_session
     public function destroy()
     {
         session_destroy();
-    }	
+    }
+    
+    public function new_regenerate_session(){
+        
+        $new_session = $_SESSION;
+        unset($_SESSION);
+        
+        foreach ($new_session as $nkey=>$session){
+            $_SESSION[$nkey] = $session;
+        }
+        
+        return true;
+    }
+            
 }
 ?>
