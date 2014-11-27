@@ -228,7 +228,7 @@ class CI_Pagination {
 		if  ($this->first_link !== FALSE AND $this->cur_page > ($this->num_links + 1))
 		{
 			$first_url = ($this->first_url == '') ? $this->base_url : $this->first_url;
-			$output .= $this->first_tag_open.'<a '.$this->anchor_class.'href="'.$first_url.'">'.$this->first_link.'</a>'.$this->first_tag_close;
+			$output .= $this->first_tag_open.$this->next_tag_open.'<a '.$this->anchor_class.'href="'.$first_url.'">'.$this->first_link.'</a>'.$this->next_tag_close.$this->first_tag_close;
 		}
 
 		// Render the "previous" link
@@ -321,7 +321,7 @@ class CI_Pagination {
 			{
 				$i = (($num_pages * $this->per_page) - $this->per_page);
 			}
-			$output .= $this->last_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_link.'</a>'.$this->last_tag_close;
+			$output .= $this->last_tag_open.$this->next_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_link.'</a>'.$this->next_tag_close.$this->last_tag_close;
 		}
 
 		// Kill double slashes.  Note: Sometimes we can end up with a double slash
