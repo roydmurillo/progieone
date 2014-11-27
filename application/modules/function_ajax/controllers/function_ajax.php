@@ -448,13 +448,10 @@ class function_ajax extends MX_Controller {
         public function upload_avatar($function = NULL, $post, $files)
         {
                 $this->load->module("function_users");
-                
-                //aps12
-				//$user_info = $this->function_users->get_user_fields(array("user_id","user_folder","user_name"));
+
                 $user_info = unserialize($this->native_session->get("user_info"));
-				
-                $path = $user_info["user_folder"] . "/avatar/";
-                
+                $path_folder = dirname(dirname(dirname(dirname(dirname(__FILE__))))). "/uploads/". $user_info['user_name'] ."-" . $user_info['user_id'].'/avatar/';
+
                 $valid_formats = array("jpg", "png", "gif", "bmp","JPG", "PNG", "GIF", "BMP");
                 
                 if(isset($post))
@@ -472,12 +469,12 @@ class function_ajax extends MX_Controller {
 						{
 							$actual_image_name = time().substr(str_replace(" ", "_", $txt), 5).".".$ext;
 							$tmp = $files['photoimg']['tmp_name'];
-                                                        $files = glob($path . '*'); // get all file names
+                                                        $files = glob($path_folder . '*'); // get all file names
                                                         foreach($files as $file){ // iterate files
                                                           if(is_file($file))
                                                             unlink($file); // delete file
                                                         }
-                                                	if(move_uploaded_file($tmp, $path.$actual_image_name))
+                                                	if(move_uploaded_file($tmp, $path_folder.$actual_image_name))
 													{
                                                                     $loc = base_url() ."uploads/". $user_info["user_name"] . "-" . $user_info["user_id"] . "/avatar/";
                                                                     $args = array("user_avatar" => $loc . $actual_image_name);    
