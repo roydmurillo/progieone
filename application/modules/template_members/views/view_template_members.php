@@ -205,23 +205,47 @@ if(empty($items)){
 			$price = $featured->item_price;
 			
 			//get primary image
-			$images = unserialize($featured->item_images);
-			$count = count($images) - 1;
-			$rand = rand(0,$count);
-			@$primary = $images[$rand];
-			
-			//if no image
-			if($primary == ""){
-				$primary = base_url() . "assets/images/no-image.png";
-			} else {
-				if(strpos($primary,"localhost") > -1){
-					$primary = explode(".",$primary);
-					$primary = $primary[0] . "_thumb." . $primary[1];
-				} else {
-					$primary = explode(".",$primary);
-					$primary = $primary[0] ."." . $primary[1] . "_thumb." . $primary[2];
-				}
-			}
+//			$images = unserialize($featured->item_images);
+//			$count = count($images) - 1;
+//			$rand = rand(0,$count);
+//			@$primary = $images[$rand];
+//			
+//			//if no image
+//			if($primary == ""){
+//				$primary = base_url() . "assets/images/no-image.png";
+//			} else {
+//				if(strpos($primary,"localhost") > -1){
+//					$primary = explode(".",$primary);
+//					$primary = $primary[0] . "_thumb." . $primary[1];
+//				} else {
+//					$primary = explode(".",$primary);
+//					$primary = $primary[0] ."." . $primary[1] . "_thumb." . $primary[2];
+//				}
+//			}
+                        
+                        $new_images = unserialize($featured->item_images);
+                        $no_image = base_url() . "assets/images/no-image.png";
+                        $default_image = $no_image;
+                        if(is_array($new_images)){
+                            foreach ($new_images as $xx){
+                                if($xx[0] == 1){
+                                    $default_image = $xx[1];
+                                }
+
+                                if($default_image == $no_image){
+                                    $default_image = $xx[1];
+                                }
+
+            //                    if(strpos($default_image,"localhost") > -1){
+            //                        $default_image = explode(".",$default_image);
+            //                        $default_image = $default_image[0] . "_thumb." . $default_image[1];
+            //                    } else {
+            //                        $default_image = explode(".",$default_image);
+            //                        $default_image = $default_image[0] ."." . $default_image[1] . "_thumb." . $default_image[1];
+            //                    }
+
+                            }
+                        }
 			
 			//country
 			$data = ($this->function_users->get_user_fields_by_id(array("user_name", "user_country"), $featured->item_user_id));
@@ -232,7 +256,7 @@ if(empty($items)){
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
 				<a href="<?php echo $url; ?>">			
-                                    <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $primary; ?>" />
+                                    <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
 				</a>
                                 <h5>
                                     <a href="<?php echo $url; ?>">
@@ -274,7 +298,9 @@ if(empty($items)){
 		}
 		 echo "<div class='pagination_links' style='float:left; clear:both; margin-top:20px; font-family:verdana; font-size:14px;'>";
 		  if($item_links){
+                      echo "<ul class='pagination'>";
 			  echo $item_links;
+                      echo "</ul>";
 		  }
 		  echo "</div>";
 		
