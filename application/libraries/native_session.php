@@ -13,10 +13,14 @@ class native_session
 		//SessionManage::sessionStart('InstallationName');
 		//SessionManage::sessionStart('Blog_myBlog', 0, '/myBlog/', 'www.site.com');
 	    $this->sessionStart('CYBERWATCHCAFE', 0, '/', '', null);
-            $this->new_regenerate_session();
+//            $this->new_regenerate_session();
+    }
+    
+    public function __destruct(){
+        $this->new_regenerate_session();
     }
 
-	public function sessionStart($name, $limit = 0, $path = '/', $domain = null, $secure = null)
+    public function sessionStart($name, $limit = 0, $path = '/', $domain = null, $secure = null)
 	{
 		// Set the cookie name
 		session_name($name);
