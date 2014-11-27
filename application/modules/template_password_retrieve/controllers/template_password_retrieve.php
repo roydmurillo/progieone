@@ -252,7 +252,7 @@ class template_password_retrieve extends MX_Controller {
 			$this->db->update("watch_users");
 			
 			$message = "<div style='float:left;margin:12px; padding:15px; border:1px solid #333; font-family:verdana; font-size:14px'>
-			<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a><br>
+			<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
 				<div style='float:left;margin:12px; padding:15px; font-family:verdana; font-size:14px; border: 1px solid #CCC;
 							background: #fcfff4;  Old browsers 
 							background: -moz-linear-gradient(top,  #fcfff4 0%, #e9e9ce 100%);  FF3.6+ 
@@ -262,12 +262,12 @@ class template_password_retrieve extends MX_Controller {
 							background: -ms-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%);  IE10+ 
 							background: linear-gradient(to bottom,  #fcfff4 0%,#e9e9ce 100%);  W3C 
 							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 );  IE6-9 '>
-					Hello ".ucfirst(strtolower($this->input->post("firstname"))).",<br><br>
-					You have received this email because you applied for change password.<br>
-					<a href='".base_url()."secure/change_password/".$user["user_name"]."/".$salt_pass."'>Just click this link to change your account password.</a><br><br>
-					Thank you! We are looking forward in doing with business with you. <br><br><br>
-					Yours Truly,<br>
-					Cyberwatchcafe Administrator<br>
+					Hello ".ucfirst(strtolower($this->input->post("firstname"))).",
+					You have received this email because you applied for change password.
+					<a href='".base_url()."secure/change_password/".$user["user_name"]."/".$salt_pass."'>Just click this link to change your account password.</a>
+					Thank you! We are looking forward in doing with business with you. 
+					Yours Truly,
+					Cyberwatchcafe Administrator
 					Cyberwatchcafe.com
 				</div>
 			</div>";

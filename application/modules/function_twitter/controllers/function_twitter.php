@@ -57,8 +57,8 @@ class function_twitter extends MX_Controller {
 
 			}
 		} else {
-			echo "Error ID: ",$http_code, "<br>\n";
-			echo "Error: ",$connection->response['error'], "<br>\n";
+			echo "Error ID: ",$http_code, "\n";
+			echo "Error: ",$connection->response['error'], "\n";
 		}
 		
 		// You may have to download and copy http://curl.haxx.se/ca/cacert.pem

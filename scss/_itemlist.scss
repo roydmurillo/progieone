@@ -12,6 +12,36 @@ item list
     height:200px;
     
 }
+.thumbnail {
+    
+        .watch-btn{
+            float:none !important;
+            .add_wishlist {
+                span{
+                    @media(max-width:480px){
+                        display:none;
+                    }
+                }
+                &.add-watch{
+                    width:100%;
+                    &:after{
+                        @media(max-width:480px){
+                            content: "+ watchlist";
+                        }
+                    }
+                }
+                &.in-watch{
+                    width:100%;
+                    &:after{
+                        @media(max-width:480px){
+                            content: "- watchlist";
+                        }
+                    }
+                }
+            }
+        }
+    
+}
 .item-single-section1{
     .breadcrumb{
         background-color: #fff;

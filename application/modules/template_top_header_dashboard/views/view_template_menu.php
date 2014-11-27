@@ -7,7 +7,7 @@
         <div class="visible-xs visible-sm menu-btn">Menu</div>
         <div class="container black-nav">
             <ul class="nav navbar-nav">
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">MEN'S</a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">MEN'S <span class="caret"></span></a>
 				<?php 		   
 				   //dependent files
 				   $data["type"] = "watch_men";
@@ -16,7 +16,7 @@
 				
 				?>			    
 	    </li>        	
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">WOMEN'S</a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">WOMEN'S <span class="caret"></span></a>
 				<?php 		   
 				   //dependent files
 				   $data["type"] = "watch_women";
@@ -25,7 +25,7 @@
 				
 				?>			    
 	    </li> 		
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">KID'S</a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">KID'S <span class="caret"></span></a>
 				<?php 		   
 				   //dependent files
 				   $data["type"] = "watch_kids";
@@ -34,7 +34,7 @@
 				
 				?>			    
 	    </li> 		
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORIES</a>		
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORIES <span class="caret"></span></a>		
 				<?php 		   
 				   //dependent files
 				   $data["type"] = "watch_category";

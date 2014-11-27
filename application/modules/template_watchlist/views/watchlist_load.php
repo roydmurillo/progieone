@@ -7,9 +7,9 @@
 </div>
 
 	<div id="filter_container">
-		<input id="filter_status" class="btn btn-default" type="button" value="Filter">
+<!--		<input id="filter_status" class="btn btn-default" type="button" value="Filter">-->
 		<input id="compare_watch" class="btn btn-default" type="button" value="Compare Selected">
-		<div class="status2">
+<!--		<div class="status2">
 			<h3 class="h3title">Filter</h3>
 			<table><tbody>
 			<tr>
@@ -45,7 +45,7 @@
 			</tr>	
 			</tbody></table>
 			
-		</div>
+		</div>-->
 	
 	</div>
 
@@ -125,9 +125,9 @@
 					<img src="<?php echo $default_image; ?>" />
 				</div>
 				<input type="hidden" value="<?php echo $featured->item_id; ?>" class="uid">
-                                <h5><a href="javascript:;" class="item_title">
+                                <h5>
 					<?php echo substr(ucwords(strtolower($featured->item_name)),0,23)."..."; ?>       
-                                    </a></h5>
+                                    </h5>
 				<div class="price">$ <?php echo $price; ?></div>
 				<a href="javascript:;" class="remove_watchlist" data-itemid="<?php echo $featured->item_id; ?>">
 					Remove from Watchlist       

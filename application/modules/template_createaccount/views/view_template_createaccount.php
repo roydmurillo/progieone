@@ -27,10 +27,8 @@ input[type="checkbox"] {
 		?>
 		
 		<?php if($remarks != ""){ ?>
-		<div id="regular_register" style="min-height:40px !important; margin:0px 155px;">
-				
-				<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-				<div style="float: left; margin-left: 60px; color: red !important; width: 410px; text-align: center;">
+		<div class="red-alert" >
+                    <div class="text-center">
 					<?php echo $remarks; ?>
 				</div>									
 					
@@ -90,7 +88,7 @@ input[type="checkbox"] {
 				</div>	
 
 				<div class="form-group">
-					<div class="hdr" style="font-size:10px; margin:20px 0px">
+					<div class="hdr clearfix">
 						<input type="checkbox" name="terms_agreement" style="float:left; margin:0px 5px 0px 0px; padding:0px" value="1" <?php if(isset($_POST["terms_agreement"])) echo 'checked="checked"'; ?>> 
 						<div style="float:left; margin:0px">I Accept the <a href="<?php echo base_url() ?>terms_and_conditions">Terms and Conditions</a></div>
 					</div>

@@ -51,8 +51,8 @@ border:1px solid #CCC;
                                     <li>203x60, 203x203, or 728x90, maximum file size of 25 KB</li>
                                     <li>GIF, animated GIF or JPEG</li>
 				</ul>
-				<p>We reserve the right to refuse advertisements and make any changes to our advertising terms and conditions without prior notice.<br>	
-				Once we have received your request it will be processed within 48 hours. You will receive a confirmation email with your account details to view your reports.<br>
+				<p>We reserve the right to refuse advertisements and make any changes to our advertising terms and conditions without prior notice.	
+				Once we have received your request it will be processed within 48 hours. You will receive a confirmation email with your account details to view your reports.
                                 We accept all major credit cards.</p>
 				<p>Cyberwatchcafe is an ecommerce advertising website listings for watch enthusiasts <a class="link" href="#">Contact us</a></p>
 			</div>

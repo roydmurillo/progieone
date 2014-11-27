@@ -66,11 +66,11 @@ if($results != NULL || !empty($results)){
 					<?php 
 						if($u["user_avatar"] != ""){
 					?>
-						<img src="<?php echo $u["user_avatar"]; ?>"  />
+						<div style="background:url(<?php echo $u["user_avatar"]; ?>) center center no-repeat; background-size:cover;" class="img-thumb-bg"></div>
 					<?php 
 						} else {
 					?>
-						<img src="<?php echo base_url(); ?>assets/images/no-image.png" />
+						<div style="background:url('<?php echo base_url(); ?>assets/images/no-image.png');" class="img-thumb-bg"></div>
 					<?php } ?>
 				</div>
 				<input type="hidden" value="<?php echo $r->friend_friend_id; ?>" class="uid">

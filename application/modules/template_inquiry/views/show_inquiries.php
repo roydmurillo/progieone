@@ -62,7 +62,7 @@ if($inquiries != NULL || !empty($inquiries)){?>
 		//else
 		$status = "s_gray";
 		
-		$contact = $r->inquiry_client ."<br>(". $r->inquiry_email .")";
+		$contact = $r->inquiry_client ."(". $r->inquiry_email .")";
 		
 		if($ctr % 2 == 0) {
         	$class = "tr1";

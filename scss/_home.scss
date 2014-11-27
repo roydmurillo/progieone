@@ -42,7 +42,7 @@ $cont-color: #fff;
             background-color:lighten($base-color,6%) !important;
         }
         .intro{
-            padding-top:200px;
+            padding-top:0px;
             color:$cont-color;
             width:70%;
             @media (max-width:480px){

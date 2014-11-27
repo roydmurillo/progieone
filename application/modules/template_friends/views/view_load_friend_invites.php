@@ -40,7 +40,7 @@ if($results != NULL || !empty($results)){
 	
 	</div>-->
     
-	<div style="float:left; width:100%; clear:both; margin-top:20px">
+	<div>
 	<?php 
 	 $user_id = unserialize($this->native_session->get("user_info"));
 	 $user_id = $user_id["user_id"];
@@ -51,25 +51,27 @@ if($results != NULL || !empty($results)){
 		
 		$u = $this->function_users->get_user_fields_by_id(array("user_avatar","user_name","user_id"),$r->friend_friend_id);
 		
-	?>
-			<div class="iteminfo" style="height:220px !important; width:158px; border:1px solid #CCC; background:ghostwhite">
-				<div class="image_holder" style="margin:0px 10px 10px 9px !important; width:140px !important; line-height:140px !important; height:140px !important;">
+                ?><div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+			<div class="iteminfo thumbnail">
+				<div class="img-slot">
 					<?php 
 						if($u["user_avatar"] != ""){
 					?>
-						<img src="<?php echo $u["user_avatar"]; ?>" style="max-width:140px !important; max-height:140px !important; " />
+						
+                                                <div style="background:url(<?php echo $u["user_avatar"]; ?>) center center no-repeat; background-size:cover;" class="img-thumb-bg"></div>
 					<?php 
 						} else {
 					?>
-						<img src="<?php echo base_url(); ?>assets/images/no-image.png"  style="max-width:140px !important; max-height:140px !important; " />
+						<div style="background:url('<?php echo base_url(); ?>assets/images/no-image.png');" class="img-thumb-bg"></div>
 					<?php } ?>
 				</div>
 				<input type="hidden" value="<?php echo $r->friend_friend_id; ?>" class="uid">
-				<a href="javascript:;" class="item_title" style="width:140px !important; margin-left:4px !important; background:none; border:none;">
-					<?php echo $u["user_name"]; ?>       
+				<a href="javascript:;" class="item_title">
+                                    <?php echo $u["user_name"]; ?>       
 				</a>
-				<input type="button" style="margin:-8px 0px 0px 16px; padding:5px 12px" class="css_btn_c0 accept_invite" value="Accept Invite">
+				<input type="button"  class="btn btn-default btn-green accept_invite" value="Accept Invite">
 			</div>
+                </div>
 	
 	<?php 
 		}
@@ -79,7 +81,7 @@ if($results != NULL || !empty($results)){
    <?php
 
    
-   echo "<div style='float:left; clear:both; margin:20px 0px;'>". $paginate ."</div>"; 
+   echo "<div>". $paginate ."</div>"; 
 
 
 } else {

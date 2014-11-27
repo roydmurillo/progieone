@@ -62,7 +62,7 @@ border:1px solid #CCC; }
 								<input class="input1 form-control" type="text" name="sender_name" id="sender_name" placeholder="Your Name">
 							</div>
 							<div class="form-group">
-								<label for="sender_email">Email:</label><br>
+								<label for="sender_email">Email:</label>
 								<input class="input1 form-control"  type="text" name="sender_email" id="sender_email" placeholder="Your Email">
 							</div>	
 							<div class="form-group">
@@ -217,7 +217,7 @@ tinymce.init({
 		
 		paste_preprocess : function(pl, o) {
 		  //example: keep bold,italic,underline and paragraphs
-		  o.content = strip_tags( o.content,'<b><u><i><p><br>' );
+		  o.content = strip_tags( o.content,'<b><u><i><p>' );
 		
 		  // remove all tags => plain text
 		  //o.content = strip_tags( o.content,'' );

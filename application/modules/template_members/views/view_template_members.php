@@ -8,8 +8,8 @@
 .inner_seller{ float:left; margin:3px 0px 0px 12px; font-size:12px; font-weight:bold; color:#333;}
 .item_title{margin-top:0px !important; height:48px; color:#333; width:143px; text-align:left; margin-top:-10px; margin-left:18px; font-weight:bold; text-transform:none !important;}
 .item_price{margin-top: 0px !important; margin-left: 23px; text-align:left; font-size: 17px;}
-.add_wishlist{margin: 3px 0px 0px 23px;}
-#filter_return{float:left; font-size:12px; font-family:Verdana; width:759px; border:1px dashed #CCC; border-left:none; border-right:none; height:30px; line-height:30px; vertical-align:middle; margin:0px 0px 10px 0px;}
+
+
 #total_message{float:left; height:30px; line-height:30px; color:#555; font-size:12px; font-weight:bold;  clear:both; width:100%; font-family:arial; }
 .list_a{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) 0px -24px; margin-left:5px; margin-top:3px;}
 .list_b{ float:left; width:25px; height:24px; background:url(<?php echo base_url() ?>assets/images/grid-list.png) -25px -24px; margin-left:5px; margin-top:3px;}
@@ -125,7 +125,7 @@ if(empty($items)){
 
 				<div>
 					<div style="float:left; clear:both; ">
-						<a href="<?php echo base_url() ?>send_pm/<?php echo $result[0]->user_name; ?>" style="padding:5px 40px;" class="css_btn_c0">Send PM</a>
+						<a href="<?php echo base_url() ?>send_pm/<?php echo $result[0]->user_name; ?>" class="btn btn-primary">Send message</a>
 					</div>
 					
 					<div id="refine_loader" style='position:absolute; z-index:100; left:59px; bottom:-80px; display:none'><img src='<?php echo base_url(); ?>assets/images/refine_loader.gif'></div>
@@ -181,7 +181,7 @@ if(empty($items)){
 					<input type="submit" name="submit_filter" id="submit_filter" style="display:none">
 					</form>			
 			</div>
-                <div class="row item-list">
+                <div class="row item-list item_list_watches">
 		<?php
         $user_id = unserialize($this->native_session->get("user_info"));
 		$user = $user_id["user_id"];
@@ -255,11 +255,11 @@ if(empty($items)){
 			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
-				<a href="<?php echo $url; ?>">			
-                                    <img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
+                                <a class="img-slot" href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">			
+                                    <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
 				</a>
                                 <h5>
-                                    <a href="<?php echo $url; ?>">
+                                    <a href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">
                                             <?php 
                                             if($display_by == "display_list"){
                                                     if(strlen(trim($featured->item_name)) > 120)
@@ -278,19 +278,21 @@ if(empty($items)){
                                     </a>
                                 </h5>
                                 
-				<div><?php echo $this->function_currency->format($price); ?></div>
+				<div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
 				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-				<?php
+				<div class="pull-right watch-btn">
+                                    <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$featured->item_id)){ 
-						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist add-watch" href="javascript:;"><span>Add to Watchlist</span></a>';  
 					} else {
-						echo '<a class="btn btn-danger add_wishlist" href="javascript:;">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist in-watch" href="javascript:;"><span>In Watchlist</span></a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist" href="javascript:;">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist add-watch" href="javascript:;"><span>Add to Watchlist</span></a>';  
 				}
 				?>
+                                </div>
                             </figure>
 			</div>			
 		

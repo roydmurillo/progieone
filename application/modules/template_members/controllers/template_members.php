@@ -384,7 +384,7 @@ class template_members extends MX_Controller {
 
 		//load footer
 		$this->load->module('template_footer');
-        $this->template_footer->index(); 		
+                $this->template_footer->index(); 		
 
 	}	
 	public function cleanup($str){
@@ -551,7 +551,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="brand">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Brand:</b><br>
+								<b>Brand:</b>
 								<div style="min-height:12px">
 									<?php echo $this->function_brands->watch_brands($n1[1]); ?>
 								</div>
@@ -563,7 +563,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="category">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Category:</b><br>
+								<b>Category:</b>
 								<div style="min-height:12px">
 									<?php echo $this->function_category->get_category_fields("category_name", $n1[1]); ?>
 								</div>
@@ -575,7 +575,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="case_type">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Case Type:</b><br>
+								<b>Case Type:</b>
 								<div style="min-height:12px">
 									<?php echo ucfirst($n1[1]); ?>
 								</div>
@@ -587,7 +587,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="bracelet_type">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Case Type:</b><br>
+								<b>Case Type:</b>
 								<div style="min-height:12px">
 									<?php echo ucfirst($n1[1]); ?>
 								</div>
@@ -599,7 +599,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="condition">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Condition:</b><br>
+								<b>Condition:</b>
 								<div style="min-height:12px">
 									<?php echo ucfirst($n1[1]); ?>
 								</div>
@@ -611,7 +611,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="min_price">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Min Price:</b><br>
+								<b>Min Price:</b>
 								<div style="min-height:12px">
 									<?php echo $n1[1]; ?>
 								</div>
@@ -623,7 +623,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="max_price">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Max Price:</b><br>
+								<b>Max Price:</b>
 								<div style="min-height:12px">
 									<?php echo $n1[1]; ?>
 								</div>
@@ -638,7 +638,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="brand">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Brand</b><br>
+								<b>Brand</b>
 								<div style="min-height:12px">
 									<?php echo $this->function_brands->watch_brands($n1[1]); ?>
 								</div>
@@ -650,7 +650,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="category">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Category:</b><br>
+								<b>Category:</b>
 								<div style="min-height:12px">
 									<?php echo $this->function_category->get_category_fields("category_name", $n1[1]); ?>
 								</div>
@@ -662,7 +662,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="case_type">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Case Type:</b><br>
+								<b>Case Type:</b>
 								<div style="min-height:12px">
 									<?php echo ucfirst($n1[1]); ?>
 								</div>
@@ -674,7 +674,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="bracelet_type">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Case Type:</b><br>
+								<b>Case Type:</b>
 								<div style="min-height:12px">
 									<?php echo ucfirst($n1[1]); ?>
 								</div>
@@ -686,7 +686,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="condition">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Condition:</b><br>
+								<b>Condition:</b>
 								<div style="min-height:12px">
 									<?php echo ucfirst($n1[1]); ?>
 								</div>
@@ -698,7 +698,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="min_price">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Min Price:</b><br>
+								<b>Min Price:</b>
 								<div style="min-height:12px">
 									<?php echo $n1[1]; ?>
 								</div>
@@ -710,7 +710,7 @@ class template_members extends MX_Controller {
 							<div style='float:left; clear:both; font-family:arial; position:relative; width:137px; padding:20px 0px 5px 9px; border-bottom:1px dashed #333; background:#FFF;  color:#333'>
 								<input type="hidden" class="filter_type" value="max_price">
 								<a href="javascript:;" class="delete_filter" style="color:red; position:absolute; font-size:11px; right:2px; top:2px">[ remove filter ]</a>
-								<b>Max Price:</b><br>
+								<b>Max Price:</b>
 								<div style="min-height:12px">
 									<?php echo $n1[1]; ?>
 								</div>
@@ -796,10 +796,10 @@ class template_members extends MX_Controller {
 						<table style='float:left; margin:2px 0px 0px 8px'>
 						<tbody>
 							<tr>
-								<td>Min Price <br><input type='text' id='min_price' class='int' value='' style='width:114px'></td>
+								<td>Min Price <input type='text' id='min_price' class='int' value='' style='width:114px'></td>
 							</tr>
 							<tr>
-								<td>Max Price <br><input type='text' id='max_price' class='int' value='' style='width:114px'></td>
+								<td>Max Price <input type='text' id='max_price' class='int' value='' style='width:114px'></td>
 							</tr>
 							<tr>
 								<td><input type='button' id='filter_price' class='css_btn_c0' style='padding:0px 12px; margin-top:12px;' value='Filter Price' style='margin-top:5px;'></td>

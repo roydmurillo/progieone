@@ -85,49 +85,49 @@ if($item_list != ""){?>
                                                     
 						</div>
 						<div >
-							<b>Watch Name:</b><br><?php echo ucwords($item_name); ?>
+							<b>Watch Name:</b><?php echo ucwords($item_name); ?>
 						</div>
 						<div >
-							<b>Brand:</b><br><?php echo ucfirst($item_brand); ?>
+							<b>Brand:</b><?php echo ucfirst($item_brand); ?>
 						</div>				
 						<div >
-							<b>Movement:</b><br><?php echo ucfirst(str_replace("_"," ",$item_movement)); ?>
+							<b>Movement:</b><?php echo ucfirst(str_replace("_"," ",$item_movement)); ?>
 						</div>	
 						<div >
-							<b>Case Type:</b><br><?php echo ucfirst($item_case); ?>
+							<b>Case Type:</b><?php echo ucfirst($item_case); ?>
 						</div>	
 						<div >
-							<b>Bracelet Type:</b><br><?php echo ucfirst($item_bracelet); ?>
+							<b>Bracelet Type:</b><?php echo ucfirst($item_bracelet); ?>
 						</div>
 						<div >
-							<b>Year Model:</b><br><?php echo $item_year_model; ?>
+							<b>Year Model:</b><?php echo $item_year_model; ?>
 						</div>	
 						<div >
-							<b>Condition:</b><br><?php echo ucfirst($item_condition); ?>
+							<b>Condition:</b><?php echo ucfirst($item_condition); ?>
 						</div>	
 						<div >
-							<b>Category:</b><br><?php echo ucfirst($this->function_category->get_category_fields("category_name",$item_category)); ?>
+							<b>Category:</b><?php echo ucfirst($this->function_category->get_category_fields("category_name",$item_category)); ?>
 						</div>	
 						<div >
-							<b>Gender:</b><br><?php echo $gender[(int)$item_gender]; ?>
+							<b>Gender:</b><?php echo $gender[(int)$item_gender]; ?>
 						</div>	
 						<div >
-							<b>For Kids:</b><br><?php echo $bool[(int)$item_kids]; ?>
+							<b>For Kids:</b><?php echo $bool[(int)$item_kids]; ?>
 						</div>	
 						<div >
-							<b>Whole Watch / Parts Only:</b><br><?php echo $whole[(int)$item_wholepart]; ?>
+							<b>Whole Watch / Parts Only:</b><?php echo $whole[(int)$item_wholepart]; ?>
 						</div>	
 						<div >
-							<b>Certificate:</b><br><?php echo $bool[(int)$item_certificate]; ?>
+							<b>Certificate:</b><?php echo $bool[(int)$item_certificate]; ?>
 						</div>	
 						<div >
-							<b>Box:</b><br><?php echo $bool[(int)$item_box]; ?>
+							<b>Box:</b><?php echo $bool[(int)$item_box]; ?>
 						</div>	
 						<div >
-							<b>Selling Price:</b><br><?php echo $item_price; ?>
+							<b>Selling Price:</b><?php echo $item_price; ?>
 						</div>	
 						<div class="desc">
-							<b>Description:</b><br><?php echo $item_desc; ?>
+							<b>Description:</b><?php echo $item_desc; ?>
 						</div>																																							
 					</div>
 				

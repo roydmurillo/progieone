@@ -28,6 +28,7 @@ float:left;
     margin:0 0 12px 15px;
 }
 .main{
+    min-height:700px;
     .title_bar{
         font-size:2em;
         margin-bottom: 12px;
@@ -37,6 +38,9 @@ float:left;
         padding: 12px;
         margin-bottom:24px;
         background:white;
+        td{
+            padding: 12px 12px 12px 0; 
+        }
         .global-price-list-adjustment{
             margin:12px 0;
         }
@@ -48,9 +52,13 @@ float:left;
             font-size: 1.3em;
             margin-bottom: 12px;
         }
-        td{
-            padding-left:12px;
+        .table{
+            td{
+                padding-left:12px;
+            }
         }
+        
+        
     }
     #single_content{
         .watchlist-container{

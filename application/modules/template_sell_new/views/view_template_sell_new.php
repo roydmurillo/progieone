@@ -408,7 +408,7 @@ jQuery(document).ready(function() {
 							<table class="table_add">
 								<tbody>
                                     <tr>
-										<td><div class="title_thread">Item type</div> <br>
+										<td><div class="title_thread">Item type</div> 
 										<select id="item_wholepart" name="item_wholepart" class="input">
 												<option value="1" selected="selected"> Whole Watch </option>
 												<option value="0"> Parts/Accessories Only </option>
@@ -416,7 +416,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr class="item_parts" style="display:none;">
-										<td><div class="title_thread">Type of Parts/Accessories Only</div> <br>
+										<td><div class="title_thread">Type of Parts/Accessories Only</div> 
 										<select id="item_parttype" name="item_parttype" class="input">
 												<option value=""> - Select - </option>
 												<option value="bracelet_strap"> Bracelet / Strap </option>
@@ -433,7 +433,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr>
-										<td><div class="title_thread">Make</div><br>
+										<td><div class="title_thread">Make</div>
 										 <select id="item_brand" name="item_brand" class="input">
 												<option value=""> - Select - </option>
 												<?php 
@@ -448,15 +448,15 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr>
-										<td><div class="title_thread">Title</div><br>
+										<td><div class="title_thread">Title</div>
 										<input type="text" value="" id="item_name" name="item_name" class="input"></td>
 									</tr>
                                     <tr>
-										<td><div class="title_thread">Classified Price($)</div><br>
+										<td><div class="title_thread">Classified Price($)</div>
 										<input type="text" value="" id="item_price" name="item_price" class="auto input"></td>
 									</tr>
                                     <tr>
-										<td><div class="title_thread">Item Condition</div><br>
+										<td><div class="title_thread">Item Condition</div>
 										<select id="item_condition" name="item_condition" class="input">
 												<option value=""> - Select - </option>
 												<option value="new"> Brand New </option>
@@ -465,7 +465,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr>
-										<td><div class="title_thread">Category</div> <br>
+										<td><div class="title_thread">Category</div> 
 										<select id="item_category" name="item_category_id" class="input">
 												<option value=""> - Select - </option>
 												<?php 
@@ -480,7 +480,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr>
-										<td><div class="title_thread">Gender</div><br>
+										<td><div class="title_thread">Gender</div>
 										<select id="item_gender" name="item_gender" class="input">
 												<option value=""> - Select - </option>
 												<option value="1"> Mens </option>
@@ -490,7 +490,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">For Kids</div><br>
+										<td><div class="title_thread">For Kids</div>
 										<select id="item_kids" name="item_kids" class="input">
 												<option value=""> - Select - </option>
 												<option value="1"> Yes </option>
@@ -499,11 +499,11 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr>
-                                        <td><div class="title_thread"><button id="additional_option" class="btn btn-info" onclick="return false;">Additional Options</button></div><br>
+                                        <td><div class="title_thread"><button id="additional_option" class="btn btn-info" onclick="return false;">Additional Options</button></div>
 										</td>
 									</tr>
                                     <tr class="hidden additional">
-										<td><div class="title_thread">Movement Type</div><br>
+										<td><div class="title_thread">Movement Type</div>
 										 <select id="item_movement" name="item_movement" class="input">
 												<option value=""> - Select - </option>
 												 	<option value="automatic">Automatic</option>												
@@ -517,7 +517,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr class="hidden additional">
-										<td><div class="title_thread">Case Type</div><br>
+										<td><div class="title_thread">Case Type</div>
 										 <select id="item_case" name="item_case" class="input">
 												<option value=""> - Select - </option>
 												<option value="aluminum">Aluminum</option>
@@ -542,7 +542,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr class="hidden additional">
-										<td><div class="title_thread">Bracelet Type</div><br>
+										<td><div class="title_thread">Bracelet Type</div>
 										 <select id="item_bracelet" name="item_bracelet" class="input">
 												<option value=""> - Select - </option>
 												<option value="aluminum">Aluminium</option>
@@ -574,11 +574,11 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr class="hidden additional">
-										<td><div class="title_thread">Year Model</div><br>
+										<td><div class="title_thread">Year Model</div>
 										<input type="text" value="" id="item_year_model" name="item_year_model" class="validateYear input" maxlength="150"></td>
 									</tr>
                                     <tr class="hidden additional">
-										<td><div class="title_thread">With Certificate</div><br>
+										<td><div class="title_thread">With Certificate</div>
 										<select id="item_certificate" name="item_certificate" class="input">
 												<option value=""> - Select - </option>
 												<option value="1"> Yes </option>
@@ -587,7 +587,7 @@ jQuery(document).ready(function() {
 										</td>
 									</tr>
                                     <tr class="hidden additional">
-										<td><div class="title_thread">With Box</div><br>
+										<td><div class="title_thread">With Box</div>
 										<select id="item_box" name="item_box" class="input">
 												<option value=""> - Select - </option>
 												<option value="1"> Yes </option>
@@ -601,7 +601,7 @@ jQuery(document).ready(function() {
 
 						<div id="details_description" style="display:none;">
 									<div class="t_area" >
-										<div class="title_thread">Watch Description</div><br>
+										<div class="title_thread">Watch Description</div>
 										<div >
 											<textarea id="item_description" name="item_desc" ></textarea>
 										</div>
@@ -610,7 +610,7 @@ jQuery(document).ready(function() {
 
 						<div id="details_shipping" style="display:none;">
 									<div class="t_area" >
-										<div class="title_thread">Shipping Information</div><br>
+										<div class="title_thread">Shipping Information</div>
 										<div >
 											<textarea id="item_shipping" name="item_shipping"></textarea>
 										</div>
@@ -631,7 +631,7 @@ jQuery(document).ready(function() {
 					}?>
 					
 					<div >
-						*Kindly complete all field details to make your watch items more searchable for buyers.<br><br>*For Parts/Accessories Only items, you can choose "others" for fields
+						*Kindly complete all field details to make your watch items more searchable for buyers.*For Parts/Accessories Only items, you can choose "others" for fields
 						that might not be appropriate for your item/s.
 					</div>				
 					

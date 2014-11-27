@@ -690,29 +690,28 @@ float: left;
 background:ghostwhite;
 }
 #contacts{
-float: left;
-width: 400px;
-height: 213px;
-padding-left:35px;
-margin-left: 20px;
 overflow: auto;
-border: 3px solid #ADD8E6;
+margin-top:24px;
 display:none;
+width:100%;
+background:#f0f0f0;
+padding:12px;
+}
+.t_area{
+    margin-bottom:24px;
+}
+.table_add{
+    width:100%;
 }
 .contact_info{
-float: left;
-padding: 12px;
-border: 1px solid #CCC;
-margin: 5px;
+
 }
 .contact_info:hover{
-box-shadow:1px 1px 3px 1px #333;
-cursor:pointer;
-cursor:hand;
+
 }
 .remove_watchlist{
-margin-left: 32px;
-font-family: arial;
+width:100%;
+display:block;
 font-size: 11px;
 color: orangered;
 }

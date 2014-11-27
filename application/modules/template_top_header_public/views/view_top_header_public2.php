@@ -1,10 +1,11 @@
 
         <header class="home-banner navbar-default">
             <div id="top" class="fix bg-success">
-                        <div class="container clearfix mobile-center top">
-                            <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
-                            <a class="pull-left" href="<?php echo base_url(); ?>secure/register" title="post new item">start here</a>
-                        </div>
+                <div class="container clearfix mobile-center top">
+                    <p>
+                        <strong>$0.50</strong> per item posting, <strong>post now!</strong> <a href="<?php echo base_url(); ?>secure/register" title="post new item">start here</a>
+                    </p> 
+                </div>
             </div>
             <div class="sub-nav">
                 <div class="container">

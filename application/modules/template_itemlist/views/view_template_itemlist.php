@@ -97,7 +97,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
 
                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 item">
                     <figure class="thumbnail">
-                        <a class="img-slot" href="<?php echo $url; ?>">
+                        <a class="img-slot" href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">
                             <?php
                                 $new_images = unserialize($featured->item_images);
                                 $no_image = base_url() . "assets/images/no-image.png";
@@ -131,15 +131,15 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                             <div class="clearfix">
                                 <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
                                 <input type="hidden" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-                                <div class="pull-right"><?php
+                                <div class="pull-right watch-btn"><?php
                                 if($this->function_login->is_user_loggedin()){
                                     if($this->template_itemlist->not_exist_wishlist($user,$item_id)){
-                                        echo '<a href="javascript:;" class="btn btn-primary add_wishlist">Add to Watchlist</a>';
+                                        echo '<a href="javascript:;" class="btn btn-primary add_wishlist add-watch"><span>Add to Watchlist</span></a>';
                                     } else {
-                                        echo '<a href="javascript:;" class="btn btn-primary add_wishlist">In Watchlist</a>';
+                                        echo '<a href="javascript:;" class="btn btn-primary add_wishlist in-watch"><span>In Watchlist</span></a>';
                                     }
                                 } else {
-                                    echo '<a href="javascript:;" class="btn btn-primary add_wishlist">Add to Watchlist</a>';
+                                    echo '<a href="javascript:;" class="btn btn-primary add_wishlist add-watch"><span>Add to Watchlist</span></a>';
                                 }
                                 ?></div>
                             </div>

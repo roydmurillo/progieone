@@ -78,12 +78,11 @@ jQuery(document).ready(function(){
             <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "administrator" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/administrator">Settings</a></li>
 		
                  <?php } ?>
-                
+            <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "profile" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/profile">Profile</a></li>    
                 
             <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "watchlist" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/watchlist">Watch List</a></li>
             <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "messages" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/messages">Messages</a></li>
             <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "sell" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/sell/for_sale">Items</a></li>
-<!--            <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "inquiry" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/inquiry">Inquiry</a></li>-->
             <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "friends" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard/friends">Friends</a></li>
             <li class="<?php echo ($this->uri->segment(1) == "forums") ? "active" :""; ?>"><a href="<?php echo base_url() ?>forums">Forums</a></li>
             

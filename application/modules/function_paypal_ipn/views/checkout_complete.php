@@ -50,7 +50,7 @@ if(!$res){
      
     echo ("<p><h3>Thank you for your purchase!</h3></p>");
      
-    echo ("<b>Payment Details</b><br>\n");
+    echo ("<b>Payment Details</b>\n");
     echo ("<li>Name: $firstname $lastname</li>\n");
     echo ("<li>Item: $itemname</li>\n");
     echo ("<li>Amount: $amount</li>\n");

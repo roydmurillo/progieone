@@ -80,7 +80,7 @@ if($inquiries != NULL || !empty($inquiries)){?>
 			$class = "tr2";
 		}
        echo "<tr class='".$class."'>  
-			  	<td class='tb3 tbprice' style='width:150px !important'><div style='float:left; width:95%; padding-left:5%; height:30px; margin-top:18px; line-height:12px; vertical-align:mmiddle'>".$info['user_name']."<br>";
+			  	<td class='tb3 tbprice' style='width:150px !important'><div style='float:left; width:95%; padding-left:5%; height:30px; margin-top:18px; line-height:12px; vertical-align:mmiddle'>".$info['user_name']."";
 			
 			   $this->function_rating->get_stars($r->watchlist_user_id);
 			
@@ -167,11 +167,11 @@ if($inquiries != NULL || !empty($inquiries)){?>
 							<table class="table_add">
 								<tbody>
 									<tr>
-										<td><div class="title_thread">Message Title</div><br>
+										<td><div class="title_thread">Message Title</div>
 										<input type="text" value="" id="message_title" name="message_title" class="input"></td>
 									</tr>	
 									<tr>
-										<td><div class="title_thread">Recipient's Username</div><br>
+										<td><div class="title_thread">Recipient's Username</div>
 										<input type="hidden" id="message_recipient_id" name="message_recipient_id" value="">
 										<?php
 											// aps12
@@ -187,7 +187,7 @@ if($inquiries != NULL || !empty($inquiries)){?>
 							</table>
 							
 							<div class="t_area">
-								<div class="title_thread" style="margin-left:5px;">Message</div><br>
+								<div class="title_thread" style="margin-left:5px;">Message</div>
 								<div style="float:left; clear:both;margin-left:5px;">
 									<textarea id="message_content" name="message_content" style="width:150%; height:300px;"></textarea>
 								</div>

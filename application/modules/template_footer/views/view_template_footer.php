@@ -17,10 +17,10 @@ jQuery(document).ready(function(){
 <footer>
 	<div class="container">
             <div class="clearfix copy">
-                <div class="col-md-6">
+                <div class="col-sm-6 copy-text">
                     Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo base_url() ?>">CyberwatchCafe Inc.</a> All Rights Reserved.
                 </div>
-                <div class="col-md-6 text-right footer-link"> 
+                <div class="col-sm-6 text-right footer-link"> 
                     <ul>
                         <li><a href="<?php echo base_url() ?>about_us">About us</a></li>
                         <li><a href="<?php echo base_url() ?>advertise">Advertise</a></li>

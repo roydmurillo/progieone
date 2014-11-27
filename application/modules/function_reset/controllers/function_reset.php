@@ -71,7 +71,7 @@ class function_reset extends MX_Controller {
                 
                 foreach($r->result() as $r){
                     
-                    echo $r->txn_id . " = " . str_replace("\n","<br>",$r->txn_details) . "<h1>-----------------</h1>";
+                    echo $r->txn_id . " = " . str_replace("\n","",$r->txn_details) . "<h1>-----------------</h1>";
                     
                 }
                 
@@ -85,7 +85,7 @@ class function_reset extends MX_Controller {
                 
                 foreach($r->result() as $r){
                     
-                    echo $r->err_txn_id . " = " . $r->err_details . "<br>";
+                    echo $r->err_txn_id . " = " . $r->err_details . "";
                     
                 }
                 

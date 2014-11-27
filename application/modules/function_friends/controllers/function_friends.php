@@ -27,16 +27,16 @@ class function_friends extends MX_Controller {
 				if($query->num_rows() > 0){
 					foreach($query->result() as $r){
 						$info = $this->function_users->get_user_fields_by_id(array("user_id","user_avatar","user_name"),$r->friend_friend_id);
-						$html .= "<div class='contact_info'>
+						$html .= "<div class='contact_info col-sm-3'>
 									<input type='hidden' class='recipient' value='".$info['user_id']."'>
-									<img src='".$info['user_avatar']."' style='max-width:50px; max-height:50px'><br>			          
+									<img src='".$info['user_avatar']."' style='max-width:50px; max-height:50px'>			          
 									<div class='recipient_name'>".$info['user_name']."</div>
 								  </div>";
 					}
 				}
-				$html2 = '<div class="regular_register" style="min-height:40px !important; width:340px !important; margin-top:50px !important">
+				$html2 = '<div class="regular_register">
 								<img src="'. base_url().'assets/images/warning.png" alt="preload" style="float:left">
-								<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+								<div>
 									You have 0 Contacts yet.
 								</div>									
 						</div>';

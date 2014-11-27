@@ -19,9 +19,9 @@ $timeStamp = strtotime($exchangeRate[2]);
 $timeStamp = date('F d, Y', $timeStamp);
 $timeStamp = "$timeStamp $exchangeRate[3]";
 
-echo "$timeStamp EST<br>";
-echo "The $baseCurrency[0]/$quoteCurrency[0] exchange rate is $exchangeRate[1]<br>\n";
-echo "$amount $baseCurrency[1] will buy $results $quoteCurrency[1]<br><br>\n";
+echo "$timeStamp EST";
+echo "The $baseCurrency[0]/$quoteCurrency[0] exchange rate is $exchangeRate[1]\n";
+echo "$amount $baseCurrency[1] will buy $results $quoteCurrency[1]\n";
 }
 
 // for additional currency ticker symbols visit: http://finance.yahoo.com/currency-converter

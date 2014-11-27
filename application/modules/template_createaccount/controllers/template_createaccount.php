@@ -27,7 +27,7 @@ class template_createaccount extends MX_Controller {
                         $encode = $this->function_security->encode($this->input->post("firstname").$this->input->post("username").$this->input->post("password"));
                         $this->send_email($encode);
                         $this->save_data($encode);
-                        $content["remarks"] = "<h3 style='color: green !important; margin-top: -10px; margin-bottom: 0px; font-size:17px'>You are now Successfully Registered!<br>Please Check your email to fully activate your account.</h3>";
+                        $content["remarks"] = "<h3 style='color: green !important; margin-top: -10px; margin-bottom: 0px; font-size:17px'>You are now Successfully Registered!Please Check your email to fully activate your account.</h3>";
                     } else {
                         $content["remarks"] = "<h3>Following Errors Encountered:</h3>" . $content["remarks"];
                     }
@@ -64,7 +64,7 @@ class template_createaccount extends MX_Controller {
 
 			$remarks .= $this->check_captcha($this->input->post("captcha_key"),$this->input->post("captcha_answer"));
 
-            $remarks .= $this->check_box("terms_agreement","Terms and Agreement must be accepted.<br>");
+            $remarks .= $this->check_box("terms_agreement","Terms and Agreement must be accepted.");
             
             return $remarks;
             
@@ -85,7 +85,7 @@ class template_createaccount extends MX_Controller {
 			
 			if($this->function_captcha->validate_captcha($response,$key) === false){
 				
-				return "Invalid Captcha Code!<br>";
+				return "Invalid Captcha Code!";
 			
 			}
 			
@@ -96,7 +96,7 @@ class template_createaccount extends MX_Controller {
         public function send_email($encode){
 
             $message = "<div style='float:left;margin:12px; padding:15px; border:1px solid #333; font-family:verdana; font-size:14px'>
-			<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a><br>
+			<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
 				<div style='float:left;margin:12px; padding:15px; font-family:verdana; font-size:14px; border: 1px solid #CCC;
 							background: #fcfff4; /* Old browsers */
 							background: -moz-linear-gradient(top,  #fcfff4 0%, #e9e9ce 100%); /* FF3.6+ */
@@ -106,13 +106,13 @@ class template_createaccount extends MX_Controller {
 							background: -ms-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* IE10+ */
 							background: linear-gradient(to bottom,  #fcfff4 0%,#e9e9ce 100%); /* W3C */
 							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 ); /* IE6-9 */'>
-					Hello ".ucfirst(strtolower($this->input->post("firstname"))).",<br><br>
-					You have received this email because you have successfully registered at Cyberwatchcafe.com.<br>
-					You only have one more step remaining to fully activate your account and use the website's features.<br><br>
-					<a href='".base_url()."activate_account/".$this->input->post("username")."/".$encode."'>Just click this link to fully activate your account.</a><br><br>
-					Thank you! We are looking forward in doing with business with you. <br><br><br>
-					Yours Truly,<br>
-					Cyberwatchcafe Administrator<br>
+					Hello ".ucfirst(strtolower($this->input->post("firstname"))).",
+					You have received this email because you have successfully registered at Cyberwatchcafe.com.
+					You only have one more step remaining to fully activate your account and use the website's features.
+					<a href='".base_url()."activate_account/".$this->input->post("username")."/".$encode."'>Just click this link to fully activate your account.</a>
+					Thank you! We are looking forward in doing with business with you. 
+					Yours Truly,
+					Cyberwatchcafe Administrator
 					Cyberwatchcafe.com
 				</div>
 			</div>";
@@ -131,19 +131,19 @@ class template_createaccount extends MX_Controller {
         public function check_user_name($field = ""){
             
             if(!$field){
-                    return "User Name is invalid.<br>";
+                    return "User Name is invalid.";
             
             } else {
                     
                 $field = trim($field);
 
                 if($field == ""){
-                    return "User Name cannot be equal to blanks.<br>";
+                    return "User Name cannot be equal to blanks.";
                 } else {
                     
                     if(preg_match('/[^a-z_\-0-9]/i', $field)){
                     
-                        return "User name format should be alphanumeric without spaces.<br>";
+                        return "User name format should be alphanumeric without spaces.";
                             
                     } else {
                     
@@ -152,10 +152,10 @@ class template_createaccount extends MX_Controller {
                         $this->db->where($where_string,null,false);  
                         $query = $this->db->get(); 
                         if($query->num_rows() > 0){
-                            return "User name $field is already in use.<br>";
+                            return "User name $field is already in use.";
                         } else {
                             if(strlen($field) > 12) {
-                                return "User name $field exceeds the limit of 12 Characters.<br>";
+                                return "User name $field exceeds the limit of 12 Characters.";
                             }
                         }
                     
@@ -174,10 +174,10 @@ class template_createaccount extends MX_Controller {
             if($title == "First Name" || $title == "Last Name" ){
                 
                 if(preg_match('/[^a-z\s-]/i',$field)){
-                    return "Only valid letters and spaces are allowed for " . $title ."<br>";
+                    return "Only valid letters and spaces are allowed for " . $title ."";
                 } else {
                     if(strlen($field) > 35){
-                        return $title . " has exceeded the standard length of 35 Characters"."<br>";
+                        return $title . " has exceeded the standard length of 35 Characters"."";
                     }
                 }
                 
@@ -185,7 +185,7 @@ class template_createaccount extends MX_Controller {
             
             
             if($field == ""){
-                return $title . " cannot be equal to blanks.<br>";
+                return $title . " cannot be equal to blanks.";
             }
             
             return "";
@@ -222,12 +222,12 @@ class template_createaccount extends MX_Controller {
                 $this->db->where($where_string,null,false);  
                 $query = $this->db->get(); 
                 if($query->num_rows() > 0){
-                    return "User email $email is already in use.<br>";
+                    return "User email $email is already in use.";
                 }
                 
             } else {
                 
-                return "User email $email is invalid.<br>";
+                return "User email $email is invalid.";
                 
             }
             

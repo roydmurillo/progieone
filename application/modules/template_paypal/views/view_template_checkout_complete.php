@@ -113,7 +113,7 @@
 													margin: 10px 5px;
 													color: green;
 													font-family:arial;
-													font-size:14px;'>Thank you " . ucfirst(strtolower($info['first_name'])) ." " . ucfirst(strtolower($info['last_name'])) . " for advertising your watch items!<br><span style='font-size:12px; float:left; margin-top:5px'>( <b>Paypal Remarks: </b> ". $array[trim($info["payment_status"])]. " )</span></div>";
+													font-size:14px;'>Thank you " . ucfirst(strtolower($info['first_name'])) ." " . ucfirst(strtolower($info['last_name'])) . " for advertising your watch items!<span style='font-size:12px; float:left; margin-top:5px'>( <b>Paypal Remarks: </b> ". $array[trim($info["payment_status"])]. " )</span></div>";
 							   
 								   //load brand obj
 								   $this->load->module("function_brands");
@@ -128,9 +128,9 @@
 											 (float)$amount = (int)$info["quantity$ctr"] * $paypal["price"];
 											 echo "<div class='completed_details' style='float:left; width:100%; font-size:13px; color:#333; font-family: courier !important; clear:both; margin:12px 12px; font-family:arial'>".
 												   "Item Name: " . $info["item_name$ctr"] . 
-												   "<br>Quantity: " .$info["quantity$ctr"] . 
-												   "<br>Price: $ ".$paypal["price"]." / ".$paypal["days"]." days" . 
-												   "<br>Total Amount: $ " .$amount. "</div> <br>";
+												   "Quantity: " .$info["quantity$ctr"] . 
+												   "Price: $ ".$paypal["price"]." / ".$paypal["days"]." days" . 
+												   "Total Amount: $ " .$amount. "</div> ";
 								       } else {
 									   	  $ctr = 600;
 									   }
@@ -138,7 +138,7 @@
 								   }
 								   
 								  echo "<div class='completed_details' style='float:left; padding:15px 100px; border:7px solid #FFD700; font-size:16px; font-weight:bold; color:#333; font-family: courier !important; clear:both; margin:12px 12px; font-family:arial'>".
-									   "Total Gross Amount Paid: $ " . $info["mc_gross"] . "</div> <br>";
+									   "Total Gross Amount Paid: $ " . $info["mc_gross"] . "</div> ";
 								   	
 								   			
 		

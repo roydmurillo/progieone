@@ -92,17 +92,17 @@ class template_pages extends MX_Controller {
 			    $this->load->library('email');
 						
 				$message = "<div style='float:left;margin:12px; padding:15px; border:1px solid #333; font-family:verdana; font-size:14px'>
-				<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a><br>
+				<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
 					<div style='float:left;margin:12px; padding:15px; font-family:verdana; font-size:14px; border: 1px solid #CCC;'>
-						Hello Admin,<br><br>
-						Some customer has used the contact form in the contact us page of cyberwatchcafe. Details below:<br><br>
-						Name: ".$this->input->post("sender_name")."<br>
-						Email: ".$this->input->post("sender_email")."<br>
-						Subject: ".$this->input->post("sender_subject")."<br>
-						Country: ".$this->input->post("sender_country")."<br>
-						Message: ".$this->input->post("sender_message")."<br>
-						Yours Truly,<br>
-						Cyberwatchcafe Administrator<br>
+						Hello Admin,
+						Some customer has used the contact form in the contact us page of cyberwatchcafe. Details below:
+						Name: ".$this->input->post("sender_name")."
+						Email: ".$this->input->post("sender_email")."
+						Subject: ".$this->input->post("sender_subject")."
+						Country: ".$this->input->post("sender_country")."
+						Message: ".$this->input->post("sender_message")."
+						Yours Truly,
+						Cyberwatchcafe Administrator
 						Cyberwatchcafe.com
 					</div>
 				</div>";

@@ -337,12 +337,12 @@ foreach($item_info as $i){
 									</table>
 									
 									<div class="t_area">
-										<div class="t_desc">Item Description:</div> <br>
+										<div class="t_desc">Item Description:</div> 
 										<textarea id="item_description" name="item_desc" style="width:150%; height:300px;"></textarea>
 									</div>
 
 									<div class="t_area">
-										<div class="t_desc">Item Shipping:</div> <br>
+										<div class="t_desc">Item Shipping:</div> 
 										<textarea id="item_shipping" name="item_shipping" style="width:150%; height:300px;"></textarea>
 									</div>									
 							

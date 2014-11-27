@@ -44,8 +44,20 @@
 </head>
 
 <body id="home">
+    <?php 
     
+        $this->load->module("function_login");
+        if($this->function_login->is_user_loggedin()===true) {
+    ?>
+                <div id="top" class="bg-success">
+                        <div class="container clearfix mobile-center top">
+                            <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
+                            <a class="pull-left" href="<?php echo base_url('dashboard/sell/new'); ?>" title="post new item">start here</a>
+                        </div>
+                </div>
+           
 <?php
+        }
 	//load sidebar left
 	$session_data = $this->native_session->get('verified');
 	if(isset($session_data['loggedin']) && $session_data['loggedin'] === true ){

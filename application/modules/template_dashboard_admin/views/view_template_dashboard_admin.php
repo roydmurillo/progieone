@@ -49,19 +49,19 @@
 						
                                                 
 					</table>
-                                        <div>
+                                        <div class="">
                                             <table class="global-price-list-adjustment">
                                                     <tr id="prce" <?php echo ($p["activate"] == "0") ? "style='display:none;'" : ""; ?>>
-                                                        <td>Price Per Item:<br>
-                                                            <input type="input" id="paypal_price" value="<?php echo $p["price"]; ?>"></td>
+                                                        <td><label for="paypal_price">Price Per Item:</label></td>
+                                                        <td><input type="input" id="paypal_price" value="<?php echo $p["price"]; ?>"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Days:<br>
-                                                            <input type="input" id="days" value="<?php echo $p["days"]; ?>"></td>
+                                                        <td><label>Days:</label></td>
+                                                        <td><input type="input" id="days" value="<?php echo $p["days"]; ?>"></td>
                                                     </tr>
                                                     <tr class="last-update">
-                                                        <td>Last Updated:<br>
-                                                            <div><?php echo date("l jS \of F Y h:i:s A", strtotime($p["date"])); ?></div></td>
+                                                        <td>Last Updated:</td>
+                                                        <td> <?php echo date("l jS \of F Y h:i:s A", strtotime($p["date"])); ?></td>
                                                     </tr>                                                    
                                             </table>
                                                

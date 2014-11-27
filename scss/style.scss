@@ -29,14 +29,15 @@ p{
 .clear{
     clear:left;
 }
-// preprocessor from this point down
-//home
+/* preprocessor from this point down*/
+/*home*/
 @import "bootstrap";
 @import 'home';
 @import 'profile';
 @import 'dashboard';
 @import 'itemlist';
 @import 'sidebar';
+@import 'forum';
 .container-center{min-height:500px;background-color:#f5f5f5;}
 .dropdown-menu{left: 12px;min-width: 107px;}
 .green-alert{
@@ -45,7 +46,7 @@ p{
 .red-alert{
     color:red;
 }
-//top
+/*top*/
 #top{
         padding: 8px 0;
         background: #fa6938;
@@ -74,7 +75,7 @@ p{
     }
 }
 
-// header
+/* header*/
 header{
     &.navbar-default{
         background-color:lighten($base-color,6%);
@@ -136,28 +137,46 @@ header{
     }
 }
 
-// footer
+/* footer*/
 footer{
     padding:15px;background:#ddd;
     .container > p{text-align:center;}
     .copy > div, .container{padding:0;}
+    .copy{
+        @media (max-width:767px){
+            text-align:center;
+        }
+        .copy-text{
+            @media (max-width:767px){
+                padding:12px 0;
+            }
+        }
+    }
     .footer-link{
         ul{
+            @media (max-width:767px){
+                padding:0;
+            }
             li{
                 display:inline;
                 list-style:none;
                 margin-left:12px;
-                a{
-                    
+                @media (max-width:767px){
+                    display: block;
+                    margin-left: 0;
+                    width: 100%;
+                    text-align: center;
+                    padding: 12px;
+                    border-top: 1px solid #f3f3f3;
                 }
             }
         }
     }
 }
-//pagination
+/*pagination*/
 .pagination{padding:20px;}
 
-//item list
+/*item list*/
 
 
 .item_list_watches{
@@ -165,7 +184,7 @@ footer{
     @include thumb(125px);
 }
 
-//item single page
+/*item single page*/
 .img-thumbs-container{
     width:100%;
     margin-top:12px;
@@ -177,14 +196,14 @@ footer{
     
 }
 
-// sidebar
+/* sidebar*/
 .sidebar{
     background:#fff;
     padding: 12px 15px;
     .active{background:#e3e3e3;}
 }
 
-//nav bar
+/*nav bar*/
 .nav.navbar-nav{
     margin: 0 auto;
     float: none;
@@ -200,8 +219,11 @@ footer{
         max-width: 280px;
     }
     nav &{
-        max-width:538px;
+        max-width:580px;
     }
+}
+.caret{
+    color: #C9C5C5;
 }
 .logo{
     padding-top:14px;
@@ -234,31 +256,48 @@ footer{
 }
 
 .mobile-center{
-    @media (max-width:768px){
+    @media (max-width:767px){
         display: block;
         margin: 0 auto;
         float: none;
-        width: 50%;
+        //width: 50%;
     }
     &.top{
-       @media (max-width:768px){
-        width: 58%;
+        @media (max-width:767px){
+            text-align:center;
         }
-        @media (max-width:568px){
-        width: 60%;
-        } 
-        @media (max-width:480px){
-        width: 75%;
-        } 
-        @media (max-width:320px){
-        width: 100%;
-        } 
+        a{
+            @media (max-width:320px){
+                display: block;
+                margin: 0 auto;
+                float: none !important;
+                width: 100px;
+                clear: left;
+            }       
+        }
     }
 }
 
-//create account
+/*create account*/
 .hdr{
     img{
         width:100%;
     }
 }
+
+/*brand*/
+.brand-box{
+    background:white;
+    padding:12px;
+    margin:12px 0;
+    p{
+        margin-top:12px;
+        a{
+            color:lightsalmon;
+        }
+    }
+}
+
+/*member*/
+#send_pm{background:#fff;padding:12px;}
+#filter_return{font-size:12px; font-family:Verdana;border:1px dashed #CCC; border-left:none; border-right:none; height:30px; line-height:30px; vertical-align:middle; margin:0px 0px 10px 0px;}

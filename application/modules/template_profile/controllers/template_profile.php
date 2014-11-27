@@ -52,7 +52,7 @@ class template_profile extends MX_Controller {
 					
 					} else {
 						
-						$remarks .= "Old Password is Invalid.<br>";
+						$remarks .= "Old Password is Invalid.";
 					
 					}
 				
@@ -61,7 +61,7 @@ class template_profile extends MX_Controller {
 					   $_POST["user_password1"] != "" ||
 					   $_POST["user_password2"] != "" ){
 			
-						$remarks .= "Kindly complete first the change password input details.<br>";
+						$remarks .= "Kindly complete first the change password input details.";
 					
 					}
 				}
@@ -134,10 +134,10 @@ class template_profile extends MX_Controller {
             if($title == "First Name" || $title == "Last Name" ){
                 
                 if(preg_match('/[^a-z\s-]/i',$field)){
-                    return "Only valid letters and spaces are allowed for " . $title ."<br>";
+                    return "Only valid letters and spaces are allowed for " . $title ."";
                 } else {
                     if(strlen($field) > 35){
-                        return $title . " has exceeded the standard length of 35 Characters"."<br>";
+                        return $title . " has exceeded the standard length of 35 Characters"."";
                     }
                 }
                 
@@ -145,7 +145,7 @@ class template_profile extends MX_Controller {
             
             
             if($field == ""){
-                return $title . " cannot be equal to blanks.<br>";
+                return $title . " cannot be equal to blanks.";
             }
             
             return "";
@@ -182,12 +182,12 @@ class template_profile extends MX_Controller {
                 $this->db->where($where_string,null,false);  
                 $query = $this->db->get(); 
                 if($query->num_rows() > 0){
-                    return "User email $email is already in use.<br>";
+                    return "User email $email is already in use.";
                 }
                 
             } else {
                 
-                return "User email $email is invalid.<br>";
+                return "User email $email is invalid.";
                 
             }
             

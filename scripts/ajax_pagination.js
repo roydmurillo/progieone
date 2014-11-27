@@ -21,10 +21,10 @@ jQuery('body').on('click','.newpager',function(){
     if(jQuery(this).text() == '>'){
         data_obj.start = parseInt(selected_val) + 1;
     }
-    if(jQuery(this).text() == '‹ First'){
+    if(jQuery(this).text() == 'First'){
         data_obj.start = 1;
     }
-    if(jQuery(this).text() == 'Last ›'){
+    if(jQuery(this).text() == 'Last'){
         data_obj.start = count;
     }
 	data_obj = jQuery.toJSON(data_obj);	
@@ -63,7 +63,7 @@ function create_pager(){
         pager += '<li><a class="newpager" href="Javascript:;"><</a></li>';
     }
     if(from_val > 1){
-        pager += '<a class="newpager" href="Javascript:;">‹ First</a>';
+        pager += '<li><a class="newpager" href="Javascript:;">First</a></li>';
     }
     
     for(var x=1; x<=count; x++){
@@ -80,7 +80,7 @@ function create_pager(){
     }
     
     if(to_val < count){
-        pager += '&nbsp;<a class="newpager" href="Javascript:;">Last ›</a>';
+        pager += '<li>&nbsp;<a class="newpager" href="Javascript:;">Last</a></li>';
     }
     
     pager +='</ul>';

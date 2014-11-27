@@ -1,13 +1,13 @@
 <!-- content goes here -->
 <div id="homepage">
 
-		<div class="fleft" style="width:824px; margin-left:70px;">
+		<div class="container">
 			<a href="" name="top_link"></a>
-			<div class="title_bar" style="width:824px; margin-left:0px;">
+			<div class="title_bar">
 				WATCH BRANDS
 			</div>
 			
-			<div class="bgaps" style="float:left; margin-left:0px; margin-top:22px; padding:12px; border:1px solid #CCC; clear:both">
+			<div class="bgaps">
 				
 				<?php 
 					$a = range('A', 'Z');
@@ -25,7 +25,7 @@
 				
 			</div>
 			
-			<div style="float:left; margin-left:0px; clear:both; position:relative">
+			<div >
 			
 			
 			<?php
@@ -48,9 +48,11 @@
 					
 
                          					
-						echo '<a name="space'.$key.'" style="float:left; min-height:12px; font-size:20px; width:700px; padding:12px; margin:5px 0px; clear:both;">'.$key.'</a>';
 						
-						echo '<div style="float:left; min-height:12px; width:820px; padding:12px; margin:12px 0px; clear:both; position:relative; border:1px solid #CCC;">';
+						
+						echo '<div class="brand-box col-xs-12">';
+                                                echo '<p><a name="space'.$key.'" class"letter-link">'.$key.'</a></p>';
+                                                        echo '<div class="row">';
 							$v = trim($val,",");
 							$v = explode(",",$val);
 							
@@ -59,9 +61,10 @@
 								@$n = $data[0];
 								@$y = $data[1];
 								
-								echo "<a href='".base_url()."brands?brand=$n' style='float:left; width:150px; font-family:arial; font-size:12px; overflow:hidden; margin:5px;'>$y</a>";
+								echo "<a href='".base_url()."brands?brand=$n' class='col-xs-2'>$y</a>";
 							}
-						echo '<a href="#top_link" style="font-size:12px; font-family:tahoma; color:red; position:absolute; bottom:8px; right:8px">[ back to top ]</a>';	
+                                                        echo "</div>";
+						echo '<p><a href="#top_link" class="back-to-top">[ back to top ]</a></p>';	
 						echo "</div>";
 					
 					

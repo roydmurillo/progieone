@@ -432,7 +432,7 @@ class template_sideleft extends MX_Controller {
 			<div >
 				<input type="hidden" class="filter_type" value="brand">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Brand:</b><br>
+				<b>Brand:</b>
 				<div  >
 					<?php echo $this->function_brands->watch_brands($n1[1]); ?>
 				</div>
@@ -444,7 +444,7 @@ class template_sideleft extends MX_Controller {
 			<div>
 				<input type="hidden" class="filter_type" value="category">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Category:</b><br>
+				<b>Category:</b>
 				<div  >
 					<?php echo $this->function_category->get_category_fields("category_name", $n1[1]); ?>
 				</div>
@@ -456,7 +456,7 @@ class template_sideleft extends MX_Controller {
 			<div>
 				<input type="hidden" class="filter_type" value="case_type">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Case Type:</b><br>
+				<b>Case Type:</b>
 				<div  >
 					<?php echo ucfirst($n1[1]); ?>
 				</div>
@@ -468,7 +468,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="bracelet_type">
 				<a href="javascript:;" class=""delete_filter style=" ">remove</a>
-				<b>Case Type:</b><br>
+				<b>Case Type:</b>
 				<div  >
 					<?php echo ucfirst($n1[1]); ?>
 				</div>
@@ -480,7 +480,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="condition">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Condition:</b><br>
+				<b>Condition:</b>
 				<div  >
 					<?php echo ucfirst($n1[1]); ?>
 				</div>
@@ -492,7 +492,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="min_price">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Min Price:</b><br>
+				<b>Min Price:</b>
 				<div  >
 					<?php echo $n1[1]; ?>
 				</div>
@@ -504,7 +504,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="max_price">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Max Price:</b><br>
+				<b>Max Price:</b>
 				<div  >
 					<?php echo $n1[1]; ?>
 				</div>
@@ -516,7 +516,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="s">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Search:</b><br>
+				<b>Search:</b>
 				<div  >
 					<?php 
 					if($n1[1] == ""){
@@ -533,7 +533,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="year_model">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Year Model:</b><br>
+				<b>Year Model:</b>
 				<div  >
 					<?php echo $n1[1]; ?>
 				</div>
@@ -545,7 +545,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="gender">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Gender:</b><br>
+				<b>Gender:</b>
 				<div  >
 					<?php 
 					$gender = array("1" => "Mens", "2" => "Womens", "3" => "Unisex");
@@ -559,7 +559,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="kids">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>For Kids:</b><br>
+				<b>For Kids:</b>
 				<div  >
 					<?php 
 					$g = array("1" => "Yes", "0" => "No");
@@ -573,7 +573,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="certificate">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>With Certificate:</b><br>
+				<b>With Certificate:</b>
 				<div  >
 					<?php 
 					$g = array("1" => "Yes", "0" => "No");
@@ -587,7 +587,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="box">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>With Box:</b><br>
+				<b>With Box:</b>
 				<div  >
 					<?php 
 					$g = array("1" => "Yes", "0" => "No");
@@ -601,7 +601,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="case_width">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Case Width:</b><br>
+				<b>Case Width:</b>
 				<div  >
 					<?php 
 					echo $n1[1]; ?> mm
@@ -614,7 +614,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="case_thickness">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Case Thickness:</b><br>
+				<b>Case Thickness:</b>
 				<div  >
 					<?php 
 					echo $n1[1]; ?> mm
@@ -627,7 +627,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="item_type">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Item Type:</b><br>
+				<b>Item Type:</b>
 				<div  >
 					<?php 
 					echo ucfirst($n1[1]); ?> & Accessories
@@ -640,7 +640,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="part_type">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Part Type:</b><br>
+				<b>Part Type:</b>
 				<div  >
 					<?php 
 					echo ucfirst($n1[1]); ?> 
@@ -653,7 +653,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="country">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Country:</b><br>
+				<b>Country:</b>
 				<div  >
 					<?php 
 					echo $this->function_country->get_country_name($n1[1]); ?> 
@@ -666,7 +666,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="rating">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>Rating:</b><br>
+				<b>Rating:</b>
 				<div  >
 					<?php 
 					echo $n1[1] . " stars"; ?> 
@@ -679,7 +679,7 @@ class template_sideleft extends MX_Controller {
 			<div  >
 				<input type="hidden" class="filter_type" value="user">
 				<a href="javascript:;" class="delete_filter" style=" ">remove</a>
-				<b>User Name:</b><br>
+				<b>User Name:</b>
 				<div  >
 					<?php 
 					echo $n1[1]; ?> 

@@ -169,6 +169,7 @@ if(empty($item_list)){
 			?>
 			
 			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+                            
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
                                     <a href="<?php echo $url; ?>">
@@ -177,7 +178,7 @@ if(empty($item_list)){
                                             </div>
                                     </a>
                             <h5>
-                                <a href="<?php echo $url; ?>" class="text-center">
+                                <a href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>" class="text-center">
                                     <?php 
                                     if($display_by == "display_list" || $display_by == ""){
                                             if(strlen(trim($featured->item_name)) > 26)
@@ -200,16 +201,16 @@ if(empty($item_list)){
                                 <div class="clearfix">    
 				<div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
                             <input type="hidden" class="item" id="item<?php echo $user.$item_id?> value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-				<div class="pull-right">
+				<div class="pull-right watch-btn">
                                     <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
 					} else {
-						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist in-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>In Watchlist</span></a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
 				}
 				?>
                                 </div>
@@ -318,12 +319,12 @@ if(empty($item_list)){
 			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
-                                <a href="<?php echo $url; ?>" class="a_class">
+                                <a href="<?php echo $url; ?>" class="a_class" title="<?php echo $featured->item_name; ?>">
 					<div class="">
-						<img alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />
+                                                <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
 					</div>
 				</a>
-                                <h5><a href="<?php echo $url; ?>">
+                                <h5><a href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">
 					<?php 
 					if($display_by == "display_list" || $display_by == ""){
 						if(strlen(trim($featured->item_name)) > 26)
@@ -344,16 +345,16 @@ if(empty($item_list)){
                                 <div class="clearfix">
                                     <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
                                     <input type="hidden" class="item" id="item<?php echo $user.$item_id?>" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-                                    <div class="pull-right">
+                                    <div class="pull-right watch-btn">
                                 <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
-						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
 					} else {
-						echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">In Watchlist</a>';  
+						echo '<a class="btn btn-danger add_wishlist in-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>In Watchlist</span></a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist" data-id="'.$user.$item_id.'" href="javascript:;">Add to Watchlist</a>';  
+					echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
 				}
 				?>
                                     </div>

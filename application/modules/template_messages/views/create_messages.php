@@ -30,8 +30,8 @@
 					<h2 class="h2_title">Create New Message</h2>
 					<?php if($this->native_session->get("message_sent")){	?>
 						<div class="regular_register" style="min-height:40px !important;">
-								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-								<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' >
+								<div >
 									Message was successfully sent!
 								</div>									
 									
@@ -43,11 +43,11 @@
 							<table class="table_add">
 								<tbody>
 									<tr>
-										<td><div class="title_thread">Message Title</div><br>
+										<td><div class="title_thread">Message Title</div>
 										<input type="text" value="" id="message_title" name="message_title" class="input"></td>
 									</tr>	
 									<tr>
-										<td><div class="title_thread">Recipient's Username</div><br>
+										<td><div class="title_thread">Recipient's Username</div>
 										<input type="hidden" id="message_recipient_id" name="message_recipient_id" value="">
 										<?php
 											// aps12
@@ -56,9 +56,9 @@
 											$user_id = $user_id["user_id"];
 										?>
 										<input type="hidden" name="message_user_id" id="message_user_id" value="<?php echo $user_id; ?>">
-										<input type="text" name="message_recipient_name" id="message_recipient_name" class="input"><a href="javascript:;" id="select_contacts" style="width:200px; float:left; margin-top:12px; color:gray"><img style="float:left; width:20px;height:20px;" src="<?php echo base_url(); ?>assets/images/contacts.png">select from contacts</a>
+										<input type="text" name="message_recipient_name" id="message_recipient_name" class="input"><a href="javascript:;" id="select_contacts" ><img style="width:20px;height:20px;" src="<?php echo base_url(); ?>assets/images/contacts.png">select from contacts</a>
 										<div id="contacts">
-										<div style="float:left; width:100%; height:100%;text-align:center;">Loading...<br><img style="width:200px" src="<?php echo base_url() ?>assets/images/loader.gif"></div>
+										<div>Loading...<img style="width:200px" src="<?php echo base_url() ?>assets/images/loader.gif"></div>
 										</div>	
 										</td>
 									</tr>	
@@ -66,7 +66,7 @@
 							</table>
 							
 							<div class="t_area">
-								<div class="title_thread">Watch Description</div><br>
+								<div class="title_thread">Watch Description</div>
 								<div>
 									<textarea id="item_description" name="message_content"></textarea>
 								</div>

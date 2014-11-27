@@ -63,7 +63,7 @@ border:1px solid #CCC;
 				<div class="inner_details_cont" id="watch" style="display:block">
 					<div style="float:left; margin:0px 0px">
 					<div id="add_new_item">
-						<h2 class="h2_title">What watch are you looking for? <br><span style="font-weight:normal">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
+						<h2 class="h2_title">What watch are you looking for? <span style="font-weight:normal">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
 						<div id="details_basic" class="details_" style="float: left;
 									clear: both;
 									padding: 20px; 
@@ -84,11 +84,11 @@ border:1px solid #CCC;
 										</td>
 									</tr>	
 									<tr>
-										<td><div class="title_thread">Title</div><br>
+										<td><div class="title_thread">Title</div>
 										<input type="text" value="" id="s" name="s" class="input alpha"></td>
 									</tr>	
 									<tr>
-										<td><div class="title_thread">Brand</div><br>
+										<td><div class="title_thread">Brand</div>
 										 <select id="brand" name="brand" class="input">
 												<option value=""> - Any - </option>
 												<?php 
@@ -103,7 +103,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>	
 									<tr>
-										<td><div class="title_thread">Movement Type</div><br>
+										<td><div class="title_thread">Movement Type</div>
 										 <select id="movement" name="movement" class="input">
 												<option value=""> - Any - </option>
 												 	<option value="automatic">Automatic</option>												
@@ -117,7 +117,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">Case Type</div><br>
+										<td><div class="title_thread">Case Type</div>
 										 <select id="case_type" name="case_type" class="input">
 												<option value=""> - Any - </option>
 												<option value="aluminum">Aluminum</option>
@@ -141,7 +141,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>	
 									<tr>
-										<td><div class="title_thread">Bracelet Type</div><br>
+										<td><div class="title_thread">Bracelet Type</div>
 										 <select id="bracelet_type" name="bracelet_type" class="input">
 												<option value=""> - Any - </option>
 												<option value="aluminum">Aluminium</option>
@@ -172,15 +172,15 @@ border:1px solid #CCC;
 										</td>
 									</tr>																											
 									<tr>
-										<td><div class="title_thread">Case Width (in millimeters)</div><br>
+										<td><div class="title_thread">Case Width (in millimeters)</div>
 										<input type="text" value="" id="case_width" name="case_width" class="int input" maxlength="4"></td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">Case Thickness (in millimeters)</div><br>
+										<td><div class="title_thread">Case Thickness (in millimeters)</div>
 										<input type="text" value="" id="case_thickness" name="case_thickness" class="int input" maxlength="4"></td>
 									</tr>									
 									<tr>
-										<td><div class="title_thread">Year Model</div><br>
+										<td><div class="title_thread">Year Model</div>
 										<input type="text" value="" id="year_model" name="year_model" class="validateYear input int" maxlength="4"></td>
 									</tr>	
 									<tr>
@@ -196,7 +196,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">Item Condition</div><br>
+										<td><div class="title_thread">Item Condition</div>
 										<select id="condition" name="condition" class="input">
 												<option value=""> - Any - </option>
 												<option value="new"> Brand New </option>
@@ -205,7 +205,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>										
 									<tr>
-										<td><div class="title_thread">Category</div> <br>
+										<td><div class="title_thread">Category</div> 
 										<select id="category" name="category" class="input">
 												<option value=""> - Any - </option>
 												<?php 
@@ -220,7 +220,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">Gender</div><br>
+										<td><div class="title_thread">Gender</div>
 										<select id="gender" name="gender" class="input">
 												<option value=""> - Any - </option>
 												<option value="1"> Mens </option>
@@ -230,7 +230,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">For Kids</div><br>
+										<td><div class="title_thread">For Kids</div>
 										<select id="kids" name="kids" class="input">
 												<option value=""> - Any - </option>
 												<option value="1"> Yes </option>
@@ -251,7 +251,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">With Certificate</div><br>
+										<td><div class="title_thread">With Certificate</div>
 										<select id="certificate" name="certificate" class="input">
 												<option value=""> - Any - </option>
 												<option value="1"> Yes </option>
@@ -260,7 +260,7 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">With Box</div><br>
+										<td><div class="title_thread">With Box</div>
 										<select id="box" name="box" class="input">
 												<option value=""> - Any - </option>
 												<option value="1"> Yes </option>
@@ -269,11 +269,11 @@ border:1px solid #CCC;
 										</td>
 									</tr>
 									<tr>
-										<td><div class="title_thread">Min Price($)</div><br>
+										<td><div class="title_thread">Min Price($)</div>
 										<input type="text" value="" id="item_price" name="min_price" class="auto input int"></td>
 									</tr>																						
 									<tr>
-										<td><div class="title_thread">Max Price($)</div><br>
+										<td><div class="title_thread">Max Price($)</div>
 										<input type="text" value="" id="item_price" name="max_price" class="auto input int"></td>
 									</tr>																						
 								</tbody>
@@ -291,7 +291,7 @@ border:1px solid #CCC;
 					<div style="float:left; margin:0px 0px">
 
 							<div id="add_new_item">
-								<h2 class="h2_title">What watch parts are you looking for? <br><span style="font-weight:normal;">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
+								<h2 class="h2_title">What watch parts are you looking for? <span style="font-weight:normal;">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
 								<div id="details_basic" class="details_" style="float: left;
 											clear: both;
 											padding: 20px;
@@ -312,12 +312,12 @@ border:1px solid #CCC;
 												</td>
 											</tr>	
 											<tr>
-												<td><div class="title_thread">Title</div><br>
+												<td><div class="title_thread">Title</div>
 												<input type="hidden" value="parts" name="item_type" class="input2">
 												<input type="text" value="" id="s" name="s" class="input2 alpha"></td>
 											</tr>	
 											<tr class="item_parts">
-												<td><div class="title_thread" style="width:350px">Type of Parts/Accessories</div> <br>
+												<td><div class="title_thread" style="width:350px">Type of Parts/Accessories</div> 
 												<select name="part_type" class="input2">
 														<option value=""> - Any - </option>
 														<option value="bracelet_strap"> Bracelet / Strap </option>
@@ -334,7 +334,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>
 											<tr>
-												<td><div class="title_thread">Brand</div><br>
+												<td><div class="title_thread">Brand</div>
 												 <select id="brand" name="brand" class="input2">
 														<option value=""> - Any - </option>
 														<?php 
@@ -349,7 +349,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>	
 											<tr>
-												<td><div class="title_thread">Movement Type</div><br>
+												<td><div class="title_thread">Movement Type</div>
 												 <select id="movement" name="movement" class="input2">
 														<option value=""> - Any - </option>
 															<option value="automatic">Automatic</option>												
@@ -363,7 +363,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>
 											<tr>
-												<td><div class="title_thread">Case Type</div><br>
+												<td><div class="title_thread">Case Type</div>
 												 <select id="case_type" name="case_type" class="input2">
 														<option value=""> - Any - </option>
 														<option value="aluminum">Aluminum</option>
@@ -387,7 +387,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>	
 											<tr>
-												<td><div class="title_thread">Bracelet Type</div><br>
+												<td><div class="title_thread">Bracelet Type</div>
 												 <select id="bracelet_type" name="bracelet_type" class="input2">
 														<option value=""> - Any - </option>
 														<option value="aluminum">Aluminium</option>
@@ -418,19 +418,19 @@ border:1px solid #CCC;
 												</td>
 											</tr>																											
 											<tr>
-												<td><div class="title_thread">Case Width (in millimeters)</div><br>
+												<td><div class="title_thread">Case Width (in millimeters)</div>
 												<input type="text" value="" id="case_width" name="case_width" class="int input2" maxlength="4"></td>
 											</tr>
 											<tr>
-												<td><div class="title_thread">Case Thickness (in millimeters)</div><br>
+												<td><div class="title_thread">Case Thickness (in millimeters)</div>
 												<input type="text" value="" id="case_thickness" name="case_thickness" class="int input2" maxlength="4"></td>
 											</tr>									
 											<tr>
-												<td><div class="title_thread">Year Model</div><br>
+												<td><div class="title_thread">Year Model</div>
 												<input type="text" value="" id="year_model" name="year_model" class="validateYear input2 int" maxlength="4"></td>
 											</tr>	
 											<tr>
-												<td><div class="title_thread">Item Condition</div><br>
+												<td><div class="title_thread">Item Condition</div>
 												<select id="condition" name="condition" class="input2">
 														<option value=""> - Any - </option>
 														<option value="new"> Brand New </option>
@@ -439,7 +439,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>										
 											<tr>
-												<td><div class="title_thread">Category</div> <br>
+												<td><div class="title_thread">Category</div> 
 												<select id="category" name="category" class="input2">
 														<option value=""> - Any - </option>
 														<?php 
@@ -454,11 +454,11 @@ border:1px solid #CCC;
 												</td>
 											</tr>
 											<tr>
-												<td><div class="title_thread">Min Price($)</div><br>
+												<td><div class="title_thread">Min Price($)</div>
 												<input type="text" value="" id="item_price" name="min_price" class="auto input2 int"></td>
 											</tr>																						
 											<tr>
-												<td><div class="title_thread">Max Price($)</div><br>
+												<td><div class="title_thread">Max Price($)</div>
 												<input type="text" value="" id="item_price" name="max_price" class="auto input2 int"></td>
 											</tr>																						
 										</tbody>
@@ -476,7 +476,7 @@ border:1px solid #CCC;
                 <div class="inner_details_cont" id="sellers">
 					<div style="float:left; margin:0px 0px">
 							<div id="add_new_item">
-								<h2 class="h2_title">Search your favorite sellers <br><span style="font-weight:normal;">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
+								<h2 class="h2_title">Search your favorite sellers <span style="font-weight:normal;">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
 								<div id="details_basic" class="details_" style="float: left;
 											clear: both;
 											padding: 20px;
@@ -497,11 +497,11 @@ border:1px solid #CCC;
 												</td>
 											</tr>	
 											<tr>
-												<td><div class="title_thread">User Name</div><br>
+												<td><div class="title_thread">User Name</div>
 												<input type="text" value="" id="user" name="user" class="input3 alpha"></td>
 											</tr>	
 											<tr class="item_parts">
-												<td><div class="title_thread" style="width:350px">Country</div> <br>
+												<td><div class="title_thread" style="width:350px">Country</div> 
 												<select id="country" name="country" class="input3">
 																			<option value=""> - Any -</option>
 																			<?php 
@@ -518,7 +518,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>
 											<tr class="item_parts">
-												<td><div class="title_thread" style="width:350px">Seller Rating</div> <br>
+												<td><div class="title_thread" style="width:350px">Seller Rating</div> 
 												<select name="rating" id="rating" class="input3">
 														<option value=""> - Any - </option>
 														<option value="5"> 5 Stars </option>
@@ -544,7 +544,7 @@ border:1px solid #CCC;
              <div class="inner_details_cont" id="forums">
 					<div style="float:left; margin:0px 0px">
 							<div id="add_new_item">
-								<h2 class="h2_title">Search for related forum topics <br><span style="font-weight:normal;">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
+								<h2 class="h2_title">Search for related forum topics <span style="font-weight:normal;">(Just leave field as blank or "- Any -" if not needed for your search)</span></h2>
 								<div id="details_basic" class="details_" style="float: left;
 											clear: both;
 											padding: 20px;
@@ -565,11 +565,11 @@ border:1px solid #CCC;
 												</td>
 											</tr>	
 											<tr>
-												<td><div class="title_thread">Topic</div><br>
+												<td><div class="title_thread">Topic</div>
 												<input type="text" value="" id="topic" name="topic" class="input4 alpha"></td>
 											</tr>	
 											<tr class="item_parts">
-												<td><div class="title_thread" style="width:350px">Category</div> <br>
+												<td><div class="title_thread" style="width:350px">Category</div> 
 												<select id="category" name="category" class="input4">
 																			<option value=""> - Any -</option>
 														<?php 
@@ -583,7 +583,7 @@ border:1px solid #CCC;
 												</td>
 											</tr>
 											<tr>
-												<td><div class="title_thread">Posted by User</div><br>
+												<td><div class="title_thread">Posted by User</div>
 												<input type="text" value="" id="user" name="user" class="input4 alpha"></td>
 											</tr>										
 										</tbody>

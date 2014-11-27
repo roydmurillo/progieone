@@ -67,7 +67,7 @@ class function_forums extends MX_Controller {
                             $user_id = $t->reply_user_id;
                             $username = $this->function_users->get_user_fields_by_id("user_name", $user_id);
                             $last_update = $this->last_updated($t->reply_date);
-                            return "$last_update<br>by: <a class='updated_by' href='".base_url()."member_profile/$username'>$username</a>";    
+                            return "$last_updateby: <a class='updated_by' href='".base_url()."member_profile/$username'>$username</a>";    
                         } 
                     }
 
@@ -84,14 +84,14 @@ class function_forums extends MX_Controller {
 					        $username = $this->function_users->get_user_fields_by_id("user_name", $user_id);
                             $last_update = $this->last_updated($t->reply_date);
 							if($username != ""){
-                            	return "$last_update<br>by: <a class='updated_by' href='".base_url()."member_profile/$username'>$username</a>";    
+                            	return "$last_updateby: <a class='updated_by' href='".base_url()."member_profile/$username'>$username</a>";    
 							}
 						} 
                     } else {
 					        $username = $this->function_users->get_user_fields_by_id("user_name", $userid);
                     		$last_update = $this->last_updated($date);
 							if($username != ""){
-                            	return "$last_update<br>by: <a class='updated_by' href='".base_url()."member_profile/$username'>$username</a>";    
+                            	return "$last_updateby: <a class='updated_by' href='".base_url()."member_profile/$username'>$username</a>";    
 							}
                     }
 					        

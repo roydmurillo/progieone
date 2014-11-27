@@ -93,7 +93,7 @@ tinymce.init({
 		
 		paste_preprocess : function(pl, o) {
 		  //example: keep bold,italic,underline and paragraphs
-		  o.content = strip_tags( o.content,'<b><u><i><p><br>' );
+		  o.content = strip_tags( o.content,'<b><u><i><p>' );
 		
 		  // remove all tags => plain text
 		  //o.content = strip_tags( o.content,'' );
