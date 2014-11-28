@@ -216,13 +216,6 @@ profile
   margin-bottom: 24px; }
   #homepage #avatar {
     margin: 12px auto;
-    clear: both;
-    height: 150px;
-    border: 3px solid #777;
-    text-align: center;
-    line-height: 143px;
-    overflow: hidden;
-    background: black;
     margin-bottom: 0; }
   #homepage #upload_avatar {
     background: #f0f0f0;
@@ -357,6 +350,10 @@ item list
   width: 80px;
   height: 80px;
   background-size: cover; }
+.dashboard_avatar .profile-photo {
+  width: 100%;
+  height: 169px;
+  background-size: cover; }
 
 .a_class.img-slot .img-slot {
   border: 1px solid #ccc; }
@@ -403,9 +400,17 @@ sidebar
     forum style
 */
 /*        friends*/
-.friend-q-profile .friend-img img {
-  max-width: 100px;
+.friend-img img {
+  max-width: 80px;
+  max-height: 80px;
   width: 100%; }
+.friend-q-profile .friend-img {
+  padding: 12px; }
+
+.user-link {
+  padding-left: 12px;
+  padding: 12px 24px;
+  display: block; }
 
 .container-center {
   min-height: 500px;

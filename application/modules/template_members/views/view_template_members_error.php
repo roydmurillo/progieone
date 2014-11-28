@@ -12,7 +12,7 @@
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 
 		<div class="regular_register" style="min-height:40px !important;">
 				<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">

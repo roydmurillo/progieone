@@ -10,7 +10,7 @@
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage"class="row">
 		
  		<?php
     	//load sidebar left

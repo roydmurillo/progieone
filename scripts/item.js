@@ -89,14 +89,12 @@ var native_width = 0;
 		jQuery(".large").hide();
     });		
 	jQuery("#contact_seller").click(function(){
-		jQuery(".dtab").removeClass("dtab_active");
-		jQuery("#tab_contact").addClass("dtab_active");
-		jQuery(".inner_details_cont").hide();
-		jQuery("#contact").show();
+		jQuery(".tab-pane").removeClass("active");
+                jQuery(".nav-tabs li").removeClass("active");
+		jQuery(".contact").addClass("active");
+		jQuery("#contact").addClass("active");
 		jQuery("#contact_name").focus();
-		jQuery('html, body').animate({
-        	scrollTop: jQuery(".dtab").offset().top
-    	}, 500);
+		
 	});
 	jQuery(window).scroll(function() {
       	jQuery(".large").hide();

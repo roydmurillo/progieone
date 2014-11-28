@@ -1,7 +1,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>tinymce/tinymce.min.js"></script> 
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/editor3.js"></script>
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
-<div id="homepage">
+<div id="homepage" class="row">
 		
  		<?php
     	//load sidebar left

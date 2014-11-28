@@ -9,7 +9,7 @@
 <input id="type_contacts" type="hidden" value="<?php echo $type_update; ?>">
 <input id="type_check" type="hidden" value="<?php echo $type_check; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
-<div id="homepage">
+<div id="homepage" class="row">
 		
  		<?php
     	//load sidebar left

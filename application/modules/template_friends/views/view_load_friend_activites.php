@@ -69,7 +69,7 @@ if($results != NULL || !empty($results)){
 						  "new_thread" => "Created a thread",);
 		
 		if($u["user_avatar"] != "") { 
-			$img =  "<img src='".$u["user_avatar"]."'>";
+			$img =  "<img class='img-circle' src='".$u["user_avatar"]."'>";
 		} else { 
 			$img =  "<img src='".base_url()."assets/images/avatar.jpg'>";
 		}
@@ -211,13 +211,13 @@ if($results != NULL || !empty($results)){
 				$htm  = "<div >";
 				$htm  .= "<div >Sent a Friend Invitation to:</div>";
 				$htm  .= "   <div >";
-				$htm .= "      <div >";
+				$htm .= "      <div class='friend-img'>";
 				
 				// get image
 				if(!empty($data["user_avatar"])) { 
-					$htm .=  "<img src='".$data["user_avatar"]."'>";
+					$htm .=  "<img class='img-circle' src='".$data["user_avatar"]."'>";
 				} else { 
-					$htm .=  "<img src='".base_url()."assets/images/no-image.png'>";
+					$htm .=  "<img class='img-circle' src='".base_url()."assets/images/no-image.png'>";
 				}				
 				
 				$htm .= "    </div>";
@@ -251,13 +251,13 @@ if($results != NULL || !empty($results)){
 				$htm  = "<div >";
 				$htm  .= "<div >Accepted Friend Invitation of:</div>";
 				$htm  .= "   <div >";
-				$htm .= "      <div >";
+				$htm .= "      <div class='friend-img'>";
 				
 				// get image
 				if(!empty($data["user_avatar"])) { 
-					$htm .=  "<img src='".$data["user_avatar"]."'>";
+					$htm .=  "<img class='img-circle' src='".$data["user_avatar"]."'>";
 				} else { 
-					$htm .=  "<img src='".base_url()."assets/images/no-image.png'>";
+					$htm .=  "<img class='img-circle' src='".base_url()."assets/images/no-image.png'>";
 				}				
 				
 				$htm .= "    </div>";
@@ -284,7 +284,7 @@ if($results != NULL || !empty($results)){
 					
 				    <div class='friend-q-profile col-sm-6'>
                                         <div class='friend-img'>".$img."</div>
-                                        <a href='".base_url()."member_profile/".$u["user_name"]."'>".$u["user_name"]."</a>	 
+                                        <a class='user-link' href='".base_url()."member_profile/".$u["user_name"]."'>".$u["user_name"]."</a>	 
                                     </div>	
                                     <div class='friend-ink col-sm-6'>".$htm."</div>									
 			   </div>

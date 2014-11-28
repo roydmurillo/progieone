@@ -27,6 +27,7 @@ jQuery(document).ready(function(){
         // scroll fix
         var scrolled=0;
             $('.ww-tabs').on('click','a',function(e){
+                $(".tab-pane").removeClass('active');
                 $('.ww-tab-container > .ww-tab-panel').removeClass('active');
                 var x = $(this).attr('href');
                 $(x).addClass('active');
@@ -76,6 +77,7 @@ jQuery(document).ready(function(){
             });
             
             $('.ww-tabs').on('click','a',function(e){
+                
                 $('.container-center').show();
                 $('.ww-tab-container > .ww-tab-panel').removeClass('active');
                 var x = $(this).attr('href');

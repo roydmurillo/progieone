@@ -128,11 +128,11 @@
                                                                         $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                                                     ?>
                                                                     <div class="small_info2">
-                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>&nbsp;(<?php echo $ret_count['ok'];?>)</span>&nbsp;
-                                                                        <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>&nbsp;(<?php echo $ret_count['no'];?>)</span></div>
+                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>(<?php echo $ret_count['ok'];?>)</span>
+                                                                        <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>(<?php echo $ret_count['no'];?>)</span></div>
 <!--									<div class="small_info2"><?php $this->function_rating->get_stars($item_details[0]->item_user_id); ?></div>
                                                                         <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>-->
-									<div class="small_info" style="float:left">
+									<div class="small_info">
 									    <input type="hidden" id="uid" value="<?php echo $item_details[0]->item_user_id; ?>">
 										<a href="javascript:;" id="add_friend" >Add as Friend</a>
 									</div>
@@ -149,7 +149,7 @@
 				<ul class="nav nav-tabs" role="tablist">
                                     <li class="active"><a href="#description" role="tab" data-toggle="tab">Details</a></li>
                                     <li><a href="#shipping" role="tab" data-toggle="tab">Shipping Information</a></li>			
-                                    <li><a href="#contact" role="tab" data-toggle="tab">Contact Seller</a></li>	
+                                    <li class="contact"><a href="#contact" role="tab" data-toggle="tab">Contact Seller</a></li>	
 <!--					<li>
 						<?php
                                                 // adding to watchlist snippets

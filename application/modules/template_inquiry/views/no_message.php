@@ -1,4 +1,4 @@
-<div id="homepage">
+<div id="homepage" class="row">
 		
   		<?php
     	//load sidebar left

@@ -73,13 +73,21 @@ item list
 .single-item-wrapper{
     margin-top:36px;
 }
-.seller_avatar{
-    .profile-photo{
-        width: 80px;
-        height:80px;
-        background-size:cover;
-    }
+.profile-photo{
+        
+        
+        .seller_avatar &{
+            width: 80px;
+            height:80px;
+            background-size:cover;
+        }
+        .dashboard_avatar &{
+            width: 100%;
+            height:169px;
+            background-size:cover;
+        }
 }
+
 .a_class.img-slot{
     .img-slot{
         border:1px solid #ccc;

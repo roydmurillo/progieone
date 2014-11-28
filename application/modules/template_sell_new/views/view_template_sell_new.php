@@ -366,7 +366,7 @@ jQuery(document).ready(function() {
 <input id="type_addimg" type="hidden" value="<?php echo $type_addimg ?>">
 <input id="type_delimg" type="hidden" value="<?php echo $type_delimg; ?>">
 <input id="type_setdefault" type="hidden" value="<?php echo $type_setdefault; ?>">
-<div id="homepage">
+<div id="homepage" class="row">
  		<?php
     	//load sidebar left
 		$this->load->module('template_sideleft_dashboard');

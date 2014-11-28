@@ -1,6 +1,6 @@
 <!-- content goes here -->
 <img src='<?php echo base_url(); ?>assets/images/refine_loader.gif' style='display:none'>
-<div id="homepage">
+<div id="homepage" class="row">
     <diV class="row">
         <div class="col-sm-3 col-md-2 sidebar desktop-sidebar">
             <?php

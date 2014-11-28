@@ -39,20 +39,21 @@ jQuery(document).ready(function(){
 });
 </script>
 <div class="sidebar-inner">
-  <div >
+  
       <div class="text-center">Welcome <strong><?php echo $this->native_session->get("user_name"); ?></strong>!</div>
-	<div id="avatar">
+      <div id="avatar" class="dashboard_avatar">
 		<?php 
 			if($user_avatar != ""){
-				echo '<img src="'.$user_avatar.'">';
+				$avatar = $user_avatar;
 				$title = "Change Avatar";
 			} else {
-				echo '<img src="'.base_url().'assets/images/avatar.jpg">';
+				$avatar = base_url() . "assets/images/avatar.jpg";
 				$title = "Upload Avatar";
 			}
 		?>
+                <div class='profile-photo' style="background:url('<?php echo $avatar; ?>') center center no-repeat; background-size:cover;"></div>
 	</div>
-	<div>
+  
 		<div id="uploads" style="display:none">
 				<form id="imageform" method="post" enctype="multipart/form-data" action='<?php echo base_url() ?>ajax_avatar/upload_avatar'>
 							 <input type="hidden" id="item_id" value="1">
@@ -63,8 +64,8 @@ jQuery(document).ready(function(){
 		<a class="" id="upload_avatar" href="#"><?php echo $title; ?></a>
 <!--		<a class="" href="<?php echo base_url() ?>dashboard/profile">Edit Profile</a>
 		<a class="" style="color:orange !important" href="<?php echo base_url() ?>dashboard/logout">[ Logout ]</a>-->
-  	</div>
-  </div>
+  
+  
 	<ul class="nav nav-sidebar">
             <li class="<?php echo ($this->uri->segment(1) == "dashboard" && $this->uri->segment(2) == "" ) ? "active" :""; ?>"><a href="<?php echo base_url() ?>dashboard">Summary</a><li>
 		<?php 

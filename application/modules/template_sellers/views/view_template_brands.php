@@ -1,5 +1,5 @@
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 
 		<div class="fleft" style="width:824px; margin-left:70px;">
 			<a href="" name="top_link"></a>

@@ -1,5 +1,5 @@
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 		
         <div class="fleft">
 			<?php

@@ -1,5 +1,5 @@
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 
 		<div class="container">
 			<a href="" name="top_link"></a>

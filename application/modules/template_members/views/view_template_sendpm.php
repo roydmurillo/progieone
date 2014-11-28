@@ -21,7 +21,7 @@
 <img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="display:none">
 
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 
 		<div class="col-sm-3 col-md-2 sidebar" >
 				

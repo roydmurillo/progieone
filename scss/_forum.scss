@@ -3,11 +3,23 @@
 */
 
 /*        friends*/
-        .friend-q-profile{
-            .friend-img{
+        .friend-img{
+            
+            
                 img{
-                    max-width:100px;
+                    max-width:80px;
+                    max-height: 80px;
                     width:100%;
                 }
+                
+                .friend-q-profile &{
+                    padding:12px;
+                    
+                }
             }
+        
+        .user-link{
+            padding-left:12px;
+            padding: 12px 24px;
+            display: block;
         }

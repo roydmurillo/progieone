@@ -1,7 +1,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>tinymce/tinymce.min.js"></script> 
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/editor3.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/read_scripts.js"></script>
-<div id="homepage">
+<div id="homepage" class="row">
 		
  		<?php
     	//load sidebar left

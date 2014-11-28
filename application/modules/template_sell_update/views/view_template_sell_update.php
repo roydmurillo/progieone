@@ -54,7 +54,7 @@ foreach($item_info as $i){
 <input id="type_setdefault" type="hidden" value="<?php echo $type_setdefault; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
-<div id="homepage">
+<div id="homepage" class="row">
 		
  		<?php
     	//load sidebar left

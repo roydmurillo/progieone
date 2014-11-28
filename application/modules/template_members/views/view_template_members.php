@@ -86,7 +86,7 @@ if(empty($items)){
   <input type="hidden" value="<?php echo $g; ?>" id="get_values">
   <input type="hidden" value="<?php echo $user; ?>" id="current_user"> 
 <!-- content goes here -->
-<div id="homepage">
+<div id="homepage" class="row">
 
 		<div class="col-sm-3 col-md-2 sidebar">
 				
@@ -131,11 +131,13 @@ if(empty($items)){
                                             $like_flag = $ret_count['ok'] == 1 ? 1 : 0;
                                             $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                         ?>
-					<div style="float:left; clear:both; margin:5px 0px;">
-						<!--<a href="<?php echo base_url() . $this->uri->segment(1) . "/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
+					<div>
+                                            <!--<a href="<?php echo base_url() . $this->uri->segment(1) . "/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
-                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>&nbsp;(<?php echo $ret_count['ok'];?>)</span>&nbsp;
-                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>&nbsp;(<?php echo $ret_count['no'];?>)</span></div>
+                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a>
+                                            <span>(<?php echo $ret_count['ok'];?>)</span>
+                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a>
+                                            <span>&nbsp;(<?php echo $ret_count['no'];?>)</span>
 					</div>
 					
 				</div>	
@@ -148,7 +150,7 @@ if(empty($items)){
 					<div id="refine_loader" style='position:absolute; z-index:100; left:59px; bottom:-80px; display:none'><img src='<?php echo base_url(); ?>assets/images/refine_loader.gif'></div>
 
 				</div>								
-				<div>
+<!--				<div>
 					
 					<div style="float:left; clear:both; margin-top:12px; ">
 						<a id="filter_show" href="javascript:;" style="display:none; padding: 5px 0px;
@@ -165,26 +167,26 @@ if(empty($items)){
 					 font-size: 13px;
 					 width: 150px;
 					 overflow:hidden; display:none">
-				</div>								
+				</div>								-->
 				
 				
 		</div>
 
 		<div class="col-sm-9 col-md-10 main">
-		
-		<div>
+                    <div class="row">
+                    <div class="col-sm-6">
 			USER'S CLASSIFIEDS
-		</div>
+                    </div>
 		<?php 
 		
 		if(!empty($items)){?>
-			<div id="filter_return">
+			<div id="filter_return" class="col-sm-6 text-right">
 		
 					<form method="POST">
-					<div class="fleft">
+                                            
 						<b>Sort By:</b>
-					</div>
-					<div class="fleft" style="margin-left:12px;">
+					
+                                            
 						<input type="hidden" value="" name="sort_by" id="sort_by">
 						<select id="sort_by_dropdown">
 							<option value="" <?php echo ($sort_by == "")? "selected='selected'":""; ?>>Relevance & Date</option>
@@ -194,10 +196,11 @@ if(empty($items)){
 							<option value="za" <?php echo ($sort_by == "za")? "selected='selected'":""; ?>>Name Z - A</option>
 							<option value="advertised" <?php echo ($sort_by == "advertised")? "selected='selected'":""; ?>>Date Advertised</option>
 						</select>
-					</div>
+					
 					<input type="submit" name="submit_filter" id="submit_filter" style="display:none">
 					</form>			
 			</div>
+                    </div>
                 <div class="row item-list item_list_watches">
 		<?php
         $user_id = unserialize($this->native_session->get("user_info"));
