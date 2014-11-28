@@ -168,6 +168,15 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="panel panel-primary">
+                    <h2 class="panel-heading">Ratings</h2>
+                    <div class="panel-body">
+                        <p>Like: <span class="badge"><?php echo $count_watch_ratings_like;?></span></p>
+                        <p>Dislike: <span class="badge"><?php echo $count_watch_ratings_dislike;?></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="panel panel-primary">
                     <h2 class="panel-heading">Forum</h2>
                     <div class="panel-body">
                         <p>Help or ask questions</p>
