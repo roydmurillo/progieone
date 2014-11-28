@@ -3,15 +3,20 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>styles/scroll.css">
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/scroll.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/json.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/ratings.js"></script>
 
 <!-- content goes here -->
 <?php $this->load->module("function_security"); 
 	  $type_initial = $this->function_security->encode("validate_captcha");
 	  $type_send = $this->function_security->encode("send_inquiry");
-	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
+	  $ajax = $this->function_security->encode("dashboard-ajax"); 
+          $type_rating = $this->function_security->encode("cyber_rating");
+?>
+<input id="load_initial_rating" type="hidden" value="<?php echo base_url() . $ajax; ?>">
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
 <input id="type_initial" type="hidden" value="<?php echo $type_initial; ?>">
 <input id="send_inquiry" type="hidden" value="<?php echo $type_send; ?>">
+<input id="type_rating" type="hidden" value="<?php echo $type_rating; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 <img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="display:none">
 
@@ -55,10 +60,20 @@
 
 				<div >
 							
-					<?php echo $this->function_rating->get_stars($result[0]->user_id); ?>
-					
+					<?php // echo $this->function_rating->get_stars($result[0]->user_id); ?>
+					<?php
+
+                                            $this->load->module("function_ratings");
+                                            $ret_count = $this->function_ratings->get_count_all_rating($result[0]->user_id);
+                                            $single_rating = $this->function_ratings->get_single_ratings($result[0]->user_id);
+                                            $like_flag = $ret_count['ok'] == 1 ? 1 : 0;
+                                            $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
+                                        ?>
 					<div style="float:left; clear:both; margin:5px 0px;">
-						<a href="<?php echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>
+                                            <a href="<?php // echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>
+                                            <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
+                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>&nbsp;(<?php echo $ret_count['ok'];?>)</span>&nbsp;
+                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>&nbsp;(<?php echo $ret_count['no'];?>)</span></div>
 					</div>
 					
 				</div>	
