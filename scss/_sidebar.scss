@@ -20,9 +20,10 @@ sidebar
 
 .go-mobile{
     display:block !important;
-    position: fixed;
+    position: absolute;
     top: 0;
-    height: 100%;
+    left:0;
+    height: auto;
     z-index:25;
     max-width:220px;
     width:100%;
@@ -34,5 +35,5 @@ sidebar
     left:0;
     top:0;
     z-index:22 !important;
-    background-color:rgba(0, 0, 0, 0.55);
+    background-color:rgba(0, 0, 0, 0.80);
 }

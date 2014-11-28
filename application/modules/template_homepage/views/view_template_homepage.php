@@ -30,7 +30,7 @@
             ?>
                 <div class="container text-center">
                     <h2>We love watches so much we can't stop looking at them</h2>
-                    <h4>Search for all kinds and types of watch from other cyberwatch users</h4>
+                    <h4>Search for all kinds and types of watch from other cyberwatchcafe users</h4>
                 </div>
             <?php
                 }

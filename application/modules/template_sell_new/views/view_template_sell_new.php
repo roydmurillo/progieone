@@ -400,9 +400,13 @@ jQuery(document).ready(function() {
 						<h2 class="h2_title">Fill Up Complete Details for New Watch</h2>
 						<div id="add_remarks"></div>
 						
-						<div id="add_info_links" class="clearfix">
-							<a href="javascript:;" class="add_act add_active pull-left" id="basic">Add Basic Information</a> <span class="glyphicon glyphicon-circle-arrow-right pull-left"></span> <a class="add_act pull-left" id="description" href="javascript:;">Add Watch Description</a> <span class="glyphicon glyphicon-circle-arrow-right pull-left"></span> <a class="add_act pull-left" id="shipping" href="javascript:;">Add Shipping Information</a>	
-						</div>
+						<ul id="add_info_links" class="breadcrumb clearfix">
+                                                    <li><a href="javascript:;" class="add_act add_active" id="basic">Add Basic Information</a> </li>
+                                                        
+                                                    <li>   <a class="add_act" id="description" href="javascript:;">Add Watch Description</a> </li>
+                                                        
+                                                    <li>   <a class="add_act " id="shipping" href="javascript:;">Add Shipping Information</a>	</li>
+						</ul>
 						
 						<div id="details_basic" class="details_" >
 							<table class="table_add">
@@ -619,8 +623,8 @@ jQuery(document).ready(function() {
 						
 						<input id="add_reset" class='btn btn-danger' type="button" onclick="reset_data()" value="clear"/>
 						<input id="add_next" class='btn btn-primary btn-green details_' type="button" value="Next">
-						<input id="add_next2" class='css_btn_c0 n1' style="display:none" type="button" value="Next">
-						<input id="add_forsale" class='css_btn_c0 n1' type="button" style="display:none" value="Submit Info">
+						<input id="add_next2" class='css_btn_c0 n1 btn btn-primary btn-green' style="display:none" type="button" value="Next">
+						<input id="add_forsale" class='css_btn_c0 n1 btn btn-primary btn-green' type="button" style="display:none" value="Submit Info">
 						<input id="submit_add" name="submit_add" type="submit" value="Submit Info" style="display:none">
 					</form>
 					
@@ -630,7 +634,7 @@ jQuery(document).ready(function() {
 						
 					}?>
 					
-					<div >
+					<div class="small ma-t1em">
 						*Kindly complete all field details to make your watch items more searchable for buyers.*For Parts/Accessories Only items, you can choose "others" for fields
 						that might not be appropriate for your item/s.
 					</div>				

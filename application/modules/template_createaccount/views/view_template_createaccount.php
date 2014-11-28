@@ -24,14 +24,12 @@ input[type="checkbox"] {
 		
 		<?php 
 			if (strpos($remarks, "You are now Successfully Registered") === false) {
-		?>
-		
+		?>	
 		<?php if($remarks != ""){ ?>
-		<div class="red-alert" >
-                    <div class="text-center">
+		<div class="text-center" >
+                    <div class="alert alert-danger">
 					<?php echo $remarks; ?>
-				</div>									
-					
+                    </div>												
 		</div>
 		<?php } ?>
             <div class="col-md-6">
@@ -41,19 +39,19 @@ input[type="checkbox"] {
                             <form role="form" method="POST">
 				<div class="form-group">
 					<label for="username">Username</label>
-					<input class="form-control" type="text" id="username" name="username" placeholder="username" value="<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
+					<input class="form-control" type="text" id="username" name="username"  value="<?php if(isset($_POST["username"])) echo $_POST["username"]; ?>">
 				</div>
 				<div class="form-group">
-					<label>Password</label>
-					<input class="form-control"  id="password" type="password" name="password" placeholder="password" value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>">
+                                    <label for="password">Password</label>
+					<input class="form-control"  id="password" type="password" name="password"  value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>">
 				</div>
 				<div class="form-group">
 					<label for="first">First Name</label>
-                                <input class="form-control" type="text" id="first" name="firstname" placeholder="first name" value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"]; ?>">
+                                <input class="form-control" type="text" id="first" name="firstname"  value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"]; ?>">
 				</div>
 				<div class="form-group">
 					<label for="last">Last Name</label>
-					<input class="form-control" type="text" id="last" name="lastname" value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"]; ?>">
+                                        <input class="form-control" type="text" id="last" name="lastname"  value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"]; ?>">
 				</div>			
 				<div class="form-group">
 					<label for="email">Email Address</label>

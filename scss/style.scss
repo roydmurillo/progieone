@@ -29,6 +29,9 @@ p{
 .clear{
     clear:left;
 }
+.ma-t1em{
+    margin-top: 1em;
+}
 /* preprocessor from this point down*/
 /*home*/
 @import "bootstrap";
@@ -105,15 +108,16 @@ header{
     .myaccount-btn{
         clear:left;
         padding:12px;
-        background:#333;
+        background:#000;
         color:#fff;
         text-align: center;
         border-bottom:1px solid #4F4F4F;
     }
     .myaccount-menu{
-            display:none;
+            
             background:#333;
             ul{
+                display:none;
                 margin:0;
                 padding:0;
                 li{
@@ -208,6 +212,11 @@ footer{
     margin: 0 auto;
     float: none;
     width:100%;
+    .black-nav &{
+        @media (max-width:767px){
+            margin-left:1px;
+        }
+    }   
     header &{
         max-width: 201px;
         @media (max-width:480px){
@@ -219,7 +228,7 @@ footer{
         max-width: 280px;
     }
     nav &{
-        max-width:580px;
+        max-width:590px;
     }
 }
 .caret{
@@ -260,7 +269,12 @@ footer{
         display: block;
         margin: 0 auto;
         float: none;
-        //width: 50%;
+    }
+    &.navbar-brand{
+        @media (max-width:767px){
+            max-width:320px;
+            width:100%;
+        }
     }
     &.top{
         @media (max-width:767px){
@@ -300,4 +314,4 @@ footer{
 
 /*member*/
 #send_pm{background:#fff;padding:12px;}
-#filter_return{font-size:12px; font-family:Verdana;border:1px dashed #CCC; border-left:none; border-right:none; height:30px; line-height:30px; vertical-align:middle; margin:0px 0px 10px 0px;}
+#filter_return{height:30px; line-height:30px; vertical-align:middle;}

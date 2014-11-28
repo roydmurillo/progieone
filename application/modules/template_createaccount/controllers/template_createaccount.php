@@ -27,9 +27,9 @@ class template_createaccount extends MX_Controller {
                         $encode = $this->function_security->encode($this->input->post("firstname").$this->input->post("username").$this->input->post("password"));
                         $this->send_email($encode);
                         $this->save_data($encode);
-                        $content["remarks"] = "<h3 style='color: green !important; margin-top: -10px; margin-bottom: 0px; font-size:17px'>You are now Successfully Registered!Please Check your email to fully activate your account.</h3>";
+                        $content["remarks"] = "<h3 style='color: green !important; margin-top: -10px; margin-bottom: 0px; font-size:17px'>You are now Successfully Registered! Please Check your email to fully activate your account.</h3>";
                     } else {
-                        $content["remarks"] = "<h3>Following Errors Encountered:</h3>" . $content["remarks"];
+                        $content["remarks"] = " " . $content["remarks"];
                     }
                 }
                 
@@ -131,19 +131,19 @@ class template_createaccount extends MX_Controller {
         public function check_user_name($field = ""){
             
             if(!$field){
-                    return "User Name is invalid.";
+                    return "User Name is invalid. ";
             
             } else {
                     
                 $field = trim($field);
 
                 if($field == ""){
-                    return "User Name cannot be equal to blanks.";
+                    return "User Name cannot be equal to blanks. ";
                 } else {
                     
                     if(preg_match('/[^a-z_\-0-9]/i', $field)){
                     
-                        return "User name format should be alphanumeric without spaces.";
+                        return "User name format should be alphanumeric without spaces. ";
                             
                     } else {
                     
@@ -155,7 +155,7 @@ class template_createaccount extends MX_Controller {
                             return "User name $field is already in use.";
                         } else {
                             if(strlen($field) > 12) {
-                                return "User name $field exceeds the limit of 12 Characters.";
+                                return "User name $field exceeds the limit of 12 Characters. ";
                             }
                         }
                     
@@ -185,7 +185,7 @@ class template_createaccount extends MX_Controller {
             
             
             if($field == ""){
-                return $title . " cannot be equal to blanks.";
+                return $title . " cannot be equal to blanks. ";
             }
             
             return "";
@@ -222,12 +222,12 @@ class template_createaccount extends MX_Controller {
                 $this->db->where($where_string,null,false);  
                 $query = $this->db->get(); 
                 if($query->num_rows() > 0){
-                    return "User email $email is already in use.";
+                    return "User email $email is already in use. ";
                 }
                 
             } else {
                 
-                return "User email $email is invalid.";
+                return "User email $email is invalid. ";
                 
             }
             

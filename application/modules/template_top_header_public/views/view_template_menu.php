@@ -4,7 +4,7 @@
     ==================================================================
     -->
     <nav class="navbar-inverse">
-        <div class="visible-xs visible-sm menu-btn">Menu</div>
+        <div class="visible-xs menu-btn">Menu <span class="caret"></span></div>
         <div class="container black-nav">
             <ul class="nav navbar-nav">
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">MEN'S <span class="caret"></span></a>

@@ -70,7 +70,7 @@ jQuery(document).ready(function(){
                 });
             });
             $('.myaccount-btn').on('click',function(){
-                $('.myaccount-menu').toggle(function(){
+                $('.myaccount-menu ul').toggle(function(){
                     $('.myaccount-btn').css('background-color','black');
                 });
             });
