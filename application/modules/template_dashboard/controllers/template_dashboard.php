@@ -253,11 +253,14 @@ class template_dashboard extends MX_Controller {
         
         public function dashboard_main($data){
             //load header
+            $user_info = unserialize($this->native_session->get("user_info"));
+            $userid = $user_info["user_id"];
+            
             $this->load->module('template_header');
             $this->template_header->index($data); 		
 
             $this->load->module('template_friends');
-			$datus['friends_count'] = $this->template_friends->count_friends();
+            $datus['friends_count'] = $this->template_friends->count_friends();
             $datus['count_friend_invites'] = $this->template_friends->count_friend_invites();
 
             $this->load->module('template_messages');
@@ -269,6 +272,17 @@ class template_dashboard extends MX_Controller {
             
             $this->load->module('function_items');
             $datus['count_sell_items'] = $this->function_items->count_sell_item();
+
+            $this->load->module('function_ratings');
+            $rating = $this->function_ratings->get_count_all_rating($userid);
+            if($rating){
+                $datus['count_watch_ratings_like'] = $rating['ok'];
+                $datus['count_watch_ratings_dislike'] = $rating['no'];
+            }
+            else{
+                $datus['count_watch_ratings_like'] = 0;
+                $datus['count_watch_ratings_dislike'] = 0;
+            }
 
             $this->load->view('view_template_dashboard', $datus);
 
