@@ -420,6 +420,14 @@ class function_ajax extends MX_Controller {
                 $this->load->module("function_items");
                 $ret = $this->function_items->set_defaultimage($args);
             } 	            
+            /*===================================================================
+            * name : 
+            * desc : for adding ratings
+            *===================================================================*/        
+            elseif($this->function_security->encode("cyber_rating") == $type){
+                $this->load->module("function_ratings");
+                $this->function_ratings->add_ratings($args);
+            } 	            
 			          
         }
         

@@ -1,15 +1,19 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/json.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/item.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/ratings.js"></script>
 
 <!-- content goes here -->
 <?php $this->load->module("function_security"); 
 	  $type_initial = $this->function_security->encode("captcha_email");
 	  $type_friend = $this->function_security->encode("add_friend");
+	  $type_rating = $this->function_security->encode("cyber_rating");
 	  $type_watchlist = $this->function_security->encode("add_to_watchlist");
 	  $type_send = $this->function_security->encode("send_inquiry");
 	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
+<input id="load_initial_rating" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
 <input id="type_friend" type="hidden" value="<?php echo $type_friend; ?>">
+<input id="type_rating" type="hidden" value="<?php echo $type_rating; ?>">
 <input id="type_watchlist" type="hidden" value="<?php echo $type_watchlist; ?>">
 <input id="type_initial" type="hidden" value="<?php echo $type_initial; ?>">
 <input id="send_inquiry" type="hidden" value="<?php echo $type_send; ?>">
@@ -115,8 +119,19 @@
 									<div class="small_info">
 										<a class="u_name" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>"><?php echo $owner["user_name"]; ?></a>
 									</div>
-									<div class="small_info2"><?php $this->function_rating->get_stars($item_details[0]->item_user_id); ?></div>
-								    <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>
+                                                                    <?php
+
+                                                                        $this->load->module("function_ratings");
+                                                                        $ret_count = $this->function_ratings->get_count_all_rating($item_details[0]->item_user_id);
+                                                                        $single_rating = $this->function_ratings->get_single_ratings($item_details[0]->item_user_id);
+                                                                        $like_flag = $ret_count['ok'] == 1 ? 1 : 0;
+                                                                        $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
+                                                                    ?>
+                                                                    <div class="small_info2">
+                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>&nbsp;(<?php echo $ret_count['ok'];?>)</span>&nbsp;
+                                                                        <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>&nbsp;(<?php echo $ret_count['no'];?>)</span></div>
+<!--									<div class="small_info2"><?php $this->function_rating->get_stars($item_details[0]->item_user_id); ?></div>
+                                                                        <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>-->
 									<div class="small_info" style="float:left">
 									    <input type="hidden" id="uid" value="<?php echo $item_details[0]->item_user_id; ?>">
 										<a href="javascript:;" id="add_friend" >Add as Friend</a>
