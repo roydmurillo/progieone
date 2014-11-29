@@ -25,7 +25,7 @@
 
 		<div class="col-sm-3 col-md-2 sidebar" >
 				
-				<div id="avatar">
+                    <div id="avatar" class="dashboard_avatar">
 					<?php
 						if($result[0]->user_avatar != ""){
 						   $im = $result[0]->user_avatar;
@@ -33,8 +33,9 @@
 						   $im = base_url()."assets/images/avatar.jpg";
 						} 
 					?>
-					<img src="<?php echo $im; ?>">
-				</div>
+					
+                                        <div class="profile-photo" style="background:url('<?php echo $im ?>') center center no-repeat; background-size:cover;"></div>
+				
 
 				<div >
 					<a  href="<?php echo base_url(); ?>member_profile/<?php echo $result[0]->user_name; ?>"><?php echo $result[0]->user_name; ?></a>
@@ -42,10 +43,8 @@
 				
 
 				<div >
-				
 					<div >Last login: <?php echo $this->function_forums->last_updated($result[0]->user_logged); ?></div>		
-					<div >Registered: <?php echo date("F j, Y", strtotime($result[0]->user_date)); ?></div>		
-					
+					<div >Registered: <?php echo date("F j, Y", strtotime($result[0]->user_date)); ?></div>							
 				</div>
 				
 
@@ -69,7 +68,7 @@
                                             $like_flag = $ret_count['ok'] == 1 ? 1 : 0;
                                             $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                         ?>
-					<div style="float:left; clear:both; margin:5px 0px;">
+					<div >
                                             <a href="<?php // echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
                                             <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>&nbsp;(<?php echo $ret_count['ok'];?>)</span>&nbsp;
@@ -78,19 +77,19 @@
 					
 				</div>	
 
-				<div >
+<!--				<div >
 					<div>
 						<a href="<?php echo base_url() ?>send_pm/<?php echo $result[0]->user_name; ?>" class="btn btn-primary">Send message</a>
 					</div>
 					
-				</div>								
+				</div>								-->
 				
 				
 		</div>
 
 		<div class="col-sm-9 col-md-10 main">
 		
-			<div class="title_bar" style="width:755px; margin:0px 0px 10px 0px;">
+			<div class="title_bar">
 				SEND PM
 			</div>
 			
@@ -140,25 +139,25 @@
                                             <div id="send_pm" class="col-xs-12">  
 						   <form method="POST">
 							
-							<div class="t_area" style="float:left; clear:both; margin-top:20px;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px 5px">Subject:</div>
-								<div style="float:left; clear:both; margin-left:5px">
+							<div class="t_area" >
+								<div >Subject:</div>
+								<div >
 									<input type="text" name="message_title" id="subject" style="padding:5px; width:422px">
 									<input type="hidden" value="<?php echo $user_id; ?>" name="message_user_id">
 									<input type="hidden" value="<?php echo $recipient[0]->user_id; ?>" name="message_recipient_id">
 								</div>
 							</div>
 							
-							<div class="t_area" style="float:left; margin:20px 0px;clear:both;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px">Message:</div>
-								<div style="float:left; clear:both; margin-left:5px">
-									<textarea id="item_description" name="message_content" style="width:150%; height:300px;"></textarea>
+							<div class="t_area" >
+								<div >Message:</div>
+								<div >
+									<textarea id="item_description" name="message_content"></textarea>
 								</div>
 							</div>
 
-							<div class="t_area" style="float:left; margin:20px 0px;clear:both;">
-								<div style="float:left; clear:both; font-family:arial; font-size:16px; font-weight:bold; color:#555; margin:5px">Verify Captcha:</div>
-								<div style="float:left; clear:both; margin-left:5px">
+							<div class="t_area" >
+								<div >Verify Captcha:</div>
+								<div>
 								<?php
 								        $this->load->module("function_captcha");
 										$cap= $this->function_captcha->create_captcha();
@@ -166,14 +165,14 @@
 										$key = $cap["key"];
 										echo $image["image"];
 								?>
-									<div style="float:left; clear:both; margin-left:0px">
+									<div >
 									    <input type="hidden" id="captcha_key" value="<?php echo $key; ?>">
-										<input class="input1"  type="text" id="captcha_answer" placeholder="Enter Captcha Code" style="padding:5px; width:349px">
+										<input class="input1"  type="text" id="captcha_answer" placeholder="Enter Captcha Code">
 									</div>
 								</div>
 							</div>							
 							
-							<div class="t_area" style="float:left; margin:10px 8px 20px 8px; clear:both;">
+							<div class="t_area">
 								<input class='css_btn_c0' type="button" onclick="reset_data()" value="Reset"/>
 								<input id="submit_pm" class='css_btn_c0' type="button" value="Send Message">
 								<input id="submit_sendpm" name="submit_sendpm" type="submit" value="Submit Info" style="display:none">
@@ -225,7 +224,7 @@
 			
 				<div class="regular_register" style="min-height:40px !important;">
 							<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-							<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+							<div>
 								 You need to be logged in to be able to send private message
 							</div>
 				</div>

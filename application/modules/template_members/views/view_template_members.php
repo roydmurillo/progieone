@@ -90,7 +90,7 @@ if(empty($items)){
 
 		<div class="col-sm-3 col-md-2 sidebar">
 				
-				<div id="avatar">
+                    <div id="avatar" class="dashboard_avatar">
 					<?php
 						if($result[0]->user_avatar != ""){
 						   $im = $result[0]->user_avatar;
@@ -98,7 +98,8 @@ if(empty($items)){
 						   $im = base_url()."assets/images/avatar.jpg";
 						} 
 					?>
-					<img src="<?php echo $im; ?>">
+					 <div class="profile-photo" style="background:url('<?php echo $im ?>') center center no-repeat; background-size:cover;"></div>
+
 				</div>
 
 				<div>
