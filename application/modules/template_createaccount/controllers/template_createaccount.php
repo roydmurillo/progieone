@@ -257,6 +257,7 @@ class template_createaccount extends MX_Controller {
             $user_email = trim($_POST["email"]);
                         
             $this->db->set('user_name', $username);
+            $this->db->set('user_folder', '');
             $this->db->set('user_password', $password);
             $this->db->set('user_fname', $user_fname);
             $this->db->set('user_lname', $user_lname);
@@ -267,6 +268,16 @@ class template_createaccount extends MX_Controller {
             $this->db->set('user_activation', $encode);
 			$this->db->set('user_date',date('Y-m-d H:i:s'));
             $this->db->set('user_listprice_id',$paypalid);
+            
+            #### added for default value #########
+            $this->db->set('user_folder', '');
+            $this->db->set('user_description', '');
+            $this->db->set('user_rating', '0');
+            $this->db->set('user_activated', '');
+            $this->db->set('user_avatar', '');
+            $this->db->set('user_changepass_code', '');
+            $this->db->set('user_logged', '0000-00-00 00:00:00');
+            ######################################
             $this->db->insert('watch_users'); 
             
             $inserted_id = $this->db->insert_id();

@@ -210,7 +210,8 @@ if(empty($item_list)){
 						echo '<a class="btn btn-danger add_wishlist in-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>In Watchlist</span></a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
+//					echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist3</span></a>';  
+                                        echo '<a href="'. $url .'" class="btn btn-primary"><span>View Details</span></a>';
 				}
 				?>
                                 </div>
@@ -354,7 +355,8 @@ if(empty($item_list)){
 						echo '<a class="btn btn-danger add_wishlist in-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>In Watchlist</span></a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
+//					echo '<a class="btn btn-danger add_wishlist add-watch" data-id="'.$user.$item_id.'" href="javascript:;"><span>Add to Watchlist</span></a>';  
+                                        echo '<a href="'. $url .'" class="btn btn-primary"><span>View Details</span></a>';
 				}
 				?>
                                     </div>

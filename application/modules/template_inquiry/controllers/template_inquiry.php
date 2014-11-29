@@ -20,6 +20,11 @@ class template_inquiry extends MX_Controller {
 					}
 				}		
 				$this->db->set("message_date",date("Y-m-d H:i:s")); 
+                                
+                                ##### added for default value ######
+                                $this->db->set("message_parent_id",'0'); 
+                                
+                                ####################################
 				$this->db->insert('watch_messages', $data); 
 				
 		   }

@@ -139,7 +139,8 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                                         echo '<a href="javascript:;" class="btn btn-primary add_wishlist in-watch"><span>In Watchlist</span></a>';
                                     }
                                 } else {
-                                    echo '<a href="javascript:;" class="btn btn-primary add_wishlist add-watch"><span>Add to Watchlist</span></a>';
+//                                    echo '<a href="javascript:;" class="btn btn-primary add_wishlist add-watch"><span>Add to Watchlist</span></a>';
+                                    echo '<a href="'. $url .'" class="btn btn-primary"><span>View Details</span></a>';
                                 }
                                 ?></div>
                             </div>

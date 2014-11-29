@@ -309,7 +309,8 @@ if(empty($items)){
 						echo '<a class="btn btn-danger add_wishlist in-watch" href="javascript:;"><span>In Watchlist</span></a>';  
 					}
 				} else {
-					echo '<a class="btn btn-danger add_wishlist add-watch" href="javascript:;"><span>Add to Watchlist</span></a>';  
+//					echo '<a class="btn btn-danger add_wishlist add-watch" href="javascript:;"><span>Add to Watchlist</span></a>';  
+                                        echo '<a href="'. $url .'" class="btn btn-primary"><span>View Details</span></a>';
 				}
 				?>
                                 </div>

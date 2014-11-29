@@ -102,9 +102,14 @@ class template_single_item extends MX_Controller {
 					if($key != "inquiry_item_id" && $key != "inquiry_email" && $key != "inquiry_token" && $key != "inquiry_user_id"){
 						$val = $this->function_xss->xss_this($val);
 					}
+
 					$this->db->set($key, $val);
 				}
 			}
+                        
+                        ####### added for default value #########
+                        $this->db->set('inquiry_open', '0');
+                        #########################################
 			
 			// not in post items
 			$this->db->set("inquiry_date", date("Y-m-d H:i:s"));

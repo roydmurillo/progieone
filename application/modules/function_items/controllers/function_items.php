@@ -150,9 +150,13 @@ class function_items extends MX_Controller {
 							   && $key != "item_case" && $key != "item_bracelet" && $key != "item_parttype"){
                                 $val = $this->function_xss->xss_this($val);
                             }
-							if($key == "item_name"){
-								$val = preg_replace("/[^A-Za-z0-9 ]/",'',$val);
-							}
+                            if($key == "item_name"){
+                                    $val = preg_replace("/[^A-Za-z0-9 ]/",'',$val);
+                            }
+                            if($key == "item_kids" && $val == ''){
+                                    $val = '0';
+                            }
+                                                        
                             $this->db->set($key, $val);
                         }else if($key != "type" && $key != "args" && $val == ""){
 //                            $this->db->set($key, '');
@@ -193,6 +197,11 @@ class function_items extends MX_Controller {
                             $this->db->set("item_days", $fullDays);
                         }
                     }
+                    
+                    #### added for default value #########
+                    $this->db->set("item_expire", '0000-00-00 00:00:00');
+                    $this->db->set("item_expire", '0000-00-00 00:00:00');
+                    ######################################
 
                     $this->db->insert('watch_items'); 
 

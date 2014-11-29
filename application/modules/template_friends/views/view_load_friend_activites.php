@@ -97,7 +97,7 @@ if($results != NULL || !empty($results)){
 				// get image
 				$image = unserialize($item[0]->item_images);
 				$count = count($image) - 1;
-				if(is_array($image) != !empty($image)) { 
+				if(is_array($image) && !empty($image)) { 
 					$htm .=  "<img src='".$image[rand(0,$count)]."'>";
 				} else { 
 					$htm .=  "<img src='".base_url()."assets/images/no-image.png'>";
