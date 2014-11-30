@@ -14,7 +14,7 @@
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 
 		<div class="fleft" style="width:765px; margin-right:12px;">
 		
@@ -217,7 +217,7 @@
 								<td class="title5">Message</td><td class="desc5"><textarea id="contact_message" class="inp_public" style="height:150px !important; resize:none"></textarea></td>
 							</tr>
 							<tr>
-								<td class="title52"></td><td class="desc5"><input type="button" class="fleft css_btn_c0" id="reset" value="Reset"><input id="send_message" style="margin-left:12px" class="fleft css_btn_c0" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
+								<td class="title5"></td><td class="desc5"><input type="button" class="fleft css_btn_c0" id="reset" value="Reset"><input id="send_message" style="margin-left:12px" class="fleft css_btn_c0" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
 							</tr>
 						</table>
 					</div>

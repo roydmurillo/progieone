@@ -3,7 +3,7 @@
 </div>
 <div class="forum_container">
 	
-	<div class="forum_title">
+	<div class="forum_title clearfix">
 		
 		<div class="div_td1">
 			
@@ -35,11 +35,11 @@
 				    $count = $this->function_forums->count_reply_by_thread($r->thread_id);
 					(int)$count = (int)$count + 1;
 					
-					echo "<div class='div_td_content' $class>
-					        <div class='f_info' style='min-height:30px !important; width:470px !important'>
+					echo "<div class='div_td_content clearfix' $class>
+					        <div class='f_info' >
 					      		<div class='forum_t'><a href='".base_url()."forums/thread/$r->thread_id/".$this->function_forums->clean_url($r->thread_title)."'>".$r->thread_title."</a></div>
 						  	</div>
-			                <div class='f_info2' style='min-height:30px !important; width:250px !important'>
+			                <div class='f_info2' >
 					      		<div class='forum_count'>".$count."</div>";
 						  
 						   echo "<div class='forum_updated'>".$this->function_forums->last_updated_by_thread($r->thread_id,$r->thread_user_id,$r->thread_date)."</div>";

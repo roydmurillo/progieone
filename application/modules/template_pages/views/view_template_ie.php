@@ -1,5 +1,5 @@
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 
 		<div id="inner_dashboard">
 			<div style="float:left; width:700px; min-height:300px; margin:0px 0px 80px 40px; font-family:arial; color:#333; font-size:14px">

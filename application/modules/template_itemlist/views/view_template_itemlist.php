@@ -95,7 +95,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
             if($data["user_activated"] != "deactivated"){
                 ?>
 
-                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 item">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 item">
                     <figure class="thumbnail">
                         <a class="img-slot" href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">
                             <?php
@@ -114,7 +114,7 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                                     }
                                 }
                             ?>
-                            <div style="background: url(<?php echo $default_image; ?>);" class="img-thumb-bg"></div>
+                            <div style="background: url(<?php echo $default_image; ?>) center center no-repeat;background-size:cover;" class="img-thumb-bg"></div>
                         </a>
 <!--                        <h5 class="text-center"><a class="name" href="<?php echo base_url(); ?>member_profile/<?php echo $data["user_name"]; ?>"><?php echo $data["user_name"]; ?></a></h5>-->
                             <figcaption class="caption">
@@ -129,9 +129,9 @@ $type_initial = $this->function_security->encode("ajax_wishlist"); ?>
                                 ?>
                                 </a>
                             <div class="clearfix">
-                                <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
+                                <div class="price"><?php echo $this->function_currency->format($price); ?></div>
                                 <input type="hidden" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-                                <div class="pull-right watch-btn"><?php
+                                <div class="watch-btn"><?php
                                 if($this->function_login->is_user_loggedin()){
                                     if($this->template_itemlist->not_exist_wishlist($user,$item_id)){
                                         echo '<a href="javascript:;" class="btn btn-primary add_wishlist add-watch"><span>Add to Watchlist</span></a>';

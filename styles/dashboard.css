@@ -1,3 +1,4 @@
+
 /* CSS Document */
 
 
@@ -350,28 +351,7 @@ background:lightblue;
 float:right;
 margin-left:12px;
 }
-#checkout_btn{
-float: right;
-margin-right: 100px;
-clear: both;
-width: 220px;
-text-align: center;
-font-family: verdana;
-color: green;
-font-weight: bold;
-padding: 12px;
-margin-top:20px;
-cursor:pointer;
-cursor:hand;
-background: #f1da36; /* Old browsers */
-background: -moz-linear-gradient(top,  #f1da36 0%, #fcf083 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1da36), color-stop(100%,#fcf083)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #f1da36 0%,#fcf083 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #f1da36 0%,#fcf083 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #f1da36 0%,#fcf083 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #f1da36 0%,#fcf083 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fcf083',GradientType=0 ); /* IE6-9 */
-}
+
 .checkout_btn{
 float: right;
 margin-right: 100px;
@@ -411,9 +391,7 @@ vertical-align:top;
 margin-top:15px !important;
 }
 .s_green{
-width:12px;
-height:12px;
-background:green;
+border:1px solid green;
 }
 .s_green2{
 width:12px;
@@ -421,9 +399,7 @@ height:12px;
 background:green;
 }
 .s_red{
-width:12px;
-height:12px;
-background:red;
+border:1px solid red;
 }
 .s_red2{
 width:12px;
@@ -436,9 +412,7 @@ height:12px;
 background:orange;
 }
 .s_gray{
-width:12px;
-height:12px;
-background:DarkGray ;
+border:1px solid darkgray;
 }
 .s_gray2{
 width:12px;
@@ -537,7 +511,7 @@ margin-left:10px;
 .div_td3{
 width: 22%;
 padding-right: 12px;
-text-align: right;
+
   float:left;
   height:auto;
   line-height:20px;

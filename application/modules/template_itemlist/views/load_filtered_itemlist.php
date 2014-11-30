@@ -168,13 +168,13 @@ if(empty($item_list)){
 			
 			?>
 			
-			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 item">
                             
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
                                     <a href="<?php echo $url; ?>">
                                             <div class="img-slot">
-                                                    <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
+                                                    <div style="background: url(<?php echo $default_image; ?>)center center no-repeat;background-size:cover;" class="img-thumb-bg"></div>
                                             </div>
                                     </a>
                             <h5>
@@ -199,9 +199,9 @@ if(empty($item_list)){
                                 </a>
                             </h5>
                                 <div class="clearfix">    
-				<div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
+				<div class="price"><?php echo $this->function_currency->format($price); ?></div>
                             <input type="hidden" class="item" id="item<?php echo $user.$item_id?> value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-				<div class="pull-right watch-btn">
+				<div class="watch-btn">
                                     <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 
@@ -317,7 +317,7 @@ if(empty($item_list)){
 			
 			?>
 			
-			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
                                 <a href="<?php echo $url; ?>" class="a_class" title="<?php echo $featured->item_name; ?>">
@@ -344,9 +344,9 @@ if(empty($item_list)){
 				</a>
                                 </h5>
                                 <div class="clearfix">
-                                    <div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
+                                    <div class="price"><?php echo $this->function_currency->format($price); ?></div>
                                     <input type="hidden" class="item" id="item<?php echo $user.$item_id?>" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-                                    <div class="pull-right watch-btn">
+                                    <div class="watch-btn">
                                 <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$item_id)){ 

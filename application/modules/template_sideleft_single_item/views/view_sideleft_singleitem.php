@@ -97,7 +97,7 @@
 						echo $n; 
 						?>" alt="<?php echo $featured->item_name; ?>" src="<?php echo $default_image; ?>" />-->
                                                 <div class="img-slot">
-                                                    <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
+                                                    <div style="background: url(<?php echo $default_image; ?>)center center no-repeat;background-size:cover;" class="img-thumb-bg"></div>
                                                 </div>
 				</a>
                         </figure>

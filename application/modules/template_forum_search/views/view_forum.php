@@ -2,7 +2,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/forum_scripts.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination.js"></script>
 
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
         
 		<div class="title_bar">
 			FORUM OVERVIEW

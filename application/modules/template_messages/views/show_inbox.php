@@ -103,7 +103,7 @@ if($results != NULL || !empty($results)){?>
 	   		<input id='trash_message' class='btn btn-danger' type='button' value='Move to Trash'>
          </div>"; 
 
-   echo "<div style='float:left; clear:both; margin:20px 0px;'>". $paginate ."</div>"; 
+   echo "<div>". $paginate ."</div>"; 
 
 
 } else {

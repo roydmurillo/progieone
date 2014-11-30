@@ -30,7 +30,7 @@
 		echo "<input id='start' type='hidden' value='0'>";
 	}
 ?>
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 		
  		<?php
     	//load sidebar left

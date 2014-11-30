@@ -100,7 +100,7 @@ if($inquiries != NULL || !empty($inquiries)){?>
 
    echo "</tbody></table>"; 	
    
-   echo "<div style='float:left; clear:both; margin:20px 0px;'>". $paginate ."</div>"; 
+   echo "<div>". $paginate ."</div>"; 
 
    
 } else {

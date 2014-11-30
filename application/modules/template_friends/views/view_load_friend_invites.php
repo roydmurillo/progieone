@@ -51,7 +51,7 @@ if($results != NULL || !empty($results)){
 		
 		$u = $this->function_users->get_user_fields_by_id(array("user_avatar","user_name","user_id"),$r->friend_friend_id);
 		
-                ?><div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+                ?><div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 item">
 			<div class="iteminfo thumbnail">
 				<div class="img-slot">
 					<?php 
@@ -62,7 +62,7 @@ if($results != NULL || !empty($results)){
 					<?php 
 						} else {
 					?>
-						<div style="background:url('<?php echo base_url(); ?>assets/images/no-image.png');" class="img-thumb-bg"></div>
+						<div style="background:url('<?php echo base_url(); ?>assets/images/no-image.png') center center no-repeat;" class="img-thumb-bg"></div>
 					<?php } ?>
 				</div>
 				<input type="hidden" value="<?php echo $r->friend_friend_id; ?>" class="uid">

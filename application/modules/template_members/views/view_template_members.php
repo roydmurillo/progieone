@@ -86,7 +86,7 @@ if(empty($items)){
   <input type="hidden" value="<?php echo $g; ?>" id="get_values">
   <input type="hidden" value="<?php echo $user; ?>" id="current_user"> 
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 
 		<div class="col-sm-3 col-md-2 sidebar">
 				
@@ -135,16 +135,16 @@ if(empty($items)){
 					<div>
                                             <!--<a href="<?php echo base_url() . $this->uri->segment(1) . "/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
-                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a>
-                                            <span>(<?php echo $ret_count['ok'];?>)</span>
-                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a>
-                                            <span>&nbsp;(<?php echo $ret_count['no'];?>)</span>
+                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a>
+                                            <span class="badge"><?php echo $ret_count['ok'];?></span>
+                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a>
+                                            <span class="badge">&nbsp;<?php echo $ret_count['no'];?></span>
 					</div>
 					
 				</div>	
 
 				<div>
-					<div style="float:left; clear:both; ">
+					<div>
 						<a href="<?php echo base_url() ?>send_pm/<?php echo $result[0]->user_name; ?>" class="btn btn-primary">Send message</a>
 					</div>
 					
@@ -273,11 +273,11 @@ if(empty($items)){
 			
 			?>
 			
-			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 item">
 			    <input type="hidden" class="item_brand" vale="<?php echo $featured->item_brand; ?>"> 
                             <figure class="thumbnail">
                                 <a class="img-slot" href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">			
-                                    <div style="background-image: url(<?php echo $default_image; ?>)" class="img-thumb-bg"></div>
+                                    <div style="background: url(<?php echo $default_image; ?>)center center no-repeat;background-size:cover;" class="img-thumb-bg"></div>
 				</a>
                                 <h5>
                                     <a href="<?php echo $url; ?>" title="<?php echo $featured->item_name; ?>">
@@ -299,9 +299,9 @@ if(empty($items)){
                                     </a>
                                 </h5>
                                 
-				<div class="pull-left price"><?php echo $this->function_currency->format($price); ?></div>
+				<div class="price"><?php echo $this->function_currency->format($price); ?></div>
 				<input type="hidden" class="item" value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
-				<div class="pull-right watch-btn">
+				<div class="watch-btn">
                                     <?php
 				if($this->function_login->is_user_loggedin()){
 					if($this->template_itemlist->not_exist_wishlist($user,$featured->item_id)){ 

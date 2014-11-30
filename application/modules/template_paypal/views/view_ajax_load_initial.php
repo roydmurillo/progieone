@@ -128,16 +128,7 @@ if($results != NULL || !empty($results)){?>
 		 <input type='hidden' name='upload' value='1'>
 		 <input type='hidden' name='business' value='".$this->paypal_settings->business_email()."'>";
    	
-   echo "<table id='tbl_for_sale' class='table table-striped'><tbody>
-   			<tr class='tb_head'>
-				<td class='tb1'>Status</td>
-				<td class='tb2'><a class='sort watch-name' href='javascript:;' title='Sort Model Name'>Model Name</a></td>
-				<td class='tb3'><a class='sort watch-price' href='javascript:;' title='Sort Price'>Watch Price</a> </td>
-				<td class='tb7' style='width:100px !important'>Advertising Price</td>
-				<td class='tb7'>Quantity</td>
-				<td class='tb7 tlast' style='width:55px'> Actions </td>				
-			</tr>
-   		 "; 	 
+   	 
    $ctr = 2;	
    $product_id_array = array();
    foreach($results as $r)
@@ -176,9 +167,7 @@ if($results != NULL || !empty($results)){?>
 			$status = "s_red";
 		}
 		
-        echo "<tr class='".$class."'>  
-				<td class='tb1'><div class='".$status."'></div></td>
-			  	<td class='tb2'>";
+                
 		
 		//setup paypal data
 		$product_id_array[] = $r->item_id . "-1"; 
@@ -186,24 +175,44 @@ if($results != NULL || !empty($results)){?>
 		echo "<input type='hidden' name='item_name_".$count."' value='".$name."'>";
 		echo "<input type='hidden' name='amount_".$count."' value='".$paypal["price"]."'>";
 		echo "<input type='hidden' class='q_".$count."' name='quantity_".$count."' value='1'>";
+//				
+//		echo "		<div >".strtoupper($r->item_name)."</div>
+//				</td>
+//			  	<td class='tb3 tbprice'>$ $r->item_price</td>
+//				<td class='tb7' style='width:100px !important'>$ ".$paypal["price"]." / ".$paypal["days"]." days</td>
+//				<td class='tb7'>
+//					<input type='hidden' class='item_id' value='".$r->item_id."' style='width:60px'>
+//					<input type='text' id='q_".$count."' class='itemquantity' value='1' style='width:60px'></td>
+//				<td class='tb7'>
+//					&nbsp;&nbsp;&nbsp;&nbsp;<a class='remove_item' style='color:red;' href='javascript:;' title='Delete Item " . $r->item_name . "'><input type='hidden' value='".$r->item_id."' class='id'>Remove</a></td>				
+//			  </tr>";
+                echo " <div class='col-xs-12 sell'>
+                            <figure class='thumbnail  ".$status."'>
 				
-		echo "		<div >".strtoupper($r->item_name)."</div>
-				</td>
-			  	<td class='tb3 tbprice'>$ $r->item_price</td>
-				<td class='tb7' style='width:100px !important'>$ ".$paypal["price"]." / ".$paypal["days"]." days</td>
-				<td class='tb7'>
-					<input type='hidden' class='item_id' value='".$r->item_id."' style='width:60px'>
-					<input type='text' id='q_".$count."' class='itemquantity' value='1' style='width:60px'></td>
-				<td class='tb7'>
-					&nbsp;&nbsp;&nbsp;&nbsp;<a class='remove_item' style='color:red;' href='javascript:;' title='Delete Item " . $r->item_name . "'><input type='hidden' value='".$r->item_id."' class='id'>Remove</a></td>				
-			  </tr>";	 
+                                <div class='row'>  
+                                    
+                                    <div class='col-sm-8 details'>
+                                        <div>model name: ".strtoupper($r->item_name)."</div>
+                                        <div>watch price: $".$paypal["price"]." / ".$paypal["days"]." days</div>
+                                        <div>
+                                            <input type='hidden' class='item_id' value='".$r->item_id."' style='width:60px'>
+                                            <input type='text' id='q_".$count."' class='itemquantity' value='1' style='width:60px'>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-4 action'>
+                                           <div><a class='remove_item btn btn-danger btn-red' href='javascript:;' title='Delete Item " . $r->item_name . "'><input type='hidden' value='".$r->item_id."' class='id'>Remove</a></div>          
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+			  ";
 		$ctr ++; $count++;	  
     }		
 
-   echo "</tbody></table>"; 	
-   
-   echo "<div>Total Amount For Checkout: $ <div id='total'></div></div>";
-   
+    	
+    echo "<div class='clear'></div>";
+   echo "<div class='checkout-total'>Total Amount For Checkout: $ <div id='total'></div>";
+   echo "<div>";
    //paypal	bottom form
    echo "<input type='hidden' id='custom_value' name='custom' value=''>";
    echo "<input type='hidden' name='notify_url' value='".base_url()."ipn'>";
@@ -213,9 +222,10 @@ if($results != NULL || !empty($results)){?>
    echo "<input type='hidden' name='cancel_return' value='".base_url()."dashboard/checkout'>";
    echo "<input type='hidden' name='lc' value='US'>";
    echo "<input type='hidden' name='currency_code' value='USD'>";
-   echo "<input type='submit' id='checkout_btn' value='Proceed To Chekout'>";
+   echo "</div>";
+   echo "<input class='btn btn-default btn-green ma-t1em' type='submit' id='checkout_btn' value='Proceed To Chekout'>";
    echo "</form>";
-   
+    echo "</div>";
 } else {
 	if( $this->native_session->get('filter_type') || $this->native_session->get('search_item')){
 		?>

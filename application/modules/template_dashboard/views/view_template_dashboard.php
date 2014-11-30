@@ -17,7 +17,7 @@
 </script>
 
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 <?php
 		$week_number = date("W");
 		$year = date("Y");

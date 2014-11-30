@@ -1,6 +1,6 @@
 <div class="forum_container">
 	
-	<div class="forum_title">
+	<div class="forum_title clearfix">
 		
 		<div class="div_td1">
 			
@@ -36,12 +36,12 @@
 					$category_name = $this->function_forums->get_category_name_by_thread_id($r->thread_id);
 					$clean_url = $this->function_forums->clean_url($category_name);
 					
-					echo "<div class='div_td_content' $class>
-					        <div class='f_info' style='min-height:30px !important; width:470px !important'>
+					echo "<div class='div_td_content clearfix' $class>
+					        <div class='f_info'>
 					      		<div class='forum_t'><a href='".base_url()."forums/thread/$r->thread_id/".$this->function_forums->clean_url($r->thread_title)."'>".$r->thread_title."</a></div>
 						  		<div class='forum_d'>Posted at <a style='color:#3e6876' href='".base_url()."forums/category/$clean_url/'>$category_name</a></div>
 						  	</div>
-			                <div class='f_info2' style='min-height:30px !important; width:250px !important'>
+			                <div class='f_info2'>
 					      		<div class='forum_count'>".$count."</div>";
 						  
 						   echo "<div class='forum_updated'>".$this->function_forums->last_updated_by_thread($r->thread_id,$r->thread_user_id,$r->thread_date)."</div>";
@@ -53,7 +53,7 @@
 			  
 		  } else {
 		  		
-				echo "<div style='margin:12px 0px 0px 50px; color:red; float:left; font-family:verdana; font-size:14px'>No Thread Found.</div>";
+				echo "<div >No Thread Found.</div>";
 		  	
 		  }
 		  
@@ -62,7 +62,7 @@
 </div><!-- forum_container -->
 
 <?php
-		  echo "<div class='pagination_links' style='float:left; clear:both; margin-top:20px; font-family:verdana; font-size:14px;'>";
+		  echo "<div class='pagination_links'>";
 		  if($forum_links){
 			  
 			  echo $forum_links;

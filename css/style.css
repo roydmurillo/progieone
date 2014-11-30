@@ -11,6 +11,10 @@ body {
   background-color: #F5f5f5;
   font-family: "Lato", sans-serif; }
 
+input, select {
+  border: 1px solid #ccc !important;
+  padding: 3px; }
+
 figure {
   margin: 2px; }
 
@@ -243,7 +247,8 @@ dashboard
   vertical-align: middle; }
 
 h2.h2_title {
-  padding: 0 12px 15px 0; }
+  margin: 12px;
+  border-bottom: 1px solid #ccc; }
 
 #filter_container {
   padding: 12px 15px; }
@@ -295,6 +300,22 @@ h2.h2_title {
   .table_add td select, .table_add td input {
     max-width: 320px;
     width: 100%; }
+
+.sell .action .btn {
+  width: 100%;
+  margin-bottom: 3px; }
+.sell .details div:nth-child(even) {
+  background: #ccc; }
+
+.btn-group .btn {
+  font-size: .7em; }
+
+.checkout-total, .quick-box {
+  padding: 24px; }
+
+.user-loop {
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc; }
 
 /*
 item list
@@ -405,6 +426,9 @@ sidebar
   max-height: 80px;
   width: 100%; }
 .friend-q-profile .friend-img {
+  padding: 12px; }
+
+.friend-ink {
   padding: 12px; }
 
 .user-link {

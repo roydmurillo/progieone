@@ -54,7 +54,7 @@ foreach($item_info as $i){
 <input id="type_setdefault" type="hidden" value="<?php echo $type_setdefault; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 		
  		<?php
     	//load sidebar left
@@ -79,8 +79,8 @@ foreach($item_info as $i){
 						Checkout
 					</div>
 				</a>				
-				<a class="btn btn-default <?php echo ($this->uri->segment(3) == "update") ? "active":"tab_inner"; ?>" href="javascript:;">
-					<div class="tab_inner_active" style="width:120px !important"> 
+				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "sell") ? "active":"tab_inner"; ?>" href="javascript:;">
+					<div class="tab_inner_active"> 
 						Update Items
 					</div>
 				</a>
@@ -90,7 +90,7 @@ foreach($item_info as $i){
 				<?php if($update_remarks){	?>
 					<div class="regular_register" style="min-height:40px !important;">
 							<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-							<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+							<div>
 								Watch Item had been successfully updated!
 							</div>									
 								
@@ -101,18 +101,15 @@ foreach($item_info as $i){
 				<?php if($item_info != "") { ?>
 			
 				<div id="loader"><div id="loader_inner"></div></div>
+                                <h2 class="h2_title">Update Watch Details</h2>
 				<div id="add_new_item">
 					
 					<form method="POST">
 							<input id="item_id" name="item_id" type="hidden" value="<?php echo $item_id; ?>">
-							<h2 class="h2_title">Update Watch Details</h2>
+							
 							<div id="add_remarks"></div>
 							
-							<div class="details_" style="float: left;
-									clear: both;
-									padding: 20px;
-									background: none repeat scroll 0% 0% #F8F8FF; 
-									width: 565px;">
+							<div class="details_" >
 							
 									<table class="table_add">
 										<tbody>
@@ -338,22 +335,22 @@ foreach($item_info as $i){
 									
 									<div class="t_area">
 										<div class="t_desc">Item Description:</div> 
-										<textarea id="item_description" name="item_desc" style="width:150%; height:300px;"></textarea>
+										<textarea id="item_description" name="item_desc" ></textarea>
 									</div>
 
 									<div class="t_area">
 										<div class="t_desc">Item Shipping:</div> 
-										<textarea id="item_shipping" name="item_shipping" style="width:150%; height:300px;"></textarea>
+										<textarea id="item_shipping" name="item_shipping"></textarea>
 									</div>									
 							
 							</div><!-- background end -->
 		
-						<div style="float:right; width:100%; clear:both; display:none">
+						<div>
 							<input id="update_item" name="update_item" type="submit" value="Update Info" style="display:none">
 						</div>
   				
 				</form>
-					<div style="float: left; clear: both; padding: 20px; width: 565px; background:ghostwhite">
+					<div >
 										<h2 style="width:540px !important" class="h2_title">Update Watch Item Images</h2>
 										<div id="uploads" style="display:none">
 										<?php 
@@ -405,9 +402,9 @@ foreach($item_info as $i){
 				
 				</div>
 				
-				<div style="float:right; width:100%; clear:both">
-						<input id="update_reset" class="css_btn_c0" type="button" onclick="reset_data()" value="Reset"/>
-						<input id="update_forsale" class="css_btn_c0" type="button" value="Update Info">
+				<div class="quick-box">
+						<input id="update_reset" class="css_btn_c0 btn btn-primary" type="button" onclick="reset_data()" value="Reset"/>
+						<input id="update_forsale" class="css_btn_c0 btn btn-primary" type="button" value="Update Info">
 				</div>
 				
  

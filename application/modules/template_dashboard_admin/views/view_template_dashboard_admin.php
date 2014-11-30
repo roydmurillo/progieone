@@ -10,7 +10,7 @@
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage"class="row">
+<div id="homepage">
 		
  		<?php
     	//load sidebar left
@@ -50,20 +50,20 @@
                                                 
 					</table>
                                         <div class="">
-                                            <table class="global-price-list-adjustment">
-                                                    <tr id="prce" <?php echo ($p["activate"] == "0") ? "style='display:none;'" : ""; ?>>
-                                                        <td><label for="paypal_price">Price Per Item:</label></td>
-                                                        <td><input type="input" id="paypal_price" value="<?php echo $p["price"]; ?>"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><label>Days:</label></td>
-                                                        <td><input type="input" id="days" value="<?php echo $p["days"]; ?>"></td>
-                                                    </tr>
-                                                    <tr class="last-update">
-                                                        <td>Last Updated:</td>
-                                                        <td> <?php echo date("l jS \of F Y h:i:s A", strtotime($p["date"])); ?></td>
-                                                    </tr>                                                    
-                                            </table>
+                                            <div class="global-price-list-adjustment">
+                                                    <div id="prce" <?php echo ($p["activate"] == "0") ? "style='display:none;'" : ""; ?>>
+                                                        <div><label for="paypal_price">Price Per Item:</label></div>
+                                                        <div><input type="input" id="paypal_price" value="<?php echo $p["price"]; ?>"></div>
+                                                    </div>
+                                                    <div>
+                                                        <div><label>Days:</label></div>
+                                                        <div><input type="input" id="days" value="<?php echo $p["days"]; ?>"></div>
+                                                    </div>
+                                                    <div class="last-update">
+                                                        <div>Last Updated:</div>
+                                                        <div> <?php echo date("l jS \of F Y h:i:s A", strtotime($p["date"])); ?></div>
+                                                    </div>                                                    
+                                            </div>
                                                
                                             <input type="button" id="submit_changes" class="btn btn-success" value="Save Changes">
                                             <div id="remarks"></div>
@@ -108,7 +108,7 @@
                         <div class="box_title">
                                 User Settings
                         </div>
-                           <table class="table table-striped" width="100%" border="1">
+                           <table class="table table-striped hidden-xs hidden-sm" width="100%" border="1">
                                 <?php 
                                 if($users){
                                 ?>
@@ -140,6 +140,35 @@
                                     }
                                 ?>       
                            </table>
+                            <div class="user-settings hidden-lg hidden-md">
+                                <figure class="thumbnail">
+
+                                    <div class=''>  
+
+                                        <?php
+                                        
+                                            foreach ($users as $nkey1 => $fields){
+
+                                        ?>
+                                                <div class="user-loop">
+                                                    <div><strong>name:</strong> <?php echo ucfirst($fields['user_fname']).' '. ucfirst($fields['user_lname']);?></div>
+                                                    <div><strong>username:</strong> <?php echo ucfirst($fields['user_name'])?></div>
+                                                    <div><strong>email:</strong> <?php echo ucfirst($fields['user_email'])?></div>
+                                                    <div>
+                                                        <input type="hidden" id="userid<?php echo $fields['user_id']?>" class="paypal_price" data-userid="<?php echo $fields['user_id']?>" data-listid="<?php echo $fields['user_listprice_id']?>" value="<?php echo $fields['paypal_price']?>">
+                                                        <a href="Javascript:;" class="userpaypal" id="userpaypal<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>">price</a>
+                                                        <a href="Javascript:;" class="userdelete" id="userdelete<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | delete</a>
+                                                        <a href="Javascript:;" class="userblock" id="userblock<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | block</a>
+                                                    </div>
+                                                    <div><label id="user_price<?php echo $fields['user_id']?>"><?php echo $fields['paypal_price']?></label></div>
+                                                </div>
+                                        <?php
+                                            }
+                                        ?>    
+                                    </div>
+                                </figure>
+                            </div>
+
 			</div>
 		</div>
     </div>

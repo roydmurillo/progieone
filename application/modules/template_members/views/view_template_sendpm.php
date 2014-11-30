@@ -21,7 +21,7 @@
 <img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="display:none">
 
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 
 		<div class="col-sm-3 col-md-2 sidebar" >
 				
@@ -69,10 +69,10 @@
                                             $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                         ?>
 					<div >
-                                            <a href="<?php // echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>
+<!--                                            <a href="<?php // echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
-                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>&nbsp;(<?php echo $ret_count['ok'];?>)</span>&nbsp;
-                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>&nbsp;(<?php echo $ret_count['no'];?>)</span></div>
+                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a><span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>&nbsp;
+                                            <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a><span class="badge">&nbsp;<?php echo $ret_count['no'];?></span></div>
 					</div>
 					
 				</div>	

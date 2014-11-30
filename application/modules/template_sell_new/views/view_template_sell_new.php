@@ -366,7 +366,7 @@ jQuery(document).ready(function() {
 <input id="type_addimg" type="hidden" value="<?php echo $type_addimg ?>">
 <input id="type_delimg" type="hidden" value="<?php echo $type_delimg; ?>">
 <input id="type_setdefault" type="hidden" value="<?php echo $type_setdefault; ?>">
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
  		<?php
     	//load sidebar left
 		$this->load->module('template_sideleft_dashboard');
@@ -393,11 +393,12 @@ jQuery(document).ready(function() {
 			
 				<div id="dashboard_content">
 					<div id="loader"><div id="loader_inner"></div></div>
+                                        <h2 class="h2_title">Fill Up Complete Details for New Watch</h2>
 					<div id="add_new_item">
 						<?php if($form_image == ""){ ?>
 						
 						<form method="POST">
-						<h2 class="h2_title">Fill Up Complete Details for New Watch</h2>
+						
 						<div id="add_remarks"></div>
 						
 						<ul id="add_info_links" class="breadcrumb clearfix">

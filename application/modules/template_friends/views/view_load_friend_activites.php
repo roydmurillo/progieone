@@ -69,7 +69,7 @@ if($results != NULL || !empty($results)){
 						  "new_thread" => "Created a thread",);
 		
 		if($u["user_avatar"] != "") { 
-			$img =  "<img class='img-circle' src='".$u["user_avatar"]."'>";
+			$img =  "<img class='' src='".$u["user_avatar"]."'>";
 		} else { 
 			$img =  "<img src='".base_url()."assets/images/avatar.jpg'>";
 		}
@@ -92,7 +92,7 @@ if($results != NULL || !empty($results)){
 				$htm  = "<div>";
 				$htm  .= "<div>Added New Watch Item to Watchlist:</div>";
 				$htm  .= "   <div>";
-				$htm .= "      <div>";
+				$htm .= "      <div class='friend-img'>";
 				
 				// get image
 				$image = unserialize($item[0]->item_images);
@@ -215,9 +215,9 @@ if($results != NULL || !empty($results)){
 				
 				// get image
 				if(!empty($data["user_avatar"])) { 
-					$htm .=  "<img class='img-circle' src='".$data["user_avatar"]."'>";
+					$htm .=  "<img class='' src='".$data["user_avatar"]."'>";
 				} else { 
-					$htm .=  "<img class='img-circle' src='".base_url()."assets/images/no-image.png'>";
+					$htm .=  "<img class='' src='".base_url()."assets/images/no-image.png'>";
 				}				
 				
 				$htm .= "    </div>";
@@ -255,9 +255,9 @@ if($results != NULL || !empty($results)){
 				
 				// get image
 				if(!empty($data["user_avatar"])) { 
-					$htm .=  "<img class='img-circle' src='".$data["user_avatar"]."'>";
+					$htm .=  "<img class='' src='".$data["user_avatar"]."'>";
 				} else { 
-					$htm .=  "<img class='img-circle' src='".base_url()."assets/images/no-image.png'>";
+					$htm .=  "<img class='' src='".base_url()."assets/images/no-image.png'>";
 				}				
 				
 				$htm .= "    </div>";
@@ -280,13 +280,13 @@ if($results != NULL || !empty($results)){
 						 ".$activity[trim($r->activity_type)]." ".$this->function_forums->last_updated($r->activity_date)." <span ></span>
 					</div>
 				</div>
-		        <div class='row'>
+		        <div class='clearfix'>
 					
-				    <div class='friend-q-profile col-sm-6'>
+				    <div class='friend-q-profile col-sm-3'>
                                         <div class='friend-img'>".$img."</div>
                                         <a class='user-link' href='".base_url()."member_profile/".$u["user_name"]."'>".$u["user_name"]."</a>	 
                                     </div>	
-                                    <div class='friend-ink col-sm-6'>".$htm."</div>									
+                                    <div class='friend-ink col-sm-9'>".$htm."</div>									
 			   </div>
 			</div>";
 

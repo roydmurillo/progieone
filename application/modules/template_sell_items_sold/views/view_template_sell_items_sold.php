@@ -3,7 +3,7 @@
 
 <!-- content goes here -->
 <input id="load_initial" type="hidden" value="<?php echo base_url() ?>dashboard/sell/items_sold/ajax">
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 		
  		<?php
     	//load sidebar left

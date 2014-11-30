@@ -2,30 +2,30 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>tinymce/tinymce.min.js"></script> 
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/editor.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/thread_scripts.js"></script>
+<div class="clearfix">
+    <div class="forum_links col-sm-6">
+        <?php $name_category = $this->function_forums->get_category_name_by_thread_id($this->uri->segment(3));
+                      $url_category = $this->function_forums->clean_url($name_category);
 
-<div class="forum_links">
-    <?php $name_category = $this->function_forums->get_category_name_by_thread_id($this->uri->segment(3));
-		  $url_category = $this->function_forums->clean_url($name_category);
-		  
-		  $title = $this->function_forums->get_thread_fields_by_id("thread_title",$this->uri->segment(3));
-		  $clean_title = $this->function_forums->clean_url($title);
-		  
-		  // revoked data when wrong url is supplied
-		  if( $clean_title != $this->uri->segment(4)) {
-		  		$thread_data = ""; $form_data = "";
-		  }
-	?>
-	<a href="<?php echo base_url() ?>forums"  style="color:#E56718">Forums</a> › <a href="<?php echo base_url() ?>forums/category/<?php echo $url_category; ?>"  style="color:#E56718"><?php echo $name_category; ?></a> > <?php echo str_replace("-", " ",$this->uri->segment(4)); ?>
+                      $title = $this->function_forums->get_thread_fields_by_id("thread_title",$this->uri->segment(3));
+                      $clean_title = $this->function_forums->clean_url($title);
+
+                      // revoked data when wrong url is supplied
+                      if( $clean_title != $this->uri->segment(4)) {
+                                    $thread_data = ""; $form_data = "";
+                      }
+            ?>
+            <a href="<?php echo base_url() ?>forums"  style="color:#E56718">Forums</a> › <a href="<?php echo base_url() ?>forums/category/<?php echo $url_category; ?>"  style="color:#E56718"><?php echo $name_category; ?></a> > <?php echo str_replace("-", " ",$this->uri->segment(4)); ?>
+    </div>
+
+    <?php
+     if($this->function_login->is_user_loggedin() && $thread_data){
+    ?>
+
+    <div class="text-right col-sm-6">
+        <a class="btn btn-primary" id="post_reply" href="javascript:;">Post a Reply</a>
+    </div>
 </div>
-
-<?php
- if($this->function_login->is_user_loggedin() && $thread_data){
-?>
-
-<div class="forum_links_right">
-	<a id="post_reply" href="javascript:;">Post a Reply</a>
-</div>
-
 <div class="forum_reply">
 	
 	<form method="POST">
@@ -55,7 +55,7 @@
 
 <?php } ?>
 
-<div id="forum_content">
+<div id="forum_content" class="ma-t1em">
 
 	<?php
 		  $check = 0;	
@@ -77,42 +77,24 @@
 					}
 					
 					echo '<div class="forum_container" style="margin-bottom:15px !important">
-						  <div class="forum_title" style="padding:0px 10px !important">
+						  <div class="forum_title clearfix" style="padding:0px 10px !important">
 							<div class="div_td1">
 								Posted '.$this->function_forums->last_updated($r->thread_date).' <span style="font-weight:normal !important; font-size:11px !important">( Thread Starter )</span>
 							</div>
 						</div><!-- forum_title -->';
-					echo "<div class='div_td_content thread_start' style='padding:0px !important; position:relative; min-height:160px; overflow:hidden;'>
+					echo "<div class='div_td_content thread_start clearfix' >
 								
-								<div style='position:absolute;
-											width: 100px;
-											height: 100%;
-											border-right: 1px solid #CCC;
-											padding: 20px;
-											left:0px;
-											background:#fafafa'>
+								<div class='col-sm-3'>
 									
-									<div style='float:left;
-												clear: both;
-												width: 100px;
-												height: 100px;
-												border: 1px solid #777;
-												text-align: center;
-												line-height: 95px;
-												overflow: hidden;'>
+									<div >
 												".$img."
 									</div>
-									<a style='float:left; color:#E56718; margin-top:8px' href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
+									<a  href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
 								 
 								
 								</div>	
 								
-								<div style='float: left;
-											width: 400px;
-											margin-left:140px;
-											height: 100%;
-											padding: 20px;
-											'>
+								<div class='col-sm-9'>
 									        ".$r->thread_content."
 								</div>									
 						  </div>
@@ -139,40 +121,23 @@
 					}
 					
 					echo '<div class="forum_container" style="margin-bottom:15px !important">
-					 	  <div class="forum_title" style="padding:0px 10px !important;">
+					 	  <div class="forum_title clearfix" style="padding:0px 10px !important;">
 							<div class="div_td1">
 								Posted '.$this->function_forums->last_updated($r->reply_date).'
 							</div>
 						</div><!-- forum_title -->';					
-					echo "<div class='div_td_content' style='padding:0px !important; position:relative; min-height:160px; overflow:hidden'>
+					echo "<div class='div_td_content clearfix' >
 								
-								<div style='position:absolute;
-											width: 100px;
-											height: 100%;
-											border-right: 1px solid #CCC;
-											padding: 20px;
-											left:0px;
-											background:#fafafa'>
+								<div class='col-sm-3'>
 									
-									<div style='float:left;
-												clear: both;
-												width: 100px;
-												height: 100px;
-												border: 1px solid #777;
-												text-align: center;
-												line-height: 95px;
-												overflow: hidden;'>
+									<div>
 												".$img."
 									</div>
-									<a style='float:left; color:#E56718; margin-top:8px' href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
+									<a  href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
 								
 								</div>	
 								
-								<div style='float: left;
-											width: 400px;
-											height: 100%;
-											padding: 20px;
-											margin-left:140px'>
+								<div class='col-sm-9'>
 									        ".$r->reply_content."
 								</div>									
 						  </div>
@@ -182,7 +147,7 @@
 			  }
 			  
 		  } 
-		  echo "<div class='pagination_links' style='float:left; clear:both; margin-top:20px; font-family:verdana; font-size:14px;'>";
+		  echo "<div class='pagination_links' >";
 		  if($forum_links){
 			  
 			  $links = $forum_links->create_links();

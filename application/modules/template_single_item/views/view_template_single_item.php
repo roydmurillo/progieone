@@ -128,8 +128,8 @@
                                                                         $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                                                     ?>
                                                                     <div class="small_info2">
-                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>">ok</a><span>(<?php echo $ret_count['ok'];?>)</span>
-                                                                        <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>">no</a><span>(<?php echo $ret_count['no'];?>)</span></div>
+                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a><span class="badge"><?php echo $ret_count['ok'];?></span>
+                                                                        <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a><span class="badge"><?php echo $ret_count['no'];?></span></div>
 <!--									<div class="small_info2"><?php $this->function_rating->get_stars($item_details[0]->item_user_id); ?></div>
                                                                         <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>-->
 									<div class="small_info">
@@ -148,8 +148,8 @@
 			<div class="details_container">
 				<ul class="nav nav-tabs" role="tablist">
                                     <li class="active"><a href="#description" role="tab" data-toggle="tab">Details</a></li>
-                                    <li><a href="#shipping" role="tab" data-toggle="tab">Shipping Information</a></li>			
-                                    <li class="contact"><a href="#contact" role="tab" data-toggle="tab">Contact Seller</a></li>	
+                                    <li><a href="#shipping" role="tab" data-toggle="tab">Shipping</a></li>			
+                                    <li class="contact"><a href="#contact" role="tab" data-toggle="tab">Contact</a></li>	
 <!--					<li>
 						<?php
                                                 // adding to watchlist snippets
@@ -295,7 +295,7 @@
 							</td>
 							</tr>							
 							<tr>
-								<td class="title52"></td><td class="desc5"><input type="button" class="btn btn-primary" id="reset" value="Reset"><input id="send_message" class="btn btn-primary" type="button" value="Send Message"><div class="fleft" style="margin:15px" id="submit_message"></div></td>
+								<td class="title5"></td><td class="desc5"><input type="button" class="btn btn-primary" id="reset" value="Reset"><input id="send_message" class="btn btn-primary" type="button" value="Send Message"><div class="fleft"id="submit_message"></div></td>
 							</tr>
 						</table>
 

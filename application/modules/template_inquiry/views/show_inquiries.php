@@ -90,7 +90,7 @@ if($inquiries != NULL || !empty($inquiries)){?>
 
    echo "<div style='float:left; clear:both; margin:20px 0px 0px 20px;'><input type='button' value='Delete Selected Inquiry' id='delete_inq'></div>"; 
    
-   echo "<div style='float:left; clear:both; margin:20px 0px;'>". $paginate ."</div>"; 
+   echo "<div>". $paginate ."</div>"; 
 
    
 } else {

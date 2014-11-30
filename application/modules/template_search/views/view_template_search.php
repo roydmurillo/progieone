@@ -12,7 +12,7 @@
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 
 		<div class="fleft" style="width:765px; margin-right:12px;">
 		

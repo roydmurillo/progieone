@@ -1,6 +1,6 @@
 <!-- content goes here -->
 <img src='<?php echo base_url(); ?>assets/images/refine_loader.gif' style='display:none'>
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 
         <div class="fleft">
 			<?php

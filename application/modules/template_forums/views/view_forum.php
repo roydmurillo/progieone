@@ -2,7 +2,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/forum_scripts.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/pagination.js"></script>
 
-<div id="homepage" class="row">
+<div id="homepage" class="clearfix">
 <!--        forum-->
 		<div class="col-xs-12 main">
 			<?php
@@ -13,7 +13,7 @@
                                         <a class="btn btn-default <?php echo ($this->uri->segment(2) == "") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums">
 						Forums
 					</a>
-					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "your/thread") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/your_thread"> 
+					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "your_thread") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/your_thread"> 
 							Your Threads
 					</a>
 					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/new">

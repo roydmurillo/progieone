@@ -89,18 +89,7 @@ if($results != NULL || !empty($results)){?>
    <?php
    //load brand obj
    $this->load->module("function_brands");
-   	
-   echo "<table id='tbl_for_sale' class='table table-striped'><tbody>
-   			<tr>
-				<td>Status</td>
-				<td><a class='sort watch-name' href='javascript:;' title='Sort Model Name'>Model Name</a></td>
-				<td><a class='sort watch-price' href='javascript:;' title='Sort Price'>Watch Price</a> </td>
-				<td><a class='sort watch-brand' href='javascript:;' title='Sort Make'>Make</a></td>
-				<td><a class='sort watch-created' href='javascript:;' title='Sort Date Created'>Created</a></td>
-				<td><a class='sort watch-expire' href='javascript:;' title='Sort Expiry Date'>Expiry</a></td>
-				<td class='tlast'> Actions </td>				
-			</tr>
-   		 "; 	 
+   	 
    $ctr = 2;	
    foreach($results as $r)
     {	
@@ -138,24 +127,45 @@ if($results != NULL || !empty($results)){?>
 			$status = "s_red";
 		}
 		
-        echo "<tr class='".$class."'>  
-				<td class='tb1'><div class='".$status."'></div></td>
-			  	<td class='tb2'><div>".strtoupper($r->item_name)."</div></td>
-			  	<td class='tb3 tbprice'>$ $r->item_price</td>
-				<td class='tbdata'><div>".$this->function_brands->get_brand($r->item_brand)."</div></td>
-				<td class='tb7'>$registered</td>
-				<td class='tb7'>$expire</td>
-				<td class='tb7'>
-					<a href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'>details</a>
-					<a href='".base_url()."dashboard/sell/update/{$r->item_id}' title='Edit Details'>edit</a>
-					<a class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'>delete</a></td>				
-			  </tr>";	 
-		$ctr ++;	  
+//        echo "<tr class='".$class."'>  
+//				<td class='tb1'><div class='".$status."'></div></td>
+//			  	<td class='tb2'><div>".strtoupper($r->item_name)."</div></td>
+//			  	<td class='tb3 tbprice'>$ $r->item_price</td>
+//				<td class='tbdata'><div>".$this->function_brands->get_brand($r->item_brand)."</div></td>
+//				<td class='tb7'>$registered</td>
+//				<td class='tb7'>$expire</td>
+//				<td class='tb7'>
+//					<a href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'>details</a>
+//					<a href='".base_url()."dashboard/sell/update/{$r->item_id}' title='Edit Details'>edit</a>
+//					<a class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'>delete</a></td>				
+//			  </tr>";	 
+//		$ctr ++;
+                echo " <div class='col-xs-12 sell'>
+                            <figure class='thumbnail  ".$status."'>
+				
+                                <div class='row'>  
+                                    
+                                    <div class='col-sm-8 details'>
+                                        <div>model name: ".strtoupper($r->item_name)."</div>
+                                        <div>watch price: $r->item_price</div>
+                                        <div>make: ".$this->function_brands->get_brand($r->item_brand)."</div>
+                                        <div>created: $registered</div>
+                                        <div>expiry: $expire</div>
+                                    </div>
+                                    <div class='col-sm-4 action'>
+                                           <div><a class='btn btn-primary' href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'>details</a></div>
+                                           <div><a class='btn btn-default btn-green' href='".base_url()."dashboard/sell/update/{$r->item_id}' title='Edit Details'>edit</a></div>
+                                           <div><a class='btn btn-danger btn-red' class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'>delete</a>	</div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+			  ";	 
+		$ctr ++;
     }		
-
-   echo "</tbody></table>"; 	
+	
    
-   echo "<div style='float:left; clear:both; margin:20px 0px;'>". $paginate ."</div>"; 
+   echo "<div>". $paginate ."</div>"; 
 
 
 } else {

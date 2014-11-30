@@ -119,22 +119,24 @@
             }
 			
 			?>
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 item">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 item">
 			<figure class="thumbnail">
 				<div class="img-slot">
-					<img src="<?php echo $default_image; ?>" />
+					
+                                        <div style="background: url(<?php echo $default_image; ?>)center center no-repeat;background-size:cover;" class="img-thumb-bg"></div>
+
 				</div>
 				<input type="hidden" value="<?php echo $featured->item_id; ?>" class="uid">
                                 <h5>
 					<?php echo substr(ucwords(strtolower($featured->item_name)),0,23)."..."; ?>       
                                     </h5>
 				<div class="price">$ <?php echo $price; ?></div>
-				<a href="javascript:;" class="remove_watchlist" data-itemid="<?php echo $featured->item_id; ?>">
-					Remove from Watchlist       
-				</a>
+				
 				<input type="checkbox" class="sel_compare"> 
 				<span >Select to Compare</span> 
-   
+                                   <a href="javascript:;" class="remove_watchlist btn btn-danger btn-red" data-itemid="<?php echo $featured->item_id; ?>">
+					Remove from Watchlist       
+				</a>
                         </figure>			
     </div>	
 		<?php
