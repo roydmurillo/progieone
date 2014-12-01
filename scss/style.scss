@@ -97,6 +97,12 @@ header{
                 }
             }
         }
+        .navbar-brand{
+            @media (max-width:480px){
+                width:100%;
+                text-align:center;
+            }
+        }
         .sub-nav{
             padding-top:45px;
             @media (max-width:767px){

@@ -36,24 +36,19 @@
 			<!-- content goes here -->
 			<h2 class="h2_title">Read Message</h2>
 
-			<div style="float: left;
-						font-family: arial;
-						font-size: 14px;
-						margin: 2px 0px 20px;
-						width: 500px;
-						min-height: 20px;">
-				<a id="send_reply" class="css_btn_c0" href="javascript:;" style="float:left; padding:5px 9px !important">Send a Reply</a>
-				<a id="view_messages" class="css_btn_c0" href="javascript:;" style="float:left; margin-left:12px;  padding:5px 9px !important">View Full Messages</a>
+			<div>
+				<a id="send_reply" class="css_btn_c0 btn btn-primary" href="javascript:;" >Send a Reply</a>
+				<a id="view_messages" class="css_btn_c0 btn btn-primary" href="javascript:;" >View Full Messages</a>
 			</div>
 			
 			<div class="message_reply">
 				
 				<form method="POST">
 				
-					<h2 class="h2_title" style="width:100% !important">Post Reply</h2>
-					<textarea name="message_content" id="message_content" class="content" style="height:300px;"></textarea>
-					<input id="add_reset" type="button" class="css_btn_c3" onclick="reset_data()" value="Reset"  style="padding: 3px 18px !important;"/>
-					<input id="post_reply_button" class="css_btn_c3" type="button" value="Submit Reply" style="padding: 3px 18px !important;">
+					<h2 class="h2_title" >Post Reply</h2>
+					<textarea name="message_content" id="message_content" class="content" ></textarea>
+					<input id="add_reset" type="button" class="css_btn_c3 btn btn-primary" onclick="reset_data()" value="Reset"  />
+					<input id="post_reply_button" class="css_btn_c3 btn btn-primary" type="button" value="Submit Reply" >
 					<input name="message_recipient_id" type="hidden" value="<?php echo $message_prev['message_user_id'] ?>"/>
 					<input name="message_title" type="hidden" value="<?php echo $message_prev['message_title'] ?>"/>
 					<?php
@@ -90,53 +85,30 @@
 										
 									$user_info = $this->function_users->get_user_fields_by_id(array("user_name", "user_avatar"),$r->message_user_id);
 									if($user_info["user_avatar"] != "") { 
-										$img =  "<img style='max-width: 100px;
-															max-height: 100px;
-															vertical-align: middle;'
-													  src='".$user_info["user_avatar"]."'>";
+										$img =  "<img src='".$user_info["user_avatar"]."'>";
 									} else { 
-										$img =  "<img style='max-width: 100px;
-															max-height: 100px;'
-													  src='".base_url()."assets/images/avatar.jpg'>";
+										$img =  "<img src='".base_url()."assets/images/avatar.jpg'>";
 									}
 									
-									echo '<div class="forum_container" style="margin-bottom:15px !important">
-										  <div class="forum_title" style="padding:0px 10px !important">
-											<div class="div_td1" style="width:480px !important">
+									echo '<div class="forum_container" >
+										  <div class="forum_title">
+											<div class="div_td1" >
 												Sent '.$this->function_forums->last_updated($r->message_date).' 
 											</div>
 										</div><!-- forum_title -->';
-									echo "<div class='div_td_content' style='padding:0px !important; position:relative; min-height:160px; overflow:hidden;'>
+									echo "<div class='div_td_content clearfix'>
 												
-												<div style='position:absolute;
-															width: 100px;
-															height: 100%;
-															border-right: 1px solid #CCC;
-															padding: 20px;
-															left:0px;
-															background:#fafafa'>
+												<div class='col-xs-6'>
 													
-													<div style='float:left;
-																clear: both;
-																width: 100px;
-																height: 100px;
-																border: 1px solid #777;
-																text-align: center;
-																line-height: 95px;
-																overflow: hidden;'>
+													<div class='msg-img'>
 																".$img."
 													</div>
-													<a style='float:left; color:#E56718; margin-top:8px' href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
+													<a  href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
 												 
 												
 												</div>	
 												
-												<div style='float: left;
-															width: 400px;
-															margin-left:140px;
-															height: 100%;
-															padding: 20px;
-															'>
+												<div class='col-xs-6'>
 															".$r->message_content."
 												</div>									
 										  </div>
@@ -154,53 +126,30 @@
 									
 								$user_info = $this->function_users->get_user_fields_by_id(array("user_name", "user_avatar"),$r->message_user_id);
 								if($user_info["user_avatar"] != "") { 
-									$img =  "<img style='max-width: 100px;
-														max-height: 100px;
-														vertical-align: middle;'
-												  src='".$user_info["user_avatar"]."'>";
+									$img =  "<img src='".$user_info["user_avatar"]."'>";
 								} else { 
-									$img =  "<img style='max-width: 100px;
-														max-height: 100px;'
-												  src='".base_url()."assets/images/avatar.jpg'>";
+									$img =  "<img src='".base_url()."assets/images/avatar.jpg'>";
 								}
 								
-								echo '<div class="forum_container" style="margin-bottom:15px !important">
-									  <div class="forum_title" style="padding:0px 10px !important">
-										<div class="div_td1" style="width:480px !important">
+								echo '<div class="forum_container" >
+									  <div class="forum_title" >
+										<div class="div_td1" >
 											Sent '.$this->function_forums->last_updated($r->message_date).' 
 										</div>
 									</div><!-- forum_title -->';
-								echo "<div class='div_td_content' style='padding:0px !important; position:relative; min-height:160px; overflow:hidden;'>
+								echo "<div class='div_td_content clearfix' >
 											
-											<div style='position:absolute;
-														width: 100px;
-														height: 100%;
-														border-right: 1px solid #CCC;
-														padding: 20px;
-														left:0px;
-														background:#fafafa'>
+											<div class='col-xs-6'>
 												
-												<div style='float:left;
-															clear: both;
-															width: 100px;
-															height: 100px;
-															border: 1px solid #777;
-															text-align: center;
-															line-height: 95px;
-															overflow: hidden;'>
+												<div class='msg-img'>
 															".$img."
 												</div>
-												<a style='float:left; color:#E56718; margin-top:8px' href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
+												<a  href='".base_url()."member_profile/".$user_info["user_name"]."'>".$user_info["user_name"]."</a>	 
 											 
 											
 											</div>	
 											
-											<div style='float: left;
-														width: 400px;
-														margin-left:140px;
-														height: 100%;
-														padding: 20px;
-														'>
+											<div class='col-xs-6'>
 														".$r->message_content."
 											</div>									
 									  </div>

@@ -5,9 +5,9 @@
 <h2 class="h2_title">Message Inbox</h2>
 
 <?php if($this->native_session->get("success_sent")){	?>
-	<div class="regular_register" style="min-height:40px !important;">
-			<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-			<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+	<div class="regular_register">
+			
+			<div >
 				Message was successfully sent!
 			</div>									
 				
@@ -64,7 +64,7 @@ if($results != NULL || !empty($results)){?>
    //load brand obj
    $this->load->module("function_brands");
    	
-   echo "<table id='tbl_for_sale' class='table table-striped'><tbody>
+   echo "<table id='tbl_for_sale' class='table table-striped hidden-xs'><tbody>
    			<tr class='tb_head'>
 				<td class='tb1'><input type='checkbox' id='select_all'></td>
 				<td class='tb3'><a class='sort message_user_id' href='javascript:;' title='Order Users'>From</a> </td>
@@ -98,7 +98,33 @@ if($results != NULL || !empty($results)){?>
 		$ctr ++;	  
     }		
 
-   echo "</tbody></table>"; 	
+   echo "</tbody></table>";
+   echo "<div class='visible-xs'>";
+   foreach($results as $r)
+    {	
+		
+		//get if there are replies
+		$status = "s_green";
+		
+		//else
+		$status = "s_gray";
+		
+		
+		if($ctr % 2 == 0) {
+        	$class = "tr1";
+		} else {
+			$class = "tr2";
+		}
+	   $open = ($r->message_open) ? "":"font-weight:bold; font-family:verdana;";	
+       echo "  
+				<div class='tb1'><input type='hidden' class='message_id' id='msg_id".$r->message_id."' value='".$r->message_id."'><input type='checkbox' class='select_item'></div>
+			  	<div class='tb3 tbprice'>".$this->function_users->get_user_fields_by_id("user_name",$r->message_user_id)."</div>
+			  	<div class='tb2' ><a href='".base_url()."dashboard/messages/read/$r->message_id' style='text-decoration:none; color:#333; $open'>$r->message_title</a></div>
+				<div class='tbdata'><div>".date('m.d.Y',strtotime($r->message_date))."</div></div>
+			  ";	 
+		$ctr ++;	  
+    }	
+   echo "</div >";
    echo "<div >
 	   		<input id='trash_message' class='btn btn-danger' type='button' value='Move to Trash'>
          </div>"; 

@@ -29,7 +29,7 @@
 					<!-- content goes here -->
 					<h2 class="h2_title">Create New Message</h2>
 					<?php if($this->native_session->get("message_sent")){	?>
-						<div class="regular_register" style="min-height:40px !important;">
+						<div class="regular_register">
 								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' >
 								<div >
 									Message was successfully sent!

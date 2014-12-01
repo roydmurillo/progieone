@@ -57,7 +57,7 @@ if($message_info != NULL || !empty($message_info)){?>
    			<tr class='tb_head'>
 				<td class='tb1'><input type='checkbox' id='select_all'></td>
 				<td class='tb3'><a class='sort message_user_id' href='javascript:;' title='Order Users'>From</a> </td>
-				<td class='tb2' style='width:400px !important'><a class='sort message_title' href='javascript:;' title='Sort Model Name'>Message</a></td>
+				<td class='tb2' ><a class='sort message_title' href='javascript:;' title='Sort Model Name'>Message</a></td>
 				<td class='tb3'  style='border-right:1px solid #CCC !important'><a class='sort message_date' href='javascript:;' title='Sort Make'>Date</a></td>
 			</tr>
    		 "; 	 

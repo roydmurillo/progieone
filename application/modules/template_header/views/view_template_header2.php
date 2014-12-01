@@ -51,8 +51,8 @@
     ?>
                 <div id="top" class="bg-success">
                         <div class="container clearfix mobile-center top">
-                            <p class="pull-left"><strong>$0.50</strong> per item posting, <strong>post now!</strong></p>
-                            <a class="pull-left" href="<?php echo base_url('dashboard/sell/new'); ?>" title="post new item">start here</a>
+                            <p class=""><strong>$0.50</strong> per item posting, <strong>post now!</strong> <a class="" href="<?php echo base_url('dashboard/sell/new'); ?>" title="post new item">start here</a></p>
+                            
                         </div>
                 </div>
            

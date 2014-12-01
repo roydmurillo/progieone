@@ -463,7 +463,7 @@ font-size: 12px;
 margin-bottom: 20px;
 overflow: hidden;
 box-shadow: 0px 1px 2px #E2E2E2;
-margin-left:10px;
+
 }
 
 .forum_title{
@@ -488,39 +488,9 @@ margin-left:10px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#efefef'); /* IE6–IE9 */
 }
 
-.div_td1{
-  float:left;
-  width:50%;
-  height:auto;
-  line-height:20px;
-  vertical-align:middle;
-  font-family:arial;
-  font-size:12px;
-  color: #374437;
-}
-.div_td2{
-  float:left;
-  width:14%;
-  height:auto;
-  line-height:20px;
-  vertical-align:middle;
-  font-family:arial;
-  font-size:12px;
-  color: #374437;
-}
-.div_td3{
-width: 22%;
-padding-right: 12px;
 
-  float:left;
-  height:auto;
-  line-height:20px;
-  vertical-align:middle;
-  font-family:arial;
-  font-size:12px;
-  color: #374437;
 
-}
+
 .div_td_content{
 min-height:20px;
 padding:20px 0px;
@@ -612,7 +582,7 @@ background: -ms-linear-gradient(top,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* I
 background: linear-gradient(to bottom,  #fbfbfb 0%,#f0f0f0 44%,#e7e7e7 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
 }
-.forum_reply, .message_reply, .create_message{
+.forum_reply, .create_message{
 float: left;
 width: 600px;
 min-height: 400px;
@@ -620,6 +590,9 @@ margin-bottom: 20px;
 display: none;
 padding: 20px;
 position: relative;
+}
+.message_reply{
+    display:none;
 }
 .create_message{
 display: block;
@@ -652,10 +625,6 @@ bottom: 21px;
 right: 20px;
 }
 
-#post_reply_button, #post_submit_thread{
-margin: 20px 5px 0px 0px;
-float: left;
-}
 .thread_start{
 background:ghostwhite;
 }

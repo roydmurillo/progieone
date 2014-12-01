@@ -317,6 +317,9 @@ h2.h2_title {
   padding: 12px 0;
   border-bottom: 1px solid #ccc; }
 
+.msg-img img {
+  max-width: 40px; }
+
 /*
 item list
 */
@@ -486,6 +489,10 @@ header.navbar-default {
         margin-left: 12px; }
         header.navbar-default .navbar-nav > li > a:hover {
           color: #a6a6a6; }
+  @media (max-width: 480px) {
+    header.navbar-default .navbar-brand {
+      width: 100%;
+      text-align: center; } }
   header.navbar-default .sub-nav {
     padding-top: 45px; }
     @media (max-width: 767px) {
