@@ -140,17 +140,31 @@ if($results != NULL || !empty($results)){?>
 //					<a class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'>delete</a></td>				
 //			  </tr>";	 
 //		$ctr ++;
+                $new_images = unserialize($r->item_images);
+                        $no_image = base_url() . "assets/images/no-image.png";
+                        $default_image = $no_image;
+                        if(is_array($new_images)){
+                            foreach ($new_images as $xx){
+                                if($xx[0] == 1){
+                                    $default_image = $xx[1];
+                                }
+
+                                if($default_image == $no_image){
+                                    $default_image = $xx[1];
+                                }
+                            }
+                        }
                 echo " <div class='col-xs-12 sell'>
                             <figure class='thumbnail  ".$status."'>
 				
                                 <div class='row'>  
-                                    
-                                    <div class='col-sm-8 details'>
-                                        <div>model name: ".strtoupper($r->item_name)."</div>
-                                        <div>watch price: $r->item_price</div>
-                                        <div>make: ".$this->function_brands->get_brand($r->item_brand)."</div>
-                                        <div>created: $registered</div>
-                                        <div>expiry: $expire</div>
+                                    <div class='col-sm-2 details'><img src=".$default_image."></div>
+                                    <div class='col-sm-6 details'>
+                                        <div><label>model name:</label> ".strtoupper($r->item_name)."</div>
+                                        <div><label>watch price:</label> $r->item_price</div>
+                                        <div><label>make:</label> ".$this->function_brands->get_brand($r->item_brand)."</div>
+                                        <div><label>created:</label> $registered</div>
+                                        <div><label>expiry:</label> $expire</div>
                                     </div>
                                     <div class='col-sm-4 action'>
                                            <div><a class='btn btn-primary' href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'>details</a></div>

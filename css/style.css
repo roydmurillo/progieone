@@ -238,6 +238,9 @@ dashboard
 .bg-success .container {
   padding-left: 0; }
 
+.action {
+  padding-top: 12px; }
+
 #inner_dashboard_tab {
   float: left;
   max-width: 763px;
@@ -301,11 +304,27 @@ h2.h2_title {
     max-width: 320px;
     width: 100%; }
 
-.sell .action .btn {
-  width: 100%;
-  margin-bottom: 3px; }
-.sell .details div:nth-child(even) {
-  background: #ccc; }
+.sell .action {
+  padding: 12px; }
+  .sell .action .btn {
+    width: 100%;
+    margin-bottom: 3px; }
+.sell .details label {
+  font-weight: bold; }
+.sell .details img {
+  max-width: 100px;
+  width: 100%; }
+
+.tablediv-ui {
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0; }
+  .tablediv-ui div {
+    display: inline-block;
+    padding: 0 12px; }
+    .tablediv-ui div.tb3 {
+      font-weight: bold; }
+    .tablediv-ui div.tb2 {
+      font-style: italic; }
 
 .btn-group .btn {
   font-size: .7em; }
@@ -319,6 +338,10 @@ h2.h2_title {
 
 .msg-img img {
   max-width: 40px; }
+
+.ratings p {
+  display: inline-block;
+  margin-right: 12px; }
 
 /*
 item list

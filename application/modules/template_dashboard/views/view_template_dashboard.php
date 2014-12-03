@@ -130,7 +130,7 @@
     <div class="col-sm-9 col-md-10 main">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <h2 class="panel-heading">Watchlist</h2>
                     <div class="panel-body">
                         <p>Current watch list: <span class="badge"><?php echo $current_watch_list;?></span></p>
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <h2 class="panel-heading">Messages</h2>
                     <div class="panel-body">
                         <p>Inbox: <span class="badge"><?php echo $message_count;?></span></p>
@@ -155,7 +155,7 @@
             </div>
             <div class="clear"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <h2 class="panel-heading">Friends</h2>
                     <div class="panel-body">
                         <p>Current friends: <span class="badge"><?php echo $friends_count;?></span></p>
@@ -167,20 +167,20 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
-                    <h2 class="panel-heading">Ratings</h2>
-                    <div class="panel-body">
-                        <p>Like: <span class="badge"><?php echo $count_watch_ratings_like;?></span></p>
-                        <p>Dislike: <span class="badge"><?php echo $count_watch_ratings_dislike;?></span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <h2 class="panel-heading">Forum</h2>
                     <div class="panel-body">
                         <p>Help or ask questions</p>
                         <a class="btn btn-primary">visit forum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h2 class="panel-heading">Ratings</h2>
+                    <div class="panel-body ratings">
+                        <p>Like: <span class="badge"><?php echo $count_watch_ratings_like;?></span></p>
+                        <p>Dislike: <span class="badge"><?php echo $count_watch_ratings_dislike;?></span></p>
                     </div>
                 </div>
             </div>

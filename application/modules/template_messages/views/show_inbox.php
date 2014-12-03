@@ -99,7 +99,7 @@ if($results != NULL || !empty($results)){?>
     }		
 
    echo "</tbody></table>";
-   echo "<div class='visible-xs'>";
+   
    foreach($results as $r)
     {	
 		
@@ -116,16 +116,19 @@ if($results != NULL || !empty($results)){?>
 			$class = "tr2";
 		}
 	   $open = ($r->message_open) ? "":"font-weight:bold; font-family:verdana;";	
+       echo "<div class='visible-xs tablediv-ui'>";
        echo "  
 				<div class='tb1'><input type='hidden' class='message_id' id='msg_id".$r->message_id."' value='".$r->message_id."'><input type='checkbox' class='select_item'></div>
 			  	<div class='tb3 tbprice'>".$this->function_users->get_user_fields_by_id("user_name",$r->message_user_id)."</div>
 			  	<div class='tb2' ><a href='".base_url()."dashboard/messages/read/$r->message_id' style='text-decoration:none; color:#333; $open'>$r->message_title</a></div>
 				<div class='tbdata'><div>".date('m.d.Y',strtotime($r->message_date))."</div></div>
-			  ";	 
+                                
+			  ";
+       echo "</div >";
 		$ctr ++;	  
     }	
-   echo "</div >";
-   echo "<div >
+   
+   echo "<div class='action'>
 	   		<input id='trash_message' class='btn btn-danger' type='button' value='Move to Trash'>
          </div>"; 
 

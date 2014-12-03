@@ -6,6 +6,9 @@ dashboard
         padding-left:0;
     }
 }
+.action{
+    padding-top:12px;
+}
 #inner_dashboard_tab{
 float:left; max-width:763px; width:100%; height:40px; line-height:40px; vertical-align:middle; 
 
@@ -95,18 +98,37 @@ float:left;
 
 .sell{
     .action{
+        padding:12px;
         .btn{
             width:100%;
             margin-bottom:3px;
         }
     }
     .details{
-        div:nth-child(even){
-            background:#ccc;
+        label{
+            font-weight: bold;
+        }
+        img{
+           max-width:100px; 
+           width:100%;
         }
     }
 }
-
+.tablediv-ui{
+    border-bottom: 1px solid #ccc;
+    padding:12px 0;
+    div{
+        display: inline-block;
+        padding:0 12px;
+        
+        &.tb3{
+          font-weight: bold;  
+        }
+        &.tb2{
+            font-style: italic;
+        }
+    }
+}
 .btn-group{
     .btn{
         font-size:.7em;
@@ -125,5 +147,12 @@ float:left;
 .msg-img{
     img{
         max-width:40px;
+    }
+}
+
+.ratings{
+    p{
+        display:inline-block;
+        margin-right: 12px;
     }
 }

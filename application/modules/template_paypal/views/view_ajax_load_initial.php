@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
 		});
 		
 		jQuery("#custom_value").val($custom + "=" +jQuery("#ud").val());
-		jQuery("#total").html($total);
+		jQuery("#total").html('$'+$total);
         
 		//checkout
 		jQuery.ajax({
@@ -186,17 +186,36 @@ if($results != NULL || !empty($results)){?>
 //				<td class='tb7'>
 //					&nbsp;&nbsp;&nbsp;&nbsp;<a class='remove_item' style='color:red;' href='javascript:;' title='Delete Item " . $r->item_name . "'><input type='hidden' value='".$r->item_id."' class='id'>Remove</a></td>				
 //			  </tr>";
+           
+                     
+                        $new_images = unserialize($r->item_images);
+                        $no_image = base_url() . "assets/images/no-image.png";
+                        $default_image = $no_image;
+                        if(is_array($new_images)){
+                            foreach ($new_images as $xx){
+                                if($xx[0] == 1){
+                                    $default_image = $xx[1];
+                                }
+
+                                if($default_image == $no_image){
+                                    $default_image = $xx[1];
+                                }
+                            }
+                        }
+		
                 echo " <div class='col-xs-12 sell'>
                             <figure class='thumbnail  ".$status."'>
 				
-                                <div class='row'>  
-                                    
-                                    <div class='col-sm-8 details'>
-                                        <div>model name: ".strtoupper($r->item_name)."</div>
-                                        <div>watch price: $".$paypal["price"]." / ".$paypal["days"]." days</div>
+                                <div class='row'>   
+                                    <div class='col-sm-2 details'><img src=".$default_image."></div>
+                                    <div class='col-sm-6 details'>
+                                        
+                                        <div><label>model name:</label> ".strtoupper($r->item_name)."</div>
+                                        <div><label>watch price:</label> $".$r->item_price."</div>    
+                                        <div><label>listing price:</label> $".$paypal["price"]." / ".$paypal["days"]." days</div>
                                         <div>
-                                            <input type='hidden' class='item_id' value='".$r->item_id."' style='width:60px'>
-                                            <input type='text' id='q_".$count."' class='itemquantity' value='1' style='width:60px'>
+                                            <input type='hidden' class='item_id' value='".$r->item_id."' >
+                                            <input type='text' id='q_".$count."' class='itemquantity' value='1' >
                                         </div>
                                     </div>
                                     <div class='col-sm-4 action'>
@@ -211,7 +230,7 @@ if($results != NULL || !empty($results)){?>
 
     	
     echo "<div class='clear'></div>";
-   echo "<div class='checkout-total'>Total Amount For Checkout: $ <div id='total'></div>";
+   echo "<div class='checkout-total'>Total Amount For Checkout: <div id='total' class='badge'></div>";
    echo "<div>";
    //paypal	bottom form
    echo "<input type='hidden' id='custom_value' name='custom' value=''>";
