@@ -1,23 +1,23 @@
 <div class="forum_container">
 	
 	<div class="forum_title clearfix">
-		
-		<div class="div_td1">
+		<div class="hidden-xs">
+		<div class="col-sm-8">
 			
 			Threads
 			
 		</div>
-		<div class="div_td2">
+		<div class="col-sm-2">
 			
 			Reply Posts
 			
 		</div>		
-		<div class="div_td3">
+		<div class="col-sm-2">
 			
 			Last Updated
 			
-		</div>						
-			
+		</div>
+            </div>
 	</div><!-- forum_title -->
 	
 	<?php
@@ -37,14 +37,14 @@
 					$clean_url = $this->function_forums->clean_url($category_name);
 					
 					echo "<div class='div_td_content clearfix' $class>
-					        <div class='f_info' >
+					        <div class='col-sm-8' >
 					      		<div class='forum_t'><a href='".base_url()."forums/thread/$r->reply_thread_id/".$this->function_forums->clean_url($title)."'>".$title."</a></div>
 						  		<div class='forum_d'>Posted at <a style='color:#3e6876' href='".base_url()."forums/category/$clean_url/'>$category_name</a></div>
 						  	</div>
-                                                <div class='f_info2' >
-					      		<div class='forum_count'>".$r->total."</div>";
+                                                <div class='col-sm-4' >
+					      		<div class='col-sm-6'>".$r->total."</div>";
 						  
-						   echo "<div class='forum_updated'>".$this->function_forums->last_updated_by_thread($r->reply_thread_id,$r->reply_user_id,$r->reply_date)."</div>";
+						   echo "<div class='col-sm-6'>".$this->function_forums->last_updated_by_thread($r->reply_thread_id,$r->reply_user_id,$r->reply_date)."</div>";
 						   echo "</div>
 						  </div>";
 					

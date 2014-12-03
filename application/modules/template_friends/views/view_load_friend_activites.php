@@ -59,14 +59,14 @@ if($results != NULL || !empty($results)){
 	<?php 
 		echo "<div id='forum_content'>";
 		foreach($results as $r){
-		
 		$u = $this->function_users->get_user_fields_by_id(array("user_avatar","user_name","user_id"),$r->friend_friend_id);
 		
 		$activity = array("watchlist" => "Added to Watchlist",
 		                  "invited_friend" => "Invited a Friend",
-						  "accept_friend" => "Accepted a Friend",
-						  "reply_thread" => "replied to a thread",
-						  "new_thread" => "Created a thread",);
+                                  "accept_friend" => "Accepted a Friend",
+				  "reply_thread" => "replied to a thread",
+				  "new_thread" => "Created a thread",
+                                  "sell" => "Sell new item");
 		
 		if($u["user_avatar"] != "") { 
 			$img =  "<img class='' src='".$u["user_avatar"]."'>";
@@ -354,3 +354,9 @@ if($results != NULL || !empty($results)){
 	}
 }
 ?>		
+
+
+
+<script>
+create_pager();
+</script>
