@@ -56,5 +56,17 @@ class template_paypal extends MX_Controller {
             $this->load->view($data["view_mode"],$data);
             
         }
+        
+        public function get_single_paypal($userid){
+            
+            $query = $this->db->query("select b.* from watch_users as a inner join watch_paypal b on a.user_listprice_id=b.paypal_id where a.user_id = '$userid' ");
+            if($query->num_rows() > 0){
+                return $query->row_array();
+            }
+            else{
+                $query = $this->db->query("select * from watch_paypal where paypal_id = '1' ");
+                return $query->row_array();
+            }
+        }
 
 }

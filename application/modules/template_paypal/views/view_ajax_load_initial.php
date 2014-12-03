@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
 		var $custom = "";
 		jQuery('.itemquantity').each(function(){
 			if(jQuery(this).val() != ""){
-				$total = parseFloat($total) + parseFloat(parseFloat(jQuery(this).val()) * <?php echo $paypal["price"]; ?>);
+				$total = parseFloat($total) + parseFloat(parseFloat(jQuery(this).val()) * <?php echo $paypal_details["paypal_price"]; ?>);
 				$total = $total.toFixed(2);
 			}
 			//change hidden paypal count
@@ -173,7 +173,7 @@ if($results != NULL || !empty($results)){?>
 		$product_id_array[] = $r->item_id . "-1"; 
 		$name = $r->item_name;
 		echo "<input type='hidden' name='item_name_".$count."' value='".$name."'>";
-		echo "<input type='hidden' name='amount_".$count."' value='".$paypal["price"]."'>";
+		echo "<input type='hidden' name='amount_".$count."' value='".$paypal_details["paypal_price"]."'>";
 		echo "<input type='hidden' class='q_".$count."' name='quantity_".$count."' value='1'>";
 //				
 //		echo "		<div >".strtoupper($r->item_name)."</div>
@@ -212,7 +212,7 @@ if($results != NULL || !empty($results)){?>
                                         
                                         <div><label>model name:</label> ".strtoupper($r->item_name)."</div>
                                         <div><label>watch price:</label> $".$r->item_price."</div>    
-                                        <div><label>listing price:</label> $".$paypal["price"]." / ".$paypal["days"]." days</div>
+                                        <div><label>listing price:</label> $".$paypal_details["paypal_price"]." / ".$paypal["days"]." days</div>
                                         <div>
                                             <input type='hidden' class='item_id' value='".$r->item_id."' >
                                             <input type='text' id='q_".$count."' class='itemquantity' value='1' >

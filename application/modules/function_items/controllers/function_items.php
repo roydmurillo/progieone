@@ -967,6 +967,7 @@ class function_items extends MX_Controller {
                     //load template
                     $return["view_mode"] = 'view_ajax_load_initial';
                     $this->load->module("template_paypal");
+                    $return['paypal_details'] = $this->template_paypal->get_single_paypal($user_id);
                     $this->template_paypal->ajax_load_view($return);
         }      
 
