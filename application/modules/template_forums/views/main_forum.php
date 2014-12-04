@@ -35,8 +35,8 @@
 					      		<div class='forum_t'><a href='".base_url()."forums/category/".str_replace(" ","-",(trim($r->category_title)))."'>".$r->category_title."</a></div>
 								<div class='forum_d'>".$r->category_desc."</div>
 						  	</div>
-			                <div class='col-sm-4'>
-					      		<div class='col-sm-6'>".$this->function_forums->count_threads_by_category($r->category_id)."</div>
+                                                        <div class='col-sm-4'>
+                                                            <div class='col-sm-6'>".$this->function_forums->count_threads_by_category($r->category_id)."</div>
 								<div class='forum_count'>".$count = $this->function_forums->count_reply_by_category($r->category_id)."</div>";
 						  
 						  if($count > 0){

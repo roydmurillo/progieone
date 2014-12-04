@@ -36,10 +36,10 @@
 					(int)$count = (int)$count + 1;
 					
 					echo "<div class='div_td_content clearfix' $class>
-					        <div class='col-sm-8 >
+					        <div class='col-sm-8'>
 					      		<div class='forum_t'><a href='".base_url()."forums/thread/$r->thread_id/".$this->function_forums->clean_url($r->thread_title)."'>".$r->thread_title."</a></div>
 						  	</div>
-			                <div class='col-sm-4' >
+                                                <div class='col-sm-4' >
 					      		<div class='col-sm-6'>".$count."</div>";
 						  
 						   echo "<div class='col-sm-6'>".$this->function_forums->last_updated_by_thread($r->thread_id,$r->thread_user_id,$r->thread_date)."</div>";
