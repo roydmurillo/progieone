@@ -51,7 +51,7 @@ class function_login extends MX_Controller {
 												   "user_folder" => $result[0]->user_folder,
 												   "user_avatar" => $result[0]->user_avatar ));
 								$this->native_session->set('user_info',$user_info);
-								
+                                                                
 								//update last logged in "user_logged"
 								$this->db->set("user_logged", date("Y-m-d H:i:s"));
 								$this->db->where("user_id", $result[0]->user_id);				   
@@ -77,6 +77,7 @@ class function_login extends MX_Controller {
 								 "ipadd" => $this->set_ip());
 				
                 $this->native_session->set('verified',$details);
+                unset($_SESSION['paypal']);
                 redirect(base_url()."dashboard"); exit();
         }
 
