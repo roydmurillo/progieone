@@ -12,8 +12,8 @@ class function_paypal extends MX_Controller {
 
             $this->load->module("function_paypal");
             if($this->needed_updated()){
-                 if($this->native_session->get("user_info") != NULL && !empty($this->native_session->get("user_info"))){
-//                     die('aa');
+                 if($this->native_session->get("user_info") != NULL && $this->native_session->get("user_info") != ''){
+
                      $user_info = unserialize($this->native_session->get("user_info"));
                      $userid = $user_info["user_id"];
 
@@ -22,14 +22,11 @@ class function_paypal extends MX_Controller {
                          $this->native_session->set("paypal",$paypal);
                      }
                      else{
-                         print_r($_SESSION);
-                         die('cc');
                         $paypal = $this->function_paypal->get_details();
                          $this->native_session->set("paypal",$paypal);
                      }
                  }
                  else{
-die('bbb');
                      $paypal = $this->function_paypal->get_details();
                      $this->native_session->set("paypal",$paypal);
                  }
