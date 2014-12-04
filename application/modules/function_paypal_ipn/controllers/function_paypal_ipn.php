@@ -219,6 +219,23 @@ class function_paypal_ipn extends MX_Controller {
                     
                     #expand items customs with uid
                     $c = explode("=",$POST["custom"]);
+                    
+                    ### get new paypal ###
+                    $this->load->module("function_paypal");
+                    $newpaypal = $this->function_paypal->get_details_new($c[1]);
+                    if($newpaypal){
+                        unset($_SESSION['paypal']);
+                        $this->native_session->set("paypal",$newpaypal);
+                        $paypal = $this->native_session->get("paypal");
+                        
+                    }
+                    else{
+                        $error++;
+                        $error_details .= "unable to get new paypal userid : ".$c[1]."\n";
+                    }
+                    ######################
+                    
+                    
                     $custom = trim($c[0], ",");
                     $custom = explode(",", $custom);
                     
