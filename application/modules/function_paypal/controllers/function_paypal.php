@@ -10,11 +10,30 @@ class function_paypal extends MX_Controller {
         
         public function set_paypal(){
 
-               if($this->needed_updated()){
-                       $this->load->module("function_paypal");
-                       $paypal = $this->function_paypal->get_details();
-                       $this->native_session->set("paypal",$paypal);        
-               }	
+            $this->load->module("function_paypal");
+            if($this->needed_updated()){
+                 if($this->native_session->get("user_info") != NULL && !empty($this->native_session->get("user_info"))){
+//                     die('aa');
+                     $user_info = unserialize($this->native_session->get("user_info"));
+                     $userid = $user_info["user_id"];
+
+                     $paypal = $this->function_paypal->get_details_new($userid);
+                     if($paypal){
+                         $this->native_session->set("paypal",$paypal);
+                     }
+                     else{
+                         print_r($_SESSION);
+                         die('cc');
+                        $paypal = $this->function_paypal->get_details();
+                         $this->native_session->set("paypal",$paypal);
+                     }
+                 }
+                 else{
+die('bbb');
+                     $paypal = $this->function_paypal->get_details();
+                     $this->native_session->set("paypal",$paypal);
+                 }
+            }	
 
         }
         
@@ -83,6 +102,31 @@ class function_paypal extends MX_Controller {
                     return $return;
                     
                 }
+            
+            return false;
+            
+        }
+        public function get_details_new($userid){
+            
+                $user = $this->db->query("SELECT * FROM watch_users where user_id = '$userid'");
+                if($user->num_rows() > 0){
+                    $row = $user->row_array();
+                    $query = $this->db->query("SELECT * FROM watch_paypal WHERE paypal_id = '". $row['user_listprice_id'] ."' ");
+                
+                    if($query->num_rows() > 0){
+
+                        $r = $query->result();
+                        $return = array();
+                        $return["paypal_id"] = $r[0]->paypal_id;
+                        $return["activate"] = $r[0]->paypal_activate;
+                        $return["price"] = $r[0]->paypal_price;
+                        $return["days"] = $r[0]->paypal_days;
+                        $return["date"] = $r[0]->paypal_date;
+
+                        return $return;
+                    }
+                }
+                
             
             return false;
             
