@@ -95,14 +95,27 @@ if($results != NULL || !empty($results)){
 				$htm .= "      <div class='friend-img'>";
 				
 				// get image
-				$image = unserialize($item[0]->item_images);
-				$count = count($image) - 1;
-				if(is_array($image) && !empty($image)) { 
-					$htm .=  "<img src='".$image[rand(0,$count)]."'>";
-				} else { 
-					$htm .=  "<img src='".base_url()."assets/images/no-image.png'>";
-				}				
-				
+//				$image = unserialize($item[0]->item_images);
+//                                                                print_r($image);
+//				$count = count($image) - 1;
+                                
+                                $new_images = unserialize($item[0]->item_images);
+                                $no_image = base_url() . "assets/images/no-image.png";
+                                $default_image = $no_image;
+                                if(is_array($new_images)){
+                                    foreach ($new_images as $xx){
+                                        if($xx[0] == 1){
+                                            $default_image = $xx[1];
+                                        }
+
+                                        if($default_image == $no_image){
+                                            $default_image = $xx[1];
+                                        }
+                                    }
+                                }
+
+                                $htm .=  "<img src='".$default_image."'>";
+
 				$htm .= "    </div>";
 				
 				// item name set link
@@ -354,9 +367,3 @@ if($results != NULL || !empty($results)){
 	}
 }
 ?>		
-
-
-
-<script>
-create_pager();
-</script>

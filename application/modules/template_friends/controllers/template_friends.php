@@ -273,6 +273,62 @@ class template_friends extends MX_Controller {
 			$this->load->view("view_load_friend_activites",$return); 			
 		
 	}
+	public function load_friend_activities_new(){
+			
+			$this->load->module("function_forums");
+
+			$start = 0;
+			
+			$user_ = unserialize($this->native_session->get("user_info"));
+			$user =  $user_["user_id"];
+	
+			$srch = "";
+			$per_page = 12;
+			$start_main = ($start * $per_page) - $per_page;
+			if($start_main < 0) $start_main = 0;
+			
+			//count total number of rows
+			$total_count = 0;
+				$total = $this->db->query("SELECT COUNT(1) as total FROM watch_friends
+										   JOIN watch_activity
+										   ON watch_friends.friend_friend_id = watch_activity.activity_user_id  
+										   WHERE friend_user_id = $user AND friend_accepted = 1");
+			
+			if($total->num_rows() > 0){
+				foreach($total->result() as $t){
+					$total_count = $t->total;
+				} 
+			}      
+
+			$this->db->join('watch_users', 'watch_users.user_id = watch_friends.friend_friend_id', 'left');			
+			$this->db->join('watch_activity', 'watch_activity.activity_user_id = watch_friends.friend_friend_id');			
+
+			//load items
+			$where_string = "friend_user_id = $user AND friend_accepted = 1 ";
+			$this->db->where($where_string,null,false);  
+
+			if($per_page == "All"){
+				$query = $this->db->get("watch_friends"); 
+			} else {
+				$query = $this->db->get("watch_friends",$per_page, $start_main); 
+			}
+			
+			$return["results"] = "";
+			
+			if($query->num_rows() > 0){
+				$return["results"] = $query->result();
+				//setup pagination
+				$this->load->module('function_pagination');
+				$this->load->module('function_security');
+				$ajax = $this->function_security->encode("dashboard-ajax");
+				$base_url = base_url() . 'dashboard/'.$ajax;
+				$total_rows = $total_count;
+				$per_page = $per_page;
+				$return["paginate"] = $this->function_pagination->pagination($base_url,$total_rows,$per_page,$start);
+			}    
+			$this->load->view("view_load_friend_activites",$return); 			
+		
+	}
 
     /*===================================================================
 	* name : delete_item()

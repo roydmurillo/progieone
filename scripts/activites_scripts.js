@@ -22,11 +22,11 @@ jQuery(document).ready(function() {
             jQuery("#loader_inner").html("");
             jQuery("#loader").hide();
     }
-    if(jQuery("#load_initial").val() != ""){
-		var data_obj = {start:jQuery("#start").val()};
-		data_obj = jQuery.toJSON(data_obj);
-        ajax_load(data_obj);
-    }
+//    if(jQuery("#load_initial").val() != ""){
+//		var data_obj = {start:jQuery("#start").val()};
+//		data_obj = jQuery.toJSON(data_obj);
+//        ajax_load(data_obj);
+//    }
 	jQuery('body').on('click', '.remove_friend', function(){
 		var ths = jQuery(this);
 		var r=confirm("You are about to remove "+jQuery(this).prevAll(".item_title").html().trim()+" from your friend's list.\n Proceed?");

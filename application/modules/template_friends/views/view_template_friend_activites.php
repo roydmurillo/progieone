@@ -47,7 +47,12 @@
 						Friend Invites
 				</a>				
 			</div>
-			<div id="dashboard_content"><div id="loader"><div id="loader_inner"></div></div></div>
+			<div id="dashboard_content">
+                            <?php
+                                $this->load->module("template_friends");
+                                $this->template_friends->load_friend_activities_new();
+                            ?>
+                        </div>
 		</div>
         
 </div>
