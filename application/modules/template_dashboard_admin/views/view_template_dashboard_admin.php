@@ -60,7 +60,7 @@
                                                         <div><input type="input" id="days" value="<?php echo $p["days"]; ?>"></div>
                                                     </div>
                                                     <div class="last-update">
-                                                        <div>Last Updated:</div>
+                                                        <div><label>Last Updated:</label></div>
                                                         <div> <?php echo date("l jS \of F Y h:i:s A", strtotime($p["date"])); ?></div>
                                                     </div>                                                    
                                             </div>

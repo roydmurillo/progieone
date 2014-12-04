@@ -280,6 +280,8 @@ h2.h2_title {
       padding: 12px 12px 12px 0; }
     .main .settings-wrapper .global-price-list-adjustment {
       margin: 12px 0; }
+      .main .settings-wrapper .global-price-list-adjustment .last-update {
+        padding-top: 12px; }
     .main .settings-wrapper .last-update td {
       padding: 12px 0; }
     .main .settings-wrapper .box_title {
@@ -370,6 +372,8 @@ item list
     @media (max-width: 480px) {
       .thumbnail .watch-btn .add_wishlist.in-watch:after {
         content: "- watchlist"; } }
+  .thumbnail .watch-btn .btn {
+    width: 100%; }
 
 .item-single-section1 .breadcrumb {
   background-color: #fff; }
@@ -443,6 +447,12 @@ sidebar
   z-index: 22 !important;
   background-color: rgba(0, 0, 0, 0.8); }
 
+.thumb-rating, .quick-prof-info {
+  margin: 12px 0; }
+
+.quick-prof-info span, .quick-prof-info label {
+  font-size: .7em; }
+
 /*
     forum style
 */
@@ -461,6 +471,15 @@ sidebar
   padding-left: 12px;
   padding: 12px 24px;
   display: block; }
+
+@media (max-width: 767px) {
+  .forum_count {
+    float: none !important;
+    height: auto !important; } }
+
+@media (max-width: 767px) {
+  .last-update, .post-count {
+    padding: 0; } }
 
 .container-center {
   min-height: 500px;

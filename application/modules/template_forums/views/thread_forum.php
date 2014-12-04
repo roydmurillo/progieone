@@ -110,14 +110,9 @@
 			  foreach($form_data->result() as $r){
 			  		$user_info = $this->function_users->get_user_fields_by_id(array("user_name", "user_avatar"),$r->reply_user_id);
 					if($user_info["user_avatar"] != "") { 
-						$img =  "<img style='max-width: 100px;
-											max-height: 100px;
-											vertical-align: middle;'
-									  src='".$user_info["user_avatar"]."'>";
+						$img =  "<img src='".$user_info["user_avatar"]."'>";
 					} else { 
-						$img =  "<img style='max-width: 100px;
-											max-height: 100px;'
-									  src='".base_url()."assets/images/avatar.jpg'>";
+						$img =  "<img src='".base_url()."assets/images/avatar.jpg'>";
 					}
 					
 					echo '<div class="forum_container" style="margin-bottom:15px !important">

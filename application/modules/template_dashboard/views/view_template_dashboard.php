@@ -149,7 +149,7 @@
                         <p>Inbox: <span class="badge"><?php echo $message_count;?></span></p>
                         <p>Unread messages: <span class="badge"><?php echo $message_unread_count;?></span></p>
                         <a href="<?php echo base_url(); ?>dashboard/messages" title="read messages" class="btn btn-primary">read messages</a>
-                        <a href="<?php echo base_url(); ?>dashboard/create" title="create new message" class="btn btn-primary">create new message</a>
+                        <a href="<?php echo base_url(); ?>dashboard/messages/create" title="create new message" class="btn btn-primary">create new message</a>
                     </div>
                 </div>
             </div>
@@ -171,7 +171,7 @@
                     <h2 class="panel-heading">Forum</h2>
                     <div class="panel-body">
                         <p>Help or ask questions</p>
-                        <a class="btn btn-primary">visit forum</a>
+                        <a href="<?php echo base_url(); ?>forums" title="visit forum" class="btn btn-primary">visit forum</a>
                     </div>
                 </div>
             </div>

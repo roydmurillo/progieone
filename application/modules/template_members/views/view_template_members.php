@@ -105,9 +105,9 @@ if(empty($items)){
 				<div>
 					<a style="color:#06C; font-weight:bold;" href="<?php echo base_url(); ?>member_profile/<?php echo $result[0]->user_name; ?>"><?php echo $result[0]->user_name; ?></a>
 				</div>
-				<div    >
-					<div >Last login: <?php echo $this->function_forums->last_updated($result[0]->user_logged); ?></div>		
-					<div >Registered: <?php echo date("F j, Y", strtotime($result[0]->user_date)); ?></div>		
+				<div    class="quick-prof-info">
+                                    <div ><label>Last login:</label> <span><?php echo $this->function_forums->last_updated($result[0]->user_logged); ?></span></div>		
+                                    <div ><label>Registered:</label> <span><?php echo date("F j, Y", strtotime($result[0]->user_date)); ?></span></div>		
 
 				</div>
 				
@@ -132,11 +132,11 @@ if(empty($items)){
                                             $like_flag = $ret_count['ok'] == 1 ? 1 : 0;
                                             $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                         ?>
-					<div>
+                                        <div class="thumb-rating">
                                             <!--<a href="<?php echo base_url() . $this->uri->segment(1) . "/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
                                             <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a>
-                                            <span class="badge"><?php echo $ret_count['ok'];?></span>
+                                            <span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>
                                             <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a>
                                             <span class="badge">&nbsp;<?php echo $ret_count['no'];?></span>
 					</div>
@@ -330,20 +330,7 @@ if(empty($items)){
 		
 		} else {
 			
-			echo '<div id="total_message" 
-					  style="float: left;
-							height: 30px;
-							line-height: 30px;
-							color: red;
-							width:580px;
-							font-size: 12px;
-							font-weight: bold;
-							clear: both;
-							font-family: arial;
-							border: 1px solid #F00;
-							padding: 5px 20px;
-							margin: 5px 0px 12px;
-							background: none repeat scroll 0% 0% #FFFACD;">
+			echo '<div id="total_message" class="col-sm-6">
 						    0 Watch Items Found with the current search / filter. 
 			       </div>';		
 		

@@ -36,11 +36,11 @@
 								<div class='forum_d'>".$r->category_desc."</div>
 						  	</div>
                                                         <div class='col-sm-4'>
-                                                            <div class='col-sm-6'>".$this->function_forums->count_threads_by_category($r->category_id)."</div>
-								<div class='forum_count'>".$count = $this->function_forums->count_reply_by_category($r->category_id)."</div>";
+                                                            <div class='col-sm-6 post-count'><label class='visible-sm visible-xs'>Replies:</label>".$this->function_forums->count_threads_by_category($r->category_id)."</div>
+								<div class='forum_count'><label class='visible-sm visible-xs'>last update:</label>".$count = $this->function_forums->count_reply_by_category($r->category_id)."</div>";
 						  
 						  if($count > 0){
-						  	  echo "<div class='col-sm-6'>".$this->function_forums->last_updated_by($r->category_id)."</div>";
+						  	  echo "<div class='col-sm-6 last-update'>".$this->function_forums->last_updated_by($r->category_id)."</div>";
 						  } else {
 						  	  echo "<div class='col-sm-6'>No Updates</div>";
 						  }

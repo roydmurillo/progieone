@@ -37,3 +37,12 @@ sidebar
     z-index:22 !important;
     background-color:rgba(0, 0, 0, 0.80);
 }
+
+.thumb-rating, .quick-prof-info{
+    margin: 12px 0;
+}
+.quick-prof-info{
+    span, label{
+        font-size:.7em;
+    }
+}

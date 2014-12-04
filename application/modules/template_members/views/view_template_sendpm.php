@@ -42,9 +42,9 @@
 				</div>
 				
 
-				<div >
-					<div >Last login: <?php echo $this->function_forums->last_updated($result[0]->user_logged); ?></div>		
-					<div >Registered: <?php echo date("F j, Y", strtotime($result[0]->user_date)); ?></div>							
+				<div class="quick-prof-info">
+                                    <div ><label>Last login:</label> <span><?php echo $this->function_forums->last_updated($result[0]->user_logged); ?></span></div>		
+                                    <div ><label>Registered:</label> <span><?php echo date("F j, Y", strtotime($result[0]->user_date)); ?></span></div>							
 				</div>
 				
 
@@ -68,7 +68,7 @@
                                             $like_flag = $ret_count['ok'] == 1 ? 1 : 0;
                                             $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                         ?>
-					<div >
+					<div class="thumb-rating">
 <!--                                            <a href="<?php // echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
                                             <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a><span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>&nbsp;

@@ -1,26 +1,25 @@
-<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="display:none">
-<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="display:none">
+
 <div id="create_account">
 	
 	<div class="inner_acct">
 		
 		<?php if($error != ""){	?>
-			<div class="regular_register" style="min-height:40px !important;">
+			<div class="regular_register">
 					<?php if(strpos($error,"successfully") > -1 ) { ?>
-						<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-						<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+						<i class="fa fa-check-circle"></i>
+						<div>
 							<?php echo $error; ?>
 						</div>
 					<?php } elseif(strpos($error,"Error") > -1 ) { ?>
-						<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-						<div style="float:left; margin-left:12px; margin-top:12px; color:red">
+						<i class="fa fa-exclamation-triangle"></i>
+						<div>
 							<?php echo $error; ?>
 						</div>
 					<?php } ?>
 			</div>
 		<?php } ?>	
 		
-		<div id="regular_register" style="min-height:40px !important">
+		<div id="regular_register">
 			
 			<h2 class="mtop0 mbottom">Change Your Password</h2>
 				

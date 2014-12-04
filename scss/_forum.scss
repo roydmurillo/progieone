@@ -25,3 +25,14 @@
             padding: 12px 24px;
             display: block;
         }
+        .forum_count{
+            @media (max-width:767px){
+                float:none !important;
+                height:auto !important;
+            }
+        }
+        .last-update, .post-count{
+            @media (max-width:767px){
+                padding:0;
+            }
+        }

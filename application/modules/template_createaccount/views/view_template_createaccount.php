@@ -108,9 +108,9 @@ input[type="checkbox"] {
                 </div> 
 		<?php } else { ?>
 		
-		<div id="regular_register" style="min-height:40px !important; width:520px !important">
+		<div id="regular_register">
 				
-				<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
+				<i class="fa fa-check-circle"></i>
 				<div style="float:left; margin-left:12px; margin-top:12px">
 					<?php echo $remarks; ?>
 				</div>									
