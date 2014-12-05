@@ -486,7 +486,6 @@ sidebar
   background-color: #f5f5f5; }
 
 .dropdown-menu {
-  left: 12px;
   min-width: 107px; }
 
 .green-alert {
@@ -649,7 +648,7 @@ footer {
     .black-nav .nav.navbar-nav {
       margin-left: 1px; } }
   header .nav.navbar-nav {
-    max-width: 201px; }
+    max-width: 203px; }
     @media (max-width: 480px) {
       header .nav.navbar-nav {
         float: none !important;
