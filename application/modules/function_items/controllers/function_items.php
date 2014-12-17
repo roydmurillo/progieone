@@ -199,8 +199,7 @@ class function_items extends MX_Controller {
                     }
                     
                     #### added for default value #########
-                    $this->db->set("item_expire", '0000-00-00 00:00:00');
-                    $this->db->set("item_expire", '0000-00-00 00:00:00');
+//                    $this->db->set("item_expire", '0000-00-00 00:00:00');
                     ######################################
 
                     $this->db->insert('watch_items'); 
