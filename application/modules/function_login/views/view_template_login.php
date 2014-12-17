@@ -8,11 +8,8 @@
 		<?php } ?>	
 		
 		<?php if($msg = $this->native_session->get("login_message")){	?>
-			<div class="regular_register" style="min-height:40px !important; margin: 0px 155px;">
-					<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-					<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-						<?php echo $msg; ?>
-					</div>									
+			<div class="regular_register">
+					<i class="fa fa-check-circle"></i> <?php echo $msg; ?>								
 			</div>
 		<?php $this->native_session->delete("login_message"); } ?>	
                 <div class="col-md-6">

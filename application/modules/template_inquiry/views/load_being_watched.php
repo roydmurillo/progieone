@@ -6,12 +6,9 @@
 <h2 class="h2_title">Your Items Being Watched</h2>
 
 <?php if($this->native_session->get("message_sent1")){	?>
-	<div class="regular_register" style="min-height:40px !important;">
-			<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-			<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-				Message was successfully sent!
-			</div>									
-				
+	<div class="regular_register">
+			<i class="fa fa-check-circle"></i> Message was successfully sent!
+		
 	</div>
 <?php $this->native_session->delete("message_sent1");} ?>	
 

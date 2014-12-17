@@ -6,15 +6,11 @@
 		<?php if($error != ""){	?>
 			<div class="regular_register">
 					<?php if(strpos($error,"Success") > -1 ) { ?>
-						<i class="fa fa-check-circle"></i>
-                                                <div>
-							<?php echo $error; ?>
-						</div>
+						<i class="fa fa-check-circle"></i> <?php echo $error; ?>
+						
 					<?php } elseif(strpos($error,"Error") > -1 ) { ?>
-						<i class="fa fa-exclamation-triangle"></i>
-						<div>
-							<?php echo $error; ?>
-						</div>
+						<i class="fa fa-exclamation-triangle"></i> <?php echo $error; ?>
+						
 					<?php } ?>
 			</div>
 		<?php } ?>	

@@ -44,14 +44,13 @@ border:1px solid #CCC; }
 			<div>
 					<!-- content goes here -->
 					<?php if($this->native_session->get("message_contact_us")){	?>
-						<div class="regular_register" style="min-height:40px !important;">
-								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-								<p> Your Inquiry was successfully sent! We will reply to you as soon as possible. Thank You!</p>												
+						<div class="regular_register">
+								<i class="fa fa-check-circle"></i> Your Inquiry was successfully sent! We will reply to you as soon as possible. Thank You!												
 						</div>
 					<?php $this->native_session->delete("message_contact_us");} ?>	
 				<div>	
 				</div>
-					<div class="col-md-6">
+					<div class="col-md-6 ma-t1em">
 						<div class="panel panel-default">
                                                    <div class="panel-heading">Contact</div>
                                                 <div class="panel-body">  
@@ -103,7 +102,7 @@ border:1px solid #CCC; }
 								?>
 									<div>
 									    <input type="hidden" id="captcha_key" value="<?php echo $key; ?>">
-                                                                            <input class="input1 form-control"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code" style="padding:5px; width:349px">
+                                                                            <input class="input1 form-control"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code">
 									</div>
                                                             </div>
 							</div>							
@@ -113,7 +112,7 @@ border:1px solid #CCC; }
 								<input id="submit_pm" class='btn btn-default' type="button" value="Send Message">
 								<input id="submit_sendpm" name="submit_sendpm" type="submit" value="Submit Info" style="display:none">
 							</div>
-							<div id="remarks" style="float: left;width: 300px;height: 20px;color:red;font-family:arial;font-size:14px;margin-left: 10px;margin-top:-12px;clear: both;"></div>	
+							<div id="remarks"></div>	
 						</form>
                                             </div>	
                                             </div>

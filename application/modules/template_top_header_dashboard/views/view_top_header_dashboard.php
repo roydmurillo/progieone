@@ -11,12 +11,12 @@
 
 <header class="navbar-default">
             <div class="container">
-                <a class="navbar-brand mobile-center" href="<?php echo base_url();?>/all-watches"><img class="img-responsive" src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
+                <a class="navbar-brand mobile-center" href="<?php echo base_url();?>/all-watches"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a>      	      	
                     <!--== desktop menu ==-->
                     <ul class="nav navbar-nav pull-right hidden-xs">
                         <li class="dropdown">
                             <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">My Account <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu drop-admin" role="menu">
                                 <li><a href="<?php echo base_url();?>dashboard/account">Admin</a></li>
                                 <li><a href="<?php echo base_url();?>dashboard/messages">Inbox</a></li>
                                 <li><a href="<?php echo base_url();?>dashboard/friends">Friends</a></li> 

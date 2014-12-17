@@ -14,11 +14,9 @@
 <!-- content goes here -->
 <div id="homepage" class="clearfix">
 
-		<div class="regular_register" style="min-height:40px !important;">
-				<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-				<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-					Member <?php echo $this->uri->segment(2); ?> does not exist!
-				</div>									
+		<div class="regular_register">
+				<i class="fa fa-exclamation-triangle"></i> Member <?php echo $this->uri->segment(2); ?> does not exist!
+												
 					
 		</div>
         

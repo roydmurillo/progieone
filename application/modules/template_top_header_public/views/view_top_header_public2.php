@@ -9,7 +9,7 @@
             </div>
             <div class="sub-nav">
                 <div class="container">
-                    <div class="col-sm-6 logo"><a href="<?php echo base_url();?>"><img class="img-responsive" src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a></div>      	      	
+                    <div class="col-sm-6 logo"><a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>/assets/images/cw-logo.png" alt="cyberwatch cafe"/></a></div>      	      	
                     <div class="col-sm-6">    <ul class="nav navbar-nav pull-right topnav clearfix">
                             <li><a class="btn btn-default" href="<?php echo base_url();?>secure/register">Create Account</a></li>      	
                             <li><a class="btn btn-default" href="<?php echo base_url();?>secure/sign-in">Login</a></li>       	

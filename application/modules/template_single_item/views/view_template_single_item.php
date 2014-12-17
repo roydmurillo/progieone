@@ -128,7 +128,7 @@
                                                                         $dislike_flag = $ret_count['no'] == 1 ? 1 : 0;
                                                                     ?>
                                                                     <div class="small_info2">
-                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a><span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>
+                                                                        <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;<span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>
                                                                         <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a><span class="badge">&nbsp;<?php echo $ret_count['no'];?></span></div>
 <!--									<div class="small_info2"><?php $this->function_rating->get_stars($item_details[0]->item_user_id); ?></div>
                                                                         <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>-->

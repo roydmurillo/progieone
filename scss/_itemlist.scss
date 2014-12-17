@@ -101,3 +101,10 @@ item list
     text-align: center;
     padding:12px;
 }
+
+.sort-left-mobile{
+    @media (max-width:767px){
+        text-align:left;
+        padding-top:12px;
+    }
+}

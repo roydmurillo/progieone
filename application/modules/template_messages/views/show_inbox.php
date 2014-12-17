@@ -6,11 +6,7 @@
 
 <?php if($this->native_session->get("success_sent")){	?>
 	<div class="regular_register">
-			
-			<div >
-				Message was successfully sent!
-			</div>									
-				
+			<i class="fa fa-check-circle"></i> Message was successfully sent!												
 	</div>
 <?php $this->native_session->delete("success_sent");} ?>	
 

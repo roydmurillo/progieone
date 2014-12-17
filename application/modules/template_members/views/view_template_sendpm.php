@@ -71,7 +71,7 @@
 					<div class="thumb-rating">
 <!--                                            <a href="<?php // echo base_url() . "member_profile/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
-                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a><span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>&nbsp;
+                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;<span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>&nbsp;
                                             <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a><span class="badge">&nbsp;<?php echo $ret_count['no'];?></span></div>
 					</div>
 					
@@ -108,11 +108,9 @@
 
 				?>
 							
-								<div class="regular_register" style="min-height:40px !important;">
-											<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-											<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-												 You are not allowed to send a messages to your own profile!
-											</div>
+								<div class="regular_register">
+									<i class="fa fa-exclamation-triangle"></i> You are not allowed to send a messages to your own profile!
+									
 								</div>
 							
 							<?php
@@ -125,11 +123,9 @@
 				
 					<!-- content goes here -->
 					<?php if($this->native_session->get("message_pm")){	?>
-						<div class="regular_register" style="min-height:40px !important;">
-								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-								<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-									Message was successfully sent!
-								</div>									
+						<div class="regular_register">
+								<i class="fa fa-check-circle"></i> Message was successfully sent!
+														
 									
 						</div>
 					<?php $this->native_session->delete("message_pm");} ?>	
@@ -222,11 +218,9 @@
 				}
 			} else { ?>
 			
-				<div class="regular_register" style="min-height:40px !important;">
-							<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-							<div>
-								 You need to be logged in to be able to send private message
-							</div>
+				<div class="regular_register">
+							<i class="fa fa-exclamation-triangle"></i> You need to be logged in to be able to send private message
+					
 				</div>
 			
 			<?php

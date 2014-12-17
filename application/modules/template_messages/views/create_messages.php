@@ -30,11 +30,8 @@
 					<h2 class="h2_title">Create New Message</h2>
 					<?php if($this->native_session->get("message_sent")){	?>
 						<div class="regular_register">
-								<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' >
-								<div >
-									Message was successfully sent!
-								</div>									
-									
+							<i class="fa fa-check-circle"></i> Message was successfully sent!
+								
 						</div>
 					<?php $this->native_session->delete("message_sent");} ?>	
 					<div id="add_new_item">

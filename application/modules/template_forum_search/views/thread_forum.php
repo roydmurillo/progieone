@@ -193,11 +193,8 @@
 		  
 		  //no data found
 		  if($check == 0){ ?>
-				<div class="regular_register" style="min-height:40px !important;">
-						<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-						<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-							No Data was Found! Please check your URL
-						</div>									
+				<div class="regular_register">
+						<i class="fa fa-exclamation-triangle"></i> No Data was Found! Please check your URL								
 							
 				</div>	
 		  <?php				  

@@ -62,7 +62,7 @@ if(empty($item_list)){
 	<div id="filter_return" class="col-md-6 text-right">
             
 	        <form method="POST">
-                        <div>
+                        <div class="sort-left-mobile">
                             <b>Sort By:</b>
                             <input type="hidden" value="" name="sort_by" id="sort_by">
                             <select id="sort_by_dropdown">

@@ -2,7 +2,7 @@
 <div class="sidebar-inner">
 	
     <div>
-        REFINE LIST
+        <label>REFINE LIST</label>
     </div> 	
 
   

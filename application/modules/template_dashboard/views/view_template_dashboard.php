@@ -135,9 +135,8 @@
                     <div class="panel-body">
                         <p>Current watch list: <span class="badge"><?php echo $current_watch_list;?></span></p>
                         <p>Current items for sale: <span class="badge"><?php echo $count_sell_items;?></span></p>
-                        <a href="<?php echo base_url(); ?>dashboard/sell/new" title="post new item" class="btn btn-primary btn-green">post item</a>
-                        <a href="<?php echo base_url(); ?>dashboard/checkout" title="checkout item posted" class="btn btn-danger">checkout</a>
-                        <a href="<?php echo base_url(); ?>dashboard/sell/for_sale" title="view item list" class="btn btn-primary">view item list</a>
+                        <a href="<?php echo base_url(); ?>dashboard/sell/new" title="post new item" class="btn btn-primary btn-green">sell an item</a>
+                        <a href="<?php echo base_url(); ?>dashboard/sell/for_sale" title="view item list" class="btn btn-primary">view selling</a>
                         <a href="<?php echo base_url(); ?>dashboard/watchlist" title="view watch list" class="btn btn-primary">view watch list</a>
                     </div>
                 </div>

@@ -87,7 +87,7 @@ if(empty($user_list)){
 	<div id="filter_return">
 
 	        <form method="POST">
-	        <div class="fleft">
+	        <div class="fleft sort-left-mobile">
 				<b>Sort By:</b>
 			</div>
 			<div class="fleft" style="margin-left:12px;">

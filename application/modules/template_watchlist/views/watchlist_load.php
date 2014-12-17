@@ -119,7 +119,7 @@
             }
 			
 			?>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 item">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 item">
 			<figure class="thumbnail">
 				<div class="img-slot">
 					
@@ -142,7 +142,7 @@
 		<?php
 		}
     ?>
-		<div style="float:left; clear:both; margin-top:12px">
+		<div>
 		<?php echo $paginate; ?>
 		</div>
 	<?php	

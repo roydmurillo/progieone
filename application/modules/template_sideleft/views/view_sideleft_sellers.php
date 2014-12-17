@@ -17,13 +17,13 @@
   <?php 
 	if($validate === false){?>
 	  <div class="title_bar" style="margin:10px 0px 0px 0px; width:182px; position:relative;">
-		REFINE LIST
+		<label>REFINE LIST</label>
 		<div id="refine_loader" style='position:absolute; z-index:100; left:82px; bottom:-130px; display:none'><img src='<?php echo base_url(); ?>assets/images/refine_loader.gif'></div>
 	  </div> 	
 	<?php
 	} else { ?>
 	  <div class="title_bar" style="margin:0px 0px; width:182px; position:relative">
-		REFINE LIST
+		<label>REFINE LIST</label>
 		<div id="refine_loader" style='position:absolute; z-index:100; left:82px; bottom:-130px; display:none'><img src='<?php echo base_url(); ?>assets/images/refine_loader.gif'></div>
 	  </div> 	
 <?php }	?>

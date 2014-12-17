@@ -241,15 +241,11 @@ class function_items extends MX_Controller {
                                     <input type="file" name="photoimg_add" id="photoimg_add" />
                                 </form>
                      </div>
-                     <div id="add_image" style="float:left; width:700px">
-					 	<a id="upload_item_images" href="javascript:;" class="css_btn_c2" style="float:left;">Click Here to Upload Images</a>
-					 	<a id="checkout_item" href="'.base_url().'dashboard/checkout/item/'.$id.'" class="css_btn_c0" style="float:left; margin-left:12px; display:none">Checkout This Watch Item</a>
+                     <div id="add_image">
+					 	<a id="upload_item_images" href="javascript:;" class="css_btn_c2 btn btn-primary">Click Here to Upload Images</a>
+					 	<a id="checkout_item" href="'.base_url().'dashboard/checkout/item/'.$id.'" class="css_btn_c0 btn btn-danger btn-red" style="display:none">Checkout This Watch Item</a>
 					 </div>
-                     <div id="added_images" style="min-height: 0px;
-													margin: 20px;
-													background: #F8F8FF;
-													float: left;
-													min-width: 0px;">No Image Added Yet. Click button to upload new images.</div>
+                     <div id="added_images">No Image Added Yet. Click button to upload new images.</div>
                      ';
                 
             

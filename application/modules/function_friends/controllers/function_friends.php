@@ -35,10 +35,7 @@ class function_friends extends MX_Controller {
 					}
 				}
 				$html2 = '<div class="regular_register">
-								<img src="'. base_url().'assets/images/warning.png" alt="preload" style="float:left">
-								<div>
-									You have 0 Contacts yet.
-								</div>									
+							<i class="fa fa-exclamation-triangle"></i> You have 0 Contacts yet.							
 						</div>';
 				if($html == ""){
 					exit($html2);

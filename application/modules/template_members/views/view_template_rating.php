@@ -162,17 +162,13 @@
 		if(!empty($ratings)){ ?>
 
 			<?php if($submit_result != ""){	?>
-				<div class="regular_register" style="min-height:40px !important;float: left; margin: 3px 11px 15px;">
+				<div class="regular_register">
 						<?php if(strpos($submit_result,"successfully") > -1 ) { ?>
-							<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-							<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-								<?php echo $submit_result; ?>
+							<i class="fa fa-check-circle"></i> <?php echo $submit_result; ?>
 							</div>
 						<?php } elseif(strpos($submit_result,"Error") > -1 ) { ?>
-							<img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="float:left">
-							<div style="float:left; margin-left:12px; margin-top:12px; color:red">
-								<?php echo $submit_result; ?>
-							</div>
+							<i class="fa fa-exclamation-triangle"></i> <?php echo $submit_result; ?>
+							
 						<?php } ?>
 				</div>
 			<?php } ?>	

@@ -252,6 +252,13 @@ dashboard
 h2.h2_title {
   margin: 12px;
   border-bottom: 1px solid #ccc; }
+  #add_new_item h2.h2_title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-size: 1.5em; }
+
+#added_images {
+  margin-top: 12px !important; }
 
 #filter_container {
   padding: 12px 15px; }
@@ -305,6 +312,11 @@ h2.h2_title {
   .table_add td select, .table_add td input {
     max-width: 320px;
     width: 100%; }
+  .table_add td label {
+    padding: 12px 0; }
+
+.t_desc label {
+  padding: 12px 0; }
 
 .sell .action {
   padding: 12px; }
@@ -316,6 +328,8 @@ h2.h2_title {
 .sell .details img {
   max-width: 100px;
   width: 100%; }
+.sell .thumbnail {
+  padding: 12px; }
 
 .tablediv-ui {
   border-bottom: 1px solid #ccc;
@@ -344,6 +358,12 @@ h2.h2_title {
 .ratings p {
   display: inline-block;
   margin-right: 12px; }
+
+.main .panel .btn {
+  margin-top: 12px; }
+
+.drop-admin {
+  margin-left: 12px; }
 
 /*
 item list
@@ -412,6 +432,11 @@ item list
 #cross-sell .view-all {
   text-align: center;
   padding: 12px; }
+
+@media (max-width: 767px) {
+  .sort-left-mobile {
+    text-align: left;
+    padding-top: 12px; } }
 
 /*
 sidebar
@@ -504,7 +529,6 @@ sidebar
   #top .container p {
     margin: 0;
     color: #FFF;
-    margin-right: 12px;
     font-family: 'Georgia';
     -webkit-font-smoothing: antialiased;
     font-size: 16px; }
@@ -656,7 +680,7 @@ footer {
   .home-banner .nav.navbar-nav {
     max-width: 280px; }
   nav .nav.navbar-nav {
-    max-width: 590px; }
+    max-width: 593px; }
 
 .caret {
   color: #C9C5C5; }

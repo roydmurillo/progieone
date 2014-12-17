@@ -135,7 +135,7 @@ if(empty($items)){
                                         <div class="thumb-rating">
                                             <!--<a href="<?php echo base_url() . $this->uri->segment(1) . "/" . $this->uri->segment(2)."/member_rating"; ?>">View User Ratings</a>-->
                                             <input type="hidden" id="uid" value="<?php echo $result[0]->user_id; ?>">
-                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a>
+                                            <a href="Javascript:;" class="cyberlike" data-count="<?php echo $ret_count['ok'];?>"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;
                                             <span class="badge">&nbsp;<?php echo $ret_count['ok'];?></span>
                                             <a href="Javascript:;" class="cyberdislike" data-count="<?php echo $ret_count['no'];?>"><i class="fa fa-thumbs-o-down"></i></a>
                                             <span class="badge">&nbsp;<?php echo $ret_count['no'];?></span>
@@ -184,7 +184,7 @@ if(empty($items)){
 			<div id="filter_return" class="col-sm-6 text-right">
 		
 					<form method="POST">
-                                            
+                                            <div class="sort-left-mobile">    
 						<b>Sort By:</b>
 					
                                             
@@ -197,7 +197,7 @@ if(empty($items)){
 							<option value="za" <?php echo ($sort_by == "za")? "selected='selected'":""; ?>>Name Z - A</option>
 							<option value="advertised" <?php echo ($sort_by == "advertised")? "selected='selected'":""; ?>>Date Advertised</option>
 						</select>
-					
+                                            </div>
 					<input type="submit" name="submit_filter" id="submit_filter" style="display:none">
 					</form>			
 			</div>

@@ -79,20 +79,18 @@ foreach($item_info as $i){
 						Checkout
 					</div>
 				</a>				
-				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "sell") ? "active":"tab_inner"; ?>" href="javascript:;">
+<!--				<a class="btn btn-default <?php echo ($this->uri->segment(2) == "sell") ? "active":"tab_inner"; ?>" href="javascript:;">
 					<div class="tab_inner_active"> 
 						Update Items
 					</div>
-				</a>
+				</a>-->
 			</div>	
 			<div id="dashboard_content">
 				
 				<?php if($update_remarks){	?>
-					<div class="regular_register" style="min-height:40px !important;">
-							<img src='<?php echo base_url(); ?>assets/images/check.png' alt='preload' style="float:left">
-							<div>
-								Watch Item had been successfully updated!
-							</div>									
+					<div class="regular_register" >
+							<i class="fa fa-check-circle"></i> Watch Item had been successfully updated!
+																
 								
 					</div>
 				<?php } ?>	
@@ -232,7 +230,7 @@ foreach($item_info as $i){
 												</td>
 											</tr>
                                             <tr>
-                                                <td colspan="2">Additional Options</td>
+                                                <td colspan="2"><label>Additional Options</label></td>
                                             </tr>
                                             <tr>
                                                 <td>Movement Type:</td>
@@ -334,12 +332,12 @@ foreach($item_info as $i){
 									</table>
 									
 									<div class="t_area">
-										<div class="t_desc">Item Description:</div> 
+                                                                            <div class="t_desc"><label>Item Description:</label></div> 
 										<textarea id="item_description" name="item_desc" ></textarea>
 									</div>
 
 									<div class="t_area">
-										<div class="t_desc">Item Shipping:</div> 
+                                                                            <div class="t_desc"><label>Item Shipping:</label></div> 
 										<textarea id="item_shipping" name="item_shipping"></textarea>
 									</div>									
 							
@@ -351,7 +349,7 @@ foreach($item_info as $i){
   				
 				</form>
 					<div >
-										<h2 style="width:540px !important" class="h2_title">Update Watch Item Images</h2>
+										<h2 class="h2_title">Update Watch Item Images</h2>
 										<div id="uploads" style="display:none">
 										<?php 
 											$this->load->module("function_security");
