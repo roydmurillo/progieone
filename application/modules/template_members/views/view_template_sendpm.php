@@ -108,7 +108,7 @@
 
 				?>
 							
-								<div class="regular_register">
+								<div class="red-alert">
 									<i class="fa fa-exclamation-triangle"></i> You are not allowed to send a messages to your own profile!
 									
 								</div>
@@ -123,7 +123,7 @@
 				
 					<!-- content goes here -->
 					<?php if($this->native_session->get("message_pm")){	?>
-						<div class="regular_register">
+						<div class="green-alert">
 								<i class="fa fa-check-circle"></i> Message was successfully sent!
 														
 									
@@ -218,7 +218,7 @@
 				}
 			} else { ?>
 			
-				<div class="regular_register">
+				<div class="red-alert">
 							<i class="fa fa-exclamation-triangle"></i> You need to be logged in to be able to send private message
 					
 				</div>

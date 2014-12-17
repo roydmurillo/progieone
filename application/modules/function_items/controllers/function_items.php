@@ -242,7 +242,7 @@ class function_items extends MX_Controller {
                      </div>
                      <div id="add_image">
 					 	<a id="upload_item_images" href="javascript:;" class="css_btn_c2 btn btn-primary">Click Here to Upload Images</a>
-					 	<a id="checkout_item" href="'.base_url().'dashboard/checkout/item/'.$id.'" class="css_btn_c0 btn btn-danger btn-red" style="display:none">Checkout This Watch Item</a>
+					 	<a id="checkout_item" href="'.base_url().'dashboard/checkout/item/'.$id.'" class="css_btn_c0 btn btn-danger btn-red" style="display:none">proceed to check out</a>
 					 </div>
                      <div id="added_images">No Image Added Yet. Click button to upload new images.</div>
                      ';

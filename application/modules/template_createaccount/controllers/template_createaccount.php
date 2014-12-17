@@ -27,7 +27,7 @@ class template_createaccount extends MX_Controller {
                         $encode = $this->function_security->encode($this->input->post("firstname").$this->input->post("username").$this->input->post("password"));
                         $this->send_email($encode);
                         $this->save_data($encode);
-                        $content["remarks"] = "<h3 style='color: green !important; margin-top: -10px; margin-bottom: 0px; font-size:17px'>You are now Successfully Registered! Please Check your email to fully activate your account.</h3>";
+                        $content["remarks"] = "<h3>You are now Successfully Registered! Please Check your email to fully activate your account.</h3>";
                     } else {
                         $content["remarks"] = " " . $content["remarks"];
                     }
@@ -95,17 +95,9 @@ class template_createaccount extends MX_Controller {
         
         public function send_email($encode){
 
-            $message = "<div style='float:left;margin:12px; padding:15px; border:1px solid #333; font-family:verdana; font-size:14px'>
+            $message = "<div>
 			<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
-				<div style='float:left;margin:12px; padding:15px; font-family:verdana; font-size:14px; border: 1px solid #CCC;
-							background: #fcfff4; /* Old browsers */
-							background: -moz-linear-gradient(top,  #fcfff4 0%, #e9e9ce 100%); /* FF3.6+ */
-							background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(100%,#e9e9ce)); /* Chrome,Safari4+ */
-							background: -webkit-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* Chrome10+,Safari5.1+ */
-							background: -o-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* Opera 11.10+ */
-							background: -ms-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* IE10+ */
-							background: linear-gradient(to bottom,  #fcfff4 0%,#e9e9ce 100%); /* W3C */
-							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 ); /* IE6-9 */'>
+				<div>
 					Hello ".ucfirst(strtolower($this->input->post("firstname"))).",
 					You have received this email because you have successfully registered at Cyberwatchcafe.com.
 					You only have one more step remaining to fully activate your account and use the website's features.

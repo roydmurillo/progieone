@@ -175,7 +175,7 @@ if(empty($items)){
 
 		<div class="col-sm-9 col-md-10 main">
                     <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 classified">
 			USER'S CLASSIFIEDS
                     </div>
 		<?php 

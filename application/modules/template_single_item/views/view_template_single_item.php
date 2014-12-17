@@ -104,7 +104,7 @@
 							
 							<div class="clearfix">
 							<div class="single_desc" >Online Seller:</div>
-								<div class="seller_avatar">
+								<div class="seller_avatar col-xs-4 col-sm-3">
 								    <?php 
 										if($owner["user_avatar"] != ""){
 											$avatar = $owner["user_avatar"];
@@ -115,7 +115,7 @@
 
                                                                         <div class='profile-photo' style="background:url('<?php echo $avatar; ?>') center center no-repeat; background-size:cover;"></div>
 								</div>
-								<div class="seller_info">
+								<div class="seller_info col-xs-8 col-sm-9">
 									<div class="small_info">
 										<a class="u_name" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>"><?php echo $owner["user_name"]; ?></a>
 									</div>
@@ -134,10 +134,11 @@
                                                                         <div class="small_info2" ><div class="flag flag-<?php echo strtolower($owner["user_country"]); ?>" title="<?php echo $this->function_country->get_country_name($owner["user_country"]); ?>"></div></div>-->
 									<div class="small_info">
 									    <input type="hidden" id="uid" value="<?php echo $item_details[0]->item_user_id; ?>">
-										<a href="javascript:;" id="add_friend" >Add as Friend</a>
+										<a class="btn btn-primary" href="javascript:;" id="add_friend" >invite</a>
+                                                                                <a class="btn btn-primary" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>" >view profile</a>
 									</div>
 								</div>
-							    <input id="contact_seller" type="button" value="Contact Seller" class="btn btn-primary">
+							    <input id="contact_seller" type="button" value="Contact Seller" class="btn btn-primary ma-t1em">
 
 							</div>
 				</div>

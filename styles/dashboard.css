@@ -264,10 +264,12 @@ margin-top:-5px;
 .ad_im{
 max-width:150px; max-height:150px; vertical-align:middle; box-shadow:1px 1px 2px 1px #555;
 }
-.img{
-width:150px;height:150px; text-align:center; line-height:150px; vertical-align:middle; float:left; margin:12px; position:relative;
+.img
+{
+width:150px;height:150px; margin:12px 0; line-height:150px; vertical-align:middle; position:relative;
 cursor:pointer; cursor:hand;
 }
+
 .del_im{
 position:absolute;
 top:50%;

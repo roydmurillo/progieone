@@ -231,6 +231,12 @@ profile
     border-top: 1px solid #ccc; }
   #homepage .title_thread {
     margin: 12px 0; }
+  @media (max-width: 767px) {
+    #homepage .classified {
+      margin-top: 12px; } }
+
+#contact_seller {
+  width: 100%; }
 
 /*
 dashboard
@@ -518,6 +524,13 @@ sidebar
 
 .red-alert {
   color: red; }
+
+.green-alert {
+  color: green; }
+  .green-alert h3 {
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 12px; }
 
 /*top*/
 #top {

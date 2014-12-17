@@ -22,5 +22,13 @@ profile
     .title_thread{
         margin:12px 0;
     }
+    .classified{
+        @media(max-width:767px){
+            margin-top:12px;
+        }
+    }
+    
 }
-
+#contact_seller{
+        width:100%;
+    }

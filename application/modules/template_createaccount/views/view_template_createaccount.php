@@ -108,11 +108,11 @@ input[type="checkbox"] {
                 </div> 
 		<?php } else { ?>
 		
-		<div id="regular_register">
+		<div class="green-alert">
 				
-				<i class="fa fa-check-circle"></i>
-				<div style="float:left; margin-left:12px; margin-top:12px">
-					<?php echo $remarks; ?>
+				
+				<div>
+					<i class="fa fa-check-circle"></i><?php echo $remarks; ?>
 				</div>									
 					
 		</div>

@@ -52,6 +52,14 @@ p{
 .red-alert{
     color:red;
 }
+.green-alert{
+    color:green;
+    h3{
+        display:inline-block;
+        font-size:15px;
+        margin-left:12px;
+    }
+}
 /*top*/
 #top{
         padding: 8px 0;
@@ -237,7 +245,7 @@ footer{
         max-width: 280px;
     }
     nav &{
-        max-width:590px;
+        max-width:593px;
     }
 }
 .caret{
