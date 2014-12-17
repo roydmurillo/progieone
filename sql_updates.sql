@@ -1,0 +1,1 @@
+ALTER TABLE `watch_users` ADD `user_phone` VARCHAR(15) NOT NULL DEFAULT '' AFTER `user_email`;
