@@ -1,10 +1,17 @@
 jQuery(document).ready(function() {
     
     $('.cyberlike').on('click', function(){
+        if(confirm('You are about to like this profile') == true){
             rating('ok');
+        }
     });
     $('.cyberdislike').on('click', function(){
+        if(confirm('You are about to dislike this profile?') == true){
             rating('no');
+        }
+    });
+    $('#contact_seller_phone').on('click', function(){
+        $(this).val($(this).attr('data-phone'));
     });
 
 	function rating(type){

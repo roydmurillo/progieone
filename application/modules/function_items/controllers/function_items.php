@@ -914,7 +914,7 @@ class function_items extends MX_Controller {
 
                     if(isset($data->item) && ($data->item != "") && ($data->item != "0")){
                         $srch .= " AND item_id = $data->item";
-                    } 					
+                    }
 
                     $filter_type = "";    
                     if(isset($data->filter_type) && ($data->filter_type != "")){
@@ -935,8 +935,11 @@ class function_items extends MX_Controller {
                     
                     //count total number of rows
                     $total_count = 0;
+//                    $total = $this->db->query("SELECT COUNT(1) as total FROM watch_items
+//                                               WHERE item_paid = '0' and item_user_id = $user_id 
+//                                               $srch $filter_type");
                     $total = $this->db->query("SELECT COUNT(1) as total FROM watch_items
-                                               WHERE item_paid = '0' and item_user_id = $user_id 
+                                               WHERE item_expire < NOW() and item_user_id = $user_id 
                                                $srch $filter_type");
                     if($total->num_rows() > 0){
                         foreach($total->result() as $t){
@@ -945,7 +948,7 @@ class function_items extends MX_Controller {
                     }
                     
                     //load items
-                    $where_string = " item_paid = '0' and item_user_id = $user_id $srch $filter_type";
+                    $where_string = " item_expire < NOW() and item_user_id = $user_id $srch $filter_type";
                     $this->db->where($where_string,null,false);  
                     if($sortby != ""){
                         $this->db->order_by($sortby, $sorttype);

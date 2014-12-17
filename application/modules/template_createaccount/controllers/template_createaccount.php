@@ -59,6 +59,7 @@ class template_createaccount extends MX_Controller {
             $remarks .= $this->check_blanks($this->input->post("lastname"),"Last Name");
 
             $remarks .= $this->check_email($this->input->post("email"),"Email");
+            $remarks .= $this->check_blanks($this->input->post("phone"),"Phone No.");
 			
 			$remarks .= $this->check_blanks($this->input->post("user_country"),"User Country");
 
@@ -246,6 +247,7 @@ class template_createaccount extends MX_Controller {
             $code = $this->encode_this($_POST["password"],$salt);
             $user_fname = $this->function_xss->xss_this(trim($_POST["firstname"]));
             $user_lname = $this->function_xss->xss_this(trim($_POST["lastname"]));
+            $user_phone = $this->function_xss->xss_this(trim($_POST["phone"]));
             $user_email = trim($_POST["email"]);
                         
             $this->db->set('user_name', $username);
@@ -254,6 +256,7 @@ class template_createaccount extends MX_Controller {
             $this->db->set('user_fname', $user_fname);
             $this->db->set('user_lname', $user_lname);
             $this->db->set('user_email', $user_email);
+            $this->db->set('user_phone', $user_phone);
             $this->db->set('user_auth', $salt);
             $this->db->set('user_code', $code);
             $this->db->set('user_country', $_POST["user_country"]);

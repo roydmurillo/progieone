@@ -30,7 +30,7 @@
 		    echo '<input type="hidden" id="item_i" value="'. $this->function_security->r_encode($item_details[0]->item_id).'">'; 
 		    $title = strtoupper($item_details[0]->item_name);
 			$this->template_single_item->display_links($title);
-			$owner = $this->function_users->get_user_fields_by_id(array("user_name","user_avatar","user_country"),$item_details[0]->item_user_id);
+			$owner = $this->function_users->get_user_fields_by_id(array("user_name","user_avatar","user_country", "user_phone"),$item_details[0]->item_user_id);
 		?>
 			        <?php
                      
@@ -138,6 +138,13 @@
                                                                                 <a class="btn btn-primary" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>" >view profile</a>
 									</div>
 								</div>
+                                                                <?php 
+                                                                    $phone = $owner['user_phone'];
+                                                                    $phone_count = strlen($phone);
+                                                                    $phone1 = substr($phone, 0, 3);
+                                                                    $new_phone = str_pad($phone1, ($phone_count - 1), "X", STR_PAD_RIGHT);
+                                                                ?>
+							    <input id="contact_seller_phone" type="button" data-phone="<?php echo $phone; ?>" value="<?php echo $new_phone; ?>" class="btn btn-primary ma-t1em btn-green">
 							    <input id="contact_seller" type="button" value="Contact Seller" class="btn btn-primary ma-t1em">
 
 							</div>
