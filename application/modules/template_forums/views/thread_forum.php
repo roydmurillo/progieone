@@ -153,7 +153,7 @@
 		  
 		  //no data found
 		  if($check == 0){ ?>
-				<div class="regular_register">
+				<div class="regular_register red-alert">
 						<i class="fa fa-exclamation-triangle"></i> No Data was Found! Please check your URL
 														
 							

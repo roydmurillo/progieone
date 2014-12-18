@@ -14,7 +14,7 @@
 <!-- content goes here -->
 <div id="homepage" class="clearfix">
 
-		<div class="regular_register">
+		<div class="regular_register red-alert">
 				<i class="fa fa-exclamation-triangle"></i> Member <?php echo $this->uri->segment(2); ?> does not exist!
 												
 					

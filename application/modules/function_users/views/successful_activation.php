@@ -5,7 +5,7 @@
 	
 	<div class="inner_acct">
 		
-		<div id="regular_register">
+		<div id="regular_register" class="green-alert">
 				
 				<i class="fa fa-check-circle"></i>
 				<div>

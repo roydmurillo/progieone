@@ -8,7 +8,7 @@
 		<?php } ?>	
 		
 		<?php if($msg = $this->native_session->get("login_message")){	?>
-			<div class="regular_register">
+			<div class="regular_register green-alert">
 					<i class="fa fa-check-circle"></i> <?php echo $msg; ?>								
 			</div>
 		<?php $this->native_session->delete("login_message"); } ?>	

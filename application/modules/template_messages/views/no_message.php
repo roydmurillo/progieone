@@ -23,7 +23,7 @@
 			</div>
 			
 			<div id="dashboard_content">
-				<div class="regular_register">
+				<div class="regular_register red-alert">
 						<i class="fa fa-exclamation-triangle"></i> No Message was Found. Please Correct your URL.
 												
 				</div>

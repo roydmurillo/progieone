@@ -3,7 +3,7 @@
 	
 	<div class="inner_acct">
 		
-			<div class="regular_register">
+			<div class="regular_register red-alert">
 					<i class="fa fa-exclamation-triangle"></i> Error: Invalid Page Access. Your link data is incorrect!
 					
 			</div>

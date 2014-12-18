@@ -44,7 +44,7 @@ border:1px solid #CCC; }
 			<div>
 					<!-- content goes here -->
 					<?php if($this->native_session->get("message_contact_us")){	?>
-						<div class="regular_register">
+						<div class="regular_register green-alert">
 								<i class="fa fa-check-circle"></i> Your Inquiry was successfully sent! We will reply to you as soon as possible. Thank You!												
 						</div>
 					<?php $this->native_session->delete("message_contact_us");} ?>	

@@ -6,7 +6,7 @@
 <h2 class="h2_title">Your Items Being Watched</h2>
 
 <?php if($this->native_session->get("message_sent1")){	?>
-	<div class="regular_register">
+	<div class="regular_register green-alert">
 			<i class="fa fa-check-circle"></i> Message was successfully sent!
 		
 	</div>

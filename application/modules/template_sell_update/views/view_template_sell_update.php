@@ -88,7 +88,7 @@ foreach($item_info as $i){
 			<div id="dashboard_content">
 				
 				<?php if($update_remarks){	?>
-					<div class="regular_register" >
+					<div class="green-alert" >
 							<i class="fa fa-check-circle"></i> Watch Item had been successfully updated!
 																
 								

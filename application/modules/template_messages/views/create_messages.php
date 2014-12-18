@@ -29,7 +29,7 @@
 					<!-- content goes here -->
 					<h2 class="h2_title">Create New Message</h2>
 					<?php if($this->native_session->get("message_sent")){	?>
-						<div class="regular_register">
+						<div class="regular_register green-alert">
 							<i class="fa fa-check-circle"></i> Message was successfully sent!
 								
 						</div>

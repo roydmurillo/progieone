@@ -5,7 +5,7 @@
 	
 	<div class="inner_acct">
 		
-		<div id="regular_register">
+		<div id="regular_register" class="red-alert">
 				
 				<i class="fa fa-exclamation-triangle"></i>
 				<div>
