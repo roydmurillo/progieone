@@ -58,10 +58,6 @@ input[type="checkbox"] {
 					<input class="form-control" type="text" id="email" name="email" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>">
 				</div>
 				<div class="form-group">
-					<label for="email">Contact No.</label>
-                                        <input class="form-control" type="text" id="phone" name="phone" value="<?php if(isset($_POST["phone"])) echo $_POST["phone"]; ?>" maxlength="15">
-				</div>
-				<div class="form-group">
 					<label for="user_country">Country</label>
                                             <select id="user_country" name="user_country" class="form-control">
 						<option value=""> -- Select Country --</option>

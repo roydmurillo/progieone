@@ -11,7 +11,7 @@
 		$user_id = unserialize($this->native_session->get("user_info"));
 		$user_id = $user_id["user_id"];
 		
-		$u = $this->function_users->get_user_fields_by_id(array("user_fname","user_lname","user_email","user_country","user_description"),$user_id);
+		$u = $this->function_users->get_user_fields_by_id(array("user_fname","user_lname","user_email","user_country","user_description", "user_phone"),$user_id);
 		
 		echo "<input type='hidden' id='u_desc' value='".trim($u["user_description"])."'>";							
 		
@@ -78,6 +78,10 @@
                                                                                     <td><div class="title_thread">Email Address</div>
                                                                                     <input type="hidden" name="original_email" value="<?php echo $u["user_email"]; ?>">
                                                                                     <input type="text" value="<?php echo $u["user_email"]; ?>" id="user_email" name="user_email" class="input"></td>
+                                                                            </tr>	
+                                                                            <tr>
+                                                                                    <td><div class="title_thread">Phone No.</div>
+                                                                                        <input type="text" value="<?php echo $u["user_phone"]; ?>" id="user_phone" name="user_phone" class="input" maxlength="15"></td>
                                                                             </tr>	
 
                                                                             <tr>

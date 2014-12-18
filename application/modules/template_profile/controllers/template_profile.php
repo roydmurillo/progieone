@@ -74,6 +74,7 @@ class template_profile extends MX_Controller {
 						   'user_fname' => trim($_POST["user_fname"]),
 						   'user_lname' => trim($_POST["user_lname"]),
 						   'user_email' => trim($_POST["user_email"]),
+						   'user_phone' => trim($_POST["user_phone"]),
 						   'user_country' => trim($_POST["user_country"]),
 						   'user_description' => trim($_POST["user_description"]),
 						   'user_auth' => $salt,
@@ -84,6 +85,7 @@ class template_profile extends MX_Controller {
 						   'user_fname' => trim($_POST["user_fname"]),
 						   'user_lname' => trim($_POST["user_lname"]),
 						   'user_email' => trim($_POST["user_email"]),
+						   'user_phone' => trim($_POST["user_phone"]),
 						   'user_description' => trim($_POST["user_description"]),
 						   'user_country' => trim($_POST["user_country"])
 						);

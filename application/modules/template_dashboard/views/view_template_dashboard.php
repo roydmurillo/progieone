@@ -1,14 +1,30 @@
+<?php 
+    $user_id = unserialize($this->native_session->get("user_info"));
+    $user_id = $user_id["user_id"];
+
+    $user_info = $this->function_users->get_user_fields_by_id(array("user_phone", "is_show"),$user_id);
+    echo "<script>var is_alert = false;</script>";
+    if($user_info['user_phone'] != '' && $user_info['is_show'] == 0){
+        echo "<script>is_alert = true;</script>";
+    }
+?>
+
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.pieRenderer.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.donutRenderer.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.categoryAxisRenderer.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.highlighter.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.canvasTextRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.caonvasAxisTickRenderer.min.js"></script>
 <link rel="stylesheet" type="text/css" hrf="<?php echo base_url(); ?>styles/jquery.jqplot.min.css" />
 
 <!-- additional scripts -->
 <script type="text/javascript">
+    if(is_alert === false){
+        if(confirm('Phone No. not set do you want to update your profile?') === true){
+            window.location = '<?php echo base_url().'dashboard/profile';?>';
+        }
+    }
 	jQuery(document).ready(function(){
 		jQuery(".inner_box").click(function(){
 			window.location.href = jQuery(this).find(".link").val();
