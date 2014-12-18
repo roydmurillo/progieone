@@ -52,6 +52,8 @@
                                     data: { type:jQuery("#type_isshow").val(), args:data_obj }
                             });
                         }
+                        
+                        setTimeout('window.location = \'<?php echo base_url().'dashboard/profile';?>\'', '1500')
                     });
                 }
 	});
