@@ -209,6 +209,14 @@ class function_users extends MX_Controller {
                 $this->template_footer->index(); 		
             } 
         }
+        
+        public function update_isshow(){
+            
+            $user_id = unserialize($this->native_session->get("user_info"));
+            $user_id = $user_id["user_id"];
+            
+            $this->db->query(" update watch_users set is_show = '1' where user_id = '". $user_id ."' ");
+        }
 		
 
         
