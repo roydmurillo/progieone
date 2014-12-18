@@ -4,10 +4,19 @@
 
     $user_info = $this->function_users->get_user_fields_by_id(array("user_phone", "is_show"),$user_id);
     echo "<script>var is_alert = false;</script>";
-    if($user_info['user_phone'] != '' && $user_info['is_show'] == 0){
+    if($user_info['user_phone'] == '' && $user_info['is_show'] == 0){
         echo "<script>is_alert = true;</script>";
     }
+    
+    $this->load->module("function_security"); 
+    $type_isshow = $this->function_security->encode("isshow");
+    $ajax = $this->function_security->encode("dashboard-ajax");
 ?>
+
+<input id="load_initial" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
+<input id="type_isshow" type="hidden" value="<?php echo $type_isshow; ?>">
+<input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
+
 
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jqplot.pieRenderer.min.js"></script>
@@ -20,17 +29,54 @@
 
 <!-- additional scripts -->
 <script type="text/javascript">
-    if(is_alert === false){
-        if(confirm('Phone No. not set do you want to update your profile?') === true){
-            window.location = '<?php echo base_url().'dashboard/profile';?>';
-        }
-    }
+    
 	jQuery(document).ready(function(){
 		jQuery(".inner_box").click(function(){
 			window.location.href = jQuery(this).find(".link").val();
 		});
+                
+                if(is_alert === true){
+            //        if(confirm('Phone No. not set do you want to update your profile?') === true){
+            //            window.location = '<?php echo base_url().'dashboard/profile';?>';
+            //        }
+
+                    $('#myModal').modal('show');
+                    
+                    $('#update_profile').click(function(){
+                        if($('#is_show').is(':checked')){
+                            var data_obj = {};
+                            jQuery.ajax({
+                                    type: "POST",
+                                    url: jQuery("#load_initial").val(),
+                                    cache: false,
+                                    data: { type:jQuery("#type_isshow").val(), args:data_obj }
+                            });
+                        }
+                    });
+                }
 	});
 </script>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+          <p>Phone No. not set do you want to update your profile?</p>
+          <p>
+              <input type="checkbox" id="is_show"> show this message again?
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="update_profile">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- content goes here -->
 <div id="homepage" class="clearfix">
