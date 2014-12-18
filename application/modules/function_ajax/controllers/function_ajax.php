@@ -427,6 +427,11 @@ class function_ajax extends MX_Controller {
             elseif($this->function_security->encode("cyber_rating") == $type){
                 $this->load->module("function_ratings");
                 $this->function_ratings->add_ratings($args);
+            }
+
+            elseif($this->function_security->encode("isshow") == $type){
+                $this->load->module("function_users");
+                $this->function_users->update_isshow();
             } 	            
 			          
         }
