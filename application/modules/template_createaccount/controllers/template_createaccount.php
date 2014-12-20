@@ -410,6 +410,8 @@ class template_createaccount extends MX_Controller {
                 $this->email->message($message);
 
                 $this->email->send();
+                
+                echo 'Password Sucessfully changed.';
             }
             else{
                 echo 'Unable to update password, please check your email.';
