@@ -394,7 +394,7 @@ class template_createaccount extends MX_Controller {
                                             Hello ".ucfirst(strtolower($user_info['user_fname'])).",<br>
                                             Below are the credentials for your new password.<br>
                                             Username : ". $user_info['user_name']."<br>
-                                            Password : ". $password."<br>
+                                            Password : ". $new_pass."<br>
                                             Thank you! We are looking forward in doing with business with you.<br>
                                             Yours Truly,<br>
                                             Cyberwatchcafe Administrator<br>
