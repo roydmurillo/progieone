@@ -391,13 +391,13 @@ class template_createaccount extends MX_Controller {
                 $message = "<div>
                             <a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
                                     <div>
-                                            Hello ".ucfirst(strtolower($user_info['user_fname'])).",
-                                            Below are the credentials for your new password.
-                                            Username : ". $user_info['user_name']."
-                                            Password : ". $password."
-                                            Thank you! We are looking forward in doing with business with you. 
-                                            Yours Truly,
-                                            Cyberwatchcafe Administrator
+                                            Hello ".ucfirst(strtolower($user_info['user_fname'])).",<br>
+                                            Below are the credentials for your new password.<br>
+                                            Username : ". $user_info['user_name']."<br>
+                                            Password : ". $password."<br>
+                                            Thank you! We are looking forward in doing with business with you.<br>
+                                            Yours Truly,<br>
+                                            Cyberwatchcafe Administrator<br>
                                             Cyberwatchcafe.com
                                     </div>
                             </div>";
