@@ -20,8 +20,8 @@ jQuery(document).ready(function() {
         $('#myModal').modal('show');
     });
 
-    $('#submit_change_pass').click(function(){
-        
+    $('#submit_change_pass').on('click',function(){
+
         if(validateEmail($('#email').val())){
 
             var data_obj = {email:jQuery('#email').val()};
@@ -40,5 +40,25 @@ jQuery(document).ready(function() {
             alert('Email invalid');
         }
     });
+//    $('#submit_change_pass').click(function(){
+//        
+//        if(validateEmail($('#email').val())){
+//
+//            var data_obj = {email:jQuery('#email').val()};
+//            data_obj = jQuery.toJSON(data_obj);	
+//    
+//            jQuery.ajax({
+//                type: "POST",
+//                url: jQuery("#load_initial").val(),
+//                data: { type: jQuery("#type_initial").val(), args: data_obj },
+//                success : function(html){
+//                    
+//                }
+//            });
+//        }
+//        else{
+//            alert('Email invalid');
+//        }
+//    });
     
 });
