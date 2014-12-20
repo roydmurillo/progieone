@@ -29,12 +29,9 @@ input[type="checkbox"] {
       </div>
       <div class="modal-body">
           <p>Email : <input type="text" id="email"> </p>
-          <p>
-              <button id="submit_change_pass" class="btn btn-primary">Change</button>
-          </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="submit_change_pass">Cancel</button>
         <button type="button" class="btn btn-primary" id="update_profile">Ok</button>
       </div>
     </div>
