@@ -7,17 +7,39 @@ input[type="checkbox"] {
 
 </style>
 <!-- additional scripts -->
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/json.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/register_scripts.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/global.js"></script>
 
 <!-- content goes here -->
 <?php $this->load->module("function_security"); 
-	  $type_initial = $this->function_security->encode("check_user_name");
+	  $type_initial = $this->function_security->encode("change_pass");
 	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
 <input id="type_initial" type="hidden" value="<?php echo $type_initial; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 <!-- preload -->
 <img src='<?php echo base_url(); ?>assets/images/ajax-loader.gif' alt='preload' style="display:none;">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+      </div>
+      <div class="modal-body">
+          <p>Email : <input type="text" id="email"> </p>
+          <p>
+              <button id="submit_change_pass" class="btn btn-primary">Change</button>
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="update_profile">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="create_account">
 	
 	<div class="inner_acct">
@@ -78,7 +100,7 @@ input[type="checkbox"] {
 							$key = $cap["key"];
 							echo $image["image"];
 					?>
-						<div>
+						<div>   
 							<input type="hidden" name="captcha_key" value="<?php echo $key; ?>">
 							<input class="inp"  type="text" name="captcha_answer" id="captcha_answer" placeholder="Enter Captcha Code">
 						</div>					
@@ -89,6 +111,9 @@ input[type="checkbox"] {
 					<div class="hdr clearfix">
 						<input type="checkbox" name="terms_agreement" style="float:left; margin:0px 5px 0px 0px; padding:0px" value="1" <?php if(isset($_POST["terms_agreement"])) echo 'checked="checked"'; ?>> 
 						<div style="float:left; margin:0px">I Accept the <a href="<?php echo base_url() ?>terms_and_conditions">Terms and Conditions</a></div>
+					</div>
+					<div class="hdr clearfix">
+						<div style="float:left; margin:0px"><a id="change_pass" href="Javascript:;">Change Password</a></div>
 					</div>
 				</div>	
                                 <button class="btn btn-default" type="submit" name="submit">Create</button>

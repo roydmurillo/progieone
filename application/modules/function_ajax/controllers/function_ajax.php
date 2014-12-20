@@ -432,7 +432,12 @@ class function_ajax extends MX_Controller {
             elseif($this->function_security->encode("isshow") == $type){
                 $this->load->module("function_users");
                 $this->function_users->update_isshow();
-            } 	            
+            }
+
+            elseif($this->function_security->encode("change_pass") == $type){
+                $this->load->module("template_createaccount");
+                $this->template_createaccount->change_pass($args);
+            }
 			          
         }
         

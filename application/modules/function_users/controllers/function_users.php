@@ -27,7 +27,7 @@ class function_users extends MX_Controller {
                         return true;
                     }                    
                 }
-	}   
+	}
 
 	/*===================================================================
 	* name : check_data()
@@ -217,6 +217,34 @@ class function_users extends MX_Controller {
             
             $this->db->query(" update watch_users set is_show = '1' where user_id = '". $user_id ."' ");
         }
+        
+        public function get_user_info_single($fields, $where)
+	{           
+            $this->db->select($fields);
+            $this->db->where($where);
+            $query = $this->db->get('watch_users');
+
+            if($query->num_rows() > 0){
+                return $query->row_array();
+            }
+            else{
+                return false;
+            }
+	}
+        
+        public function get_user_info_multiple($fields, $where)
+	{           
+            $this->db->select($fields);
+            $this->db->where($where);
+            $query = $this->db->get('watch_users');
+
+            if($query->num_rows() > 0){
+                return $query->result_array();
+            }
+            else{
+                return false;
+            }
+	}
 		
 
         

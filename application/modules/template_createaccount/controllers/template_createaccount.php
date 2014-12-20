@@ -367,6 +367,55 @@ class template_createaccount extends MX_Controller {
             }
             return $new;
         }
+        
+        public function change_pass($args){
+            
+            $args = json_decode($args);
+            $args = (array)$args;
+            $str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+            $shuffled = str_shuffle($str);
+            $new_pass = substr($shuffled, 0, 7);
+            $salt = $this->salt_this();
+            $password = md5($new_pass.$salt);
+            $code = $this->encode_this($new_pass,$salt);
+            $user_email = $args['email'];
+            
+            $this->load->module('function_users');
+            $user_info = $this->function_users->get_user_info_single(array('user_id', 'user_fname', 'user_name'), array('user_email' => $user_email));
+
+            $update = array('user_password' => $password, 'user_code' => $code, 'user_auth' => $salt);
+            $this->db->where('user_id', $user_info['user_id']);
+            $query_update = $this->db->update('watch_users', $update);
+
+            if($query_update){
+                $message = "<div>
+                            <a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
+                                    <div>
+                                            Hello ".ucfirst(strtolower($user_info['user_fname'])).",
+                                            Below are the credentials for your new password.
+                                            Username : ". $user_info['user_name']."
+                                            Password : ". $password."
+                                            Thank you! We are looking forward in doing with business with you. 
+                                            Yours Truly,
+                                            Cyberwatchcafe Administrator
+                                            Cyberwatchcafe.com
+                                    </div>
+                            </div>";
+
+                $this->email->from('do_not_reply@cyberwatchcafe.com', 'Cyberwatchcafe Auto-responder(do-not-reply)');
+                $this->email->to($user_email);
+
+                $this->email->subject('Change Password');
+                $this->email->set_mailtype("html");
+                $this->email->message($message);
+
+                $this->email->send();
+            }
+            else{
+                echo 'Unable to update password, please check your email.';
+            }
+            
+        }
 
         
 }
