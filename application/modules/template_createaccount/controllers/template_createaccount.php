@@ -96,7 +96,7 @@ class template_createaccount extends MX_Controller {
         public function send_email($encode){
 
             $message = "<div>
-			<a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
+			<a href='".base_url()."' background-color='#1990b9'><img src='".base_url()."assets/images/cw-logo.png'></a>
 				<div>
 					Hello ".ucfirst(strtolower($this->input->post("firstname"))).",
 					You have received this email because you have successfully registered at Cyberwatchcafe.com.
@@ -389,7 +389,7 @@ class template_createaccount extends MX_Controller {
 
             if($query_update){
                 $message = "<div>
-                            <a href='".base_url()."'><img src='".base_url()."assets/images/cyberwatchcafe.png'></a>
+                            <a href='".base_url()."' background-color='#1990b9'><img src='".base_url()."assets/images/cw-logo.png'></a>
                                     <div>
                                             Hello ".ucfirst(strtolower($user_info['user_fname'])).",<br>
                                             Below are the credentials for your new password.<br>
