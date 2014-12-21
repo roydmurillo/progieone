@@ -32,7 +32,8 @@ jQuery(document).ready(function() {
                 url: jQuery("#load_initial").val(),
                 data: { type: jQuery("#type_initial").val(), args: data_obj },
                 success : function(html){
-                    
+                    $('#myModal').modal('hide');
+                    alert(html);
                 }
             });
         }
