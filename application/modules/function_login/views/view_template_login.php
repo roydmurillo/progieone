@@ -1,4 +1,33 @@
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/json.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/register_scripts.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/global.js"></script>
+
+<?php $this->load->module("function_security"); 
+    $type_initial = $this->function_security->encode("change_pass");
+    $ajax = $this->function_security->encode("dashboard-ajax");
+?>
+<input id="load_initial" type="hidden" value="<?php echo base_url(); ?><?php echo $ajax; ?>">
+<input id="type_initial" type="hidden" value="<?php echo $type_initial; ?>">
+<input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
+
 <img src='<?php echo base_url(); ?>assets/images/warning.png' alt='preload' style="display:none">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+      </div>
+      <div class="modal-body">
+          <p>Email : <input type="text" id="email"> </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="submit_change_pass">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="create_account">
 	
 	<div class="inner_acct">
@@ -27,6 +56,9 @@
                                     </div>
                                     <button class="btn btn-default" type="submit" name="login_submit">login</button>
                             </form>	
+                            </div>
+                            <div class="hdr clearfix">
+                                    <div style="float:left; margin:0px"><a id="change_pass" href="Javascript:;">Change Password</a></div>
                             </div>
                     </div>
                 </div>
