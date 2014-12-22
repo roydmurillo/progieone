@@ -20,7 +20,7 @@ class template_dashboard_admin extends MX_Controller {
             $data['users'] = $this->get_all_users();
             $listing = $this->get_all_listing();
             $data['listing'] = array();
-            $nlistng = [];
+            $nlistng = array();
             if($listing){
                 foreach ($listing as $nkey1 => $val){
 
@@ -31,8 +31,8 @@ class template_dashboard_admin extends MX_Controller {
                 $amt = 0;
                 $count = 0;
                 $countval = 0;
-                $ncount = [];
-                $listing = [];
+                $ncount = array();
+                $listing = array();
                 foreach ($nlistng as $nkey1 => $loopval){
                     $amt = 0;
                     $count = 0;
