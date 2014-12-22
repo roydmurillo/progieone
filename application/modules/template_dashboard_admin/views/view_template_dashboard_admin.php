@@ -104,6 +104,44 @@
                                </div>
                            </div>    
                     </div>
+                    <div class="settings-wrapper"> 
+                        <div class="box_title">
+                                Total listing Monthly
+                        </div>
+                        <table class="table table-striped hidden-xs hidden-sm" width="100%" border="1">
+                            <tr>
+                                <td>Date</td>
+                                <td>Count</td>
+                                <td>Amount</td>
+                            </tr>
+                            
+                                <?php if($listing){
+                                    $total_amount = 0;
+                                    $total_count = 0;
+                                    foreach ($listing as $nkey1 => $val){
+                                        $total_amount += $val['amount'];
+                                        $total_count += $val['count'];
+                                ?>
+                                        <tr>
+                                            <td><?php echo $nkey1?></td>
+                                            <td><?php echo $val['count']?></td>
+                                            <td><?php echo $val['amount']?></td>
+                                        </tr>
+                                <?php
+                                    }
+                                ?>
+                                        <tr>
+                                            <td>Total :</td>
+                                            <td><?php echo $total_count?></td>
+                                            <td><?php echo $total_amount?></td>
+                                        </tr>
+                                <?php }else{?>
+                                        <tr>
+                                            <td colspan="2">no record(s) found.</td>
+                                        </tr>
+                                <?php }?>
+                        </table>
+                    </div>
                     <div class="settings-wrapper">
                         <div class="box_title">
                                 User Settings

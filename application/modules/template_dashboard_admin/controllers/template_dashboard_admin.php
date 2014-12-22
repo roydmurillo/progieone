@@ -18,6 +18,39 @@ class template_dashboard_admin extends MX_Controller {
             $this->template_header->index($data); 		
 			
             $data['users'] = $this->get_all_users();
+            $listing = $this->get_all_listing();
+            $data['listing'] = array();
+            $nlistng = [];
+            if($listing){
+                foreach ($listing as $nkey1 => $val){
+
+                    $ndate = date('F, Y', strtotime($val['txn_payment_date']));
+                    $nlistng[$ndate][] = array($val['txn_mc_gross'], $val['txn_productid_quantity']);
+                }
+                
+                $amt = 0;
+                $count = 0;
+                $countval = 0;
+                $ncount = [];
+                $listing = [];
+                foreach ($nlistng as $nkey1 => $loopval){
+                    $amt = 0;
+                    $count = 0;
+                    foreach ($loopval as $nkey2 => $val){
+                        $amt += $val[0];
+                        $ncount = explode(',', $val[1]);
+                        foreach ($ncount as $keycount => $countval1){
+                            
+                            $countval = explode('-', $countval1);
+                            $count += $countval[1]; 
+                        }
+                    }
+                    $listing[$nkey1] = array('amount' => $amt, 'count' => $count);
+                }
+            }
+            
+            $data['listing'] = $listing;
+
             $this->load->view('view_template_dashboard_admin', $data);
 
             //load footer
@@ -29,6 +62,18 @@ class template_dashboard_admin extends MX_Controller {
         public function get_all_users(){
             
             $q = $this->db->query("SELECT a.*, b.paypal_price FROM watch_users as a left join watch_paypal as b on a.user_listprice_id=b.paypal_id");
+            
+            if($q->num_rows() <= 0){
+                return false;
+            }
+            else{
+                return $q->result_array();
+            }
+        }
+        
+        public function get_all_listing(){
+            
+            $q = $this->db->query("SELECT * from watch_transactions where txn_payment_status = 'Completed' ");
             
             if($q->num_rows() <= 0){
                 return false;
