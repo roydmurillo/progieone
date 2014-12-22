@@ -64,12 +64,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Update phone number</h4>
       </div>
       <div class="modal-body">
           <p>Phone No. not set do you want to update your profile?</p>
           <p>
-              <input type="checkbox" id="is_show"> show this message again?
+              <input type="checkbox" id="is_show"> don't show this message again?
           </p>
       </div>
       <div class="modal-footer">

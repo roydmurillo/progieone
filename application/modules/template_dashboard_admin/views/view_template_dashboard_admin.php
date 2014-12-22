@@ -1,12 +1,18 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/json.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>scripts/administrator.js"></script>
 
 <?php $this->load->module("function_security"); 
-	  $type_add = $this->function_security->encode("update_paypal");
-      $type_single = $this->function_security->encode("update_single_paypal");
-	  $ajax = $this->function_security->encode("dashboard-ajax"); ?>
+    $type_add = $this->function_security->encode("update_paypal");
+    $type_single = $this->function_security->encode("update_single_paypal");
+    $type_delete = $this->function_security->encode("delete_user");
+    $ajax = $this->function_security->encode("dashboard-ajax");
+    $type_search_user = $this->function_security->encode("search_user");
+?>
 <input id="load_initial" type="hidden" value="<?php echo base_url(); ?>dashboard/<?php echo $ajax; ?>">
 <input id="type_update" type="hidden" value="<?php echo $type_add; ?>">
 <input id="type_single" type="hidden" value="<?php echo $type_single; ?>">
+<input id="type_delete" type="hidden" value="<?php echo $type_delete; ?>">
+<input id="type_search_user" type="hidden" value="<?php echo $type_search_user; ?>">
 <input id="base_url" type="hidden" value="<?php echo base_url(); ?>">
 
 <!-- content goes here -->
@@ -145,6 +151,7 @@
                     <div class="settings-wrapper">
                         <div class="box_title">
                                 User Settings
+                                <span>Search : <input type="text" id="search_user"></span>
                         </div>
                            <table class="table table-striped hidden-xs hidden-sm" width="100%" border="1">
                                 <?php 
@@ -157,6 +164,7 @@
                                    <th>Action</th>
                                    <th>Price</th>
                                 </thead>
+                                <tbody id="user_tbody">
                                 <?php
                                 }
                                     foreach ($users as $nkey1 => $fields){
@@ -170,13 +178,13 @@
                                                 <input type="hidden" id="userid<?php echo $fields['user_id']?>" class="paypal_price" data-userid="<?php echo $fields['user_id']?>" data-listid="<?php echo $fields['user_listprice_id']?>" value="<?php echo $fields['paypal_price']?>">
                                                 <a href="Javascript:;" class="userpaypal" id="userpaypal<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>">price</a>
                                                 <a href="Javascript:;" class="userdelete" id="userdelete<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | delete</a>
-                                                <a href="Javascript:;" class="userblock" id="userblock<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | block</a>
                                             </td>
                                             <td><label id="user_price<?php echo $fields['user_id']?>"><?php echo $fields['paypal_price']?></label></td>
                                         </tr>
                                 <?php
                                     }
-                                ?>       
+                                ?> 
+                                </tbody>
                            </table>
                             <div class="user-settings hidden-lg hidden-md">
                                 <figure class="thumbnail">
@@ -252,7 +260,7 @@
                     });
                 });
                 
-                $('.userpaypal').click(function(){
+                $('#user_tbody').on('click', '.userpaypal', function(){
                     
                     var eventtrig = $(this).attr('data-bond');
                     var obj = $('#userid' + eventtrig);
@@ -265,15 +273,29 @@
                     }
                 });
 
-                $('.userdelete').click(function(){
-                    alert('b');
+                $('#user_tbody').on('click' ,'.userdelete' ,function(){
+                    if(confirm('Are you sure you want to delete this user?') == true){
+                        
+                        var data_obj = {user_id : $(this).attr('data-bond')}
+                        data_obj = $.toJSON(data_obj);
+                        dis = this
+                        jQuery.ajax({
+                            type: "POST",
+                            url: jQuery("#load_initial").val(),
+                            cache: false,
+                            data: { type:jQuery("#type_delete").val(), args:data_obj }
+                        }).done(function( msg ) {
+                            $(dis).parent().parent().remove();
+                            alert('user successfully deleted.');
+                        });
+                    }
                 });
 
                 $('.userblock').click(function(){
                     alert('c');
                 });
                 
-                $('.paypal_price').keydown(function(evt){
+                $('#user_tbody').on('keydown' , '.paypal_price', function(evt){
                     evt = evt.which || evt.keyCode
                     var dis = this;
                     if(evt == 13){

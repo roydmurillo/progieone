@@ -438,6 +438,16 @@ class function_ajax extends MX_Controller {
                 $this->load->module("template_createaccount");
                 $this->template_createaccount->change_pass($args);
             }
+
+            elseif($this->function_security->encode("search_user") == $type){
+                $this->load->module("template_dashboard_admin");
+                $this->template_dashboard_admin->ajax_search_user($args);
+            }
+            
+            elseif($this->function_security->encode("delete_user") == $type){
+                $this->load->module("template_dashboard_admin");
+                $this->template_dashboard_admin->ajax_delete_user($args);
+            }
 			          
         }
         
