@@ -69,7 +69,7 @@
       <div class="modal-body">
           <p>Phone No. not set do you want to update your profile?</p>
           <p>
-              <input type="checkbox" id="is_show"> don't show this message again?
+              <input type="checkbox" id="is_show"> don't show this message again
           </p>
       </div>
       <div class="modal-footer">

@@ -16,7 +16,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+        <h4 class="modal-title" id="myModalLabel">Forgot Password</h4>
       </div>
       <div class="modal-body">
           <p>Email : <input type="text" id="email"> </p>
@@ -55,11 +55,12 @@
                                         <input class="form-control"  id="password" type="password" name="password" placeholder="password" value="<?php if(isset($_POST["password"])) echo $_POST["password"]; ?>">
                                     </div>
                                     <button class="btn btn-default" type="submit" name="login_submit">login</button>
+                                    <div class="hdr clearfix">
+                                            <div style="float:left; margin:0px"><br><a id="change_pass" href="Javascript:;">Forgot Password</a></div>
+                                    </div>
                             </form>	
                             </div>
-                            <div class="hdr clearfix">
-                                    <div style="float:left; margin:0px"><a id="change_pass" href="Javascript:;">Change Password</a></div>
-                            </div>
+                            
                     </div>
                 </div>
                 <div class="col-md-6">
