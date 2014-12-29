@@ -8,10 +8,8 @@ class exclude_settings
     public function excluded_user($user)
     {   
   		
-		$excluded = array(  "musicman",
-                                    "cyber1cafe",
-                                    "cheartco",
-                                    "alterbliss");    
+		$excluded = array(  "cyber1cafe",
+                                    "cheartco",);    
 		
 		if(in_array(strtolower($user),$excluded)){
 		    return true;
