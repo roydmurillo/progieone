@@ -1082,8 +1082,8 @@ class function_items extends MX_Controller {
 
             //count total number of rows
             $total_count = 0;
-            $total = $this->db->query("SELECT COUNT(1) as total FROM watch_items
-                                       WHERE item_paid = '0' and item_user_id = $user_id 
+            $total = $this->db->query("SELECT COUNT(*) as total FROM watch_items
+                                       WHERE item_paid = '1' and item_expire > NOW() and item_user_id = $user_id 
                                        ");
             if($total->num_rows() > 0){
                 foreach($total->result() as $t){
