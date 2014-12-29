@@ -5,7 +5,8 @@ function reset_data(){
 jQuery(document).ready(function() {
 	
 	jQuery("#post_reply").click(function(){
-		jQuery(this).parent().nextAll(".forum_reply").eq(0).toggle();
+//		jQuery(this).parent().nextAll(".forum_reply").eq(0).toggle();
+		jQuery(".forum_reply").toggle();
 		jQuery("#forum_content").toggle();
 	});
 
