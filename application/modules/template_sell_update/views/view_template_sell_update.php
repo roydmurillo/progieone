@@ -22,8 +22,8 @@ foreach($item_info as $i){
 	$item_movement = $i->item_movement;
 	$item_case = $i->item_case;	
 	$item_bracelet = $i->item_bracelet;	
-	$item_case_width = $i->item_case_width;	
-	$item_case_thickness = $i->item_case_thickness;	
+//	$item_case_width = $i->item_case_width;	
+//	$item_case_thickness = $i->item_case_thickness;	
 	$item_condition = $i->item_condition;
 	$item_parttype = $i->item_parttype;	
 }
