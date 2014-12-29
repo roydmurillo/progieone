@@ -201,12 +201,11 @@
                                                     <div><strong>username:</strong> <?php echo ucfirst($fields['user_name'])?></div>
                                                     <div><strong>email:</strong> <?php echo ucfirst($fields['user_email'])?></div>
                                                     <div>
-                                                        <input type="hidden" id="userid<?php echo $fields['user_id']?>" class="paypal_price" data-userid="<?php echo $fields['user_id']?>" data-listid="<?php echo $fields['user_listprice_id']?>" value="<?php echo $fields['paypal_price']?>">
-                                                        <a href="Javascript:;" class="userpaypal" id="userpaypal<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>">price</a>
-                                                        <a href="Javascript:;" class="userdelete" id="userdelete<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | delete</a>
-                                                        <a href="Javascript:;" class="userblock" id="userblock<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | block</a>
+                                                        <input type="hidden" id="mobileuserid<?php echo $fields['user_id']?>" class="paypal_price" data-userid="<?php echo $fields['user_id']?>" data-listid="<?php echo $fields['user_listprice_id']?>" value="<?php echo $fields['paypal_price']?>">
+                                                        <a href="Javascript:;" class="userpaypal" id="mobileuserpaypal<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>">price</a>
+                                                        <a href="Javascript:;" class="userdelete" id="mobileuserdelete<?php echo $fields['user_id']?>" data-bond="<?php echo $fields['user_id']?>"> | delete</a>
                                                     </div>
-                                                    <div><label id="user_price<?php echo $fields['user_id']?>"><?php echo $fields['paypal_price']?></label></div>
+                                                    <div><label id="mobileuser_price<?php echo $fields['user_id']?>"><?php echo $fields['paypal_price']?></label></div>
                                                 </div>
                                         <?php
                                             }
@@ -269,7 +268,18 @@
                         obj.attr('type', 'text');
                         $('#userpaypal' + eventtrig).css('display', 'none');
                         $('#userdelete' + eventtrig).css('display', 'none');
-                        $('#userblock' + eventtrig).css('display', 'none');
+                    }
+                });
+
+                $('.user-loop').on('click', '.userpaypal', function(){
+                    
+                    var eventtrig = $(this).attr('data-bond');
+                    var obj = $('#mobileuserid' + eventtrig);
+                    
+                    if(obj.attr('type') == 'hidden'){
+                        obj.attr('type', 'text');
+                        $('#mobileuserpaypal' + eventtrig).css('display', 'none');
+                        $('#mobileuserdelete' + eventtrig).css('display', 'none');
                     }
                 });
 
@@ -291,8 +301,22 @@
                     }
                 });
 
-                $('.userblock').click(function(){
-                    alert('c');
+                $('.user-loop').on('click' ,'.userdelete' ,function(){
+                    if(confirm('Are you sure you want to delete this user?') == true){
+                        
+                        var data_obj = {user_id : $(this).attr('data-bond')}
+                        data_obj = $.toJSON(data_obj);
+                        dis = this
+                        jQuery.ajax({
+                            type: "POST",
+                            url: jQuery("#load_initial").val(),
+                            cache: false,
+                            data: { type:jQuery("#type_delete").val(), args:data_obj }
+                        }).done(function( msg ) {
+                            $(dis).parent().parent().remove();
+                            alert('user successfully deleted.');
+                        });
+                    }
                 });
                 
                 $('#user_tbody').on('keydown' , '.paypal_price', function(evt){
@@ -314,6 +338,28 @@
                             $('#userdelete' + $(dis).attr('data-userid')).css('display', '');
                             $('#userblock' + $(dis).attr('data-userid')).css('display', '');
                             $('#user_price' + $(dis).attr('data-userid')).text($(dis).val());
+                        });
+                    }
+                });
+
+                $('.user-loop').on('keydown' , '.paypal_price', function(evt){
+                    evt = evt.which || evt.keyCode
+                    var dis = this;
+                    if(evt == 13){
+
+                        var data_obj = {user_id : $(dis).attr('data-userid'), listprice : $(dis).val(), listid : $(dis).attr('data-listid')}
+                        data_obj = $.toJSON(data_obj);
+
+                        jQuery.ajax({
+                            type: "POST",
+                            url: jQuery("#load_initial").val(),
+                            cache: false,
+                            data: { type:jQuery("#type_single").val(), args:data_obj }
+                        }).done(function( msg ) {
+                            $(dis).attr('type', 'hidden');
+                            $('#mobileuserpaypal' + $(dis).attr('data-userid')).css('display', '');
+                            $('#mobileuserdelete' + $(dis).attr('data-userid')).css('display', '');
+                            $('#mobileuser_price' + $(dis).attr('data-userid')).text($(dis).val());
                         });
                     }
                 });
