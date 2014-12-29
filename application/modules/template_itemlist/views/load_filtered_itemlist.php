@@ -200,7 +200,7 @@ if(empty($item_list)){
                             </h5>
                                 <div class="clearfix">    
 				<div class="price"><?php echo $this->function_currency->format($price); ?></div>
-                            <input type="hidden" class="item" id="item<?php echo $user.$item_id?> value="<?php echo $this->function_security->r_encode($featured->item_id); ?>">
+                                <input type="hidden" class="item" id="item<?php echo $user.$item_id?>" value="<?php echo $this->function_security->r_encode($featured->item_id);?>">
 				<div class="watch-btn">
                                     <?php
 				if($this->function_login->is_user_loggedin()){
