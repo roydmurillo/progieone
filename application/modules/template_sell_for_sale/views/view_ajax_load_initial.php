@@ -169,7 +169,7 @@ if($results != NULL || !empty($results)){?>
                                     <div class='col-sm-4 action'>
                                            <div><a class='btn btn-primary' href='".base_url() .$link ."/". str_replace(" ","-",(trim($r->item_name))) ."_watch_i" .$this->function_security->r_encode($r->item_id) . ".html' title='View Full Details' target='_blank'>details</a></div>
                                            <div><a class='btn btn-default btn-green' href='".base_url()."dashboard/sell/update/{$r->item_id}' title='Edit Details'>edit</a></div>
-                                           <div><a class='btn btn-danger btn-red' class='delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "'>delete</a>	</div>
+                                           <div><a class='btn btn-danger btn-red delete_item' href='javascript:;' title='Delete Item " . $r->item_name . "' data-id=\"". $r->item_id ."\" >delete</a>	</div>
                                     </div>
                                 </div>
                             </figure>
