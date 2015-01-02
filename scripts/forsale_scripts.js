@@ -36,10 +36,11 @@ jQuery(document).ready(function() {
 				type: "POST",
 				url: jQuery("#load_initial").val(),
 				cache: false,
-				data: { type: jQuery("#type_delete").val(), args:jQuery(this).find(".id").eq(0).val() }
+				data: { type: jQuery("#type_delete").val(), args:jQuery(this).attr("data-id")}
 			}).done(function( msg ) {
 				unloader();
 				jQuery("#dashboard_content").html(msg);
+                create_pager();
 			});	
 		}
 	});		
