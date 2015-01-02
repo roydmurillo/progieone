@@ -54,7 +54,7 @@
 			<div id="image_viewer">
 <!--			    <div class="large" style="background:url() no-repeat"></div>-->
                             
-				<img class="img-thumbnail" src="<?php echo $default_image; ?>">
+				<img class="img-thumbnail img-responsive" src="<?php echo $default_image; ?>">
 			</div>
             <ul class="thumb-list-inline img-thumbs-container">
                 
@@ -137,8 +137,7 @@
 										<a class="btn btn-primary" href="javascript:;" id="add_friend" >invite</a>
                                                                                 <a class="btn btn-primary" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>" >view profile</a>
 									</div>
-								</div>
-                                                                <?php 
+                                                                        <?php 
                                                                     $phone = $owner['user_phone'];
                                                                     $phone_count = strlen($phone);
                                                                     $phone1 = substr($phone, 0, 3);
@@ -148,6 +147,8 @@
                                                                 ?>
 							    <input id="contact_seller_phone" type="button" data-phone="<?php echo $phone; ?>" value="<?php echo $new_phone; ?>" class="btn btn-primary ma-t1em btn-green">
                                                             <?php }?>
+								</div>
+                                                                
 							    <input id="contact_seller" type="button" value="Contact Seller" class="btn btn-primary ma-t1em">
 
 							</div>

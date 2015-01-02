@@ -114,7 +114,7 @@
                         <div class="box_title">
                                 Total listing Monthly
                         </div>
-                        <table class="table table-striped hidden-xs hidden-sm" width="100%" border="1">
+                        <table class="table table-striped" width="100%" border="1">
                             <tr>
                                 <td>Date</td>
                                 <td>Count</td>
@@ -131,7 +131,7 @@
                                         <tr>
                                             <td><?php echo $nkey1?></td>
                                             <td><?php echo $val['count']?></td>
-                                            <td><?php echo $val['amount']?></td>
+                                            <td><?php echo $val['amount']?></td>    
                                         </tr>
                                 <?php
                                     }
@@ -151,7 +151,7 @@
                     <div class="settings-wrapper">
                         <div class="box_title">
                                 User Settings
-                                <span>Search : <input type="text" id="search_user"></span>
+                                <input type="text" id="search_user" placeholder="Input keyword">
                         </div>
                            <table class="table table-striped hidden-xs hidden-sm" width="100%" border="1">
                                 <?php 

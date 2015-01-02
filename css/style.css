@@ -439,6 +439,9 @@ item list
   text-align: center;
   padding: 12px; }
 
+#contact_seller_phone {
+  margin-left: 8px; }
+
 @media (max-width: 767px) {
   .sort-left-mobile {
     text-align: left;

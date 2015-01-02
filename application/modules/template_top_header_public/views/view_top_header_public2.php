@@ -31,16 +31,16 @@
             </form>
             <div class="container text-center social st-multi-color">
                 <p>follow us</p>
-                <a href="" class="st-icon-facebook">
+                <a href="https://www.facebook.com/claire.heartco" target="_blank" class="st-icon-facebook">
                     <span></span>
                 </a>
-                <a href="" class="st-icon-twitter">
+                <a href="" target="_blank" class="st-icon-twitter">
                     <span></span>
                 </a>
-                <a href="" class="st-icon-instagram">
+                <a href="" target="_blank" class="st-icon-instagram">
                     <span></span>
                 </a>
-                <a href="" class="st-icon-googleplus">
+                <a href="" target="_blank" class="st-icon-googleplus">
                     <span></span>
                 </a>
             </div>
