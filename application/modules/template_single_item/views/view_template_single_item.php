@@ -118,6 +118,8 @@
 								<div class="seller_info col-xs-8 col-sm-9">
 									<div class="small_info">
 										<a class="u_name" href="<?php echo base_url() ?>member_profile/<?php echo $owner["user_name"]; ?>"><?php echo $owner["user_name"]; ?></a>
+                                                                                <br>
+                                                                                <?php echo $this->function_country->get_country_name($owner["user_country"]); ?>
 									</div>
                                                                     <?php
 
