@@ -140,9 +140,9 @@
                                                                         <?php 
                                                                     $phone = $owner['user_phone'];
                                                                     $phone_count = strlen($phone);
-                                                                    $phone1 = substr($phone, 0, 3);
-                                                                    $new_phone = str_pad($phone1, (15 - $phone_count), "X", STR_PAD_RIGHT);
-                                                                    
+                                                                    $phone1 = substr($phone, 0, 4);
+                                                                    $new_phone = str_pad($phone1, 15, "X", STR_PAD_RIGHT);
+
                                                                     if($phone != ''){
                                                                 ?>
 							    <input id="contact_seller_phone" type="button" data-phone="<?php echo $phone; ?>" value="<?php echo $new_phone; ?>" class="btn btn-primary ma-t1em btn-green">
