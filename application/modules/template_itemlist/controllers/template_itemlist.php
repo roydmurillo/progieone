@@ -128,11 +128,23 @@ class template_itemlist extends MX_Controller {
 			$data["item_links"] = $this->create_pagination($this->count_rec($where_string),$per_page);
 		} else {
 			$data["uri_process"] = "no_data";
+                        
+                        $new_condition = $this->wild_search();
+                        
 			$where_string =  "item_paid = 1 
                                         AND item_days > 0
-                                        AND item_expire > CURDATE()";
+                                        AND item_expire > CURDATE() 
+                                        ". $new_condition;
+                        
+                        
 			$this->db->where($where_string,NULL,false);
+			$items2 = $this->db->join('watch_category', 'watch_items.item_category_id = watch_category.category_id', 'left');
 			$items2 = $this->db->get("watch_items",$per_page,$start);
+//                        echo $this->db->last_query();
+//                        $this->db->query(" select a.* from watch_items a left join "
+//                                . " where a.item_paid = 1  AND a.item_days > 0 AND a.item_expire > CURDATE() "
+//                                . ""
+//                                );
                         if($items2->num_rows() > 0){
                                 $data["total_count"] = "";
 				$data["item_list_backup"] = $items2->result();
@@ -408,7 +420,41 @@ class template_itemlist extends MX_Controller {
 				return $query->num_rows();
 			}
 			return 0;
-	}	
+	}
+        
+        private function wild_search(){
+            
+            $return_string = '';
+
+            if(strpos($_GET['s'], 'men')){
+                
+                $return_string .= " and item_gender = '1' ";
+            }
+
+            if(strpos($_GET['s'], 'women')){
+                
+                $return_string .= " and item_gender = '2' ";
+            }
+
+            if(strpos($_GET['s'], 'unisex')){
+                
+                $return_string .= " and item_gender = '3' ";
+            }
+
+            if(strpos($_GET['s'], 'kid')){
+                
+                $return_string .= " and item_kids = '1' ";
+            }
+            
+            if($return_string == ''){
+                
+                $return_string .= " AND ( item_brand like '%". $_GET['s'] ."%' or
+                                        category_name like '%". $_GET['s'] ."%' ) ";
+            }
+
+            return $return_string;
+            
+        }
 
     public function last_updated($date=""){
 
