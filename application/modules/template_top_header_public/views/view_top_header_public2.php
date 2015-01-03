@@ -31,13 +31,13 @@
             </form>
             <div class="container text-center social st-multi-color">
                 <p>follow us</p>
-                <a href="https://www.facebook.com/claire.heartco" target="_blank" class="st-icon-facebook">
+                <a href="https://www.facebook.com/cyberwatchcafe" target="_blank" class="st-icon-facebook">
                     <span></span>
                 </a>
-                <a href="" target="_blank" class="st-icon-twitter">
+                <a href="https://twitter.com/cyberwatchcafe" target="_blank" class="st-icon-twitter">
                     <span></span>
                 </a>
-                <a href="" target="_blank" class="st-icon-instagram">
+                <a href="http://instagram.com/cyberwatchcafe" target="_blank" class="st-icon-instagram">
                     <span></span>
                 </a>
                 <a href="" target="_blank" class="st-icon-googleplus">
