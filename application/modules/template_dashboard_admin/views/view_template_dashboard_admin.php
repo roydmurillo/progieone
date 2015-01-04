@@ -101,7 +101,7 @@
                                </div>
                                <div class="col-sm-6">
                                 <?php 
-                                $q = $this->db->query("SELECT COUNT(1) as total FROM watch_users");
+                                $q = $this->db->query("SELECT COUNT(1) as total FROM watch_users where is_deleted = '0' ");
                                 if($q->num_rows() > 0){
                                     $q = $q->result();
                                     echo $q[0]->total . " User/s";
