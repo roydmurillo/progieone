@@ -440,7 +440,7 @@ class template_itemlist extends MX_Controller {
 
                 if(strpos($search, 'unisex') !== FALSE){
 
-                    $return_string .= " and item_gender = '3' ";
+                    $return_string .= " and item_gender in ('1','2','3') ";
                 }
 
                 if(strpos($search, 'kid') !== FALSE){
