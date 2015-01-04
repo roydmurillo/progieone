@@ -431,16 +431,16 @@ class template_itemlist extends MX_Controller {
 
                 if(strpos($search, 'women') !== FALSE){
 
-                    $return_string .= " and item_gender = '2' ";
+                    $return_string .= " and item_gender in ('3', '2') ";
                 }
                 elseif(strpos($search, 'men') !== FALSE){
 
-                    $return_string .= " and item_gender = '1' ";
+                    $return_string .= " and item_gender in ('1', '3') ";
                 }
 
                 if(strpos($search, 'unisex') !== FALSE){
 
-                    $return_string .= " and item_gender in ('1','2','3') ";
+                    $return_string .= " and item_gender = '3' ";
                 }
 
                 if(strpos($search, 'kid') !== FALSE){
