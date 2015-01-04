@@ -140,11 +140,7 @@ class template_itemlist extends MX_Controller {
 			$this->db->where($where_string,NULL,false);
 			$items2 = $this->db->join('watch_category', 'watch_items.item_category_id = watch_category.category_id', 'left');
 			$items2 = $this->db->get("watch_items",$per_page,$start);
-//                        echo $this->db->last_query();
-//                        $this->db->query(" select a.* from watch_items a left join "
-//                                . " where a.item_paid = 1  AND a.item_days > 0 AND a.item_expire > CURDATE() "
-//                                . ""
-//                                );
+echo $this->db->last_query();
                         if($items2->num_rows() > 0){
                                 $data["total_count"] = "";
 				$data["item_list_backup"] = $items2->result();
@@ -426,31 +422,36 @@ class template_itemlist extends MX_Controller {
             
             $return_string = '';
 
+            
             if(isset($_GET['s'])){
-                if(strpos($_GET['s'], 'men')){
+                
+                $search = strtolower($_GET['s']);
+
+                
+
+                if(strpos($search, 'women') !== FALSE){
+
+                    $return_string .= " and item_gender = '2' ";
+                }
+                elseif(strpos($search, 'men') !== FALSE){
 
                     $return_string .= " and item_gender = '1' ";
                 }
 
-                if(strpos($_GET['s'], 'women')){
-
-                    $return_string .= " and item_gender = '2' ";
-                }
-
-                if(strpos($_GET['s'], 'unisex')){
+                if(strpos($search, 'unisex') !== FALSE){
 
                     $return_string .= " and item_gender = '3' ";
                 }
 
-                if(strpos($_GET['s'], 'kid')){
+                if(strpos($search, 'kid') !== FALSE){
 
                     $return_string .= " and item_kids = '1' ";
                 }
 
                 if($return_string == ''){
 
-                    $return_string .= " AND ( item_brand like '%". $_GET['s'] ."%' or
-                                            category_name like '%". $_GET['s'] ."%' ) ";
+                    $return_string .= " AND ( item_brand like '%". $search ."%' or
+                                            category_name like '%". $search ."%' ) ";
                 }
             }
 
