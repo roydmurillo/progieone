@@ -140,7 +140,7 @@ class template_itemlist extends MX_Controller {
 			$this->db->where($where_string,NULL,false);
 			$items2 = $this->db->join('watch_category', 'watch_items.item_category_id = watch_category.category_id', 'left');
 			$items2 = $this->db->get("watch_items",$per_page,$start);
-echo $this->db->last_query();
+
                         if($items2->num_rows() > 0){
                                 $data["total_count"] = "";
 				$data["item_list_backup"] = $items2->result();
