@@ -426,30 +426,32 @@ class template_itemlist extends MX_Controller {
             
             $return_string = '';
 
-            if(strpos($_GET['s'], 'men')){
-                
-                $return_string .= " and item_gender = '1' ";
-            }
+            if(isset($_GET['s'])){
+                if(strpos($_GET['s'], 'men')){
 
-            if(strpos($_GET['s'], 'women')){
-                
-                $return_string .= " and item_gender = '2' ";
-            }
+                    $return_string .= " and item_gender = '1' ";
+                }
 
-            if(strpos($_GET['s'], 'unisex')){
-                
-                $return_string .= " and item_gender = '3' ";
-            }
+                if(strpos($_GET['s'], 'women')){
 
-            if(strpos($_GET['s'], 'kid')){
-                
-                $return_string .= " and item_kids = '1' ";
-            }
-            
-            if($return_string == ''){
-                
-                $return_string .= " AND ( item_brand like '%". $_GET['s'] ."%' or
-                                        category_name like '%". $_GET['s'] ."%' ) ";
+                    $return_string .= " and item_gender = '2' ";
+                }
+
+                if(strpos($_GET['s'], 'unisex')){
+
+                    $return_string .= " and item_gender = '3' ";
+                }
+
+                if(strpos($_GET['s'], 'kid')){
+
+                    $return_string .= " and item_kids = '1' ";
+                }
+
+                if($return_string == ''){
+
+                    $return_string .= " AND ( item_brand like '%". $_GET['s'] ."%' or
+                                            category_name like '%". $_GET['s'] ."%' ) ";
+                }
             }
 
             return $return_string;
