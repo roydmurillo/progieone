@@ -119,6 +119,8 @@ if($results != NULL || !empty($results)){
 				$htm .= "    </div>";
 				
 				// item name set link
+                                
+                                $link = '';
 				if($item[0]->item_gender == 1){
 					$link = "mens-watches";
 				} elseif($item[0]->item_gender == 2){
