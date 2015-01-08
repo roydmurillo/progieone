@@ -14,7 +14,7 @@
 		<input type="text" name="thread_title" id="thread_title" class="input_thread thread">
 		</div>
 
-		<div >
+<!--		<div >
 		<div class="title_thread">Select Thread Category</div> 
 		<?php if($form_data){ ?>
 			
@@ -28,7 +28,7 @@
 			</select>
 		
 		<?php } ?>	
-		</div>
+		</div>-->
 		
 		<div >
 			<div class="title_thread">Thread Message</div> 
@@ -46,7 +46,7 @@
                     <input name="thread_user_id" type="hidden" value="<?php echo $user_id; ?>"/>
                     <input id="add_reset" type="button" class="css_btn_c0 btn btn-primary" onclick="reset_data()" value="Reset"/>
                     <input id="post_submit_thread" class="css_btn_c0 btn btn-primary" type="button" value="Submit New Thread">
-                    <input name="redirect" type="hidden" value="<?php echo base_url() ?>forums/category/"/>
+                    <input name="redirect" type="hidden" value="<?php echo base_url() ?>forums/"/>
                     <input id="submit_add_thread" name="submit_add_thread" type="submit" value="Submit New Thread" style="display:none">
                 </div>
 	</form>

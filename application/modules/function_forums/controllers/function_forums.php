@@ -342,7 +342,7 @@ class function_forums extends MX_Controller {
 				$this->function_activity->add_activity($activity);
 				
                 $name_category = $this->get_category_fields_by_id("category_title",$_POST["thread_category_id"]);
-				$url_category = $this->function_forums->clean_url($name_category);
+                $url_category = $this->function_forums->clean_url($name_category);
                 $redirect = $_POST["redirect"] . $url_category; 
                 redirect($redirect);    
                 exit();

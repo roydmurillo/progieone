@@ -16,9 +16,9 @@
 					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "your_thread") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/your_thread"> 
 							Your Threads
 					</a>
-					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/new">
+<!--					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "new") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/new">
 							New Threads
-					</a>
+					</a>-->
 					<a class="btn btn-default <?php echo ($this->uri->segment(2) == "popular") ? "active":"tab_inner"; ?>" href="<?php echo base_url(); ?>forums/popular">
 							Popular Threads
 					</a>

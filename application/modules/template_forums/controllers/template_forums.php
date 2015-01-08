@@ -48,7 +48,11 @@ class template_forums extends MX_Controller {
                     }  
                     
                     else {
-                        $forum["forum_data"] = $this->get_forum($forum["forum_type"]);
+//                        $forum["forum_data"] = $this->get_forum($forum["forum_type"]);
+                        $form = $this->get_forum($forum["forum_type"]);
+//                                                print_r($form);die;
+                        $forum["forum_data"] = $form[0];
+                        $forum["forum_links"] = $form[1];
                     }
                             
                     //load header
@@ -106,14 +110,51 @@ class template_forums extends MX_Controller {
         
         public function main_forum(){
             
-                $this->db->from('watch_forum_category');
-                $this->db->order_by("category_id", "asc"); 
-                $query = $this->db->get(); 
+//                $this->db->from('watch_forum_category');
+//                $this->db->order_by("category_id", "asc"); 
+//                $query = $this->db->get(); 
+//                if($query->num_rows() > 0){
+//                    return $query;
+//                } 
+//                
+//                return false;
+
+                $per_page = 7;
+                
+                // get total count
+                $total_count = 0;
+                $total = $this->db->query("SELECT COUNT(1) as total FROM watch_forum_thread ");
+                if($total->num_rows() > 0){
+                    foreach($total->result() as $t){
+                        $total_count = $t->total;
+                    } 
+                }            
+                
+                // pagination setup
+                $config['base_url'] = base_url()."forums/";
+                $config['total_rows'] = $total_count;
+                //var_dump($total_count); exit();
+                $config['per_page'] = $per_page;
+                $config['uri_segment'] = 4;
+                
+                //set limit
+                if($this->uri->segment(4)){
+                    $start = $this->uri->segment(4);
+                } else {
+                    $start = 0;
+                }
+                
+                $this->pagination->initialize($config);
+                $links = $this->pagination->create_links();
+
+                $this->db->order_by("thread_date", "desc"); 
+                $query = $this->db->get('watch_forum_thread',$per_page,$start);
                 if($query->num_rows() > 0){
-                    return $query;
+                    return array($query, $links);
                 } 
                 
                 return false;
+            
                 
         } 
         
