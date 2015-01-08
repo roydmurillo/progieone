@@ -50,9 +50,16 @@ class template_forums extends MX_Controller {
                     else {
 //                        $forum["forum_data"] = $this->get_forum($forum["forum_type"]);
                         $form = $this->get_forum($forum["forum_type"]);
-//                                                print_r($form);die;
-                        $forum["forum_data"] = $form[0];
-                        $forum["forum_links"] = $form[1];
+                        
+                        if($this->uri->segment(2) == ''){
+                            
+                            $forum["forum_data"] = $form[0];
+                            $forum["forum_links"] = $form[1];
+                        }
+                        else{
+                            $forum["forum_data"] = '';
+                            $forum["forum_links"] = '';
+                        }
                     }
                             
                     //load header
